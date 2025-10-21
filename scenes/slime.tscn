@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dip4c1hem316h"]
+
+[ext_resource type="Texture2D" uid="uid://ck7mpjpwnj6gs" path="res://assets/Environment Assets/Dirtfloor.png" id="1_371uh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2gj0"]
+atlas = ExtResource("1_371uh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n6pvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2gj0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Slime" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n6pvg")
