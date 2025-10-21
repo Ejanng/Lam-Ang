@@ -6,6 +6,6 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -13)
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 
 [node name="Lam-Ang" parent="." instance=ExtResource("1_uwrxv")]
