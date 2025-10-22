@@ -5,6 +5,18 @@ const SPRINT = 140.0
 @onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
+	handle_movement()
+
+func attack():
+	pass
+	
+func hurt():
+	pass
+	
+func die():
+	pass
+
+func handle_movement():
 	var direction = Vector2.ZERO
 	
 	var current_speed = WALK

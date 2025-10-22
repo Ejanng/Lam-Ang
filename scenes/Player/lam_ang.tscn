@@ -56,6 +56,11 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qestl"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_67xbk")
@@ -116,8 +121,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5ujj"]
 radius = 8.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h7kcq"]
-radius = 4.1231055
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stb0u"]
+size = Vector2(9, 5)
 
 [node name="Lam-Ang" type="CharacterBody2D"]
 script = ExtResource("1_67xbk")
@@ -125,15 +130,15 @@ script = ExtResource("1_67xbk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_qestl")
-animation = &"walk_down"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_d5ujj")
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="Punch" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(9, -8)
-shape = SubResource("CircleShape2D_h7kcq")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Punch"]
+position = Vector2(12.5, -8.5)
+shape = SubResource("RectangleShape2D_stb0u")
