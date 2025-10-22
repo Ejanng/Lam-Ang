@@ -3,12 +3,24 @@ extends CharacterBody2D
 const SPEED = 50
 var player_chase = false
 var player = null
+@onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
-	if player_chase:
-		position += (player.position - position)/SPEED
+	handle_movement()
 		
 	
+func handle_movement():
+	if player_chase:
+		position += (player.position - position)/SPEED
+		anim.play("walk_side")
+		if (player.position.x - position.x) < 0:
+			anim.flip_h = true
+		else:
+			anim.flip_h = false
+	else:
+		anim.play("idle")
+	
+
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	player = body
