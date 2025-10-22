@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://bcxda6gun7nus"]
+
+[ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_hdtyb"]
+[ext_resource type="Script" uid="uid://buwasdtb3dsvk" path="res://scripts/enemy.gd" id="1_jgi5p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgi5p"]
+atlas = ExtResource("1_hdtyb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ptj"]
+atlas = ExtResource("1_hdtyb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enwl8"]
+atlas = ExtResource("1_hdtyb")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oecb"]
+atlas = ExtResource("1_hdtyb")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_628s0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgi5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ptj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enwl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oecb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8bc33"]
+radius = 87.32124
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r4hy2"]
+radius = 4.1231055
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_jgi5p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_628s0")
+autoplay = "default"
+frame_progress = 0.45360422
+offset = Vector2(0, -14)
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_8bc33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_r4hy2")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

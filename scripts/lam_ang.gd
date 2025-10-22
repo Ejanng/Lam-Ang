@@ -2,7 +2,14 @@ extends CharacterBody2D
 
 const WALK = 70.0
 const SPRINT = 140.0
+
+var isEnemyInAttackRange = false
+var enemyAttackCooldown = true
+var playerHealth = 100
+var isPlayerAlive = true
+
 @onready var anim = $AnimatedSprite2D
+
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
@@ -50,3 +57,19 @@ func handle_movement():
 	else:
 		velocity = Vector2.ZERO
 		anim.play("idle")
+
+
+func player():
+	pass
+
+func _on_punch_body_entered(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		isEnemyInAttackRange = true
+		
+
+func _on_punch_body_exited(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		isEnemyInAttackRange = false
+		
+func enemy_attack():
+	print("player took dmg")

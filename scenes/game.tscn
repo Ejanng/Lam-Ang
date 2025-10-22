@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cff76bduixjec"]
+[gd_scene load_steps=3 format=3 uid="uid://cff76bduixjec"]
 
-[ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/lam_ang.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/enemy.tscn" id="2_yqjtg"]
 
 [node name="Game" type="Node2D"]
 
@@ -9,3 +10,6 @@ position = Vector2(0, -13)
 zoom = Vector2(2, 2)
 
 [node name="Lam-Ang" parent="." instance=ExtResource("1_uwrxv")]
+
+[node name="enemy" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(-139, 0)

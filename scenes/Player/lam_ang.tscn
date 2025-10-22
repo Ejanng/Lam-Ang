@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bioohv47js651"]
+[gd_scene load_steps=20 format=3 uid="uid://bioohv47js651"]
 
 [ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
@@ -121,10 +121,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5ujj"]
 radius = 8.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_stb0u"]
-size = Vector2(9, 5)
-
 [node name="Lam-Ang" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_67xbk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -139,6 +137,5 @@ shape = SubResource("CircleShape2D_d5ujj")
 
 [node name="Punch" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Punch"]
-position = Vector2(12.5, -8.5)
-shape = SubResource("RectangleShape2D_stb0u")
+[connection signal="body_entered" from="Punch" to="." method="_on_punch_body_entered"]
+[connection signal="body_exited" from="Punch" to="." method="_on_punch_body_exited"]
