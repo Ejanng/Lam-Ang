@@ -6,23 +6,23 @@ const SPRINT = 140.0
 var isEnemyInAttackRange = false
 var enemyAttackCooldown = true
 var playerHealth = 100
+var maxHealth = 100
 var isPlayerAlive = true
 
-@onready var anim = $AnimatedSprite2D
 
+@onready var anim = $AnimatedSprite2D
+@onready var attackCD = $attack_cooldown
+@onready var healthBar = $ProgressBar
+
+func _ready() -> void:
+	healthBar.max_value = maxHealth
+	healthBar.value = playerHealth
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
-
-func attack():
-	pass
-	
-func hurt():
-	pass
-	
-func die():
-	pass
-
+	enemy_attack()
+	die()
+		
 func handle_movement():
 	var direction = Vector2.ZERO
 	
@@ -45,7 +45,7 @@ func handle_movement():
 		direction = direction.normalized()
 		velocity = direction * current_speed
 		move_and_slide()
-		
+	
 		if abs(direction.x) > abs(direction.y):
 			anim.play("walk_side")
 			anim.flip_h = direction.x < 0 
@@ -58,18 +58,32 @@ func handle_movement():
 		velocity = Vector2.ZERO
 		anim.play("idle")
 
-
+func die():
+	if playerHealth <= 0 and name:
+		isPlayerAlive = false
+		playerHealth = 0
+		print("Player Died!")
+		self.queue_free()
+		
 func player():
 	pass
 
-func _on_punch_body_entered(body: Node2D) -> void:
+func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("enemy"):
 		isEnemyInAttackRange = true
-		
 
-func _on_punch_body_exited(body: Node2D) -> void:
+func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("enemy"):
 		isEnemyInAttackRange = false
 		
 func enemy_attack():
-	print("player took dmg")
+	if isEnemyInAttackRange and enemyAttackCooldown == true:
+		playerHealth -= 20
+		playerHealth = clamp(playerHealth, 0, maxHealth)
+		healthBar.value = playerHealth
+		enemyAttackCooldown = false
+		attackCD.start()
+		print(playerHealth)
+
+func _on_attack_cooldown_timeout() -> void:
+	enemyAttackCooldown = true

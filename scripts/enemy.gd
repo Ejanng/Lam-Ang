@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 50
+const SPEED = 150
 var player_chase = false
 var player = null
 @onready var anim = $AnimatedSprite2D
@@ -20,7 +20,8 @@ func handle_movement():
 	else:
 		anim.play("idle")
 	
-
+func enemy():
+	pass
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	player = body

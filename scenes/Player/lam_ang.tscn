@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bioohv47js651"]
+[gd_scene load_steps=21 format=3 uid="uid://bioohv47js651"]
 
 [ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
@@ -119,14 +119,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5ujj"]
-radius = 8.0
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_stb0u"]
+radius = 9.055386
 
 [node name="Lam-Ang" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_67xbk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_qestl")
 animation = &"idle"
 autoplay = "idle"
@@ -135,7 +138,28 @@ autoplay = "idle"
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_d5ujj")
 
-[node name="Punch" type="Area2D" parent="."]
+[node name="hitbox" type="Area2D" parent="."]
 
-[connection signal="body_entered" from="Punch" to="." method="_on_punch_body_entered"]
-[connection signal="body_exited" from="Punch" to="." method="_on_punch_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_stb0u")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="respawn_cooldown" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -14.0
+offset_top = -33.0
+offset_right = 14.0
+offset_bottom = -29.0
+value = 100.0
+show_percentage = false
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_punch_body_exited"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="respawn_cooldown" to="." method="_on_respawn_cooldown_timeout"]

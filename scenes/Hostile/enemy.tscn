@@ -1,10 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcxda6gun7nus"]
+[gd_scene load_steps=15 format=3 uid="uid://bcxda6gun7nus"]
 
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_hdtyb"]
 [ext_resource type="Script" uid="uid://buwasdtb3dsvk" path="res://scripts/enemy.gd" id="1_jgi5p"]
-[ext_resource type="Texture2D" uid="uid://15e7hnpffcr1" path="res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png" id="3_5oecb"]
 [ext_resource type="Texture2D" uid="uid://dn7ncb1xcmhoj" path="res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png" id="4_628s0"]
-[ext_resource type="Texture2D" uid="uid://ddxg0illq4jmm" path="res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png" id="5_8bc33"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgi5p"]
 atlas = ExtResource("1_hdtyb")
@@ -22,14 +20,6 @@ region = Rect2(0, 32, 32, 32)
 atlas = ExtResource("1_hdtyb")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r4hy2"]
-atlas = ExtResource("3_5oecb")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_its2e"]
-atlas = ExtResource("3_5oecb")
-region = Rect2(0, 32, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ngr5"]
 atlas = ExtResource("4_628s0")
 region = Rect2(0, 0, 32, 32)
@@ -45,14 +35,6 @@ region = Rect2(0, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcal2"]
 atlas = ExtResource("4_628s0")
 region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vn6nn"]
-atlas = ExtResource("5_8bc33")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3tls7"]
-atlas = ExtResource("5_8bc33")
-region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_628s0"]
 animations = [{
@@ -75,17 +57,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r4hy2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_its2e")
-}],
-"loop": true,
-"name": &"walk_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_1ngr5")
 }, {
 "duration": 1.0,
@@ -100,17 +71,6 @@ animations = [{
 "loop": true,
 "name": &"walk_side",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vn6nn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3tls7")
-}],
-"loop": true,
-"name": &"walk_up",
-"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8bc33"]
@@ -124,7 +84,7 @@ script = ExtResource("1_jgi5p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_628s0")
-animation = &"walk_down"
+animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, -14)
 
@@ -139,5 +99,6 @@ shape = SubResource("CircleShape2D_8bc33")
 position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_r4hy2")
 
+[connection signal="area_shape_entered" from="detection_area" to="." method="_on_detection_area_area_shape_entered"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
