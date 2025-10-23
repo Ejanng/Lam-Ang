@@ -1,7 +1,7 @@
-ProgressBar
 Timer
 CollisionShape2D
 Area2D
+ProgressBar
 AnimatedSprite2D
 CharacterBody2D
 TileMap

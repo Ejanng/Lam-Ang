@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bcxda6gun7nus"]
+[gd_scene load_steps=16 format=3 uid="uid://bcxda6gun7nus"]
 
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_hdtyb"]
 [ext_resource type="Script" uid="uid://buwasdtb3dsvk" path="res://scripts/enemy.gd" id="1_jgi5p"]
@@ -77,7 +77,10 @@ animations = [{
 radius = 87.32124
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r4hy2"]
-radius = 4.1231055
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1ptj"]
+radius = 10.049875
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_jgi5p")
@@ -99,6 +102,18 @@ shape = SubResource("CircleShape2D_8bc33")
 position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_r4hy2")
 
+[node name="enemy_hitbox" type="Area2D" parent="."]
+position = Vector2(0, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+shape = SubResource("CircleShape2D_f1ptj")
+
+[node name="take_dmg_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="area_shape_entered" from="detection_area" to="." method="_on_detection_area_area_shape_entered"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="take_dmg_cooldown" to="." method="_on_take_dmg_cooldown_timeout"]

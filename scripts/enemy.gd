@@ -3,10 +3,17 @@ extends CharacterBody2D
 const SPEED = 150
 var player_chase = false
 var player = null
+var health = 100 
+var isPlayerInAttackRange = false
+var canTakeDMG = true
+
 @onready var anim = $AnimatedSprite2D
+@onready var takeDMGCD = $take_dmg_cooldown
+
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
+	deal_dmg()
 		
 	
 func handle_movement():
@@ -30,3 +37,27 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	player = null
 	player_chase = false
+
+
+func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
+	if body.has_method("player"):
+		isPlayerInAttackRange = true
+
+
+func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
+	if body.has_method("player"):
+		isPlayerInAttackRange = true
+
+func deal_dmg():
+	if isPlayerInAttackRange and Global.playerCurrentAttack == true:
+		if canTakeDMG:
+			health -= 20
+			takeDMGCD.start()
+			canTakeDMG = false
+			print("Enemy Health: ", health)
+		if health <= 0:
+			self.queue_free()
+
+
+func _on_take_dmg_cooldown_timeout() -> void:
+	canTakeDMG = true

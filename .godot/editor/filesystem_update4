@@ -1,2 +1,5 @@
-res://scenes/Player/lam_ang.tscn
+res://scenes/game.tscn
+res://scenes/Hostile/enemy.tscn
+res://scripts/enemy.gd
 res://scripts/lam_ang.gd
+res://scenes/Player/lam_ang.tscn
