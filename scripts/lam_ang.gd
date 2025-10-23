@@ -5,32 +5,67 @@ const SPRINT = 140.0
 
 var isEnemyInAttackRange = false
 var enemyAttackCooldown = true
-var playerHealth = 100
-var maxHealth = 100
 var isPlayerAlive = true
 var attackIP = false    # save for attack animation
+var isRegeningHP = false
+
+var currentSpeed = 0
+var maxHealth = 100
+var playerHealth = maxHealth
+var regenRateHP = 2.0
+var regenRateEnergy = 1.0
 var playerPos = Vector2.ZERO
+var mapBounds = Rect2(0, 0, 1024, 768)
+var regenCD = 10.0
+var energy = 50
 
 @onready var anim = $AnimatedSprite2D
 @onready var attackCD = $attack_cooldown
-@onready var healthBar = $ProgressBar
+@onready var healthBar = $HealthBar
 @onready var dealAttackCD = $deal_attack_cooldown
+@onready var regenTimer = $RegenTimer
 
 func _ready() -> void:
 	healthBar.max_value = maxHealth
 	healthBar.value = playerHealth
-
+	
+	regenTimer.wait_time = regenCD
+	regenTimer.one_shot = true
+	
+func _process(delta: float) -> void:
+	cameraMovement()
+	die()
+	regenPlayer(delta)
+	
+	
 func _physics_process(delta: float) -> void:
 	handle_movement()
 	enemy_attack()
-	die()
 	attack()
-		
+	
+	
+func cameraMovement():
+	var input = Vector2(
+		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"),
+	)
+	velocity = input.normalized() * currentSpeed
+	move_and_slide()
+	
+	global_position.x = clamp(global_position.x, mapBounds.position.x, mapBounds.position.x + mapBounds.size.x)
+	global_position.y = clamp(global_position.y, mapBounds.position.x, mapBounds.position.y + mapBounds.size.y)
+	
+func regenPlayer(delta) -> void:
+	if isRegeningHP and playerHealth < maxHealth:
+		playerHealth += regenRateHP * delta
+		playerHealth = clamp(playerHealth, 0, maxHealth)
+		healthBar.value = playerHealth
+
 func handle_movement():
 	var direction = Vector2.ZERO
-	var current_speed = WALK
+	currentSpeed = WALK
 	if Input.is_action_pressed("ui_select"):
-		current_speed = SPRINT
+		currentSpeed = SPRINT
 	
 	# movements directions
 	if Input.is_action_pressed("ui_right"):
@@ -49,7 +84,7 @@ func handle_movement():
 	# animated sprites
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
-		velocity = direction * current_speed
+		velocity = direction * currentSpeed
 		move_and_slide()
 	
 		if abs(direction.x) > abs(direction.y):
@@ -91,7 +126,9 @@ func enemy_attack():
 		playerHealth = clamp(playerHealth, 0, maxHealth)
 		healthBar.value = playerHealth
 		enemyAttackCooldown = false
+		isRegeningHP = false
 		attackCD.start()
+		regenTimer.start()
 		print("Player Health: ", playerHealth)
 
 func _on_attack_cooldown_timeout() -> void:
@@ -114,8 +151,10 @@ func attack():
 				anim.play("walk_down")
 				dealAttackCD.start()
 
-
 func _on_deal_attack_cooldown_timeout() -> void:
 	dealAttackCD.stop()
 	Global.playerCurrentAttack = false
 	attackIP = false
+
+func _on_regen_timer_timeout() -> void:
+	isRegeningHP = true

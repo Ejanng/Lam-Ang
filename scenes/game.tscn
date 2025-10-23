@@ -5,23 +5,17 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -13)
-zoom = Vector2(2, 2)
-
 [node name="Lam-Ang" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(383, 169)
 
 [node name="enemy" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(-139, 0)
+position = Vector2(32, 26)
 
 [node name="enemy2" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(195, 5)
+position = Vector2(289, 395)
 
 [node name="enemy3" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(-2, 106)
+position = Vector2(925, 146)
 
 [node name="enemy4" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(-231, -107)
-
-[node name="enemy5" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(-21, -109)
+position = Vector2(782, 449)
