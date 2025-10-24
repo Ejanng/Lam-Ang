@@ -9,7 +9,11 @@ var canTakeDMG = true
 var meleeDMG = 20
 @onready var anim = $AnimatedSprite2D
 @onready var takeDMGCD = $take_dmg_cooldown
+@onready var health_bar = $ProgressBar
 
+func _ready() -> void:
+	health_bar.max_value = health
+	health_bar.value = health
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
@@ -50,6 +54,7 @@ func deal_dmg():
 	if isPlayerInAttackRange and Global.playerCurrentAttack == true:
 		if canTakeDMG:
 			health -= meleeDMG
+			health_bar.value = health
 			takeDMGCD.start()
 			canTakeDMG = false
 			print("Player Deals DMG: ", meleeDMG, "\nEnemy Health: ", health)

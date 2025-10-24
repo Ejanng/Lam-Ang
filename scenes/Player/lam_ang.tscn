@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bioohv47js651"]
+[gd_scene load_steps=25 format=3 uid="uid://bioohv47js651"]
 
 [ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
@@ -122,13 +122,17 @@ animations = [{
 radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_stb0u"]
-radius = 9.055386
+radius = 9.05539
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3lmq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stb0u"]
-bg_color = Color(0.96862745, 0.3372549, 0.38431373, 1)
+bg_color = Color(0.968627, 0.337255, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2oh65"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad0y5"]
-bg_color = Color(0.90588236, 0.98039216, 0.19607843, 1)
+bg_color = Color(0.905882, 0.980392, 0.196078, 1)
 
 [node name="Lam-Ang" type="CharacterBody2D"]
 collision_layer = 3
@@ -166,6 +170,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_q3lmq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_stb0u")
 value = 100.0
 show_percentage = false
@@ -182,14 +187,15 @@ offset_left = -192.0
 offset_top = -92.0
 offset_right = -115.0
 offset_bottom = -85.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2oh65")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ad0y5")
 value = 100.0
 show_percentage = false
 
-[connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
-[connection signal="body_exited" from="hitbox" to="." method="_on_punch_body_exited"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_punch_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="deal_attack_cooldown" to="." method="_on_deal_attack_cooldown_timeout"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcxda6gun7nus"]
+[gd_scene load_steps=18 format=3 uid="uid://bcxda6gun7nus"]
 
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_hdtyb"]
 [ext_resource type="Script" uid="uid://buwasdtb3dsvk" path="res://scripts/enemy.gd" id="1_jgi5p"]
@@ -74,13 +74,18 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8bc33"]
-radius = 87.32124
+radius = 87.3212
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r4hy2"]
 radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f1ptj"]
-radius = 10.049875
+radius = 10.0499
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enwl8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1ptj"]
+bg_color = Color(0.968627, 0.337255, 0.384314, 1)
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_jgi5p")
@@ -110,6 +115,17 @@ shape = SubResource("CircleShape2D_f1ptj")
 
 [node name="take_dmg_cooldown" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(40, 6)
+offset_left = -20.0
+offset_top = -36.0
+offset_right = 20.0
+offset_bottom = -30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_enwl8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f1ptj")
+value = 100.0
+show_percentage = false
 
 [connection signal="area_shape_entered" from="detection_area" to="." method="_on_detection_area_area_shape_entered"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
