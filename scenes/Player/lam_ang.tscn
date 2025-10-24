@@ -199,6 +199,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="EnergyRegenTimer" type="Timer" parent="."]
 
+[node name="DashTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_punch_body_exited"]
@@ -208,3 +210,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
 [connection signal="timeout" from="PassiveCooldown" to="." method="_on_passive_cooldown_timeout"]
 [connection signal="timeout" from="EnergyRegenTimer" to="." method="_on_energy_regen_timer_timeout"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

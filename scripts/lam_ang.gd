@@ -2,7 +2,15 @@ extends CharacterBody2D
 
 const WALK = 70.0
 const SPRINT = 140.0
+const DASH_SPEED = 800
+const DOUBLE_TAP_WINDOW = 0.3
 
+var doubleTapTimers = {
+	"left": 0.0,
+	"right": 0.0,
+	"up": 0.0,
+	"down": 0.0,
+}
 
 var isEnemyInAttackRange = false
 var enemyAttackCooldown = true
@@ -11,7 +19,10 @@ var attackIP = false    # save for attack animation
 var isRegeningHP = false
 var isPassiveCD = false
 var isRegeningEnergy = false
+var isDashing = false
 
+var dashDuration = 0.1			
+var dashDirection = Vector2.ZERO
 var currentSpeed = 0
 var maxEnergy = 70
 var playerEnergy = maxEnergy
@@ -33,6 +44,8 @@ var energy = 50
 @onready var regenTimer = $RegenTimer
 @onready var passiveTimer = $PassiveCooldown
 @onready var energyRegenTimer = $EnergyRegenTimer
+@onready var dashTimer = $DashTimer
+@onready var doubleTapTimer = $DoubleTapTimer
 
 func _ready() -> void:
 	healthBar.max_value = maxHealth
@@ -51,10 +64,13 @@ func _process(delta: float) -> void:
 	regenPlayerEnergy(delta)
 	
 	
+	
 func _physics_process(delta: float) -> void:
-	handle_movement()
+	handle_movement(delta)
 	enemy_attack()
 	attack()
+	
+	
 	
 	
 func cameraMovement():
@@ -80,47 +96,85 @@ func regenPlayerEnergy(delta) -> void:
 		playerEnergy = clamp(playerEnergy, 0, maxEnergy)
 		energyBar.value = playerEnergy
 
-func handle_movement():
+func handle_movement(delta):
 	var direction = Vector2.ZERO
 	currentSpeed = WALK
-	if Input.is_action_pressed("ui_select"):
-		currentSpeed = SPRINT
 	
-	# movements directions
-	if Input.is_action_pressed("ui_right"):
-		direction.x += 1
-		playerPos = direction
-	if Input.is_action_pressed("ui_left"):
-		direction.x -= 1
-		playerPos = direction
-	if Input.is_action_pressed("ui_up"):
-		direction.y -= 1
-		playerPos = direction
-	if Input.is_action_pressed("ui_down"):
-		direction.y += 1
-		playerPos = direction
-	
-	# animated sprites
-	if direction != Vector2.ZERO:
-		direction = direction.normalized()
-		velocity = direction * currentSpeed
+	if isDashing:
+		velocity = dashDirection * DASH_SPEED
 		move_and_slide()
-	
-		if abs(direction.x) > abs(direction.y):
-			if attackIP == false:
-				anim.play("walk_side")
-				anim.flip_h = direction.x < 0 
-		else:
-			if direction.y < 0:
-				if attackIP == false:
-					anim.play("walk_up")
-			else:
-				if attackIP == false:
-					anim.play("walk_down")
 	else:
-		velocity = Vector2.ZERO
-		anim.play("idle")
+		for dir in doubleTapTimers.keys():
+			if doubleTapTimers[dir] > 0:
+				doubleTapTimers[dir] -= delta
+				
+		if Input.is_action_pressed("ui_select"):
+			currentSpeed = SPRINT
+		
+		# movements directions
+		if Input.is_action_pressed("ui_right"):
+			direction.x += 1
+			playerPos = direction
+		if Input.is_action_pressed("ui_left"):
+			direction.x -= 1
+			playerPos = direction
+		if Input.is_action_pressed("ui_up"):
+			direction.y -= 1
+			playerPos = direction
+		if Input.is_action_pressed("ui_down"):
+			direction.y += 1
+			playerPos = direction
+		
+		# animated sprites
+		if direction != Vector2.ZERO:
+			direction = direction.normalized()
+			velocity = direction * currentSpeed
+			move_and_slide()
+		
+			if abs(direction.x) > abs(direction.y):
+				if not attackIP:
+					anim.play("walk_side")
+					anim.flip_h = direction.x < 0 
+			else:
+				if not attackIP:
+					if direction.y < 0:
+						anim.play("walk_up")
+					else:
+						anim.play("walk_down")
+		else:
+			if not attackIP:
+				anim.play("idle")
+		handle_double_dash(direction)
+	
 
+func handle_double_dash(direction):
+	for dir in ["left", "right", "up", "down"]:
+		if Input.is_action_just_pressed("ui_" + dir):
+			if doubleTapTimers[dir] > 0:
+				start_dash(dir)
+				print(dir)
+				doubleTapTimers[dir] = 0.0
+			else:
+				doubleTapTimers[dir] = DOUBLE_TAP_WINDOW
+
+func start_dash(dir):
+	isDashing = true
+	dashTimer.start(dashDuration)
+	
+	match dir:
+		"left":
+			dashDirection = Vector2.LEFT
+			print("Im left")
+		"right":
+			dashDirection = Vector2.RIGHT
+			print("Im right")
+		"up":
+			dashDirection = Vector2.UP
+			print("Im up")
+		"down":
+			dashDirection = Vector2.DOWN
+			print("Im down")
+			
 func die():
 	if playerHealth <= 0 and name:
 		isPlayerAlive = false
@@ -190,3 +244,6 @@ func _on_passive_cooldown_timeout() -> void:
 
 func _on_energy_regen_timer_timeout() -> void:
 	isRegeningEnergy = true
+
+func _on_dash_timer_timeout() -> void:
+	isDashing = false
