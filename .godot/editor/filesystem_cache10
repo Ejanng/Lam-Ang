@@ -1,34 +1,34 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761292158
-icon.svg::CompressedTexture2D::4796072172068926889::1761047608::1761047608::1::::<><><>0<>0<>e28dfd9ddf7cd3839f4ffe260771cb03<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://assets/::1761047608
-::res://assets/Environment Assets/::1761047608
-CliffGrass.png::CompressedTexture2D::5302844924507247334::1761047608::1761047608::1::::<><><>0<>0<>8fb86ab6e3d680c64ca48bb41ccfa4c3<>res://.godot/imported/CliffGrass.png-2a23b5718eb0e21ee00e22738ce14e73.ctex::
-crops.png::CompressedTexture2D::4540910768343258168::1761047608::1761047608::1::::<><><>0<>0<>fcc31cd5cd669d232649b76428f68c7c<>res://.godot/imported/crops.png-3e899574486bd485307bd2ac53f5fb08.ctex::
-Dirtfloor.png::CompressedTexture2D::5541545779617768818::1761047608::1761047608::1::::<><><>0<>0<>979f4dfd1475becd361dfde14d0b2370<>res://.godot/imported/Dirtfloor.png-d04b59898f755d1ad0b51fec17bd12e1.ctex::
-Grass1.png::CompressedTexture2D::6380411423503771403::1761047608::1761047608::1::::<><><>0<>0<>617b634c6eb945df0e86a175395fcc82<>res://.godot/imported/Grass1.png-32269b465f9339011143feb3934ef9a0.ctex::
-Grass2.png::CompressedTexture2D::6451914953464657195::1761047608::1761047608::1::::<><><>0<>0<>0dc249b3fe688adfebc20aac291b4716<>res://.godot/imported/Grass2.png-e5cbc9835530cade1e765ae5258b0323.ctex::
-Kubo 1.png::CompressedTexture2D::2721501510770187617::1761047608::1761047608::1::::<><><>0<>0<>ac583f8853527e80a10040b236f4fbff<>res://.godot/imported/Kubo 1.png-3a920d34798c08322a01031d1771dce5.ctex::
-Kubo 2.png::CompressedTexture2D::109327114055005456::1761047608::1761047608::1::::<><><>0<>0<>18136f5b592c118e29ab848bb96e671c<>res://.godot/imported/Kubo 2.png-0045a630c1a40a34fc6f7af9b7a4354a.ctex::
-Kubo 3.png::CompressedTexture2D::8760235561347812399::1761047608::1761047608::1::::<><><>0<>0<>1e36598a75dc90e83eda19d14993bc2b<>res://.godot/imported/Kubo 3.png-f517812368563535104e62391d07c52a.ctex::
-Tree redesign.png::CompressedTexture2D::1888142616547961424::1761047608::1761047608::1::::<><><>0<>0<>5006ef2cdb37a213c1b3067bb2eec426<>res://.godot/imported/Tree redesign.png-07dda5da60d7b8832143fdca6c63e4c5.ctex::
-Tree.png::CompressedTexture2D::6213051082726821639::1761047608::1761047608::1::::<><><>0<>0<>ecdcd22e8a4a069f657ad0328c912273<>res://.godot/imported/Tree.png-4a271c1a40f46278235a5a5de860c316.ctex::
-::res://assets/Sprites/::1761287242
-::res://assets/Sprites/Lam-ang/::1761047608
-lam-ang back walk spritesheet.png::CompressedTexture2D::7417718654842967760::1761047608::1761047608::1::::<><><>0<>0<>adbcf4fb1f9c7826f8fbd2801b6b1a34<>res://.godot/imported/lam-ang back walk spritesheet.png-512da730e8fdf5d0d57bcb6dbb3af058.ctex::
-lam-ang front walk spritesheet.png::CompressedTexture2D::1887141669020978684::1761047608::1761047608::1::::<><><>0<>0<>eb8a0a8da2dd90ad1ee3a7eba81b8a12<>res://.godot/imported/lam-ang front walk spritesheet.png-af6fb72b6be9631fb64dce29311a566a.ctex::
-lam-ang idle spritesheet.png::CompressedTexture2D::2794188364079100339::1761047608::1761047608::1::::<><><>0<>0<>5bbfbbfe1ff31c728c180a0a9444cb25<>res://.godot/imported/lam-ang idle spritesheet.png-226fc6f5fa892cca32fd3ecd0207876a.ctex::
-lam-ang side walk spritesheet.png::CompressedTexture2D::8138570092733843425::1761047608::1761047608::1::::<><><>0<>0<>8de35d7a5d246deadaada5a8da0fa2d9<>res://.godot/imported/lam-ang side walk spritesheet.png-fa4396db14a9c4f3bcb789aa64af5d04.ctex::
-lam-ang spritesheet.png::CompressedTexture2D::4528468273779407258::1761047608::1761047608::1::::<><><>0<>0<>10f002a8408177c8cd5912d85e208069<>res://.godot/imported/lam-ang spritesheet.png-aaf8001cecae442e3f72ed8d748cd11e.ctex::
-::res://scenes/::1761287242
-game.tscn::PackedScene::5136105835804318630::1761287242::0::1::::<><><>0<>0<><>::uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/enemy.tscn
-::res://scenes/Hostile/::1761287242
-enemy.tscn::PackedScene::2574462848710875326::1761287242::0::1::::<><><>0<>0<><>::uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://buwasdtb3dsvk::::res://scripts/enemy.gd<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
-::res://scenes/Player/::1761288426
-lam_ang.tscn::PackedScene::2977696409066647794::1761288426::0::1::::<><><>0<>0<><>::uid://c8vs6jfdt5lrb::::res://scripts/lam_ang.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://15e7hnpffcr1::::res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png<>uid://ddxg0illq4jmm::::res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png
-::res://scenes/Plots/::1761287242
-starting_town.tscn::PackedScene::4283614478854630119::1761287242::0::1::::<><><>0<>0<><>::uid://cff76bduixjec::::res://scenes/game.tscn
-::res://scripts/::1761288426
-enemy.gd::GDScript::3835646198337678548::1761287242::0::1::::<>CharacterBody2D<><>0<>0<><>::
-global.gd::GDScript::2091869979308642291::1761287242::0::1::::<>Node<><>0<>0<><>::
-lam_ang.gd::GDScript::7133573886354436655::1761288426::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://::1761308796
+icon.svg::CompressedTexture2D/CompressedTexture2D::4796072172068926889::1761296118::1761296118::1::::<><><>0<>0<>e28dfd9ddf7cd3839f4ffe260771cb03<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1761296118
+::res://assets/Environment Assets/::1761296118
+CliffGrass.png::CompressedTexture2D/CompressedTexture2D::5302844924507247334::1761296118::1761296118::1::::<><><>0<>0<>8fb86ab6e3d680c64ca48bb41ccfa4c3<>res://.godot/imported/CliffGrass.png-2a23b5718eb0e21ee00e22738ce14e73.ctex::
+crops.png::CompressedTexture2D/CompressedTexture2D::4540910768343258168::1761296118::1761296118::1::::<><><>0<>0<>fcc31cd5cd669d232649b76428f68c7c<>res://.godot/imported/crops.png-3e899574486bd485307bd2ac53f5fb08.ctex::
+Dirtfloor.png::CompressedTexture2D/CompressedTexture2D::5541545779617768818::1761296118::1761296118::1::::<><><>0<>0<>979f4dfd1475becd361dfde14d0b2370<>res://.godot/imported/Dirtfloor.png-d04b59898f755d1ad0b51fec17bd12e1.ctex::
+Grass1.png::CompressedTexture2D/CompressedTexture2D::6380411423503771403::1761296118::1761296118::1::::<><><>0<>0<>617b634c6eb945df0e86a175395fcc82<>res://.godot/imported/Grass1.png-32269b465f9339011143feb3934ef9a0.ctex::
+Grass2.png::CompressedTexture2D/CompressedTexture2D::6451914953464657195::1761296118::1761296118::1::::<><><>0<>0<>0dc249b3fe688adfebc20aac291b4716<>res://.godot/imported/Grass2.png-e5cbc9835530cade1e765ae5258b0323.ctex::
+Kubo 1.png::CompressedTexture2D/CompressedTexture2D::2721501510770187617::1761296118::1761296118::1::::<><><>0<>0<>ac583f8853527e80a10040b236f4fbff<>res://.godot/imported/Kubo 1.png-3a920d34798c08322a01031d1771dce5.ctex::
+Kubo 2.png::CompressedTexture2D/CompressedTexture2D::109327114055005456::1761296118::1761296118::1::::<><><>0<>0<>18136f5b592c118e29ab848bb96e671c<>res://.godot/imported/Kubo 2.png-0045a630c1a40a34fc6f7af9b7a4354a.ctex::
+Kubo 3.png::CompressedTexture2D/CompressedTexture2D::8760235561347812399::1761296118::1761296118::1::::<><><>0<>0<>1e36598a75dc90e83eda19d14993bc2b<>res://.godot/imported/Kubo 3.png-f517812368563535104e62391d07c52a.ctex::
+Tree redesign.png::CompressedTexture2D/CompressedTexture2D::1888142616547961424::1761296118::1761296118::1::::<><><>0<>0<>5006ef2cdb37a213c1b3067bb2eec426<>res://.godot/imported/Tree redesign.png-07dda5da60d7b8832143fdca6c63e4c5.ctex::
+Tree.png::CompressedTexture2D/CompressedTexture2D::6213051082726821639::1761296118::1761296118::1::::<><><>0<>0<>ecdcd22e8a4a069f657ad0328c912273<>res://.godot/imported/Tree.png-4a271c1a40f46278235a5a5de860c316.ctex::
+::res://assets/Sprites/::1761296118
+::res://assets/Sprites/Lam-ang/::1761296118
+lam-ang back walk spritesheet.png::CompressedTexture2D/CompressedTexture2D::7417718654842967760::1761296118::1761296118::1::::<><><>0<>0<>adbcf4fb1f9c7826f8fbd2801b6b1a34<>res://.godot/imported/lam-ang back walk spritesheet.png-512da730e8fdf5d0d57bcb6dbb3af058.ctex::
+lam-ang front walk spritesheet.png::CompressedTexture2D/CompressedTexture2D::1887141669020978684::1761296118::1761296118::1::::<><><>0<>0<>eb8a0a8da2dd90ad1ee3a7eba81b8a12<>res://.godot/imported/lam-ang front walk spritesheet.png-af6fb72b6be9631fb64dce29311a566a.ctex::
+lam-ang idle spritesheet.png::CompressedTexture2D/CompressedTexture2D::2794188364079100339::1761296118::1761296118::1::::<><><>0<>0<>5bbfbbfe1ff31c728c180a0a9444cb25<>res://.godot/imported/lam-ang idle spritesheet.png-226fc6f5fa892cca32fd3ecd0207876a.ctex::
+lam-ang side walk spritesheet.png::CompressedTexture2D/CompressedTexture2D::8138570092733843425::1761296118::1761296118::1::::<><><>0<>0<>8de35d7a5d246deadaada5a8da0fa2d9<>res://.godot/imported/lam-ang side walk spritesheet.png-fa4396db14a9c4f3bcb789aa64af5d04.ctex::
+lam-ang spritesheet.png::CompressedTexture2D/CompressedTexture2D::4528468273779407258::1761296118::1761296118::1::::<><><>0<>0<>10f002a8408177c8cd5912d85e208069<>res://.godot/imported/lam-ang spritesheet.png-aaf8001cecae442e3f72ed8d748cd11e.ctex::
+::res://scenes/::1761296856
+game.tscn::PackedScene::5136105835804318630::1761296856::0::1::::<><><>0<>0<><>::uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/enemy.tscn
+::res://scenes/Hostile/::1761296926
+enemy.tscn::PackedScene::2574462848710875326::1761296926::0::1::::<><><>0<>0<><>::uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://buwasdtb3dsvk::::res://scripts/enemy.gd<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
+::res://scenes/Player/::1761297156
+lam_ang.tscn::PackedScene::2977696409066647794::1761297156::0::1::::<><><>0<>0<><>::uid://c8vs6jfdt5lrb::::res://scripts/lam_ang.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://15e7hnpffcr1::::res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png<>uid://ddxg0illq4jmm::::res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png
+::res://scenes/Plots/::1761296118
+starting_town.tscn::PackedScene::4283614478854630119::1761296118::0::1::::<><><>0<>0<><>::uid://cff76bduixjec::::res://scenes/game.tscn
+::res://scripts/::1761296821
+enemy.gd::GDScript::3835646198337678548::1761296821::0::1::::<>CharacterBody2D<><>0<>0<><>::
+global.gd::GDScript::2091869979308642291::1761296118::0::1::::<>Node<><>0<>0<><>::
+lam_ang.gd::GDScript::7133573886354436655::1761296128::0::1::::<>CharacterBody2D<><>0<>0<><>::
