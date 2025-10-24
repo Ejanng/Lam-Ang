@@ -9,3 +9,5 @@ res://scenes/Hostile/projectile.gd
 res://scenes/Hostile/ranged_tribe_member.tscn
 res://scenes/Player/lam_ang.tscn
 res://scripts/ranged_enemy.gd
+res://scripts/projectile.gd
+res://scripts/melee_enemy.gd

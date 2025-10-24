@@ -147,6 +147,15 @@ func enemy_attack():
 		attackCD.start()
 		regenTimer.start()
 		print("Player Health: ", playerHealth)
+		
+func take_damage(damage: int):
+	if isPlayerAlive:
+		playerHealth -= damage
+		playerHealth = clamp(playerHealth, 0, maxHealth)
+		healthBar.value = playerHealth
+		isRegeningHP = false
+		regenTimer.start()  # Reset health regen timer
+		print("Player took ", damage, " damage. Health: ", playerHealth)
 
 func _on_attack_cooldown_timeout() -> void:
 	enemyAttackCooldown = true

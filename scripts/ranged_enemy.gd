@@ -14,6 +14,7 @@ var attack_range = 300  # Stop moving when within this range
 @onready var health_bar = $HealthBar
 @onready var shoot_timer = $ShootTimer  # You'll add this
 
+
 # Load the projectile scene
 var projectile_scene = preload("res://scenes/Hostile/projectile.tscn")
 
