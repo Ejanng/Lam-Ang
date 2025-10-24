@@ -2,15 +2,6 @@ extends CharacterBody2D
 
 const WALK = 70.0
 const SPRINT = 140.0
-const DASH_SPEED = 800
-const DOUBLE_TAP_WINDOW = 0.3
-
-var doubleTapTimers = {
-	"left": 0.0,
-	"right": 0.0,
-	"up": 0.0,
-	"down": 0.0,
-}
 
 var isEnemyInAttackRange = false
 var enemyAttackCooldown = true
@@ -63,15 +54,10 @@ func _process(delta: float) -> void:
 	regenPlayerHealth(delta)
 	regenPlayerEnergy(delta)
 	
-	
-	
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	enemy_attack()
 	attack()
-	
-	
-	
 	
 func cameraMovement():
 	var input = Vector2(
@@ -186,6 +172,7 @@ func player():
 	pass
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
+	#if body.has_method("melee_enemy") || body.has_method("ranged_enemy"):
 	if body.has_method("enemy"):
 		isEnemyInAttackRange = true
 
@@ -203,6 +190,15 @@ func enemy_attack():
 		attackCD.start()
 		regenTimer.start()
 		print("Player Health: ", playerHealth)
+		
+func take_damage(damage: int):
+	if isPlayerAlive:
+		playerHealth -= damage
+		playerHealth = clamp(playerHealth, 0, maxHealth)
+		healthBar.value = playerHealth
+		isRegeningHP = false
+		regenTimer.start()  # Reset health regen timer
+		print("Player took ", damage, " damage. Health: ", playerHealth)
 
 func _on_attack_cooldown_timeout() -> void:
 	enemyAttackCooldown = true

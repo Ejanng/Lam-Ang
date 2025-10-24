@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://bcxda6gun7nus"]
 
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_hdtyb"]
-[ext_resource type="Script" uid="uid://buwasdtb3dsvk" path="res://scripts/enemy.gd" id="1_jgi5p"]
+[ext_resource type="Script" uid="uid://buwasdtb3dsvk" path="res://scripts/melee_enemy.gd" id="1_jgi5p"]
 [ext_resource type="Texture2D" uid="uid://dn7ncb1xcmhoj" path="res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png" id="4_628s0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgi5p"]
@@ -87,7 +87,7 @@ radius = 10.0499
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1ptj"]
 bg_color = Color(0.968627, 0.337255, 0.384314, 1)
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="melee_enemy" type="CharacterBody2D"]
 script = ExtResource("1_jgi5p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -116,7 +116,7 @@ shape = SubResource("CircleShape2D_f1ptj")
 [node name="take_dmg_cooldown" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(40, 6)
 offset_left = -20.0
 offset_top = -36.0
