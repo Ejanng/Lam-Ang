@@ -1,6 +1,3 @@
-res://scenes/Player/lam_ang.tscn
-res://scripts/lam_ang.gd
-res://scenes/game.tscn
 res://scenes/Hostile/enemy.tscn
-res://scripts/enemy.gd
-res://scripts/global.gd
+res://scenes/Player/lam_ang.tscn
+res://scenes/game.tscn

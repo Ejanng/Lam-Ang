@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bioohv47js651"]
+[gd_scene load_steps=23 format=3 uid="uid://bioohv47js651"]
 
 [ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
@@ -124,6 +124,12 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_stb0u"]
 radius = 9.055386
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stb0u"]
+bg_color = Color(0.96862745, 0.3372549, 0.38431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad0y5"]
+bg_color = Color(0.90588236, 0.98039216, 0.19607843, 1)
+
 [node name="Lam-Ang" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_67xbk")
@@ -149,10 +155,18 @@ wait_time = 5.0
 one_shot = true
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -14.0
-offset_top = -33.0
-offset_right = 14.0
-offset_bottom = -29.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = -98.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/fill = SubResource("StyleBoxFlat_stb0u")
 value = 100.0
 show_percentage = false
 
@@ -164,10 +178,11 @@ zoom = Vector2(3, 3)
 [node name="RegenTimer" type="Timer" parent="."]
 
 [node name="EnergyBar" type="ProgressBar" parent="."]
-offset_left = -14.0
-offset_top = -38.0
-offset_right = 14.0
-offset_bottom = -34.0
+offset_left = -192.0
+offset_top = -92.0
+offset_right = -115.0
+offset_bottom = -85.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ad0y5")
 value = 100.0
 show_percentage = false
 
