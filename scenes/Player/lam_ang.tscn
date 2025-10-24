@@ -155,6 +155,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="HealthBar" type="ProgressBar" parent="."]
+z_index = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -169,6 +170,7 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/fill = SubResource("StyleBoxFlat_stb0u")
 value = 100.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="deal_attack_cooldown" type="Timer" parent="."]
 
@@ -178,13 +180,18 @@ zoom = Vector2(3, 3)
 [node name="RegenTimer" type="Timer" parent="."]
 
 [node name="EnergyBar" type="ProgressBar" parent="."]
+z_index = 5
 offset_left = -192.0
 offset_top = -92.0
 offset_right = -115.0
 offset_bottom = -85.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_ad0y5")
-value = 100.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="PassiveCooldown" type="Timer" parent="."]
+
+[node name="EnergyRegenTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
@@ -193,3 +200,5 @@ show_percentage = false
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="deal_attack_cooldown" to="." method="_on_deal_attack_cooldown_timeout"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
+[connection signal="timeout" from="PassiveCooldown" to="." method="_on_passive_cooldown_timeout"]
+[connection signal="timeout" from="EnergyRegenTimer" to="." method="_on_energy_regen_timer_timeout"]

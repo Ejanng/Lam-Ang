@@ -3,15 +3,21 @@ extends CharacterBody2D
 const WALK = 70.0
 const SPRINT = 140.0
 
+
 var isEnemyInAttackRange = false
 var enemyAttackCooldown = true
 var isPlayerAlive = true
 var attackIP = false    # save for attack animation
 var isRegeningHP = false
+var isPassiveCD = false
+var isRegeningEnergy = false
 
 var currentSpeed = 0
+var maxEnergy = 70
+var playerEnergy = maxEnergy
 var maxHealth = 100
 var playerHealth = maxHealth
+var passiveCost = 5.0
 var regenRateHP = 2.0
 var regenRateEnergy = 1.0
 var playerPos = Vector2.ZERO
@@ -22,20 +28,27 @@ var energy = 50
 @onready var anim = $AnimatedSprite2D
 @onready var attackCD = $attack_cooldown
 @onready var healthBar = $HealthBar
+@onready var energyBar = $EnergyBar
 @onready var dealAttackCD = $deal_attack_cooldown
 @onready var regenTimer = $RegenTimer
+@onready var passiveTimer = $PassiveCooldown
+@onready var energyRegenTimer = $EnergyRegenTimer
 
 func _ready() -> void:
 	healthBar.max_value = maxHealth
 	healthBar.value = playerHealth
-	
+	energyBar.max_value = maxEnergy
+	energyBar.value = playerEnergy
 	regenTimer.wait_time = regenCD
 	regenTimer.one_shot = true
+	energyRegenTimer.wait_time = regenCD
+	energyRegenTimer.one_shot = true
 	
 func _process(delta: float) -> void:
 	cameraMovement()
 	die()
-	regenPlayer(delta)
+	regenPlayerHealth(delta)
+	regenPlayerEnergy(delta)
 	
 	
 func _physics_process(delta: float) -> void:
@@ -55,11 +68,17 @@ func cameraMovement():
 	global_position.x = clamp(global_position.x, mapBounds.position.x, mapBounds.position.x + mapBounds.size.x)
 	global_position.y = clamp(global_position.y, mapBounds.position.x, mapBounds.position.y + mapBounds.size.y)
 	
-func regenPlayer(delta) -> void:
+func regenPlayerHealth(delta) -> void:
 	if isRegeningHP and playerHealth < maxHealth:
 		playerHealth += regenRateHP * delta
 		playerHealth = clamp(playerHealth, 0, maxHealth)
 		healthBar.value = playerHealth
+
+func regenPlayerEnergy(delta) -> void:
+	if isRegeningEnergy and playerEnergy < maxEnergy:
+		playerEnergy += regenRateEnergy * delta
+		playerEnergy = clamp(playerEnergy, 0, maxEnergy)
+		energyBar.value = playerEnergy
 
 func handle_movement():
 	var direction = Vector2.ZERO
@@ -136,9 +155,16 @@ func _on_attack_cooldown_timeout() -> void:
 
 func attack():
 	var dir = playerPos
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and not isPassiveCD:
 		Global.playerCurrentAttack = true
 		attackIP = true
+		isPassiveCD = true
+		energyRegenTimer.start()
+		passiveTimer.start()
+		playerEnergy -= passiveCost
+		print(passiveCost)
+		energyBar.value = playerEnergy
+			
 		if abs(dir.x) > abs(dir.y):
 			anim.play("walk_side")
 			anim.flip_h = dir.x < 0 
@@ -158,3 +184,9 @@ func _on_deal_attack_cooldown_timeout() -> void:
 
 func _on_regen_timer_timeout() -> void:
 	isRegeningHP = true
+
+func _on_passive_cooldown_timeout() -> void:
+	isPassiveCD = false
+
+func _on_energy_regen_timer_timeout() -> void:
+	isRegeningEnergy = true
