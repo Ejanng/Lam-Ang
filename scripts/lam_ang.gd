@@ -3,7 +3,6 @@ extends CharacterBody2D
 const WALK = 70.0
 const SPRINT = 140.0
 
-
 var isEnemyInAttackRange = false
 var enemyAttackCooldown = true
 var isPlayerAlive = true
@@ -50,12 +49,10 @@ func _process(delta: float) -> void:
 	regenPlayerHealth(delta)
 	regenPlayerEnergy(delta)
 	
-	
 func _physics_process(delta: float) -> void:
 	handle_movement()
 	enemy_attack()
 	attack()
-	
 	
 func cameraMovement():
 	var input = Vector2(
@@ -132,6 +129,7 @@ func player():
 	pass
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
+	#if body.has_method("melee_enemy") || body.has_method("ranged_enemy"):
 	if body.has_method("enemy"):
 		isEnemyInAttackRange = true
 
