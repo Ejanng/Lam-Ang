@@ -2,6 +2,15 @@ extends CharacterBody2D
 
 const WALK = 70.0
 const SPRINT = 140.0
+const DASH_SPEED = 800
+const DOUBLE_TAP_WINDOW = 0.3
+
+var doubleTapTimers = {
+	"left": 0.0,
+	"right": 0.0,
+	"up": 0.0,
+	"down": 0.0,
+}
 
 var isEnemyInAttackRange = false
 var enemyAttackCooldown = true
@@ -36,7 +45,6 @@ var energy = 50
 @onready var passiveTimer = $PassiveCooldown
 @onready var energyRegenTimer = $EnergyRegenTimer
 @onready var dashTimer = $DashTimer
-@onready var doubleTapTimer = $DoubleTapTimer
 
 func _ready() -> void:
 	healthBar.max_value = maxHealth
