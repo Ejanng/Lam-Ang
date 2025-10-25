@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck6auu12t34u0"
-path="res://.godot/imported/Kubo 2.png-47574a5e9633dfb264259ce5013b5e08.ctex"
+uid="uid://cuomu6a2px2o0"
+path="res://.godot/imported/trees.png-386201e216120c27908e10473244625c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environments/Kubo 2.png"
-dest_files=["res://.godot/imported/Kubo 2.png-47574a5e9633dfb264259ce5013b5e08.ctex"]
+source_file="res://Environments/trees.png"
+dest_files=["res://.godot/imported/trees.png-386201e216120c27908e10473244625c.ctex"]
 
 [params]
 
