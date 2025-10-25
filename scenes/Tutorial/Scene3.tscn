@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dagubqg31lo2h"]
+
+[ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="1_punp3"]
+[ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/melee_tribe_member.tscn" id="2_0a42t"]
+
+[sub_resource type="TileSet" id="TileSet_k33rb"]
+
+[node name="Scene3_IgorotVillage" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(76, 83)
+tile_set = SubResource("TileSet_k33rb")
+format = 2
+
+[node name="VillageClearing" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VillageClearing"]
+root_node = NodePath("../..")
+
+[node name="Lam-Ang" parent="." instance=ExtResource("1_punp3")]
+position = Vector2(296, 341)
+
+[node name="Warriors" type="Node2D" parent="."]
+
+[node name="melee_enemy" parent="Warriors" instance=ExtResource("2_0a42t")]
+position = Vector2(966, 184)
+
+[node name="melee_enemy2" parent="Warriors" instance=ExtResource("2_0a42t")]
+position = Vector2(966, 351)
+
+[node name="melee_enemy3" parent="Warriors" instance=ExtResource("2_0a42t")]
+position = Vector2(967, 518)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TutorialBox" type="Panel" parent="UI"]
+offset_left = 709.0
+offset_top = 180.0
+offset_right = 749.0
+offset_bottom = 220.0
+
+[node name="Label" type="Label" parent="UI/TutorialBox"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -19.0
+offset_right = 53.0
+offset_bottom = 4.0
+
+[node name="Node" type="Node" parent="."]
+
+[node name="DrumsSound" type="AudioStreamPlayer" parent="Node"]
+
+[node name="CombatMusic" type="AudioStreamPlayer" parent="Node"]
