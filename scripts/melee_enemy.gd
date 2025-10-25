@@ -7,6 +7,8 @@ var health = 100
 var isPlayerInAttackRange = false
 var canTakeDMG = true
 var meleeDMG = 20
+var xpDrop = 25
+var dropChance = 0.8
 @onready var anim = $AnimatedSprite2D
 @onready var takeDMGCD = $take_dmg_cooldown
 @onready var health_bar = $HealthBar
@@ -59,7 +61,11 @@ func deal_dmg():
 			canTakeDMG = false
 			print("Player Deals DMG: ", meleeDMG, "\nEnemy Health: ", health)
 		if health <= 0:
-			self.queue_free()
+			die()
+			
+func die():
+	XpDropManager.drop_xp(global_position, xpDrop, dropChance)
+	queue_free()
 
 func _on_take_dmg_cooldown_timeout() -> void:
 	canTakeDMG = true

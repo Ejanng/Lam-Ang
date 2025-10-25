@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4w5fwc5qrax5"]
+[gd_scene load_steps=15 format=3 uid="uid://c471ya3dt7fq"]
 
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environment Assets/grass.png" id="1_bkswq"]
 [ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://assets/Environment Assets/Mountain.png" id="2_isv46"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://assets/Environment Assets/Treee.png" id="4_isv46"]
 [ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://assets/Environment Assets/Dirttile.png" id="5_07sus"]
 [ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="6_xxf11"]
+[ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/melee_tribe_member.tscn" id="7_o4f3m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xsg6c"]
 texture = ExtResource("1_bkswq")
@@ -401,3 +402,30 @@ layer_11/tile_data = PackedInt32Array(1835034, 18, 1, 1900570, 18, 2, 1966106, 1
 
 [node name="Lam-Ang" parent="." instance=ExtResource("6_xxf11")]
 position = Vector2(539, 299)
+
+[node name="melee_enemy" parent="." instance=ExtResource("7_o4f3m")]
+position = Vector2(590, 520)
+
+[node name="melee_enemy2" parent="." instance=ExtResource("7_o4f3m")]
+position = Vector2(691, 454)
+
+[node name="melee_enemy3" parent="." instance=ExtResource("7_o4f3m")]
+position = Vector2(749, 283)
+
+[node name="melee_enemy4" parent="." instance=ExtResource("7_o4f3m")]
+position = Vector2(369, 453)
+
+[node name="melee_enemy5" parent="." instance=ExtResource("7_o4f3m")]
+position = Vector2(823, 388)
+
+[node name="melee_enemy6" parent="." instance=ExtResource("7_o4f3m")]
+position = Vector2(553, 447)
+
+[node name="melee_enemy" parent="melee_enemy6" instance=ExtResource("7_o4f3m")]
+position = Vector2(371, -237)
+
+[node name="melee_enemy" parent="melee_enemy6/melee_enemy" instance=ExtResource("7_o4f3m")]
+position = Vector2(-5, 299)
+
+[node name="melee_enemy" parent="melee_enemy6/melee_enemy/melee_enemy" instance=ExtResource("7_o4f3m")]
+position = Vector2(-575, -168)

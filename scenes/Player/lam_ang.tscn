@@ -203,6 +203,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SprintEnergyDecay" type="Timer" parent="."]
 
+[node name="XPBar" type="ProgressBar" parent="."]
+offset_left = -192.0
+offset_top = -85.0
+offset_right = -116.0
+offset_bottom = -81.0
+show_percentage = false
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
