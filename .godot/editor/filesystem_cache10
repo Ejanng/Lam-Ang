@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761404073
+::res://::1761406370
 icon.svg::CompressedTexture2D/CompressedTexture2D::1806369474252542340::1761296118::1761398277::1::::<><><>0<>0<>cc34509834156c61553ab835d0113c2c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1761296118
 ::res://assets/Environment Assets/::1761399910
@@ -30,23 +30,24 @@ lam-ang front walk spritesheet.png::CompressedTexture2D/CompressedTexture2D::188
 lam-ang idle spritesheet.png::CompressedTexture2D/CompressedTexture2D::2794188364079100339::1761296118::1761296118::1::::<><><>0<>0<>5bbfbbfe1ff31c728c180a0a9444cb25<>res://.godot/imported/lam-ang idle spritesheet.png-226fc6f5fa892cca32fd3ecd0207876a.ctex::
 lam-ang side walk spritesheet.png::CompressedTexture2D/CompressedTexture2D::8138570092733843425::1761296118::1761296118::1::::<><><>0<>0<>8de35d7a5d246deadaada5a8da0fa2d9<>res://.godot/imported/lam-ang side walk spritesheet.png-fa4396db14a9c4f3bcb789aa64af5d04.ctex::
 lam-ang spritesheet.png::CompressedTexture2D/CompressedTexture2D::4528468273779407258::1761296118::1761296118::1::::<><><>0<>0<>10f002a8408177c8cd5912d85e208069<>res://.godot/imported/lam-ang spritesheet.png-aaf8001cecae442e3f72ed8d748cd11e.ctex::
-::res://scenes/::1761402019
-game.tscn::PackedScene::5136105835804318630::1761402019::0::1::::<><><>0<>0<><>::uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://blo75nahvq6g1::::res://scenes/Hostile/ranged_tribe_member.tscn
+::res://scenes/::1761406337
+game.tscn::PackedScene::5136105835804318630::1761406337::0::1::::<><><>0<>0<><>::uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://blo75nahvq6g1::::res://scenes/Hostile/ranged_tribe_member.tscn
 starting_town.tscn::PackedScene::4965685810134052499::1761399878::0::1::::<><><>0<>0<><>::uid://cuomu6a2px2o0::::res://assets/Environment Assets/trees.png<>uid://dtdsf4h28s5lx::::res://assets/Environment Assets/tree.png<>uid://b5818afyv7ase::::res://assets/Environment Assets/Dirtfloor.png<>uid://ci6awuwpp6n8d::::res://assets/Environment Assets/Kubo 1.png<>uid://dk4u7825ycssl::::res://assets/Environment Assets/grasss.png<>uid://ck6auu12t34u0::::res://assets/Environment Assets/Kubo 2.png<>uid://bw6r7o2awdwir::::res://assets/Environment Assets/Kubo 3.png<>uid://dqbyp5c5rx3my::::res://assets/Environment Assets/crops.png<>uid://bqi60xyvplvxm::::res://assets/Environment Assets/grass.png
-::res://scenes/Hostile/::1761317853
-melee_tribe_member.tscn::PackedScene::2574462848710875326::1761317638::0::1::::<><><>0<>0<><>::uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://buwasdtb3dsvk::::res://scripts/melee_enemy.gd<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
+::res://scenes/Hostile/::1761405179
+melee_tribe_member.tscn::PackedScene::2574462848710875326::1761405179::0::1::::<><><>0<>0<><>::uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://buwasdtb3dsvk::::res://scripts/melee_enemy.gd<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
 projectile.tscn::PackedScene::5587501533922286515::1761317853::0::1::::<><><>0<>0<><>::uid://bs7uppd36kia::::res://assets/Environment Assets/Kubo 2.png<>uid://dps83b2rlmgw6::::res://scripts/projectile.gd
-ranged_tribe_member.tscn::PackedScene::3189396453004295698::1761317507::0::1::::<><><>0<>0<><>::uid://b6tkcsf7dvwml::::res://scripts/ranged_enemy.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
+ranged_tribe_member.tscn::PackedScene::3189396453004295698::1761405178::0::1::::<><><>0<>0<><>::uid://b6tkcsf7dvwml::::res://scripts/ranged_enemy.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
 ::res://scenes/Player/::1761404039
 lam_ang.tscn::PackedScene::2977696409066647794::1761404039::0::1::::<><><>0<>0<><>::uid://c8vs6jfdt5lrb::::res://scripts/lam_ang.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://15e7hnpffcr1::::res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png<>uid://ddxg0illq4jmm::::res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png
 ::res://scenes/Plots/::1761296118
 starting_town.tscn::PackedScene::4283614478854630119::1761296118::0::1::::<><><>0<>0<><>::uid://cff76bduixjec::::res://scenes/game.tscn
-::res://scenes/Tutorial/::1761404039
+::res://scenes/Tutorial/::1761405426
 Scene1.tscn::PackedScene::4469145058526298740::1761404039::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://assets/Environment Assets/grass.png<>uid://eokialhslv6e::::res://assets/Environment Assets/Mountain.png<>uid://4r7tkukado4c::::res://assets/Environment Assets/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environment Assets/Treee.png<>uid://4p1g5gqwb62r::::res://assets/Environment Assets/Dirttile.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn
-Scene3.tscn::PackedScene::7172865294202710861::1761403734::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://assets/Environment Assets/grass.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://eokialhslv6e::::res://assets/Environment Assets/Mountain.png<>uid://4r7tkukado4c::::res://assets/Environment Assets/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environment Assets/Treee.png<>uid://4p1g5gqwb62r::::res://assets/Environment Assets/Dirttile.png
-::res://scripts/::1761404039
+Scene3.tscn::PackedScene::7172865294202710861::1761405426::0::1::::<><><>0<>0<><>::uid://cewy01yh67mdw::::res://scripts/scene_3.gd<>uid://bqi60xyvplvxm::::res://assets/Environment Assets/grass.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://eokialhslv6e::::res://assets/Environment Assets/Mountain.png<>uid://4r7tkukado4c::::res://assets/Environment Assets/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environment Assets/Treee.png<>uid://4p1g5gqwb62r::::res://assets/Environment Assets/Dirttile.png
+::res://scripts/::1761406257
 global.gd::GDScript::2091869979308642291::1761296118::0::1::::<>Node<><>0<>0<><>::
 lam_ang.gd::GDScript::7133573886354436655::1761404039::0::1::::<>CharacterBody2D<><>0<>0<><>::
-melee_enemy.gd::GDScript::3835646198337678548::1761317546::0::1::::<>CharacterBody2D<><>0<>0<><>::
+melee_enemy.gd::GDScript::3835646198337678548::1761406257::0::1::::<>CharacterBody2D<><>0<>0<><>::
 projectile.gd::GDScript::8251307263234145939::1761317853::0::1::::<>Area2D<><>0<>0<><>::
-ranged_enemy.gd::GDScript::4602109709917833619::1761317587::0::1::::<>CharacterBody2D<><>0<>0<><>::
+ranged_enemy.gd::GDScript::4602109709917833619::1761405894::0::1::::<>CharacterBody2D<><>0<>0<><>::
+scene_3.gd::GDScript::5100516308244820092::1761405426::0::1::::<>Node2D<><>0<>0<><>::

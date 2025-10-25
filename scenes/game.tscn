@@ -23,3 +23,9 @@ position = Vector2(782, 449)
 
 [node name="ranged_enemy" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(642, 274)
+
+[node name="ranged_enemy2" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(149, 241)
+
+[node name="ranged_enemy3" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(472, 55)

@@ -111,14 +111,15 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 
 func deal_dmg():
 	if Global.playerCurrentAttack == true:
-		if canTakeDMG:
-			health -= meleeDMG
-			health_bar.value = health
-			takeDMGCD.start()
-			canTakeDMG = false
-			print("Player Deals DMG: ", meleeDMG, "\nEnemy Health: ", health)
-		if health <= 0:
-			self.queue_free()
+		if player and position.distance_to(player.position) <= 50:
+			if canTakeDMG:
+				health -= meleeDMG
+				health_bar.value = health
+				takeDMGCD.start()
+				canTakeDMG = false
+				print("Player Deals DMG: ", meleeDMG, "\nEnemy Health: ", health)
+			if health <= 0:
+				self.queue_free()
 
 func _on_take_dmg_cooldown_timeout() -> void:
 	canTakeDMG = true
