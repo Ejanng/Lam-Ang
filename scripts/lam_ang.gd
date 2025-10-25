@@ -35,6 +35,9 @@ var isAttacking = false
 
 var playerHealth = MAX_HEALTH
 var playerEnergy = MAX_ENERGY
+var playerXP = 0
+var xpToNextLevel: int = 100
+var playerLevel = 1
 
 var currentSpeed = 0
 var dashDuration = 0.1
@@ -55,6 +58,7 @@ var mapBounds = Rect2(0, 0, 1024, 768)
 @onready var energyRegenTimer = $EnergyRegenTimer
 @onready var dashTimer = $DashTimer
 @onready var sprintEnergyDecay = $SprintEnergyDecay
+@onready var xpBar = $XPBar
 
 func _ready() -> void:
 	healthBar.max_value = MAX_HEALTH
@@ -65,6 +69,8 @@ func _ready() -> void:
 	regenTimer.one_shot = true
 	energyRegenTimer.wait_time = REGEN_CD
 	energyRegenTimer.one_shot = true
+	xpBar.value = playerXP
+	xpBar.max_value = xpToNextLevel
 	
 func _process(delta: float) -> void:
 	cameraMovement()
@@ -101,7 +107,19 @@ func regenPlayerEnergy(delta) -> void:
 		energyBar.value = playerEnergy
 	if isDashing or isSprinting or isAttacking:
 		isRegeningEnergy = false
-
+		
+func add_experience(amount: int) -> void:
+	playerXP += amount
+	xpBar.value = playerXP
+	print("Gained", amount, "XP. Total: ", playerXP)
+	
+	if playerXP >= xpToNextLevel:
+		playerXP -= xpToNextLevel
+		playerXP += 1
+		playerLevel += 1
+		xpToNextLevel = int(xpToNextLevel * 1.2)
+		print("Level Up! Now Level: ", playerLevel)
+		
 func handle_movement(delta):
 	var direction = Vector2.ZERO
 	isSprinting = false
