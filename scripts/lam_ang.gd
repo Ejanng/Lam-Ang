@@ -86,7 +86,7 @@ func regenPlayerHealth(delta) -> void:
 
 func regenPlayerEnergy(delta) -> void:
 	if isRegeningEnergy and playerEnergy < maxEnergy:
-		playerEnergy += regenRateEnergy * delta
+		playerEnergy += REGEN_RATE_ENERGY * delta
 		playerEnergy = clamp(playerEnergy, 0, maxEnergy)
 		energyBar.value = playerEnergy
 
@@ -103,7 +103,11 @@ func handle_movement(delta):
 				doubleTapTimers[dir] -= delta
 				
 		if Input.is_action_pressed("ui_select"):
+			isRegeningEnergy = false
+			sprintEnergyDecay.start()
 			currentSpeed = SPRINT
+			
+		
 		
 		# movements directions
 		if Input.is_action_pressed("ui_right"):

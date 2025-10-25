@@ -1,1 +1,2 @@
-res://scenes/Tutorial/Scene3.tscn
+res://scenes/game.tscn
+res://scripts/lam_ang.gd
