@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgh2buo8yjsjn"
-path="res://.godot/imported/CliffGrass.png-2a23b5718eb0e21ee00e22738ce14e73.ctex"
+uid="uid://4p1g5gqwb62r"
+path="res://.godot/imported/Dirttile.png-d25c4f3ba308ef17a1ac36f009389020.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Environment Assets/CliffGrass.png"
-dest_files=["res://.godot/imported/CliffGrass.png-2a23b5718eb0e21ee00e22738ce14e73.ctex"]
+source_file="res://assets/Environment Assets/Dirttile.png"
+dest_files=["res://.godot/imported/Dirttile.png-d25c4f3ba308ef17a1ac36f009389020.ctex"]
 
 [params]
 
