@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da02gwb6sypt4"
-path="res://.godot/imported/CliffGrass edge.png-faa959592db496f78f5f2f49a9a672b6.ctex"
+path="res://.godot/imported/CliffGrass edge.png-30cb087a4a459cbf19ddc33031703a32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environments/CliffGrass edge.png"
-dest_files=["res://.godot/imported/CliffGrass edge.png-faa959592db496f78f5f2f49a9a672b6.ctex"]
+source_file="res://assets/Environment Assets/CliffGrass edge.png"
+dest_files=["res://.godot/imported/CliffGrass edge.png-30cb087a4a459cbf19ddc33031703a32.ctex"]
 
 [params]
 

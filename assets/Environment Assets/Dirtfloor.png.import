@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5818afyv7ase"
-path="res://.godot/imported/Dirtfloor.png-6e726847ad3d48e78916d4c716459319.ctex"
+path="res://.godot/imported/Dirtfloor.png-d04b59898f755d1ad0b51fec17bd12e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environments/Dirtfloor.png"
-dest_files=["res://.godot/imported/Dirtfloor.png-6e726847ad3d48e78916d4c716459319.ctex"]
+source_file="res://assets/Environment Assets/Dirtfloor.png"
+dest_files=["res://.godot/imported/Dirtfloor.png-d04b59898f755d1ad0b51fec17bd12e1.ctex"]
 
 [params]
 

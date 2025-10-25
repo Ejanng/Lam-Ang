@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw6r7o2awdwir"
-path="res://.godot/imported/Kubo 3.png-4c9fd1f13ab995ac934ef151a19e494b.ctex"
+path="res://.godot/imported/Kubo 3.png-f517812368563535104e62391d07c52a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environments/Kubo 3.png"
-dest_files=["res://.godot/imported/Kubo 3.png-4c9fd1f13ab995ac934ef151a19e494b.ctex"]
+source_file="res://assets/Environment Assets/Kubo 3.png"
+dest_files=["res://.godot/imported/Kubo 3.png-f517812368563535104e62391d07c52a.ctex"]
 
 [params]
 

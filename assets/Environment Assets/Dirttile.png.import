@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4p1g5gqwb62r"
-path="res://.godot/imported/Dirttile.png-75be636bed21bc6238da3e368e0a96f9.ctex"
+path="res://.godot/imported/Dirttile.png-d25c4f3ba308ef17a1ac36f009389020.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environments/Dirttile.png"
-dest_files=["res://.godot/imported/Dirttile.png-75be636bed21bc6238da3e368e0a96f9.ctex"]
+source_file="res://assets/Environment Assets/Dirttile.png"
+dest_files=["res://.godot/imported/Dirttile.png-d25c4f3ba308ef17a1ac36f009389020.ctex"]
 
 [params]
 

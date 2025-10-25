@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4r7tkukado4c"
-path="res://.godot/imported/Moutains.png-a4fcf9866c926b47d874ec5b37fdfb00.ctex"
+path="res://.godot/imported/Moutains.png-1092b9dd9ba439899dc4fb8b62036fb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environments/Moutains.png"
-dest_files=["res://.godot/imported/Moutains.png-a4fcf9866c926b47d874ec5b37fdfb00.ctex"]
+source_file="res://assets/Environment Assets/Moutains.png"
+dest_files=["res://.godot/imported/Moutains.png-1092b9dd9ba439899dc4fb8b62036fb6.ctex"]
 
 [params]
 
