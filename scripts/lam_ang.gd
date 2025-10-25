@@ -3,7 +3,17 @@ extends CharacterBody2D
 const WALK = 70.0
 const SPRINT = 140.0
 const DASH_SPEED = 800
+
+const REGEN_RATE_ENERGY = 10.0
+const REGEN_RATE_HP = 2.0
+const ENERGY_DECAY_RATE_SPRINT = 5.0
+
+const MAX_ENERGY = 70
+const MAX_HEALTH = 100
+
+const REGEN_CD = 5.0
 const DOUBLE_TAP_WINDOW = 0.3
+const DASH_ENERGY_COST = 20.0
 
 var doubleTapTimers = {
 	"left": 0.0,
@@ -20,21 +30,20 @@ var isRegeningHP = false
 var isPassiveCD = false
 var isRegeningEnergy = false
 var isDashing = false
+var isSprinting = false
+var isAttacking = false
 
-var dashDuration = 0.1			
-var dashDirection = Vector2.ZERO
+var playerHealth = MAX_HEALTH
+var playerEnergy = MAX_ENERGY
+
 var currentSpeed = 0
-var maxEnergy = 70
-var playerEnergy = maxEnergy
-var maxHealth = 100
-var playerHealth = maxHealth
+var dashDuration = 0.1
+var dashDirection = Vector2.ZERO
 var passiveCost = 5.0
-var regenRateHP = 2.0
-var regenRateEnergy = 1.0
+
+
 var playerPos = Vector2.ZERO
 var mapBounds = Rect2(0, 0, 1024, 768)
-var regenCD = 10.0
-var energy = 50
 
 @onready var anim = $AnimatedSprite2D
 @onready var attackCD = $attack_cooldown
@@ -45,15 +54,16 @@ var energy = 50
 @onready var passiveTimer = $PassiveCooldown
 @onready var energyRegenTimer = $EnergyRegenTimer
 @onready var dashTimer = $DashTimer
+@onready var sprintEnergyDecay = $SprintEnergyDecay
 
 func _ready() -> void:
-	healthBar.max_value = maxHealth
+	healthBar.max_value = MAX_HEALTH
 	healthBar.value = playerHealth
-	energyBar.max_value = maxEnergy
+	energyBar.max_value = MAX_ENERGY
 	energyBar.value = playerEnergy
-	regenTimer.wait_time = regenCD
+	regenTimer.wait_time = REGEN_CD
 	regenTimer.one_shot = true
-	energyRegenTimer.wait_time = regenCD
+	energyRegenTimer.wait_time = REGEN_CD
 	energyRegenTimer.one_shot = true
 	
 func _process(delta: float) -> void:
@@ -79,19 +89,22 @@ func cameraMovement():
 	global_position.y = clamp(global_position.y, mapBounds.position.x, mapBounds.position.y + mapBounds.size.y)
 	
 func regenPlayerHealth(delta) -> void:
-	if isRegeningHP and playerHealth < maxHealth:
-		playerHealth += regenRateHP * delta
-		playerHealth = clamp(playerHealth, 0, maxHealth)
+	if isRegeningHP and playerHealth < MAX_HEALTH:
+		playerHealth += REGEN_RATE_HP * delta
+		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
 		healthBar.value = playerHealth
 
 func regenPlayerEnergy(delta) -> void:
-	if isRegeningEnergy and playerEnergy < maxEnergy:
-		playerEnergy += regenRateEnergy * delta
-		playerEnergy = clamp(playerEnergy, 0, maxEnergy)
+	if isRegeningEnergy and playerEnergy < MAX_ENERGY:
+		playerEnergy += REGEN_RATE_ENERGY * delta
+		playerEnergy = clamp(playerEnergy, 0, MAX_ENERGY)
 		energyBar.value = playerEnergy
+	if isDashing or isSprinting or isAttacking:
+		isRegeningEnergy = false
 
 func handle_movement(delta):
 	var direction = Vector2.ZERO
+	isSprinting = false
 	currentSpeed = WALK
 	
 	if isDashing:
@@ -103,8 +116,16 @@ func handle_movement(delta):
 				doubleTapTimers[dir] -= delta
 				
 		if Input.is_action_pressed("ui_select"):
-			currentSpeed = SPRINT
-		
+			print(playerEnergy, ENERGY_DECAY_RATE_SPRINT)
+			if playerEnergy >= ENERGY_DECAY_RATE_SPRINT:
+				isRegeningEnergy = false
+				isSprinting = true
+				playerEnergy -= ENERGY_DECAY_RATE_SPRINT * delta
+				playerEnergy = clamp(playerEnergy, 0, MAX_ENERGY)
+				energyBar.value = playerEnergy
+				energyRegenTimer.start()
+				currentSpeed = SPRINT
+			
 		# movements directions
 		if Input.is_action_pressed("ui_right"):
 			direction.x += 1
@@ -145,8 +166,14 @@ func handle_double_dash(direction):
 	for dir in ["left", "right", "up", "down"]:
 		if Input.is_action_just_pressed("ui_" + dir):
 			if doubleTapTimers[dir] > 0:
-				start_dash(dir)
-				print(dir)
+				if playerEnergy >= DASH_ENERGY_COST:
+					start_dash(dir)
+					playerEnergy -= DASH_ENERGY_COST
+					energyBar.value = playerEnergy
+					print("Dashing", dir, "- Energy left: ", playerEnergy)
+					energyRegenTimer.start()
+				else:
+					print("Not enough energy to dash!")
 				doubleTapTimers[dir] = 0.0
 			else:
 				doubleTapTimers[dir] = DOUBLE_TAP_WINDOW
@@ -191,7 +218,7 @@ func _on_hitbox_body_exited(body: Node2D) -> void:
 func enemy_attack():
 	if isEnemyInAttackRange and enemyAttackCooldown == true:
 		playerHealth -= 20
-		playerHealth = clamp(playerHealth, 0, maxHealth)
+		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
 		healthBar.value = playerHealth
 		enemyAttackCooldown = false
 		isRegeningHP = false
@@ -202,7 +229,7 @@ func enemy_attack():
 func take_damage(damage: int):
 	if isPlayerAlive:
 		playerHealth -= damage
-		playerHealth = clamp(playerHealth, 0, maxHealth)
+		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
 		healthBar.value = playerHealth
 		isRegeningHP = false
 		regenTimer.start()  # Reset health regen timer
@@ -213,10 +240,12 @@ func _on_attack_cooldown_timeout() -> void:
 
 func attack():
 	var dir = playerPos
+	isAttacking = false
 	if Input.is_action_just_pressed("attack") and not isPassiveCD:
 		Global.playerCurrentAttack = true
 		attackIP = true
 		isPassiveCD = true
+		isAttacking = true
 		energyRegenTimer.start()
 		passiveTimer.start()
 		playerEnergy -= passiveCost
@@ -251,3 +280,6 @@ func _on_energy_regen_timer_timeout() -> void:
 
 func _on_dash_timer_timeout() -> void:
 	isDashing = false
+
+func _on_sprint_energy_decay_timeout() -> void:
+	isRegeningEnergy = true

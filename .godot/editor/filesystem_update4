@@ -1,1 +1,3 @@
-res://scenes/Tutorial/Scene3.tscn
+res://scenes/Player/lam_ang.tscn
+res://scripts/lam_ang.gd
+res://scenes/starting_ttown.tscn
