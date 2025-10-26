@@ -483,7 +483,7 @@ position = Vector2(919, 509)
 position = Vector2(344, 341)
 
 [node name="Lam-Ang" parent="." instance=ExtResource("6_xxf11")]
-position = Vector2(519, 322)
+position = Vector2(612, 322)
 
 [node name="ExitToScene2_1" type="Area2D" parent="."]
 position = Vector2(536, 644)
