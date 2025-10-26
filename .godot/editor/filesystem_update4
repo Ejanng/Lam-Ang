@@ -1,5 +1,6 @@
-res://scenes/Hostile/melee_tribe_member.tscn
-res://scripts/melee_enemy.gd
-res://scenes/starting_ttown.tscn
-res://scenes/Player/lam_ang.tscn
-res://scripts/lam_ang.gd
+res://scenes/Tutorial/Scene3.tscn
+res://scenes/Tutorial/Scene1.tscn
+res://scenes/Tutorial/Scene2.tscn
+res://scenes/Tutorial/Scene2_1.tscn
+res://scenes/Tutorial/Scene2_2.tscn
+res://scenes/Tutorial/Scene4.tscn

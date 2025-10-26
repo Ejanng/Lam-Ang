@@ -1,9 +1,9 @@
+TileMap
 CollisionShape2D
 Area2D
 ProgressBar
 AnimatedSprite2D
 Timer
-TileMap
 AudioStreamPlayer
 AudioStreamPlayer2D
 Node
