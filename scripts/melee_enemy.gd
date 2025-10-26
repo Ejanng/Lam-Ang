@@ -4,6 +4,7 @@ const SPEED = 40
 const WANDER_SPEED = 20
 const WANDER_INTERVAL = 2.5
 const ATTACK_PAUSE_TIME = 1.0
+const ATTACK_RANGE = 30.0
 
 var player_chase = false
 var isPlayerInAttackRange = false
@@ -40,12 +41,19 @@ func _physics_process(delta: float) -> void:
 		
 func handle_movement():
 	if player_chase and player:
+		var distance = position.distance_to(player.position)
 		var direction = (player.position - position).normalized()
-		velocity = direction * SPEED
-		move_and_slide()
 		
-		anim.play("walk_side")
-		anim.flip_h = direction.x < 0
+		if distance > ATTACK_RANGE and not isAttacking:
+			velocity = velocity.lerp(direction * SPEED, 0.15)
+			move_and_slide()
+			anim.play("walk_side")
+			anim.flip_h = direction.x < 0
+		else:
+			velocity = Vector2.ZERO
+			move_and_slide()
+			if not isAttacking:
+				anim.play("idle")
 	else:
 		velocity = random_dir * WANDER_SPEED
 		move_and_slide()
