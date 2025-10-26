@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://12jcxjf74g5m"]
 
-[ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://Environments/grass.png" id="1_3p1tf"]
-[ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://Environments/Dirttile.png" id="2_phkdy"]
-[ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://Environments/Treee.png" id="3_phkdy"]
+[ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environment Assets/grass.png" id="1_a84p5"]
+[ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://assets/Environment Assets/Dirttile.png" id="2_kdnta"]
+[ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://assets/Environment Assets/Treee.png" id="3_b4su6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_joxh3"]
-texture = ExtResource("1_3p1tf")
+texture = ExtResource("1_a84p5")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -118,7 +118,7 @@ texture = ExtResource("1_3p1tf")
 3:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qi1jt"]
-texture = ExtResource("2_phkdy")
+texture = ExtResource("2_kdnta")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -193,7 +193,7 @@ texture = ExtResource("2_phkdy")
 4:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0h623"]
-texture = ExtResource("3_phkdy")
+texture = ExtResource("3_b4su6")
 0:1/0 = 0
 1:1/0 = 0
 0:2/0 = 0
