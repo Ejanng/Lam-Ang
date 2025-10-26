@@ -45,7 +45,6 @@ var dashDuration = 0.1
 var dashDirection = Vector2.ZERO
 var passiveCost = 5.0
 
-
 var playerPos = Vector2.ZERO
 var mapBounds = Rect2(0, 0, 1024, 768)
 

@@ -3,10 +3,12 @@ extends CharacterBody2D
 const SPEED = 40
 const WANDER_SPEED = 20
 const WANDER_INTERVAL = 2.5
+const ATTACK_PAUSE_TIME = 1.0
 
 var player_chase = false
 var isPlayerInAttackRange = false
 var canTakeDMG = true
+var isAttacking= false
 
 var player = null
 var health = 100 
@@ -23,6 +25,7 @@ var random_dir: Vector2 = Vector2.ZERO
 @onready var takeDMGCD = $take_dmg_cooldown
 @onready var health_bar = $HealthBar
 @onready var wanderTimer = $WanderTimer
+@onready var attackPauseTimer = $AttackPauseTimer
 
 func _ready() -> void:
 	health_bar.max_value = health
@@ -56,6 +59,18 @@ func handle_movement():
 func _on_wander_timer_timeout() -> void:
 	random_dir = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 
+func perform_attack():
+	if isAttacking:
+		return
+	isAttacking = true
+	isAttacking = true
+	velocity = Vector2.ZERO
+	#anim.play("attack")   # save for attack animation
+	print("Enemy attacks player!")
+	
+	attackPauseTimer.start()
+	
+	
 func enemy():
 	pass
 
@@ -72,6 +87,7 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		isPlayerInAttackRange = true
+		perform_attack()
 
 func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
@@ -99,3 +115,8 @@ func die():
 func _on_take_dmg_cooldown_timeout() -> void:
 	canTakeDMG = true
 	print("Cooldwon finished - enemy can take damage again")
+
+
+func _on_attack_pause_timer_timeout() -> void:
+	isAttacking = false
+	print("Enemy movement resumed after attack pause.")
