@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsi6vlnusx1tm"]
+[gd_scene load_steps=17 format=3 uid="uid://dsi6vlnusx1tm"]
 
-[ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environment Assets/grass.png" id="1_bkswq"]
-[ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://assets/Environment Assets/Mountain.png" id="2_isv46"]
-[ext_resource type="Texture2D" uid="uid://4r7tkukado4c" path="res://assets/Environment Assets/Moutains.png" id="3_07sus"]
-[ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://assets/Environment Assets/Treee.png" id="4_isv46"]
-[ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://assets/Environment Assets/Dirttile.png" id="5_07sus"]
+[ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://Environments/grass.png" id="1_bkswq"]
+[ext_resource type="Script" uid="uid://cy02qy2oqseb2" path="res://scripts/scene_1.gd" id="1_wxgyy"]
+[ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://Environments/Mountain.png" id="2_isv46"]
+[ext_resource type="Texture2D" uid="uid://4r7tkukado4c" path="res://Environments/Moutains.png" id="3_07sus"]
+[ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://Environments/Treee.png" id="4_isv46"]
+[ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://Environments/Dirttile.png" id="5_07sus"]
 [ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="6_xxf11"]
 [ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/melee_tribe_member.tscn" id="7_o4f3m"]
 
@@ -420,7 +421,11 @@ sources/14 = SubResource("TileSetAtlasSource_vxkkm")
 sources/18 = SubResource("TileSetAtlasSource_wxgyy")
 sources/24 = SubResource("TileSetAtlasSource_j37ar")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j37ar"]
+size = Vector2(16, 172)
+
 [node name="Starting_Town" type="Node2D"]
+script = ExtResource("1_wxgyy")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rxax5")
@@ -468,14 +473,24 @@ position = Vector2(823, 388)
 [node name="melee_enemy6" parent="." instance=ExtResource("7_o4f3m")]
 position = Vector2(553, 447)
 
-[node name="melee_enemy" parent="melee_enemy6" instance=ExtResource("7_o4f3m")]
-position = Vector2(371, -237)
+[node name="melee_enemy7" parent="." instance=ExtResource("7_o4f3m")]
+position = Vector2(924, 210)
 
-[node name="melee_enemy" parent="melee_enemy6/melee_enemy" instance=ExtResource("7_o4f3m")]
-position = Vector2(-5, 299)
+[node name="melee_enemy8" parent="." instance=ExtResource("7_o4f3m")]
+position = Vector2(919, 509)
 
-[node name="melee_enemy" parent="melee_enemy6/melee_enemy/melee_enemy" instance=ExtResource("7_o4f3m")]
-position = Vector2(-575, -168)
+[node name="melee_enemy9" parent="." instance=ExtResource("7_o4f3m")]
+position = Vector2(344, 341)
 
 [node name="Lam-Ang" parent="." instance=ExtResource("6_xxf11")]
 position = Vector2(519, 322)
+
+[node name="ExitToScene2_1" type="Area2D" parent="."]
+position = Vector2(536, 644)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitToScene2_1"]
+position = Vector2(80, 4)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_j37ar")
+
+[connection signal="body_entered" from="ExitToScene2_1" to="." method="_on_exit_to_scene_2_1_body_entered"]
