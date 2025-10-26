@@ -35,7 +35,7 @@ var isAttacking = false
 
 var playerHealth = MAX_HEALTH
 var playerEnergy = MAX_ENERGY
-var playerXP = 0
+var playerXP = 50
 var xpToNextLevel: int = 100
 var playerLevel = 1
 
@@ -59,6 +59,7 @@ var mapBounds = Rect2(0, 0, 1024, 768)
 @onready var dashTimer = $DashTimer
 @onready var sprintEnergyDecay = $SprintEnergyDecay
 @onready var xpBar = $XPBar
+@onready var attackArea = $AttackArea
 
 func _ready() -> void:
 	healthBar.max_value = MAX_HEALTH
@@ -118,6 +119,7 @@ func add_experience(amount: int) -> void:
 		playerXP += 1
 		playerLevel += 1
 		xpToNextLevel = int(xpToNextLevel * 1.2)
+		xpBar.value = playerXP
 		print("Level Up! Now Level: ", playerLevel)
 		
 func handle_movement(delta):
@@ -260,16 +262,30 @@ func attack():
 	var dir = playerPos
 	isAttacking = false
 	if Input.is_action_just_pressed("attack") and not isPassiveCD:
+		# player attack variables
 		Global.playerCurrentAttack = true
-		attackIP = true
+		attackArea.monitoring = true
 		isPassiveCD = true
+		# player animtion variables
+		attackIP = true
 		isAttacking = true
+		# timers
 		energyRegenTimer.start()
 		passiveTimer.start()
+		
+		
 		playerEnergy -= passiveCost
 		print(passiveCost)
 		energyBar.value = playerEnergy
+		
+		# issue on player attack at start wont work
+		# this function will overide that and deal dmg on enemy will work
+		# this function only work once... better not remove it
+		for body in attackArea.get_overlapping_bodies():
+			if Global.playerCurrentAttack and body.has_method("deal_dmg"):
+				body.deal_dmg()
 			
+		# handle the attack animations
 		if abs(dir.x) > abs(dir.y):
 			anim.play("walk_side")
 			anim.flip_h = dir.x < 0 
@@ -281,10 +297,13 @@ func attack():
 			else:
 				anim.play("walk_down")
 				dealAttackCD.start()
+				
+		# finish the animation first before starting the cd
+		dealAttackCD.start()
 
 func _on_deal_attack_cooldown_timeout() -> void:
-	dealAttackCD.stop()
 	Global.playerCurrentAttack = false
+	attackArea.monitoring = false
 	attackIP = false
 
 func _on_regen_timer_timeout() -> void:
@@ -301,3 +320,9 @@ func _on_dash_timer_timeout() -> void:
 
 func _on_sprint_energy_decay_timeout() -> void:
 	isRegeningEnergy = true
+
+
+func _on_attack_area_body_entered(body: Node2D) -> void:
+	if Global.playerCurrentAttack and body.has_method("deal_dmg"):
+		print("do i get calledd?")
+		body.deal_dmg()

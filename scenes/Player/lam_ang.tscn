@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bioohv47js651"]
+[gd_scene load_steps=26 format=3 uid="uid://bioohv47js651"]
 
 [ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
@@ -134,6 +134,9 @@ bg_color = Color(0.968627, 0.337255, 0.384314, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad0y5"]
 bg_color = Color(0.905882, 0.980392, 0.196078, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ad0y5"]
+radius = 19.235384
+
 [node name="Lam-Ang" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_67xbk")
@@ -210,6 +213,12 @@ offset_right = -116.0
 offset_bottom = -81.0
 show_percentage = false
 
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_ad0y5")
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
@@ -221,3 +230,4 @@ show_percentage = false
 [connection signal="timeout" from="EnergyRegenTimer" to="." method="_on_energy_regen_timer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="SprintEnergyDecay" to="." method="_on_sprint_energy_decay_timeout"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

@@ -114,7 +114,7 @@ position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_f1ptj")
 
 [node name="take_dmg_cooldown" type="Timer" parent="."]
-wait_time = 0.5
+one_shot = true
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(40, 6)
