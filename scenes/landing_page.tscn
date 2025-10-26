@@ -1,18 +1,21 @@
-[gd_scene load_steps=19 format=3 uid="uid://w3ngvclcrqe6"]
+[gd_scene load_steps=23 format=3 uid="uid://w3ngvclcrqe6"]
 
 [ext_resource type="Texture2D" uid="uid://bq6umwg472ved" path="res://Environments/bg.png" id="1_m3yrg"]
 [ext_resource type="Texture2D" uid="uid://bi7423fwwhe24" path="res://Environments/cliff.png" id="2_idyxi"]
-[ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://Environments/Treee.png" id="3_0tbih"]
+[ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://assets/Environment Assets/Treee.png" id="3_0tbih"]
 [ext_resource type="Texture2D" uid="uid://cfqseqlcuodwg" path="res://sprite/lam-ang spritesheet (1).png" id="4_idyxi"]
 [ext_resource type="Texture2D" uid="uid://kxjcryamnddw" path="res://Environments/Title.png" id="5_0tbih"]
 [ext_resource type="Theme" uid="uid://b7bkyhh6b6n6g" path="res://ui components/1theme.tres" id="6_4p8te"]
 [ext_resource type="Theme" uid="uid://brrcu3fc870cg" path="res://ui components/2theme.tres" id="7_2na4v"]
+[ext_resource type="Script" uid="uid://d3na5ks3837mv" path="res://scenes/button.gd" id="7_4am5e"]
+[ext_resource type="AudioStream" uid="uid://dwvchtnxg4ej5" path="res://audio/effects/BUTTON CLICK.wav" id="8_fwfnp"]
 [ext_resource type="Theme" uid="uid://b44el3pcg2u5n" path="res://ui components/3theme.tres" id="8_n7deh"]
 [ext_resource type="Theme" uid="uid://bio8ew3exmwkx" path="res://ui components/4theme.tres" id="10_dpc01"]
+[ext_resource type="Script" uid="uid://bpe0lavpv7rex" path="res://scenes/button_2.gd" id="10_fwfnp"]
 [ext_resource type="Theme" uid="uid://wl8vmrdf2ikl" path="res://ui components/5theme.tres" id="11_nkwx4"]
+[ext_resource type="AudioStream" uid="uid://cw58syye137vc" path="res://audio/bgm/menu second demo tribal.wav" id="14_7ffaj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dpc01"]
-load_path = "res://.godot/imported/whitebg.png-8af31969f8f0c4afe761c65dd2db946a.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4p8te"]
 texture = SubResource("CompressedTexture2D_dpc01")
@@ -1584,6 +1587,10 @@ offset_top = 247.0
 offset_right = 417.49493
 offset_bottom = 347.0
 theme = ExtResource("6_4p8te")
+script = ExtResource("7_4am5e")
+
+[node name="click" type="AudioStreamPlayer" parent="Button"]
+stream = ExtResource("8_fwfnp")
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 167.0
@@ -1591,6 +1598,10 @@ offset_top = 361.0
 offset_right = 416.49493
 offset_bottom = 461.0
 theme = ExtResource("7_2na4v")
+script = ExtResource("10_fwfnp")
+
+[node name="click" type="AudioStreamPlayer" parent="Button2"]
+stream = ExtResource("8_fwfnp")
 
 [node name="Button3" type="Button" parent="."]
 offset_left = 169.0
@@ -1612,3 +1623,11 @@ offset_top = 6.0
 offset_right = 1063.0
 offset_bottom = 98.232666
 theme = ExtResource("11_nkwx4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_7ffaj")
+volume_db = -8.666
+autoplay = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
