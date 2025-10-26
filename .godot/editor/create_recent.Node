@@ -1,10 +1,12 @@
+Timer
+Label
+CanvasLayer
 CollisionShape2D
 Area2D
 Label
 CanvasLayer
 ProgressBar
 AnimatedSprite2D
-Timer
 AudioStreamPlayer
 AudioStreamPlayer2D
 Node
