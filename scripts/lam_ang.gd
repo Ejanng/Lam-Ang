@@ -76,6 +76,11 @@ func _ready() -> void:
 	
 	update_coin_display()
 	
+
+	if SceneManager.spawn_position != Vector2.ZERO:
+		global_position = SceneManager.spawn_position
+		SceneManager.spawn_position = Vector2.ZERO
+	
 func _process(delta: float) -> void:
 	cameraMovement()
 	die()
