@@ -1,8 +1,12 @@
-res://scenes/Hostile/melee_tribe_member.tscn
 res://scripts/melee_enemy.gd
-res://scenes/starting_ttown.tscn
-res://scenes/Player/lam_ang.tscn
-res://scripts/lam_ang.gd
-res://scripts/DropManager.gd
 res://scripts/ranged_enemy.gd
 res://scripts/XPDropManager.gd
+res://scenes/starting_ttown.tscn
+res://scripts/DropManager.gd
+res://scenes/Drops/XPOrb.tscn
+res://scenes/Hostile/melee_tribe_member.tscn
+res://scripts/XPOrb.gd
+res://scripts/lam_ang.gd
+res://scenes/Drops/CoinDrop.tscn
+res://scripts/coin_drop.gd
+res://scenes/Player/lam_ang.tscn

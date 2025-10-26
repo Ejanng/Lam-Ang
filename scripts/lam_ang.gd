@@ -38,6 +38,7 @@ var playerEnergy = MAX_ENERGY
 var playerXP = 50
 var xpToNextLevel: int = 100
 var playerLevel = 1
+var playerCoin = 0
 
 var currentSpeed = 0
 var dashDuration = 0.1
@@ -60,6 +61,7 @@ var mapBounds = Rect2(0, 0, 1024, 768)
 @onready var sprintEnergyDecay = $SprintEnergyDecay
 @onready var xpBar = $XPBar
 @onready var attackArea = $AttackArea
+@onready var coinLabel = $CoinLabel
 
 func _ready() -> void:
 	healthBar.max_value = MAX_HEALTH
@@ -72,6 +74,8 @@ func _ready() -> void:
 	energyRegenTimer.one_shot = true
 	xpBar.value = playerXP
 	xpBar.max_value = xpToNextLevel
+	
+	update_coin_display()
 	
 func _process(delta: float) -> void:
 	cameraMovement()
@@ -122,6 +126,14 @@ func add_experience(amount: int) -> void:
 		xpBar.value = playerXP
 		print("Level Up! Now Level: ", playerLevel)
 		
+func add_coin(amount: int) -> void:
+	playerCoin += amount
+	print("Gained", amount, "Coin. Total: ", playerCoin)
+	update_coin_display()
+	
+func update_coin_display() -> void:
+	coinLabel.text = "Coins: " + str(playerCoin)
+	
 func handle_movement(delta):
 	var direction = Vector2.ZERO
 	isSprinting = false
@@ -180,7 +192,6 @@ func handle_movement(delta):
 			if not attackIP:
 				anim.play("idle")
 		handle_double_dash(direction)
-	
 
 func handle_double_dash(direction):
 	for dir in ["left", "right", "up", "down"]:
@@ -216,48 +227,6 @@ func start_dash(dir):
 			dashDirection = Vector2.DOWN
 			print("Im down")
 			
-func die():
-	if playerHealth <= 0 and name:
-		isPlayerAlive = false
-		playerHealth = 0
-		print("Player Died!")
-		self.queue_free()
-		
-func player():
-	pass
-
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	#if body.has_method("melee_enemy") || body.has_method("ranged_enemy"):
-	if body.has_method("enemy"):
-		isEnemyInAttackRange = true
-
-func _on_hitbox_body_exited(body: Node2D) -> void:
-	if body.has_method("enemy"):
-		isEnemyInAttackRange = false
-		
-func enemy_attack():
-	if isEnemyInAttackRange and enemyAttackCooldown == true:
-		playerHealth -= 20
-		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
-		healthBar.value = playerHealth
-		enemyAttackCooldown = false
-		isRegeningHP = false
-		attackCD.start()
-		regenTimer.start()
-		print("Player Health: ", playerHealth)
-		
-func take_damage(damage: int):
-	if isPlayerAlive:
-		playerHealth -= damage
-		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
-		healthBar.value = playerHealth
-		isRegeningHP = false
-		regenTimer.start()  # Reset health regen timer
-		print("Player took ", damage, " damage. Health: ", playerHealth)
-
-func _on_attack_cooldown_timeout() -> void:
-	enemyAttackCooldown = true
-
 func attack():
 	var dir = playerPos
 	isAttacking = false
@@ -301,6 +270,48 @@ func attack():
 		# finish the animation first before starting the cd
 		dealAttackCD.start()
 
+func die():
+	if playerHealth <= 0 and name:
+		isPlayerAlive = false
+		playerHealth = 0
+		print("Player Died!")
+		self.queue_free()
+		
+func player():
+	pass
+
+func enemy_attack():
+	if isEnemyInAttackRange and enemyAttackCooldown == true:
+		playerHealth -= 20
+		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
+		healthBar.value = playerHealth
+		enemyAttackCooldown = false
+		isRegeningHP = false
+		attackCD.start()
+		regenTimer.start()
+		print("Player Health: ", playerHealth)
+		
+func take_damage(damage: int):
+	if isPlayerAlive:
+		playerHealth -= damage
+		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
+		healthBar.value = playerHealth
+		isRegeningHP = false
+		regenTimer.start()  # Reset health regen timer
+		print("Player took ", damage, " damage. Health: ", playerHealth)
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	#if body.has_method("melee_enemy") || body.has_method("ranged_enemy"):
+	if body.has_method("enemy"):
+		isEnemyInAttackRange = true
+
+func _on_hitbox_body_exited(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		isEnemyInAttackRange = false
+		
+func _on_attack_cooldown_timeout() -> void:
+	enemyAttackCooldown = true
+
 func _on_deal_attack_cooldown_timeout() -> void:
 	Global.playerCurrentAttack = false
 	attackArea.monitoring = false
@@ -320,7 +331,6 @@ func _on_dash_timer_timeout() -> void:
 
 func _on_sprint_energy_decay_timeout() -> void:
 	isRegeningEnergy = true
-
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if Global.playerCurrentAttack and body.has_method("deal_dmg"):
