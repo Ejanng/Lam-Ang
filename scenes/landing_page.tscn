@@ -1,7 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://w3ngvclcrqe6"]
 
 [ext_resource type="Texture2D" uid="uid://bq6umwg472ved" path="res://Environments/bg.png" id="1_m3yrg"]
-[ext_resource type="Texture2D" uid="uid://cy1pjug463bq" path="res://Environments/whitebg.png" id="1_nftrr"]
 [ext_resource type="Texture2D" uid="uid://bi7423fwwhe24" path="res://Environments/cliff.png" id="2_idyxi"]
 [ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://Environments/Treee.png" id="3_0tbih"]
 [ext_resource type="Texture2D" uid="uid://cfqseqlcuodwg" path="res://sprite/lam-ang spritesheet (1).png" id="4_idyxi"]
@@ -12,8 +11,11 @@
 [ext_resource type="Theme" uid="uid://bio8ew3exmwkx" path="res://ui components/4theme.tres" id="10_dpc01"]
 [ext_resource type="Theme" uid="uid://wl8vmrdf2ikl" path="res://ui components/5theme.tres" id="11_nkwx4"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dpc01"]
+load_path = "res://.godot/imported/whitebg.png-8af31969f8f0c4afe761c65dd2db946a.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4p8te"]
-texture = ExtResource("1_nftrr")
+texture = SubResource("CompressedTexture2D_dpc01")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1569,7 +1571,7 @@ scale = Vector2(3.2226558, 3.2226558)
 sprite_frames = SubResource("SpriteFrames_2na4v")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.8440576
+frame_progress = 0.47147998
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(408, 124.00001)
