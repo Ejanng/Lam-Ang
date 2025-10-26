@@ -1,4 +1,5 @@
-TileMap
+Label
+CanvasLayer
 CollisionShape2D
 Area2D
 ProgressBar
@@ -7,8 +8,6 @@ Timer
 AudioStreamPlayer
 AudioStreamPlayer2D
 Node
-Label
 Panel
-CanvasLayer
 Node2D
 Sprite2D

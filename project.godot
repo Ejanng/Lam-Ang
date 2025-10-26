@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Lam-ang_V1"
-run/main_scene="uid://c471ya3dt7fq"
+run/main_scene="uid://dsi6vlnusx1tm"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://scripts/global.gd"
-XpDropManager="*res://scripts/XPDropManager.gd"
+DropManager="*res://scripts/DropManager.gd"
 
 [input]
 
