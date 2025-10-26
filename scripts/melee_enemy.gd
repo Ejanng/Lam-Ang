@@ -1,37 +1,83 @@
 extends CharacterBody2D
 
-const SPEED = 150
+const SPEED = 40
+const WANDER_SPEED = 20
+const WANDER_INTERVAL = 2.5
+const ATTACK_PAUSE_TIME = 1.0
+const ATTACK_RANGE = 30.0
+
 var player_chase = false
-var player = null
-var health = 100 
 var isPlayerInAttackRange = false
 var canTakeDMG = true
+var isAttacking= false
+
+var player = null
+var health = 100 
 var meleeDMG = 20
+
 var xpDrop = 20
 var xpDropChance = 0.8
 var coinDrop = 25
 var coinDropChance = 0.6
+
+var random_dir: Vector2 = Vector2.ZERO
+
 @onready var anim = $AnimatedSprite2D
 @onready var takeDMGCD = $take_dmg_cooldown
 @onready var health_bar = $HealthBar
+@onready var wanderTimer = $WanderTimer
+@onready var attackPauseTimer = $AttackPauseTimer
 
 func _ready() -> void:
 	health_bar.max_value = health
 	health_bar.value = health
+	wanderTimer.wait_time = WANDER_INTERVAL
+	wanderTimer.one_shot = false
+	wanderTimer.start()
+	wanderTimer.connect("timeout", _on_wander_timer_timeout)
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
 		
 func handle_movement():
-	if player_chase:
-		position += (player.position - position)/SPEED
-		anim.play("walk_side")
-		if (player.position.x - position.x) < 0:
-			anim.flip_h = true
+	if player_chase and player:
+		var distance = position.distance_to(player.position)
+		var direction = (player.position - position).normalized()
+		
+		if distance > ATTACK_RANGE and not isAttacking:
+			velocity = velocity.lerp(direction * SPEED, 0.15)
+			move_and_slide()
+			anim.play("walk_side")
+			anim.flip_h = direction.x < 0
 		else:
-			anim.flip_h = false
+			velocity = Vector2.ZERO
+			move_and_slide()
+			if not isAttacking:
+				anim.play("idle")
 	else:
-		anim.play("idle")
+		velocity = random_dir * WANDER_SPEED
+		move_and_slide()
+		
+		if random_dir.length() > 0:
+			anim.play("walk_side")
+			anim.flip_h = random_dir.x < 0
+		else:
+			anim.play("idle")
+			
+func _on_wander_timer_timeout() -> void:
+	random_dir = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+
+func perform_attack():
+	if isAttacking:
+		return
+	isAttacking = true
+	isAttacking = true
+	velocity = Vector2.ZERO
+	#anim.play("attack")   # save for attack animation
+	print("Enemy attacks player!")
+	
+	attackPauseTimer.start()
+	
 	
 func enemy():
 	pass
@@ -46,10 +92,10 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 		player = null
 		player_chase = false
 	
-
 func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
-		isPlayerInAttackRange = false
+		isPlayerInAttackRange = true
+		perform_attack()
 
 func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
@@ -77,3 +123,8 @@ func die():
 func _on_take_dmg_cooldown_timeout() -> void:
 	canTakeDMG = true
 	print("Cooldwon finished - enemy can take damage again")
+
+
+func _on_attack_pause_timer_timeout() -> void:
+	isAttacking = false
+	print("Enemy movement resumed after attack pause.")

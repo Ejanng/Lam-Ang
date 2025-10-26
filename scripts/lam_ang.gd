@@ -6,7 +6,7 @@ const DASH_SPEED = 800
 
 const REGEN_RATE_ENERGY = 10.0
 const REGEN_RATE_HP = 2.0
-const ENERGY_DECAY_RATE_SPRINT = 5.0
+const ENERGY_DECAY_RATE_SPRINT = 2.0
 
 const MAX_ENERGY = 70
 const MAX_HEALTH = 100
@@ -45,7 +45,6 @@ var dashDuration = 0.1
 var dashDirection = Vector2.ZERO
 var passiveCost = 5.0
 
-
 var playerPos = Vector2.ZERO
 var mapBounds = Rect2(0, 0, 1024, 768)
 
@@ -76,6 +75,11 @@ func _ready() -> void:
 	xpBar.max_value = xpToNextLevel
 	
 	update_coin_display()
+	
+
+	if SceneManager.spawn_position != Vector2.ZERO:
+		global_position = SceneManager.spawn_position
+		SceneManager.spawn_position = Vector2.ZERO
 	
 func _process(delta: float) -> void:
 	cameraMovement()
