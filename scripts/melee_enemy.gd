@@ -19,7 +19,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
-	deal_dmg()
 		
 func handle_movement():
 	if player_chase:
@@ -36,12 +35,14 @@ func enemy():
 	pass
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	player = body
-	player_chase = true
+	if body.has_method("player"):
+		player = body
+		player_chase = true
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
-	player = null
-	player_chase = false
+	if body.has_method("player"):
+		player = null
+		player_chase = false
 	
 
 func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
@@ -50,18 +51,21 @@ func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
 
 func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
-		isPlayerInAttackRange = true
+		isPlayerInAttackRange = false
 
 func deal_dmg():
-	if isPlayerInAttackRange and Global.playerCurrentAttack == true:
-		if canTakeDMG:
-			health -= meleeDMG
-			health_bar.value = health
-			takeDMGCD.start()
-			canTakeDMG = false
-			print("Player Deals DMG: ", meleeDMG, "\nEnemy Health: ", health)
-		if health <= 0:
-			die()
+	if not canTakeDMG:
+		return
+	canTakeDMG = false
+	health -= meleeDMG
+	health_bar.value = health
+	print("Player Deals DMG: ", meleeDMG, "\nEnemy Health: ", health)
+	
+	takeDMGCD.stop()
+	takeDMGCD.start()
+		
+	if health <= 0:
+		die()
 			
 func die():
 	XpDropManager.drop_xp(global_position, xpDrop, dropChance)
@@ -69,3 +73,4 @@ func die():
 
 func _on_take_dmg_cooldown_timeout() -> void:
 	canTakeDMG = true
+	print("Cooldwon finished - enemy can take damage again")

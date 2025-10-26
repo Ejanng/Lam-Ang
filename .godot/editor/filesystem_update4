@@ -1,9 +1,5 @@
-res://scenes/Player/lam_ang.tscn
-res://scripts/lam_ang.gd
-res://scenes/starting_ttown.tscn
-res://scripts/XPDropManager.gd
 res://scenes/Hostile/melee_tribe_member.tscn
 res://scripts/melee_enemy.gd
-res://scenes/Drops/projectile.tscn
-res://scripts/XPOrb.gd
-res://scenes/Drops/XPOrb.tscn
+res://scenes/starting_ttown.tscn
+res://scenes/Player/lam_ang.tscn
+res://scripts/lam_ang.gd
