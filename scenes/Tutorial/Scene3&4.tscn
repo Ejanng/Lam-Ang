@@ -457,7 +457,7 @@ layer_11/tile_data = PackedInt32Array(2031617, 18, 1, 2097153, 18, 2, 2162689, 1
 root_node = NodePath("../..")
 
 [node name="Lam-Ang" parent="." instance=ExtResource("1_punp3")]
-position = Vector2(367, 295)
+position = Vector2(43, 293)
 
 [node name="Warriors" type="Node2D" parent="."]
 position = Vector2(106, -23)

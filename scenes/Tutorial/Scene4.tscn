@@ -1,6 +1,5 @@
 [gd_scene load_steps=17 format=3 uid="uid://dw2pu0phebdew"]
 
-[ext_resource type="Script" uid="uid://caai2sgrudk2" path="res://scripts/scene_4.gd" id="1_gmevf"]
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://Environments/grass.png" id="1_kfsmp"]
 [ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://Environments/Mountain.png" id="2_qn02s"]
 [ext_resource type="Texture2D" uid="uid://4r7tkukado4c" path="res://Environments/Moutains.png" id="3_gmevf"]
@@ -9,6 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="6_7wdj4"]
 [ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/melee_tribe_member.tscn" id="7_0j7ux"]
 [ext_resource type="PackedScene" uid="uid://blo75nahvq6g1" path="res://scenes/Hostile/ranged_tribe_member.tscn" id="8_qn02s"]
+
+[sub_resource type="GDScript" id="GDScript_qn02s"]
+script/source = "# Scene1.gd
+
+extends Node2D 
+
+func _on_exit_to_2_1_body_entered(body):
+	if body.name == \"Player\":
+		SceneManager.change_scene_and_set_spawn(\"res://Scene2_1.tscn\", \"From_1\")
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_no7of"]
 texture = ExtResource("1_kfsmp")
@@ -423,7 +432,7 @@ sources/18 = SubResource("TileSetAtlasSource_sviqc")
 sources/24 = SubResource("TileSetAtlasSource_hso16")
 
 [node name="Scene4_IgorotVillage" type="Node2D"]
-script = ExtResource("1_gmevf")
+script = SubResource("GDScript_qn02s")
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_b5yy1")

@@ -46,7 +46,7 @@ var dashDirection = Vector2.ZERO
 var passiveCost = 5.0
 
 var playerPos = Vector2.ZERO
-var mapBounds = Rect2(0, 0, 1024, 768)
+var mapBounds = Rect2(0, 0, 1024, 2048)
 
 @onready var anim = $AnimatedSprite2D
 @onready var attackCD = $attack_cooldown
@@ -77,9 +77,9 @@ func _ready() -> void:
 	update_coin_display()
 	
 
-	if SceneManager.spawn_position != Vector2.ZERO:
-		global_position = SceneManager.spawn_position
-		SceneManager.spawn_position = Vector2.ZERO
+	#if SceneManager.spawn_position != Vector2.ZERO:
+		#global_position = SceneManager.spawn_position
+		#SceneManager.spawn_position = Vector2.ZERO
 	
 func _process(delta: float) -> void:
 	cameraMovement()
@@ -340,3 +340,7 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 	if Global.playerCurrentAttack and body.has_method("deal_dmg"):
 		print("do i get calledd?")
 		body.deal_dmg()
+
+
+func _on_exit_to_scene_2_2_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

@@ -1,13 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://dsi6vlnusx1tm"]
+[gd_scene load_steps=18 format=3 uid="uid://dsi6vlnusx1tm"]
 
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://Environments/grass.png" id="1_bkswq"]
+[ext_resource type="Script" uid="uid://cy02qy2oqseb2" path="res://scripts/scene_1.gd" id="1_wxgyy"]
 [ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://Environments/Mountain.png" id="2_isv46"]
 [ext_resource type="Texture2D" uid="uid://4r7tkukado4c" path="res://Environments/Moutains.png" id="3_07sus"]
 [ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://Environments/Treee.png" id="4_isv46"]
 [ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://Environments/Dirttile.png" id="5_07sus"]
 [ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="6_xxf11"]
 [ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/melee_tribe_member.tscn" id="7_o4f3m"]
-[ext_resource type="Script" uid="uid://drur5k3p0e6hm" path="res://scripts/Tutorial_Scene1.gd" id="8_wxgyy"]
+[ext_resource type="Script" uid="uid://dx7kmi1dn56yp" path="res://scripts/exit_to_scene_2_1.gd" id="9_j37ar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xsg6c"]
 texture = ExtResource("1_bkswq")
@@ -425,6 +426,7 @@ sources/24 = SubResource("TileSetAtlasSource_j37ar")
 size = Vector2(16, 172)
 
 [node name="Starting_Town" type="Node2D"]
+script = ExtResource("1_wxgyy")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rxax5")
@@ -482,11 +484,11 @@ position = Vector2(919, 509)
 position = Vector2(344, 341)
 
 [node name="Lam-Ang" parent="." instance=ExtResource("6_xxf11")]
-position = Vector2(607, 316)
+position = Vector2(612, 322)
 
 [node name="ExitToScene2_1" type="Area2D" parent="."]
 position = Vector2(536, 644)
-script = ExtResource("8_wxgyy")
+script = ExtResource("9_j37ar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitToScene2_1"]
 position = Vector2(80, 4)
