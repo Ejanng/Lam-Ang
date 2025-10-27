@@ -5,6 +5,7 @@ const WANDER_SPEED = 20
 const WANDER_INTERVAL = 2.5
 const ATTACK_PAUSE_TIME = 1.0
 const ATTACK_RANGE = 15.0
+const WANDER_CHANCE = 0.6
 
 var player_chase = false
 var isPlayerInAttackRange = false
@@ -60,17 +61,22 @@ func handle_movement():
 			if not isAttacking:
 				anim.play("idle")
 	else:
-		velocity = random_dir * WANDER_SPEED
-		move_and_slide()
-		
 		if random_dir.length() > 0:
+			velocity = random_dir * WANDER_SPEED
+			move_and_slide()
 			anim.play("walk_side")
 			anim.flip_h = random_dir.x < 0
 		else:
+			velocity = Vector2.ZERO
 			anim.play("idle")
 			
 func _on_wander_timer_timeout() -> void:
-	random_dir = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+	if randf() <= WANDER_CHANCE:
+		random_dir = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+		print("Enemy wandering on random direction: ", random_dir)
+	else:
+		random_dir = Vector2.ZERO
+		print("Enemy idling")
 
 func perform_attack():
 	if isAttacking or not canAttack:
@@ -81,11 +87,16 @@ func perform_attack():
 	#anim.play("attack")   # save for attack animation
 	print("Enemy attacks player!")
 	
-	if player and is_instance_valid(player) and isPlayerInAttackRange:
-		if player.has_method("take_damage"):
-			player.take_damage(enemyDMG)
-			print("Enemy dealt", enemyDMG, "damage to player!")
+	var hitChance= 0.8
+	var roll = randf()
 	
+	if player and is_instance_valid(player) and isPlayerInAttackRange:
+		if roll <= hitChance:
+			if player.has_method("take_damage"):
+				player.take_damage(enemyDMG)
+				print("Enemy dealt ", enemyDMG, " damage to player!")
+		else:
+			print("Enemy missed the attack")
 	attackPauseTimer.start()
 	attackCooldown.start()
 	
