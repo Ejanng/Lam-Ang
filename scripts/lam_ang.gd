@@ -32,6 +32,7 @@ var isRegeningEnergy = false
 var isDashing = false
 var isSprinting = false
 var isAttacking = false
+var isHurt = false
 
 var playerHealth = MAX_HEALTH
 var playerEnergy = MAX_ENERGY
@@ -83,13 +84,11 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	cameraMovement()
-	die()
 	regenPlayerHealth(delta)
 	regenPlayerEnergy(delta)
 	
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
-	enemy_attack()
 	attack()
 	
 func cameraMovement():
@@ -139,6 +138,8 @@ func update_coin_display() -> void:
 	coinLabel.text = "Coins: " + str(playerCoin)
 	
 func handle_movement(delta):
+	if isHurt:
+		return
 	var direction = Vector2.ZERO
 	isSprinting = false
 	currentSpeed = WALK
@@ -232,6 +233,8 @@ func start_dash(dir):
 			print("Im down")
 			
 func attack():
+	if isHurt:
+		return
 	var dir = playerPos
 	isAttacking = false
 	if Input.is_action_just_pressed("attack") and not isPassiveCD:
@@ -284,25 +287,25 @@ func die():
 func player():
 	pass
 
-func enemy_attack():
-	if isEnemyInAttackRange and enemyAttackCooldown == true:
-		playerHealth -= 20
-		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
-		healthBar.value = playerHealth
-		enemyAttackCooldown = false
-		isRegeningHP = false
-		attackCD.start()
-		regenTimer.start()
-		print("Player Health: ", playerHealth)
-		
 func take_damage(damage: int):
-	if isPlayerAlive:
+	if isPlayerAlive and not isHurt:
 		playerHealth -= damage
 		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
 		healthBar.value = playerHealth
 		isRegeningHP = false
 		regenTimer.start()  # Reset health regen timer
 		print("Player took ", damage, " damage. Health: ", playerHealth)
+		
+		if playerHealth > 0:
+			isHurt = true
+			print("am i playing? hurttt")
+			anim.play("hurt")
+			modulate = Color(1, 0.6, 0.6)
+			await get_tree().create_timer(0.2).timeout
+			modulate = Color(1, 1, 1)
+			isHurt = false
+		else:
+			die()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	#if body.has_method("melee_enemy") || body.has_method("ranged_enemy"):

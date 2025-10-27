@@ -132,6 +132,9 @@ show_percentage = false
 
 [node name="WanderTimer" type="Timer" parent="."]
 
+[node name="AttackCooldown" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="AttackPauseTimer" to="." method="_on_attack_pause_timer_timeout"]
 [connection signal="area_shape_entered" from="detection_area" to="." method="_on_detection_area_area_shape_entered"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
@@ -139,3 +142,4 @@ show_percentage = false
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="take_dmg_cooldown" to="." method="_on_take_dmg_cooldown_timeout"]
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

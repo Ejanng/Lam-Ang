@@ -1,6 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://dagubqg31lo2h"]
+[gd_scene load_steps=15 format=3 uid="uid://dagubqg31lo2h"]
 
-[ext_resource type="Script" uid="uid://cewy01yh67mdw" path="res://scripts/scene_3.gd" id="1_13psv"]
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://Environments/grass.png" id="1_no7of"]
 [ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="1_punp3"]
 [ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/melee_tribe_member.tscn" id="2_0a42t"]
@@ -422,7 +421,6 @@ sources/18 = SubResource("TileSetAtlasSource_sviqc")
 sources/24 = SubResource("TileSetAtlasSource_hso16")
 
 [node name="Scene3_IgorotVillage" type="Node2D"]
-script = ExtResource("1_13psv")
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_b5yy1")
