@@ -1,10 +1,19 @@
-[gd_scene load_steps=26 format=3 uid="uid://bioohv47js651"]
+[gd_scene load_steps=29 format=3 uid="uid://bioohv47js651"]
 
 [ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
+[ext_resource type="Texture2D" uid="uid://ult3cm3ocub7" path="res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png" id="2_ad0y5"]
 [ext_resource type="Texture2D" uid="uid://15e7hnpffcr1" path="res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png" id="3_h7kcq"]
 [ext_resource type="Texture2D" uid="uid://dn7ncb1xcmhoj" path="res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png" id="4_e34qr"]
 [ext_resource type="Texture2D" uid="uid://ddxg0illq4jmm" path="res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png" id="5_d5ujj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3lmq"]
+atlas = ExtResource("2_ad0y5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oh65"]
+atlas = ExtResource("2_ad0y5")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67xbk"]
 atlas = ExtResource("1_qestl")
@@ -60,6 +69,17 @@ animations = [{
 "loop": true,
 "name": &"attack",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_q3lmq")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_2oh65")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -144,8 +164,9 @@ script = ExtResource("1_67xbk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_qestl")
-animation = &"idle"
-autoplay = "idle"
+animation = &"hurt"
+autoplay = "hurt"
+frame_progress = 0.51300544
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
@@ -235,6 +256,8 @@ text = "0"
 autowrap_trim_flags = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="HurtTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
@@ -247,3 +270,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="SprintEnergyDecay" to="." method="_on_sprint_energy_decay_timeout"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]

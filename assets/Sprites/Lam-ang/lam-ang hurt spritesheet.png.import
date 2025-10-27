@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn6kwl13ikvb2"
-path="res://.godot/imported/lam-ang spritesheet (1).png-5c2a774cd7d8769780f1bb71a15aed6a.ctex"
+uid="uid://ult3cm3ocub7"
+path="res://.godot/imported/lam-ang hurt spritesheet.png-9e352404537a485b7a944d51a71cb8d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Lam-ang/lam-ang spritesheet (1).png"
-dest_files=["res://.godot/imported/lam-ang spritesheet (1).png-5c2a774cd7d8769780f1bb71a15aed6a.ctex"]
+source_file="res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png"
+dest_files=["res://.godot/imported/lam-ang hurt spritesheet.png-9e352404537a485b7a944d51a71cb8d2.ctex"]
 
 [params]
 

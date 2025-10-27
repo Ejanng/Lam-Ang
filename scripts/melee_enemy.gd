@@ -4,16 +4,18 @@ const SPEED = 40
 const WANDER_SPEED = 20
 const WANDER_INTERVAL = 2.5
 const ATTACK_PAUSE_TIME = 1.0
-const ATTACK_RANGE = 30.0
+const ATTACK_RANGE = 15.0
 
 var player_chase = false
 var isPlayerInAttackRange = false
 var canTakeDMG = true
 var isAttacking= false
+var canAttack = true
 
 var player = null
 var health = 100 
 var meleeDMG = 20
+var enemyDMG = 20
 
 var xpDrop = 20
 var xpDropChance = 0.8
@@ -27,6 +29,7 @@ var random_dir: Vector2 = Vector2.ZERO
 @onready var health_bar = $HealthBar
 @onready var wanderTimer = $WanderTimer
 @onready var attackPauseTimer = $AttackPauseTimer
+@onready var attackCooldown = $AttackCooldown
 
 func _ready() -> void:
 	health_bar.max_value = health
@@ -38,6 +41,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
+	
+	if isPlayerInAttackRange and not isAttacking and canAttack:
+		perform_attack()
 		
 func handle_movement():
 	if player_chase and player:
@@ -51,7 +57,6 @@ func handle_movement():
 			anim.flip_h = direction.x < 0
 		else:
 			velocity = Vector2.ZERO
-			move_and_slide()
 			if not isAttacking:
 				anim.play("idle")
 	else:
@@ -68,16 +73,21 @@ func _on_wander_timer_timeout() -> void:
 	random_dir = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 
 func perform_attack():
-	if isAttacking:
+	if isAttacking or not canAttack:
 		return
-	isAttacking = true
+	canAttack = false
 	isAttacking = true
 	velocity = Vector2.ZERO
 	#anim.play("attack")   # save for attack animation
 	print("Enemy attacks player!")
 	
-	attackPauseTimer.start()
+	if player and is_instance_valid(player) and isPlayerInAttackRange:
+		if player.has_method("take_damage"):
+			player.take_damage(enemyDMG)
+			print("Enemy dealt", enemyDMG, "damage to player!")
 	
+	attackPauseTimer.start()
+	attackCooldown.start()
 	
 func enemy():
 	pass
@@ -128,3 +138,7 @@ func _on_take_dmg_cooldown_timeout() -> void:
 func _on_attack_pause_timer_timeout() -> void:
 	isAttacking = false
 	print("Enemy movement resumed after attack pause.")
+
+
+func _on_attack_cooldown_timeout() -> void:
+	canAttack = true
