@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://dagubqg31lo2h"]
 
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://Environments/grass.png" id="1_no7of"]
-[ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="1_punp3"]
-[ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/melee_tribe_member.tscn" id="2_0a42t"]
 [ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://Environments/Mountain.png" id="2_13psv"]
 [ext_resource type="Texture2D" uid="uid://4r7tkukado4c" path="res://Environments/Moutains.png" id="3_7gw6k"]
 [ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://Environments/Treee.png" id="4_sviqc"]
 [ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://Environments/Dirttile.png" id="5_hso16"]
+[ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="6_furns"]
+[ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/melee_tribe_member.tscn" id="7_b5yy1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_no7of"]
 texture = ExtResource("1_no7of")
@@ -422,6 +422,10 @@ sources/24 = SubResource("TileSetAtlasSource_hso16")
 
 [node name="Scene3_IgorotVillage" type="Node2D"]
 
+[node name="Camera2D2" type="Camera2D" parent="."]
+visible = false
+position = Vector2(649, 560)
+
 [node name="Background" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_b5yy1")
 format = 2
@@ -454,19 +458,19 @@ layer_11/tile_data = PackedInt32Array(2031617, 18, 1, 2097153, 18, 2, 2162689, 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VillageClearing"]
 root_node = NodePath("../..")
 
-[node name="Lam-Ang" parent="." instance=ExtResource("1_punp3")]
+[node name="Lam-Ang" parent="." instance=ExtResource("6_furns")]
 position = Vector2(43, 293)
 
 [node name="Warriors" type="Node2D" parent="."]
 position = Vector2(106, -23)
 
-[node name="melee_enemy" parent="Warriors" instance=ExtResource("2_0a42t")]
+[node name="melee_enemy" parent="Warriors" instance=ExtResource("7_b5yy1")]
 position = Vector2(651, 214)
 
-[node name="melee_enemy2" parent="Warriors" instance=ExtResource("2_0a42t")]
+[node name="melee_enemy2" parent="Warriors" instance=ExtResource("7_b5yy1")]
 position = Vector2(648, 326)
 
-[node name="melee_enemy3" parent="Warriors" instance=ExtResource("2_0a42t")]
+[node name="melee_enemy3" parent="Warriors" instance=ExtResource("7_b5yy1")]
 position = Vector2(651, 451)
 
 [node name="UI" type="CanvasLayer" parent="."]
