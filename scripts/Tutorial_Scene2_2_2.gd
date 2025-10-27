@@ -10,6 +10,6 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Lam-Ang":
 		entered = false
 	
-func _process(delta: float) -> void:
+func _process(_delta):
 	if entered == true:
-		get_tree().change_scene_to_file("res://scenes/Tutorial/Scene3.tscn")
+		SceneManager.change_scene_to("res://scenes/Tutorial/Scene3.tscn", "FromScene2_2")

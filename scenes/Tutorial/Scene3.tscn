@@ -422,9 +422,8 @@ sources/24 = SubResource("TileSetAtlasSource_hso16")
 
 [node name="Scene3_IgorotVillage" type="Node2D"]
 
-[node name="Camera2D2" type="Camera2D" parent="."]
-visible = false
-position = Vector2(649, 560)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(604, 247)
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_b5yy1")
@@ -459,7 +458,7 @@ layer_11/tile_data = PackedInt32Array(2031617, 18, 1, 2097153, 18, 2, 2162689, 1
 root_node = NodePath("../..")
 
 [node name="Lam-Ang" parent="." instance=ExtResource("6_furns")]
-position = Vector2(43, 293)
+position = Vector2(135, 300)
 
 [node name="Warriors" type="Node2D" parent="."]
 position = Vector2(106, -23)
@@ -493,3 +492,6 @@ offset_bottom = 4.0
 [node name="DrumsSound" type="AudioStreamPlayer" parent="Node"]
 
 [node name="CombatMusic" type="AudioStreamPlayer" parent="Node"]
+
+[node name="FromScene2_2" type="Marker2D" parent="."]
+position = Vector2(19, 283)

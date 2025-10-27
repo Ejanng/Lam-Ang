@@ -427,7 +427,7 @@ size = Vector2(16, 172)
 [node name="Starting_Town" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(606, 267)
+position = Vector2(604, 247)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rxax5")
@@ -500,8 +500,7 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_j37ar")
 
 [node name="FromScene2_1" type="Marker2D" parent="."]
-position = Vector2(617, 624)
+position = Vector2(616, 616)
 
-[connection signal="body_entered" from="ExitToScene2_1" to="." method="_on_exit_to_scene_2_1_body_entered"]
 [connection signal="body_entered" from="ExitToScene2_1" to="ExitToScene2_1" method="_on_body_entered"]
 [connection signal="body_exited" from="ExitToScene2_1" to="ExitToScene2_1" method="_on_body_exited"]
