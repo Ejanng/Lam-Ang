@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://12jcxjf74g5m"]
 
-[ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://Environments/grass.png" id="1_a84p5"]
-[ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://Environments/Dirttile.png" id="2_kdnta"]
-[ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://Environments/Treee.png" id="3_b4su6"]
+[ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environment Assets/grass.png" id="1_a84p5"]
+[ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://assets/Environment Assets/Dirttile.png" id="2_kdnta"]
+[ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://assets/Environment Assets/Treee.png" id="3_b4su6"]
 [ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="4_qja8t"]
 [ext_resource type="Script" uid="uid://cyha5neg4h7vr" path="res://scripts/Tutorial_Scene2_2_1.gd" id="5_ld6t8"]
 [ext_resource type="Script" uid="uid://dpek2utsmu443" path="res://scripts/Tutorial_Scene2_2_2.gd" id="6_rg038"]

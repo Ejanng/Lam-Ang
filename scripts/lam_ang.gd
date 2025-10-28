@@ -49,10 +49,8 @@ var playerPos = Vector2.ZERO
 @onready var xpBar = $XPBar
 @onready var attackArea = $AttackArea
 @onready var coinLabel = $CoinLabel
-@onready var cameraZoom = $Camera2D
 
 func _ready() -> void:
-	cameraZoom = Global.cameraZoomValue
 	healthBar.max_value = Global.MAX_HEALTH
 	healthBar.value = Global.playerHealth
 	energyBar.max_value = Global.MAX_ENERGY
