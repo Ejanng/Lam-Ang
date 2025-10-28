@@ -8,9 +8,6 @@ const REGEN_RATE_ENERGY = 10.0
 const REGEN_RATE_HP = 2.0
 const ENERGY_DECAY_RATE_SPRINT = 2.0
 
-const MAX_ENERGY = 70
-const MAX_HEALTH = 100
-
 const REGEN_CD = 5.0
 const DOUBLE_TAP_WINDOW = 0.3
 const DASH_ENERGY_COST = 20.0
@@ -34,8 +31,6 @@ var isSprinting = false
 var isAttacking = false
 var isHurt = false
 
-var playerHealth = MAX_HEALTH
-var playerEnergy = MAX_ENERGY
 var playerXP = 50
 var xpToNextLevel: int = 100
 var playerLevel = 1
@@ -64,10 +59,10 @@ var mapBounds = Rect2(0, 0, 1024, 2048)
 @onready var coinLabel = $CoinLabel
 
 func _ready() -> void:
-	healthBar.max_value = MAX_HEALTH
-	healthBar.value = playerHealth
-	energyBar.max_value = MAX_ENERGY
-	energyBar.value = playerEnergy
+	healthBar.max_value = Global.MAX_HEALTH
+	healthBar.value = Global.playerHealth
+	energyBar.max_value = Global.MAX_ENERGY
+	energyBar.value = Global.playerEnergy
 	regenTimer.wait_time = REGEN_CD
 	regenTimer.one_shot = true
 	energyRegenTimer.wait_time = REGEN_CD
@@ -132,16 +127,16 @@ func cameraMovement():
 	global_position.y = clamp(global_position.y, mapBounds.position.x, mapBounds.position.y + mapBounds.size.y)
 	
 func regenPlayerHealth(delta) -> void:
-	if isRegeningHP and playerHealth < MAX_HEALTH:
-		playerHealth += REGEN_RATE_HP * delta
-		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
-		healthBar.value = playerHealth
+	if isRegeningHP and Global.Global.playerHealth < Global.MAX_HEALTH:
+		Global.Global.playerHealth += REGEN_RATE_HP * delta
+		Global.Global.playerHealth = clamp(Global.Global.playerHealth, 0, Global.MAX_HEALTH)
+		Global.healthBar.value = Global.Global.playerHealth
 
 func regenPlayerEnergy(delta) -> void:
-	if isRegeningEnergy and playerEnergy < MAX_ENERGY:
-		playerEnergy += REGEN_RATE_ENERGY * delta
-		playerEnergy = clamp(playerEnergy, 0, MAX_ENERGY)
-		energyBar.value = playerEnergy
+	if isRegeningEnergy and Global.Global.playerEnergy < Global.Global.MAX_ENERGY:
+		Global.Global.playerEnergy += REGEN_RATE_ENERGY * delta
+		Global.playerEnergy = clamp(Global.playerEnergy, 0, Global.MAX_ENERGY)
+		energyBar.value = Global.playerEnergy
 	if isDashing or isSprinting or isAttacking:
 		isRegeningEnergy = false
 		
@@ -182,13 +177,13 @@ func handle_movement(delta):
 				doubleTapTimers[dir] -= delta
 				
 		if Input.is_action_pressed("ui_select"):
-			print(playerEnergy, ENERGY_DECAY_RATE_SPRINT)
-			if playerEnergy >= ENERGY_DECAY_RATE_SPRINT:
+			print(Global.playerEnergy, ENERGY_DECAY_RATE_SPRINT)
+			if Global.playerEnergy >= ENERGY_DECAY_RATE_SPRINT:
 				isRegeningEnergy = false
 				isSprinting = true
-				playerEnergy -= ENERGY_DECAY_RATE_SPRINT * delta
-				playerEnergy = clamp(playerEnergy, 0, MAX_ENERGY)
-				energyBar.value = playerEnergy
+				Global.playerEnergy -= ENERGY_DECAY_RATE_SPRINT * delta
+				Global.playerEnergy = clamp(Global.playerEnergy, 0, Global.MAX_ENERGY)
+				energyBar.value = Global.playerEnergy
 				energyRegenTimer.start()
 				currentSpeed = SPRINT
 			
@@ -231,11 +226,11 @@ func handle_double_dash(direction):
 	for dir in ["left", "right", "up", "down"]:
 		if Input.is_action_just_pressed("ui_" + dir):
 			if doubleTapTimers[dir] > 0:
-				if playerEnergy >= DASH_ENERGY_COST:
+				if Global.playerEnergy >= DASH_ENERGY_COST:
 					start_dash(dir)
-					playerEnergy -= DASH_ENERGY_COST
-					energyBar.value = playerEnergy
-					print("Dashing", dir, "- Energy left: ", playerEnergy)
+					Global.playerEnergy -= DASH_ENERGY_COST
+					energyBar.value = Global.playerEnergy
+					print("Dashing", dir, "- Energy left: ", Global.playerEnergy)
 					energyRegenTimer.start()
 				else:
 					print("Not enough energy to dash!")
@@ -279,9 +274,9 @@ func attack():
 		passiveTimer.start()
 		
 		
-		playerEnergy -= passiveCost
+		Global.playerEnergy -= passiveCost
 		print(passiveCost)
-		energyBar.value = playerEnergy
+		energyBar.value = Global.playerEnergy
 		
 		# issue on player attack at start wont work
 		# this function will overide that and deal dmg on enemy will work
@@ -307,9 +302,9 @@ func attack():
 		dealAttackCD.start()
 
 func die():
-	if playerHealth <= 0 and name:
+	if Global.playerHealth <= 0 and name:
 		isPlayerAlive = false
-		playerHealth = 0
+		Global.playerHealth = 0
 		print("Player Died!")
 		self.queue_free()
 		
@@ -318,14 +313,14 @@ func player():
 
 func take_damage(damage: int):
 	if isPlayerAlive and not isHurt:
-		playerHealth -= damage
-		playerHealth = clamp(playerHealth, 0, MAX_HEALTH)
-		healthBar.value = playerHealth
+		Global.playerHealth -= damage
+		Global.playerHealth = clamp(Global.playerHealth, 0, Global.MAX_HEALTH)
+		healthBar.value = Global.playerHealth
 		isRegeningHP = false
 		regenTimer.start()  # Reset health regen timer
-		print("Player took ", damage, " damage. Health: ", playerHealth)
+		print("Player took ", damage, " damage. Health: ", Global.playerHealth)
 		
-		if playerHealth > 0:
+		if Global.playerHealth > 0:
 			isHurt = true
 			print("am i playing? hurttt")
 			anim.play("hurt")

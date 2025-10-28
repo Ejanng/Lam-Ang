@@ -1,8 +1,8 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761567458
+::res://::1761642293
 icon.svg::CompressedTexture2D/CompressedTexture2D::1806369474252542340::1760907660::1761472525::1::::<><><>0<>0<>cc34509834156c61553ab835d0113c2c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1761473744
-::res://assets/Environment Assets/::1761567042
+::res://assets/Environment Assets/::1761622752
 CliffGrass edge.png::CompressedTexture2D::7212522726990942559::1761473744::1761473744::1::::<><><>0<>0<>ad0d0a898cda60ec07b43a7c1abfc940<>res://.godot/imported/CliffGrass edge.png-30cb087a4a459cbf19ddc33031703a32.ctex::
 CliffGrass.png::CompressedTexture2D/CompressedTexture2D::5210067291717494895::1761473744::1761473744::1::::<><><>0<>0<>cec7b5e155874ac7802d87dc705b2ebc<>res://.godot/imported/CliffGrass.png-2a23b5718eb0e21ee00e22738ce14e73.ctex::
 crops.png::CompressedTexture2D/CompressedTexture2D::8285833501953680040::1761473744::1761473744::1::::<><><>0<>0<>697ac4d0f8baa5f87fe6c68514347dfe<>res://.godot/imported/crops.png-3e899574486bd485307bd2ac53f5fb08.ctex::
@@ -20,7 +20,7 @@ M.png::CompressedTexture2D::4267878124702699013::1761473744::1761473744::1::::<>
 Mountain.png::CompressedTexture2D::310278136723278478::1761473744::1761473744::1::::<><><>0<>0<>79e1ff6f8293a887d5e5c383b7a6895b<>res://.godot/imported/Mountain.png-05fe2bd563cbd84e19823a80038266f0.ctex::
 Moutains.png::CompressedTexture2D::2072548317758754284::1761473744::1761473744::1::::<><><>0<>0<>8e4d2bf50c46fcdf98957ef9e7a2e430<>res://.godot/imported/Moutains.png-1092b9dd9ba439899dc4fb8b62036fb6.ctex::
 Tree redesign.png::CompressedTexture2D/CompressedTexture2D::1888142616547961424::1761473744::1761473744::1::::<><><>0<>0<>5006ef2cdb37a213c1b3067bb2eec426<>res://.godot/imported/Tree redesign.png-07dda5da60d7b8832143fdca6c63e4c5.ctex::
-Tree.png::CompressedTexture2D/CompressedTexture2D::8500146583565801797::1761473744::1761567459::1::::<><><>0<>0<>245aaee865830f04612aed84ec631169<>res://.godot/imported/Tree.png-4a271c1a40f46278235a5a5de860c316.ctex::
+Tree.png::CompressedTexture2D/CompressedTexture2D::8500146583565801797::1761473744::1761622752::1::::<><><>0<>0<>245aaee865830f04612aed84ec631169<>res://.godot/imported/Tree.png-4a271c1a40f46278235a5a5de860c316.ctex::
 tree.png::CompressedTexture2D::8500146583565801797::1761473744::1761567042::1::::<><><>0<>0<>8f13d79e3e198f79f7d1c923d103e444<>res://.godot/imported/tree.png-3d6f19ddfd79713eb45def957237e19e.ctex::
 Treee.png::CompressedTexture2D::459983038745842979::1761473744::1761473744::1::::<><><>0<>0<>2f69348695344febeffcb191f19bd6fc<>res://.godot/imported/Treee.png-66070aa88948f6a18b9864b65d1fe688.ctex::
 trees.png::CompressedTexture2D::6206285477966573801::1761473744::1761473744::1::::<><><>0<>0<>371f47a8487ee9576bfd9f3567cf06f5<>res://.godot/imported/trees.png-bcb8474dc25395cb83fff986e23d64ec.ctex::
@@ -67,7 +67,7 @@ Title.png::CompressedTexture2D::749920079235215664::1761473018::1761473018::1:::
 tree.png::CompressedTexture2D::8500146583565801797::1761473018::1761473018::1::::<><><>0<>0<>406ad00530f938cc9ac0764737427043<>res://.godot/imported/tree.png-327b61d305914317578290ee980e4433.ctex::
 Treee.png::CompressedTexture2D::459983038745842979::1761473018::1761473018::1::::<><><>0<>0<>651792e4ab1f77e97a3f65fa53d46035<>res://.godot/imported/Treee.png-d0710ff54a15358828b919f9a50aca0c.ctex::
 trees.png::CompressedTexture2D::6206285477966573801::1761473018::1761473018::1::::<><><>0<>0<>8e9d74a7697ef88f5b199aa109e71291<>res://.godot/imported/trees.png-386201e216120c27908e10473244625c.ctex::
-::res://scenes/::1761493420
+::res://scenes/::1761622752
 button.gd::GDScript::9151440711921543709::1761493420::0::1::::<>Button<><>0<>0<><>::
 button_2.gd::GDScript::3449048450983706067::1761493420::0::1::::<>Button<><>0<>0<><>::
 game.tscn::PackedScene::5136105835804318630::1761473744::0::1::::<><><>0<>0<><>::uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://blo75nahvq6g1::::res://scenes/Hostile/ranged_tribe_member.tscn
@@ -78,34 +78,36 @@ tutorial_scene_2.tscn::PackedScene::1881199380682544616::1761473018::0::1::::<><
 ::res://scenes/Drops/::1761473744
 CoinDrop.tscn::PackedScene::886939086953359915::1761473744::0::1::::<><><>0<>0<><>::uid://ck6auu12t34u0::::res://assets/Environment Assets/Kubo 2.png<>uid://o0h43lwnpcym::::res://scripts/coin_drop.gd
 XPOrb.tscn::PackedScene::4594444080677332832::1761473744::0::1::::<><><>0<>0<><>::uid://dod42px5mjo3k::::res://scripts/XPOrb.gd<>uid://ck6auu12t34u0::::res://assets/Environment Assets/Kubo 2.png
-::res://scenes/Hostile/::1761567042
-melee_tribe_member.tscn::PackedScene::2574462848710875326::1761567042::0::1::::<><><>0<>0<><>::uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://buwasdtb3dsvk::::res://scripts/melee_enemy.gd<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
+::res://scenes/Hostile/::1761622752
+melee_tribe_member.tscn::PackedScene::2574462848710875326::1761622752::0::1::::<><><>0<>0<><>::uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://buwasdtb3dsvk::::res://scripts/melee_enemy.gd<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
 projectile.tscn::PackedScene::5587501533922286515::1761473744::0::1::::<><><>0<>0<><>::uid://bs7uppd36kia::::res://assets/Environment Assets/Kubo 2.png<>uid://dps83b2rlmgw6::::res://scripts/projectile.gd
 ranged_tribe_member.tscn::PackedScene::3189396453004295698::1761473744::0::1::::<><><>0<>0<><>::uid://b6tkcsf7dvwml::::res://scripts/ranged_enemy.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
-::res://scenes/Player/::1761567042
-lam_ang.tscn::PackedScene::2977696409066647794::1761567042::0::1::::<><><>0<>0<><>::uid://c8vs6jfdt5lrb::::res://scripts/lam_ang.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://ult3cm3ocub7::::res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png<>uid://15e7hnpffcr1::::res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png<>uid://ddxg0illq4jmm::::res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png
+::res://scenes/MainStory/::1761622752
+Plot1.tscn::PackedScene::4918623610492577208::1761622752::0::1::::<><><>0<>0<><>::
+::res://scenes/Player/::1761622752
+lam_ang.tscn::PackedScene::2977696409066647794::1761622752::0::1::::<><><>0<>0<><>::uid://c8vs6jfdt5lrb::::res://scripts/lam_ang.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://ult3cm3ocub7::::res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png<>uid://15e7hnpffcr1::::res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png<>uid://ddxg0illq4jmm::::res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png
 ::res://scenes/Plots/::1761473744
 starting_town.tscn::PackedScene::4283614478854630119::1761473744::0::1::::<><><>0<>0<><>::uid://cff76bduixjec::::res://scenes/game.tscn
-::res://scenes/Tutorial/::1761567042
-Scene1.tscn::PackedScene::8441096585817133714::1761567042::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://Environments/grass.png<>uid://eokialhslv6e::::res://Environments/Mountain.png<>uid://4r7tkukado4c::::res://Environments/Moutains.png<>uid://gs24at0wbyhn::::res://Environments/Treee.png<>uid://4p1g5gqwb62r::::res://Environments/Dirttile.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://drur5k3p0e6hm::::res://scripts/Tutorial_Scene1.gd
-Scene2_1.tscn::PackedScene::4309855362611622457::1761567042::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://Environments/grass.png<>uid://eokialhslv6e::::res://Environments/Mountain.png<>uid://4r7tkukado4c::::res://Environments/Moutains.png<>uid://gs24at0wbyhn::::res://Environments/Treee.png<>uid://4p1g5gqwb62r::::res://Environments/Dirttile.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://dm3hv1wyuviln::::res://scripts/Tutorial_Scene2_1_1.gd<>uid://4b6k6lh2diir::::res://scripts/Tutorial_Scene2_1_2.gd
-Scene2_2.tscn::PackedScene::1881199380682544616::1761567042::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://Environments/grass.png<>uid://4p1g5gqwb62r::::res://Environments/Dirttile.png<>uid://gs24at0wbyhn::::res://Environments/Treee.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://cyha5neg4h7vr::::res://scripts/Tutorial_Scene2_2_1.gd<>uid://dpek2utsmu443::::res://scripts/Tutorial_Scene2_2_2.gd
-Scene3&4.tscn::PackedScene::7172865294202710861::1761567042::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://Environments/grass.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://eokialhslv6e::::res://Environments/Mountain.png<>uid://4r7tkukado4c::::res://Environments/Moutains.png<>uid://gs24at0wbyhn::::res://Environments/Treee.png<>uid://4p1g5gqwb62r::::res://Environments/Dirttile.png
+::res://scenes/Tutorial/::1761640269
+Scene1.tscn::PackedScene::8441096585817133714::1761640269::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://Environments/grass.png<>uid://eokialhslv6e::::res://Environments/Mountain.png<>uid://4r7tkukado4c::::res://Environments/Moutains.png<>uid://gs24at0wbyhn::::res://Environments/Treee.png<>uid://4p1g5gqwb62r::::res://Environments/Dirttile.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://drur5k3p0e6hm::::res://scripts/Tutorial_Scene1.gd
+Scene2_1.tscn::PackedScene::4309855362611622457::1761622752::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://Environments/grass.png<>uid://eokialhslv6e::::res://Environments/Mountain.png<>uid://4r7tkukado4c::::res://Environments/Moutains.png<>uid://gs24at0wbyhn::::res://Environments/Treee.png<>uid://4p1g5gqwb62r::::res://Environments/Dirttile.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://dm3hv1wyuviln::::res://scripts/Tutorial_Scene2_1_1.gd<>uid://4b6k6lh2diir::::res://scripts/Tutorial_Scene2_1_2.gd
+Scene2_2.tscn::PackedScene::1881199380682544616::1761622752::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://Environments/grass.png<>uid://4p1g5gqwb62r::::res://Environments/Dirttile.png<>uid://gs24at0wbyhn::::res://Environments/Treee.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://cyha5neg4h7vr::::res://scripts/Tutorial_Scene2_2_1.gd<>uid://dpek2utsmu443::::res://scripts/Tutorial_Scene2_2_2.gd
+Scene3.tscn::PackedScene::7172865294202710861::1761622752::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://Environments/grass.png<>uid://eokialhslv6e::::res://Environments/Mountain.png<>uid://4r7tkukado4c::::res://Environments/Moutains.png<>uid://gs24at0wbyhn::::res://Environments/Treee.png<>uid://4p1g5gqwb62r::::res://Environments/Dirttile.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn
 Scene4.tscn::PackedScene::8760102617824480530::1761567042::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://Environments/grass.png<>uid://eokialhslv6e::::res://Environments/Mountain.png<>uid://4r7tkukado4c::::res://Environments/Moutains.png<>uid://gs24at0wbyhn::::res://Environments/Treee.png<>uid://4p1g5gqwb62r::::res://Environments/Dirttile.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://blo75nahvq6g1::::res://scenes/Hostile/ranged_tribe_member.tscn
-::res://scripts/::1761567042
+::res://scripts/::1761622752
 coin_drop.gd::GDScript::1034731550420752012::1761473744::0::1::::<>Area2D<><>0<>0<><>::
 DropManager.gd::GDScript::3732885360965250149::1761473744::0::1::::<>Node<><>0<>0<><>::
 global.gd::GDScript::2091869979308642291::1761473744::0::1::::<>Node<><>0<>0<><>::
-lam_ang.gd::GDScript::7133573886354436655::1761567042::0::1::::<>CharacterBody2D<><>0<>0<><>::
-melee_enemy.gd::GDScript::3835646198337678548::1761567042::0::1::::<>CharacterBody2D<><>0<>0<><>::
+lam_ang.gd::GDScript::7133573886354436655::1761622752::0::1::::<>CharacterBody2D<><>0<>0<><>::
+melee_enemy.gd::GDScript::3835646198337678548::1761622752::0::1::::<>CharacterBody2D<><>0<>0<><>::
 projectile.gd::GDScript::8251307263234145939::1761473744::0::1::::<>Area2D<><>0<>0<><>::
 ranged_enemy.gd::GDScript::4602109709917833619::1761473744::0::1::::<>CharacterBody2D<><>0<>0<><>::
-SceneManager.gd::GDScript::8108713360497690628::1761567042::0::1::::<>Node<><>0<>0<><>::
-Tutorial_Scene1.gd::GDScript::8394846279904384134::1761567042::0::1::::<>Area2D<><>0<>0<><>::
-Tutorial_Scene2_1_1.gd::GDScript::8059794673181546379::1761567042::0::1::::<>Area2D<><>0<>0<><>::
-Tutorial_Scene2_1_2.gd::GDScript::2039442573542767785::1761567042::0::1::::<>Area2D<><>0<>0<><>::
-Tutorial_Scene2_2_1.gd::GDScript::6471878522088993315::1761567042::0::1::::<>Area2D<><>0<>0<><>::
-Tutorial_Scene2_2_2.gd::GDScript::8221008683682105930::1761567042::0::1::::<>Area2D<><>0<>0<><>::
+SceneManager.gd::GDScript::8108713360497690628::1761622752::0::1::::<>Node<><>0<>0<><>::
+Tutorial_Scene1.gd::GDScript::8394846279904384134::1761622752::0::1::::<>Area2D<><>0<>0<><>::
+Tutorial_Scene2_1_1.gd::GDScript::8059794673181546379::1761622752::0::1::::<>Area2D<><>0<>0<><>::
+Tutorial_Scene2_1_2.gd::GDScript::2039442573542767785::1761622752::0::1::::<>Area2D<><>0<>0<><>::
+Tutorial_Scene2_2_1.gd::GDScript::6471878522088993315::1761622752::0::1::::<>Area2D<><>0<>0<><>::
+Tutorial_Scene2_2_2.gd::GDScript::8221008683682105930::1761622752::0::1::::<>Area2D<><>0<>0<><>::
 XPOrb.gd::GDScript::8149908829259818882::1761473744::0::1::::<>Area2D<><>0<>0<><>::
 ::res://sprite/::1761473018
 lam-ang spritesheet (1).png::CompressedTexture2D::5157916536171339310::1761473018::1761473018::1::::<><><>0<>0<>35d985dd6c14aaa964c20cdcedece715<>res://.godot/imported/lam-ang spritesheet (1).png-96b089d5a0659beee27396163b47e132.ctex::

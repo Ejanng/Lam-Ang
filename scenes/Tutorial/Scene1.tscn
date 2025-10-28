@@ -426,9 +426,6 @@ size = Vector2(16, 172)
 
 [node name="Starting_Town" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(604, 247)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rxax5")
 format = 2
@@ -485,7 +482,7 @@ position = Vector2(820, 436)
 position = Vector2(427, 319)
 
 [node name="Lam-Ang" parent="." instance=ExtResource("6_xxf11")]
-position = Vector2(607, 316)
+position = Vector2(620, 345)
 collision_mask = 3
 
 [node name="ExitToScene2_1" type="Area2D" parent="."]
