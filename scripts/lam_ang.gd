@@ -2,13 +2,13 @@ extends CharacterBody2D
 
 const WALK = 70.0
 const SPRINT = 140.0
-const DASH_SPEED = 8000
+const DASH_SPEED = 600
 
 const REGEN_RATE_ENERGY = 10.0
 const REGEN_RATE_HP = 2.0
 const ENERGY_DECAY_RATE_SPRINT = 2.0
 
-const REGEN_CD = 0
+const REGEN_CD = 5
 const DOUBLE_TAP_WINDOW = 0.3
 const DASH_ENERGY_COST = 5.0
 
@@ -20,7 +20,6 @@ var doubleTapTimers = {
 }
 
 var isEnemyInAttackRange = false
-var enemyAttackCooldown = true
 var isPlayerAlive = true
 var attackIP = false    # save for attack animation
 var isRegeningHP = false
@@ -31,18 +30,11 @@ var isSprinting = false
 var isAttacking = false
 var isHurt = false
 
-var playerXP = 50
-var xpToNextLevel: int = 100
-var playerLevel = 1
-var playerCoin = 0
-
 var currentSpeed = 0
-var dashDuration = 0.1
 var dashDirection = Vector2.ZERO
 var passiveCost = 5.0
 
 var playerPos = Vector2.ZERO
-var mapBounds = Rect2(0, 0, 1024, 2048)
 
 @onready var anim = $AnimatedSprite2D
 @onready var attackCD = $attack_cooldown
@@ -57,8 +49,10 @@ var mapBounds = Rect2(0, 0, 1024, 2048)
 @onready var xpBar = $XPBar
 @onready var attackArea = $AttackArea
 @onready var coinLabel = $CoinLabel
+@onready var cameraZoom = $Camera2D
 
 func _ready() -> void:
+	cameraZoom = Global.cameraZoomValue
 	healthBar.max_value = Global.MAX_HEALTH
 	healthBar.value = Global.playerHealth
 	energyBar.max_value = Global.MAX_ENERGY
@@ -67,8 +61,8 @@ func _ready() -> void:
 	regenTimer.one_shot = true
 	energyRegenTimer.wait_time = REGEN_CD
 	energyRegenTimer.one_shot = true
-	xpBar.value = playerXP
-	xpBar.max_value = xpToNextLevel
+	xpBar.value = Global.playerXP
+	xpBar.max_value = Global.xpToNextLevel
 	
 	update_coin_display()
 	
@@ -123,8 +117,8 @@ func cameraMovement():
 	velocity = input.normalized() * currentSpeed
 	move_and_slide()
 	
-	global_position.x = clamp(global_position.x, mapBounds.position.x, mapBounds.position.x + mapBounds.size.x)
-	global_position.y = clamp(global_position.y, mapBounds.position.x, mapBounds.position.y + mapBounds.size.y)
+	global_position.x = clamp(global_position.x, Global.mapBounds.position.x, Global.mapBounds.position.x + Global.mapBounds.size.x)
+	global_position.y = clamp(global_position.y, Global.mapBounds.position.x, Global.mapBounds.position.y + Global.mapBounds.size.y)
 	
 func regenPlayerHealth(delta) -> void:
 	if isRegeningHP and Global.playerHealth < Global.MAX_HEALTH:
@@ -141,25 +135,25 @@ func regenPlayerEnergy(delta) -> void:
 		isRegeningEnergy = false
 		
 func add_experience(amount: int) -> void:
-	playerXP += amount
-	xpBar.value = playerXP
-	print("Gained", amount, "XP. Total: ", playerXP)
+	Global.playerXP += amount
+	xpBar.value = Global.playerXP
+	print("Gained", amount, "XP. Total: ", Global.playerXP)
 	
-	if playerXP >= xpToNextLevel:
-		playerXP -= xpToNextLevel
-		playerXP += 1
-		playerLevel += 1
-		xpToNextLevel = int(xpToNextLevel * 1.2)
-		xpBar.value = playerXP
-		print("Level Up! Now Level: ", playerLevel)
+	if Global.playerXP >= Global.xpToNextLevel:
+		Global.playerXP -= Global.xpToNextLevel
+		Global.playerXP += 1
+		Global.playerLevel += 1
+		Global.xpToNextLevel = int(Global.xpToNextLevel * 1.2)
+		xpBar.value = Global.playerXP
+		print("Level Up! Now Level: ", Global.playerLevel)
 		
 func add_coin(amount: int) -> void:
-	playerCoin += amount
-	print("Gained", amount, "Coin. Total: ", playerCoin)
+	Global.playerCoin += amount
+	print("Gained", amount, "Coin. Total: ", Global.playerCoin)
 	update_coin_display()
 	
 func update_coin_display() -> void:
-	coinLabel.text = "Coins: " + str(playerCoin)
+	coinLabel.text = "Coins: " + str(Global.playerCoin)
 	
 func handle_movement(delta):
 	if isHurt:
@@ -220,9 +214,9 @@ func handle_movement(delta):
 		else:
 			if not attackIP:
 				anim.play("idle")
-		handle_double_dash(direction)
+		handle_double_dash()
 
-func handle_double_dash(direction):
+func handle_double_dash():
 	for dir in ["left", "right", "up", "down"]:
 		if Input.is_action_just_pressed("ui_" + dir):
 			if doubleTapTimers[dir] > 0:
@@ -240,7 +234,7 @@ func handle_double_dash(direction):
 
 func start_dash(dir):
 	isDashing = true
-	dashTimer.start(dashDuration)
+	dashTimer.start()
 	
 	match dir:
 		"left":
@@ -340,8 +334,6 @@ func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("enemy"):
 		isEnemyInAttackRange = false
 		
-func _on_attack_cooldown_timeout() -> void:
-	enemyAttackCooldown = true
 
 func _on_deal_attack_cooldown_timeout() -> void:
 	Global.playerCurrentAttack = false

@@ -7,7 +7,6 @@ const ATTACK_PAUSE_TIME = 1.0
 const ATTACK_RANGE = 15.0
 const WANDER_CHANCE = 0.6
 
-var player_chase = false
 var isPlayerInAttackRange = false
 var canTakeDMG = true
 var isAttacking= false
@@ -38,7 +37,6 @@ func _ready() -> void:
 	wanderTimer.wait_time = WANDER_INTERVAL
 	wanderTimer.one_shot = false
 	wanderTimer.start()
-	wanderTimer.connect("timeout", _on_wander_timer_timeout)
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
@@ -47,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		perform_attack()
 		
 func handle_movement():
-	if player_chase and player:
+	if Global.player_chase and player:
 		var distance = position.distance_to(player.position)
 		var direction = (player.position - position).normalized()
 		
@@ -106,12 +104,12 @@ func enemy():
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player = body
-		player_chase = true
+		Global.player_chase = true
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		player = null
-		player_chase = false
+		Global.player_chase = false
 	
 func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
