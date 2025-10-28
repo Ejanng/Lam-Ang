@@ -309,10 +309,6 @@ size = Vector2(16, 154.5)
 position = Vector2(1.9999998, 72)
 scale = Vector2(0.84000146, 0.84000146)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(603.99994, 246.99995)
-scale = Vector2(0.99999994, 0.99999994)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0h623")
 format = 2

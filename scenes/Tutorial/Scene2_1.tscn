@@ -427,9 +427,6 @@ size = Vector2(16, 171)
 [node name="Node2D" type="Node2D"]
 position = Vector2(-158, -12)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(604, 247)
-
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xcsmj")
 format = 2

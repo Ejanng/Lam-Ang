@@ -422,9 +422,6 @@ sources/24 = SubResource("TileSetAtlasSource_hso16")
 
 [node name="Scene3_IgorotVillage" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(604, 247)
-
 [node name="Background" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_b5yy1")
 format = 2

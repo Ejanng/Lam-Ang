@@ -2,15 +2,15 @@ extends CharacterBody2D
 
 const WALK = 70.0
 const SPRINT = 140.0
-const DASH_SPEED = 800
+const DASH_SPEED = 8000
 
 const REGEN_RATE_ENERGY = 10.0
 const REGEN_RATE_HP = 2.0
 const ENERGY_DECAY_RATE_SPRINT = 2.0
 
-const REGEN_CD = 5.0
+const REGEN_CD = 0
 const DOUBLE_TAP_WINDOW = 0.3
-const DASH_ENERGY_COST = 20.0
+const DASH_ENERGY_COST = 5.0
 
 var doubleTapTimers = {
 	"left": 0.0,
@@ -127,14 +127,14 @@ func cameraMovement():
 	global_position.y = clamp(global_position.y, mapBounds.position.x, mapBounds.position.y + mapBounds.size.y)
 	
 func regenPlayerHealth(delta) -> void:
-	if isRegeningHP and Global.Global.playerHealth < Global.MAX_HEALTH:
-		Global.Global.playerHealth += REGEN_RATE_HP * delta
-		Global.Global.playerHealth = clamp(Global.Global.playerHealth, 0, Global.MAX_HEALTH)
-		Global.healthBar.value = Global.Global.playerHealth
+	if isRegeningHP and Global.playerHealth < Global.MAX_HEALTH:
+		Global.playerHealth += REGEN_RATE_HP * delta
+		Global.playerHealth = clamp(Global.playerHealth, 0, Global.MAX_HEALTH)
+		healthBar.value = Global.playerHealth
 
 func regenPlayerEnergy(delta) -> void:
-	if isRegeningEnergy and Global.Global.playerEnergy < Global.Global.MAX_ENERGY:
-		Global.Global.playerEnergy += REGEN_RATE_ENERGY * delta
+	if isRegeningEnergy and Global.playerEnergy < Global.MAX_ENERGY:
+		Global.playerEnergy += REGEN_RATE_ENERGY * delta
 		Global.playerEnergy = clamp(Global.playerEnergy, 0, Global.MAX_ENERGY)
 		energyBar.value = Global.playerEnergy
 	if isDashing or isSprinting or isAttacking:
