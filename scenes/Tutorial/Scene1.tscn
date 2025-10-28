@@ -467,22 +467,22 @@ position = Vector2(703, 419)
 position = Vector2(749, 283)
 
 [node name="melee_enemy4" parent="." instance=ExtResource("7_o4f3m")]
-position = Vector2(369, 453)
+position = Vector2(394, 431)
 
 [node name="melee_enemy5" parent="." instance=ExtResource("7_o4f3m")]
 position = Vector2(823, 388)
 
 [node name="melee_enemy6" parent="." instance=ExtResource("7_o4f3m")]
-position = Vector2(491, 377)
+position = Vector2(617, 608)
 
 [node name="melee_enemy7" parent="." instance=ExtResource("7_o4f3m")]
-position = Vector2(924, 210)
+position = Vector2(880, 253)
 
 [node name="melee_enemy8" parent="." instance=ExtResource("7_o4f3m")]
-position = Vector2(919, 509)
+position = Vector2(820, 436)
 
 [node name="melee_enemy9" parent="." instance=ExtResource("7_o4f3m")]
-position = Vector2(344, 341)
+position = Vector2(427, 319)
 
 [node name="Lam-Ang" parent="." instance=ExtResource("6_xxf11")]
 position = Vector2(607, 316)
