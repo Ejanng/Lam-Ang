@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://dm3hv1wyuviln" path="res://scripts/Tutorial_Scene2_1_1.gd" id="7_281uv"]
 [ext_resource type="Script" uid="uid://4b6k6lh2diir" path="res://scripts/Tutorial_Scene2_1_2.gd" id="8_t8mm0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stokx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_281uv"]
 texture = ExtResource("1_c7qgl")
 0:0/0 = 0
 1:0/0 = 0
@@ -122,7 +122,7 @@ texture = ExtResource("1_c7qgl")
 6:8/0 = 0
 4:9/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j07pl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t8mm0"]
 texture = ExtResource("2_nbjlm")
 3:1/0 = 0
 4:1/0 = 0
@@ -162,7 +162,7 @@ texture = ExtResource("2_nbjlm")
 5:7/0 = 0
 6:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ls3hx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stokx"]
 texture = ExtResource("3_dn25g")
 3:0/0 = 0
 4:0/0 = 0
@@ -196,7 +196,7 @@ texture = ExtResource("3_dn25g")
 6:5/0 = 0
 7:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5602o"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j07pl"]
 texture = ExtResource("4_281uv")
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -297,7 +297,7 @@ texture = ExtResource("4_281uv")
 3:10/0 = 0
 3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sfpef"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ls3hx"]
 texture = ExtResource("5_t8mm0")
 0:0/0 = 0
 1:0/0 = 0
@@ -372,7 +372,7 @@ texture = ExtResource("5_t8mm0")
 7:7/0 = 0
 8:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rh6y4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5602o"]
 texture = ExtResource("2_nbjlm")
 3:1/0 = 0
 4:1/0 = 0
@@ -414,12 +414,12 @@ texture = ExtResource("2_nbjlm")
 
 [sub_resource type="TileSet" id="TileSet_xcsmj"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_stokx")
-sources/5 = SubResource("TileSetAtlasSource_rh6y4")
-sources/11 = SubResource("TileSetAtlasSource_j07pl")
-sources/14 = SubResource("TileSetAtlasSource_ls3hx")
-sources/18 = SubResource("TileSetAtlasSource_5602o")
-sources/24 = SubResource("TileSetAtlasSource_sfpef")
+sources/1 = SubResource("TileSetAtlasSource_281uv")
+sources/5 = SubResource("TileSetAtlasSource_5602o")
+sources/11 = SubResource("TileSetAtlasSource_t8mm0")
+sources/14 = SubResource("TileSetAtlasSource_stokx")
+sources/18 = SubResource("TileSetAtlasSource_j07pl")
+sources/24 = SubResource("TileSetAtlasSource_ls3hx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dn25g"]
 size = Vector2(16, 171)
@@ -471,6 +471,7 @@ layer_17/tile_data = PackedInt32Array(2555905, 18, 9, 2490369, 18, 8, 2424833, 1
 position = Vector2(615, 55)
 
 [node name="ExitToScene1" type="Area2D" parent="."]
+visible = false
 position = Vector2(536, 644)
 script = ExtResource("7_281uv")
 
@@ -480,6 +481,7 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_dn25g")
 
 [node name="ExitToScene2_2" type="Area2D" parent="."]
+visible = false
 position = Vector2(536, 644)
 script = ExtResource("8_t8mm0")
 
@@ -488,9 +490,11 @@ position = Vector2(607, -276)
 shape = SubResource("RectangleShape2D_dn25g")
 
 [node name="FromScene1" type="Marker2D" parent="."]
+visible = false
 position = Vector2(561, 45)
 
 [node name="FromScene2_2" type="Marker2D" parent="."]
+visible = false
 position = Vector2(1099, 368)
 
 [connection signal="body_entered" from="ExitToScene1" to="ExitToScene1" method="_on_body_entered"]
