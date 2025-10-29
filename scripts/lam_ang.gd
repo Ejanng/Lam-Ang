@@ -50,6 +50,7 @@ var playerPos = Vector2.ZERO
 @onready var xpBar = $XPBar
 @onready var attackArea = $AttackArea
 @onready var coinLabel = $CoinLabel
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
 func _ready() -> void:
 	healthBar.max_value = Global.MAX_HEALTH
@@ -65,44 +66,18 @@ func _ready() -> void:
 	
 	update_coin_display()
 	
-	#if SceneManager.target_spawn_point != "":
-		#var spawn_point = get_node_or_null("../" + SceneManager.target_spawn_point)
-		#if spawn_point:
-			#global_position = spawn_point.global_position
-		#SceneManager.target_spawn_point = ""  # Clear it
-	print("========== PLAYER READY ==========")
-	print("Player starting position BEFORE: ", global_position)
-	print("Target spawn point: '", SceneManager.target_spawn_point, "'")
-	
-	# Check if we should spawn at a specific point
-	if SceneManager.target_spawn_point != "":
-		var spawn_point = get_node_or_null("../" + SceneManager.target_spawn_point)
-		
-		if spawn_point:
-			print("Found spawn point node: ", spawn_point.name)
-			print("Spawn point position: ", spawn_point.global_position)
-			print("Spawn point local position: ", spawn_point.position)
-			
-			# Try both methods
-			global_position = spawn_point.global_position
-			print("Player position AFTER setting: ", global_position)
-		else:
-			print("ERROR: Spawn point not found!")
-			
-		SceneManager.target_spawn_point = ""
-	
-	print("Player final position: ", global_position)
-	print("==================================")
-	
-
-	#if SceneManager.spawn_position != Vector2.ZERO:
-		#global_position = SceneManager.spawn_position
-		#SceneManager.spawn_position = Vector2.ZERO
-	
 func _process(delta: float) -> void:
 	cameraMovement()
 	regenPlayerHealth(delta)
 	regenPlayerEnergy(delta)
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
+		#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/Scene1.dialogue"), "start")
+		#return
 	
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)

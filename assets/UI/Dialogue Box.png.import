@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmuwi5ovm18yy"
-path="res://.godot/imported/lam-ang idle _w sword spritesheet.png-d6326a264e2719fc91c5c255a0ef7e60.ctex"
+uid="uid://cc0lerklxn0d6"
+path="res://.godot/imported/Dialogue Box.png-e599cdd413425717e9fb457e74b96b2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Lam-ang/lam-ang idle _w sword spritesheet.png"
-dest_files=["res://.godot/imported/lam-ang idle _w sword spritesheet.png-d6326a264e2719fc91c5c255a0ef7e60.ctex"]
+source_file="res://assets/UI/Dialogue Box.png"
+dest_files=["res://.godot/imported/Dialogue Box.png-e599cdd413425717e9fb457e74b96b2c.ctex"]
 
 [params]
 
