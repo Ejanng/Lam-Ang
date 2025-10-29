@@ -458,15 +458,19 @@ root_node = NodePath("../..")
 position = Vector2(135, 300)
 
 [node name="Warriors" type="Node2D" parent="."]
+visible = false
 position = Vector2(106, -23)
 
 [node name="melee_enemy" parent="Warriors" instance=ExtResource("7_b5yy1")]
+visible = false
 position = Vector2(651, 214)
 
 [node name="melee_enemy2" parent="Warriors" instance=ExtResource("7_b5yy1")]
+visible = false
 position = Vector2(648, 326)
 
 [node name="melee_enemy3" parent="Warriors" instance=ExtResource("7_b5yy1")]
+visible = false
 position = Vector2(651, 451)
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -491,4 +495,5 @@ offset_bottom = 4.0
 [node name="CombatMusic" type="AudioStreamPlayer" parent="Node"]
 
 [node name="FromScene2_2" type="Marker2D" parent="."]
+visible = false
 position = Vector2(19, 283)
