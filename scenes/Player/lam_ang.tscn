@@ -1,11 +1,27 @@
-[gd_scene load_steps=29 format=3 uid="uid://bioohv47js651"]
+[gd_scene load_steps=47 format=3 uid="uid://bioohv47js651"]
 
 [ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
+[ext_resource type="Texture2D" uid="uid://b727b7acgwqpl" path="res://assets/Sprites/Lam-ang/lam-ang iswing sword angry spritesheet.png" id="2_5t7uf"]
 [ext_resource type="Texture2D" uid="uid://ult3cm3ocub7" path="res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png" id="2_ad0y5"]
 [ext_resource type="Texture2D" uid="uid://15e7hnpffcr1" path="res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png" id="3_h7kcq"]
 [ext_resource type="Texture2D" uid="uid://dn7ncb1xcmhoj" path="res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png" id="4_e34qr"]
+[ext_resource type="Texture2D" uid="uid://gc74qbhugg62" path="res://assets/Sprites/Lam-ang/lam-ang hurt _w sword spritesheet.png" id="4_yusw4"]
 [ext_resource type="Texture2D" uid="uid://ddxg0illq4jmm" path="res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png" id="5_d5ujj"]
+[ext_resource type="Texture2D" uid="uid://yad2o0to51go" path="res://assets/Sprites/Lam-ang/lam-ang idle _w sword spritesheet.png" id="6_fewss"]
+[ext_resource type="Texture2D" uid="uid://sn7o4nwdqen2" path="res://assets/Sprites/Lam-ang/lam-ang idle _w sword angry spritesheet.png" id="7_35ntw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2381"]
+atlas = ExtResource("2_5t7uf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl8sx"]
+atlas = ExtResource("2_5t7uf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl61q"]
+atlas = ExtResource("2_5t7uf")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3lmq"]
 atlas = ExtResource("2_ad0y5")
@@ -13,6 +29,18 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2oh65"]
 atlas = ExtResource("2_ad0y5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sv6y"]
+atlas = ExtResource("4_yusw4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2emm"]
+atlas = ExtResource("4_yusw4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heici"]
+atlas = ExtResource("4_yusw4")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67xbk"]
@@ -29,6 +57,38 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h7kcq"]
 atlas = ExtResource("1_qestl")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bah46"]
+atlas = ExtResource("6_fewss")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imw4i"]
+atlas = ExtResource("6_fewss")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or7ha"]
+atlas = ExtResource("6_fewss")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmhk6"]
+atlas = ExtResource("6_fewss")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qecjc"]
+atlas = ExtResource("7_35ntw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh1e5"]
+atlas = ExtResource("7_35ntw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iobbg"]
+atlas = ExtResource("7_35ntw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqehh"]
+atlas = ExtResource("7_35ntw")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8gi7s"]
@@ -65,10 +125,19 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qestl"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2381")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl8sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl61q")
+}],
 "loop": true,
 "name": &"attack",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 3.0,
@@ -80,6 +149,20 @@ animations = [{
 "loop": true,
 "name": &"hurt",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_4sv6y")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_l2emm")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_heici")
+}],
+"loop": true,
+"name": &"hurt_with_sword",
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -97,6 +180,40 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bah46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imw4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or7ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmhk6")
+}],
+"loop": true,
+"name": &"idle_with_sword",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qecjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh1e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iobbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqehh")
+}],
+"loop": true,
+"name": &"idle_with_sword_angry",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -164,9 +281,9 @@ script = ExtResource("1_67xbk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_qestl")
-animation = &"hurt"
+animation = &"attack"
 autoplay = "hurt"
-frame_progress = 0.51300544
+frame_progress = 0.616365
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
@@ -202,6 +319,7 @@ show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="deal_attack_cooldown" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -259,10 +377,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HurtTimer" type="Timer" parent="."]
 
-[connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
-[connection signal="body_exited" from="hitbox" to="." method="_on_punch_body_exited"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_punch_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="deal_attack_cooldown" to="." method="_on_deal_attack_cooldown_timeout"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]

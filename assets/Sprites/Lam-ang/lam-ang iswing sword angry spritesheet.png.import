@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtdsf4h28s5lx"
-path="res://.godot/imported/Tree.png-4a271c1a40f46278235a5a5de860c316.ctex"
+uid="uid://b727b7acgwqpl"
+path="res://.godot/imported/lam-ang iswing sword angry spritesheet.png-352347d5e5e584a982aff3805a96c24c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Environment Assets/Tree.png"
-dest_files=["res://.godot/imported/Tree.png-4a271c1a40f46278235a5a5de860c316.ctex"]
+source_file="res://assets/Sprites/Lam-ang/lam-ang iswing sword angry spritesheet.png"
+dest_files=["res://.godot/imported/lam-ang iswing sword angry spritesheet.png-352347d5e5e584a982aff3805a96c24c.ctex"]
 
 [params]
 

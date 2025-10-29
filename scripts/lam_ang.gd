@@ -29,6 +29,7 @@ var isDashing = false
 var isSprinting = false
 var isAttacking = false
 var isHurt = false
+var canMove = true
 
 var currentSpeed = 0
 var dashDirection = Vector2.ZERO
@@ -154,11 +155,15 @@ func update_coin_display() -> void:
 	coinLabel.text = "Coins: " + str(Global.playerCoin)
 	
 func handle_movement(delta):
+	var direction = Vector2.ZERO
+	currentSpeed = 0
+	isSprinting = false
+	
 	if isHurt:
 		return
-	var direction = Vector2.ZERO
-	isSprinting = false
-	currentSpeed = WALK
+	
+	if canMove:
+		currentSpeed = WALK
 	
 	if isDashing:
 		velocity = dashDirection * DASH_SPEED
@@ -279,15 +284,17 @@ func attack():
 			
 		# handle the attack animations
 		if abs(dir.x) > abs(dir.y):
-			anim.play("walk_side")
-			anim.flip_h = dir.x < 0 
+			anim.play("attack")
+			canMove = false
 			dealAttackCD.start()
 		else:
 			if dir.y < 0:
-				anim.play("walk_up")
+				anim.play("attack")
+				canMove = false
 				dealAttackCD.start()
 			else:
-				anim.play("walk_down")
+				anim.play("attack")
+				canMove = false
 				dealAttackCD.start()
 				
 		# finish the animation first before starting the cd
@@ -337,6 +344,7 @@ func _on_deal_attack_cooldown_timeout() -> void:
 	Global.playerCurrentAttack = false
 	attackArea.monitoring = false
 	attackIP = false
+	canMove = true
 
 func _on_regen_timer_timeout() -> void:
 	isRegeningHP = true
