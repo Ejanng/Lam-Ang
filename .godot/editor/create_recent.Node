@@ -1,0 +1,14 @@
+Camera2D
+Marker2D
+Timer
+Label
+CanvasLayer
+CollisionShape2D
+Area2D
+Label
+CanvasLayer
+ProgressBar
+AnimatedSprite2D
+AudioStreamPlayer
+AudioStreamPlayer2D
+Node
