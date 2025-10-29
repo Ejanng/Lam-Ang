@@ -158,12 +158,11 @@ func handle_movement(delta):
 	var direction = Vector2.ZERO
 	currentSpeed = 0
 	isSprinting = false
-	
 	if isHurt:
 		return
-	
 	if canMove:
 		currentSpeed = WALK
+		
 	
 	if isDashing:
 		velocity = dashDirection * DASH_SPEED
