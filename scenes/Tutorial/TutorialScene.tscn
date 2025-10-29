@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dsi6vlnusx1tm"]
+[gd_scene load_steps=36 format=3 uid="uid://dsi6vlnusx1tm"]
 
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://Environments/grass.png" id="1_23kjh"]
 [ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://Environments/Mountain.png" id="2_5bpsw"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://Environments/Treee.png" id="4_7luj0"]
 [ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://Environments/Dirttile.png" id="5_nx203"]
 [ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="7_5ry8j"]
+[ext_resource type="PackedScene" uid="uid://bg8igj13o1og6" path="res://dialogue/actionable.tscn" id="8_23kjh"]
 [ext_resource type="PackedScene" uid="uid://di6ytm5suocus" path="res://npcs/namongan.tscn" id="8_om1g8"]
+[ext_resource type="Resource" uid="uid://k0ajtmpkft7" path="res://dialogue/Scene1.dialogue" id="9_5bpsw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gdwvu"]
 texture = ExtResource("1_23kjh")
@@ -1539,9 +1541,9 @@ sources/14 = SubResource("TileSetAtlasSource_xmqx8")
 sources/18 = SubResource("TileSetAtlasSource_fuh3e")
 sources/24 = SubResource("TileSetAtlasSource_chk6s")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jkmf"]
+
 [node name="Tutorial" type="Node2D"]
-position = Vector2(63, 126)
-scale = Vector2(0.3, 0.3)
 
 [node name="Empty" type="TileMap" parent="."]
 position = Vector2(1134.3699, -27.83728)
@@ -1695,3 +1697,9 @@ collision_mask = 3
 
 [node name="Namongan" parent="." instance=ExtResource("8_om1g8")]
 position = Vector2(700, 313.33334)
+
+[node name="Actionable" parent="Namongan" instance=ExtResource("8_23kjh")]
+dialogue_resource = ExtResource("9_5bpsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Namongan/Actionable"]
+shape = SubResource("CapsuleShape2D_2jkmf")

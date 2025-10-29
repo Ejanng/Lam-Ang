@@ -49,6 +49,7 @@ var playerPos = Vector2.ZERO
 @onready var xpBar = $XPBar
 @onready var attackArea = $AttackArea
 @onready var coinLabel = $CoinLabel
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
 func _ready() -> void:
 	healthBar.max_value = Global.MAX_HEALTH
@@ -68,6 +69,14 @@ func _process(delta: float) -> void:
 	cameraMovement()
 	regenPlayerHealth(delta)
 	regenPlayerEnergy(delta)
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
+		#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/Scene1.dialogue"), "start")
+		#return
 	
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)

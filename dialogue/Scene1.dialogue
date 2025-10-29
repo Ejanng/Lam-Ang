@@ -1,11 +1,15 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+
+Namongan: Must you go, Don Juan? I fear for you... and our child grows within me.
+
+Don Juan: The Igorots have raided our lands for the last time. I must bring peace to Nalbuan, my love. I will return before our child is born.
+
+Namongan: Then take this with you
+
+- Claim Anting-anting
+	Namongan: May it protect you in the mountains.
+
+Don Juan: I will return. I promise
 => END
+
+

@@ -35,12 +35,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 2.5
+"speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4t8w"]
-radius = 11.0
-height = 32.0
+radius = 17.0
+height = 36.0
 
 [node name="Namongan" type="CharacterBody2D"]
 
@@ -48,7 +48,8 @@ height = 32.0
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rebq2")
 animation = &"idle_down"
-frame_progress = 0.9265115
+autoplay = "idle_down"
+frame_progress = 0.54473984
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_e4t8w")

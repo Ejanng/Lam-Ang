@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bioohv47js651"]
+[gd_scene load_steps=30 format=3 uid="uid://bioohv47js651"]
 
 [ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
@@ -157,6 +157,9 @@ bg_color = Color(0.905882, 0.980392, 0.196078, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ad0y5"]
 radius = 19.235384
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_q3lmq"]
+radius = 21.0
+
 [node name="Lam-Ang" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_67xbk")
@@ -164,9 +167,8 @@ script = ExtResource("1_67xbk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_qestl")
-animation = &"hurt"
+animation = &"idle"
 autoplay = "hurt"
-frame_progress = 0.51300544
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
@@ -259,10 +261,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HurtTimer" type="Timer" parent="."]
 
-[connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_q3lmq")
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
-[connection signal="body_exited" from="hitbox" to="." method="_on_punch_body_exited"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_punch_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="deal_attack_cooldown" to="." method="_on_deal_attack_cooldown_timeout"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
