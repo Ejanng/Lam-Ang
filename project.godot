@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://scripts/global.gd"
 DropManager="*res://scripts/DropManager.gd"
-SceneManager="*res://scripts/SceneManager.gd"
+SceneManager="res://scripts/SceneManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [editor_plugins]
