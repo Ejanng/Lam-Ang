@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://dagubqg31lo2h"]
 
-[ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://Environments/grass.png" id="1_no7of"]
-[ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://Environments/Mountain.png" id="2_13psv"]
-[ext_resource type="Texture2D" uid="uid://4r7tkukado4c" path="res://Environments/Moutains.png" id="3_7gw6k"]
-[ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://Environments/Treee.png" id="4_sviqc"]
-[ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://Environments/Dirttile.png" id="5_hso16"]
+[ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environments/grass.png" id="1_no7of"]
+[ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://assets/Environments/Mountain.png" id="2_13psv"]
+[ext_resource type="Texture2D" uid="uid://4r7tkukado4c" path="res://assets/Environments/Moutains.png" id="3_7gw6k"]
+[ext_resource type="Texture2D" uid="uid://gs24at0wbyhn" path="res://assets/Environments/Tree.png" id="4_sviqc"]
+[ext_resource type="Texture2D" uid="uid://4p1g5gqwb62r" path="res://assets/Environments/Dirttile.png" id="5_hso16"]
 [ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="6_furns"]
 [ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/melee_tribe_member.tscn" id="7_b5yy1"]
 
