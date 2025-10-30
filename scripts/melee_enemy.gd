@@ -14,7 +14,6 @@ var canAttack = true
 
 var player = null
 var health = 100 
-var meleeDMG = 20
 var enemyDMG = 20
 
 var xpDrop = 20
@@ -91,8 +90,8 @@ func perform_attack():
 	if player and is_instance_valid(player) and isPlayerInAttackRange:
 		if roll <= hitChance:
 			if player.has_method("take_damage"):
-				player.take_damage(enemyDMG)
-				print("Enemy dealt ", enemyDMG, " damage to player!")
+				player.take_damage(enemyDMG - Global.addDef)
+				print("Enemy dealt ", enemyDMG - Global.addDef, " damage to player!")
 		else:
 			print("Enemy missed the attack")
 	attackPauseTimer.start()
@@ -120,13 +119,13 @@ func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		isPlayerInAttackRange = false
 
-func deal_dmg():
+func deal_dmg(damage):
 	if not canTakeDMG:
 		return
 	canTakeDMG = false
-	health -= meleeDMG
+	health -= damage
 	health_bar.value = health
-	print("Player Deals DMG: ", meleeDMG, "\nEnemy Health: ", health)
+	print("Player Deals DMG: ", damage, "\nEnemy Health: ", health)
 	
 	takeDMGCD.stop()
 	takeDMGCD.start()
