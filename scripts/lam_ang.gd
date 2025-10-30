@@ -54,6 +54,7 @@ var playerPos = Vector2.ZERO
 @onready var inventoryGui = $InventoryGui
 
 @export var inventory: Inventory
+@export var artifact: Artifacts
 
 func _ready() -> void:
 	healthBar.max_value = Global.MAX_HEALTH
@@ -147,7 +148,7 @@ func handle_movement(delta):
 	if isHurt:
 		return
 	if canMove:
-		currentSpeed = WALK
+		currentSpeed = WALK + Global.addSpeed
 		
 	
 	if isDashing:
@@ -167,7 +168,7 @@ func handle_movement(delta):
 				Global.playerEnergy = clamp(Global.playerEnergy, 0, Global.MAX_ENERGY)
 				energyBar.value = Global.playerEnergy
 				energyRegenTimer.start()
-				currentSpeed = SPRINT
+				currentSpeed = SPRINT + Global.addSpeed
 			
 		# movements directions
 		if Input.is_action_pressed("ui_right"):
@@ -260,7 +261,7 @@ func attack():
 		# this function only work once... better not remove it
 		for body in attackArea.get_overlapping_bodies():
 			if Global.playerCurrentAttack and body.has_method("deal_dmg"):
-				body.deal_dmg()
+				body.deal_dmg(Global.playerDamage)
 			
 		# handle the attack animations
 		if abs(dir.x) > abs(dir.y):
@@ -342,8 +343,7 @@ func _on_sprint_energy_decay_timeout() -> void:
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if Global.playerCurrentAttack and body.has_method("deal_dmg"):
-		body.deal_dmg()
-
+		body.deal_dmg(Global.playerDamage)
 
 func _on_exit_to_scene_2_2_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
