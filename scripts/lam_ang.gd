@@ -54,6 +54,7 @@ var playerPos = Vector2.ZERO
 @onready var inventoryGui = $InventoryGui
 
 @export var inventory: Inventory
+@export var artifact: Artifacts
 
 func _ready() -> void:
 	healthBar.max_value = Global.MAX_HEALTH
@@ -343,7 +344,6 @@ func _on_sprint_energy_decay_timeout() -> void:
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if Global.playerCurrentAttack and body.has_method("deal_dmg"):
 		body.deal_dmg(Global.playerDamage)
-
 
 func _on_exit_to_scene_2_2_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
