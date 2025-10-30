@@ -1,10 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://bioohv47js651"]
+[gd_scene load_steps=51 format=3 uid="uid://bioohv47js651"]
 
 [ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
 [ext_resource type="Texture2D" uid="uid://d0e2vdb0hpbaj" path="res://assets/Sprites/Lam-ang/lam-ang iswing sword angry spritesheet.png" id="2_5t7uf"]
 [ext_resource type="Texture2D" uid="uid://ult3cm3ocub7" path="res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png" id="2_ad0y5"]
 [ext_resource type="Resource" uid="uid://dbnujrtlpcy0i" path="res://Inventory/Item/playerInventory.tres" id="2_fewss"]
+[ext_resource type="Resource" uid="uid://bp55t2r3572cr" path="res://Inventory/Artifacts/playerArtifacts.tres" id="3_35ntw"]
 [ext_resource type="Texture2D" uid="uid://15e7hnpffcr1" path="res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png" id="3_h7kcq"]
 [ext_resource type="Texture2D" uid="uid://dn7ncb1xcmhoj" path="res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png" id="4_e34qr"]
 [ext_resource type="Texture2D" uid="uid://cxpdxget7wu2y" path="res://assets/Sprites/Lam-ang/lam-ang hurt _w sword spritesheet.png" id="4_yusw4"]
@@ -285,6 +286,7 @@ position = Vector2(0, 2)
 collision_layer = 3
 script = ExtResource("1_67xbk")
 inventory = ExtResource("2_fewss")
+artifact = ExtResource("3_35ntw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
@@ -330,6 +332,8 @@ value = 100.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar"]
+
 [node name="EnergyBar" type="ProgressBar" parent="."]
 z_index = 5
 offset_left = -192.0
@@ -340,6 +344,8 @@ theme_override_styles/background = SubResource("StyleBoxFlat_2oh65")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ad0y5")
 show_percentage = false
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="EnergyBar"]
 
 [node name="XPBar" type="ProgressBar" parent="."]
 offset_left = -192.0

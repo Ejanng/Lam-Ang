@@ -55,7 +55,7 @@ func drop_items(type: String, position: Vector2, dropChance: float) -> void:
 			else:
 				print("no health scene")
 		"energyPot":
-			var energyItem = HEALTH_POTION_RESOURCE.duplicate()
+			var energyItem = ENERGY_POTION_RESOURCE.duplicate()
 			
 			if energyItem.scene:
 				var dropScene = energyItem.scene.instantiate()
