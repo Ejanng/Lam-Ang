@@ -17,8 +17,8 @@ func update():
 	for i in range(min(inventory.items.size(), slots.size())):
 		slots[i].update(inventory.items[i])
 		
-	#for i in range(min(artifacts.items.size(), artifact_slots.size())):
-		#artifact_slots[i].update(artifacts.items[i])
+	for i in range(min(artifacts.items.size(), artifact_slots.size())):
+		artifact_slots[i].update(artifacts.items[i])
 
 func open():
 	visible = true

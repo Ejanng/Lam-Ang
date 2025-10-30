@@ -1,9 +1,9 @@
+Control
 Camera2D
 Panel
 CenterContainer
 Sprite2D
 CanvasLayer
-Control
 HBoxContainer
 Label
 CharacterBody2D
