@@ -24,4 +24,4 @@ var isNameStat1 = false
 var isNameStat2 = false
 
 
-var mapBounds = Rect2(0,0,1024,2048)
+var mapBounds = Rect2(0,0,10000,10000)
