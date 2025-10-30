@@ -17,15 +17,15 @@ var playerLevel = 0
 
 # character stats
 var addDef = 0          # multiplier for health e.g health x def, to make the player can withstand longer 			
-var addStrength = 0		# added dmg for player to deal in enemy
+var addStrength = 1000		# added dmg for player to deal in enemy
 var addEnergy = 0		# added energy for player
 var addHealth = 0
-var addSpeed = 0
+var addSpeed = 100
 
 var isNameStat1 = false
 var isNameStat2 = false
 
-var mapBounds = Rect2(0,0,1024,2048)
+var mapBounds = Rect2(-100,-100,10000,10000)
 
 # recalculated variable
 var playerHealth = health + addHealth
