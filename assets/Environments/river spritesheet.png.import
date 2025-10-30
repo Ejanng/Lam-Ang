@@ -2,16 +2,36 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/Environments/river spritesheet.png.import
 uid="uid://c3bac3hax6dnk"
 path="res://.godot/imported/river spritesheet.png-62794e412f3c8b560092ea61225a9126.ctex"
+========
+<<<<<<<< HEAD:assets/UI/Dialogue Box.png.import
+uid="uid://cc0lerklxn0d6"
+path="res://.godot/imported/Dialogue Box.png-e599cdd413425717e9fb457e74b96b2c.ctex"
+========
+uid="uid://cgh2buo8yjsjn"
+path="res://.godot/imported/CliffGrass.png-627c0bf2570f4b0937427935bf4caf39.ctex"
+>>>>>>>> main:assets/Environments/CliffGrass.png.import
+>>>>>>>> b39e2bbb34c023c7311a52506db8eca9e8de1678:assets/Environments/CliffGrass.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/Environments/river spritesheet.png.import
 source_file="res://assets/Environments/river spritesheet.png"
 dest_files=["res://.godot/imported/river spritesheet.png-62794e412f3c8b560092ea61225a9126.ctex"]
+========
+<<<<<<<< HEAD:assets/UI/Dialogue Box.png.import
+source_file="res://assets/UI/Dialogue Box.png"
+dest_files=["res://.godot/imported/Dialogue Box.png-e599cdd413425717e9fb457e74b96b2c.ctex"]
+========
+source_file="res://assets/Environments/CliffGrass.png"
+dest_files=["res://.godot/imported/CliffGrass.png-627c0bf2570f4b0937427935bf4caf39.ctex"]
+>>>>>>>> main:assets/Environments/CliffGrass.png.import
+>>>>>>>> b39e2bbb34c023c7311a52506db8eca9e8de1678:assets/Environments/CliffGrass.png.import
 
 [params]
 

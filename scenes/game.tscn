@@ -7,7 +7,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="Lam-Ang" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(342, 150)
+position = Vector2(0, 1)
 
 [node name="enemy" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(32, 26)
@@ -28,4 +28,4 @@ position = Vector2(642, 274)
 position = Vector2(149, 241)
 
 [node name="ranged_enemy3" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(472, 55)
+position = Vector2(802, 103)
