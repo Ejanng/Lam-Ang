@@ -14,4 +14,14 @@ var xpToNextLevel = 100
 var playerCoin = 0
 var playerLevel = 0
 
+# character stats
+var addDef = 1          # multiplier for health e.g health x def, to make the player can withstand longer 			
+var addStrength = 0		# added dmg for player to deal in enemy
+var addEnergy = 0		# added energy for player
+var addHealth = 0
+
+var isNameStat1 = false
+var isNameStat2 = false
+
+
 var mapBounds = Rect2(0,0,1024,2048)
