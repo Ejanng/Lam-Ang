@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/UI/Dialogue Box.png.import
+uid="uid://cc0lerklxn0d6"
+path="res://.godot/imported/Dialogue Box.png-e599cdd413425717e9fb457e74b96b2c.ctex"
+========
 uid="uid://cgh2buo8yjsjn"
 path="res://.godot/imported/CliffGrass.png-627c0bf2570f4b0937427935bf4caf39.ctex"
+>>>>>>>> main:assets/Environments/CliffGrass.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/UI/Dialogue Box.png.import
+source_file="res://assets/UI/Dialogue Box.png"
+dest_files=["res://.godot/imported/Dialogue Box.png-e599cdd413425717e9fb457e74b96b2c.ctex"]
+========
 source_file="res://assets/Environments/CliffGrass.png"
 dest_files=["res://.godot/imported/CliffGrass.png-627c0bf2570f4b0937427935bf4caf39.ctex"]
+>>>>>>>> main:assets/Environments/CliffGrass.png.import
 
 [params]
 

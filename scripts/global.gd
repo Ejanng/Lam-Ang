@@ -31,3 +31,7 @@ var mapBounds = Rect2(0,0,1024,2048)
 var playerHealth = health + addHealth
 var playerEnergy = energy + addEnergy
 var playerDamage = damage + addStrength
+
+
+var currentWave: int
+var moveingToNextWave: bool
