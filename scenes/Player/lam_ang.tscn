@@ -1,15 +1,17 @@
-[gd_scene load_steps=30 format=3 uid="uid://bioohv47js651"]
+[gd_scene load_steps=50 format=3 uid="uid://bioohv47js651"]
 
 [ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
-[ext_resource type="Texture2D" uid="uid://b727b7acgwqpl" path="res://assets/Sprites/Lam-ang/lam-ang iswing sword angry spritesheet.png" id="2_5t7uf"]
+[ext_resource type="Texture2D" uid="uid://d0e2vdb0hpbaj" path="res://assets/Sprites/Lam-ang/lam-ang iswing sword angry spritesheet.png" id="2_5t7uf"]
 [ext_resource type="Texture2D" uid="uid://ult3cm3ocub7" path="res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png" id="2_ad0y5"]
+[ext_resource type="Resource" uid="uid://cfu8ljxbcqu84" path="res://Inventory/playerInventory.tres" id="2_fewss"]
 [ext_resource type="Texture2D" uid="uid://15e7hnpffcr1" path="res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png" id="3_h7kcq"]
 [ext_resource type="Texture2D" uid="uid://dn7ncb1xcmhoj" path="res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png" id="4_e34qr"]
-[ext_resource type="Texture2D" uid="uid://gc74qbhugg62" path="res://assets/Sprites/Lam-ang/lam-ang hurt _w sword spritesheet.png" id="4_yusw4"]
+[ext_resource type="Texture2D" uid="uid://cxpdxget7wu2y" path="res://assets/Sprites/Lam-ang/lam-ang hurt _w sword spritesheet.png" id="4_yusw4"]
 [ext_resource type="Texture2D" uid="uid://ddxg0illq4jmm" path="res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png" id="5_d5ujj"]
-[ext_resource type="Texture2D" uid="uid://yad2o0to51go" path="res://assets/Sprites/Lam-ang/lam-ang idle _w sword spritesheet.png" id="6_fewss"]
-[ext_resource type="Texture2D" uid="uid://sn7o4nwdqen2" path="res://assets/Sprites/Lam-ang/lam-ang idle _w sword angry spritesheet.png" id="7_35ntw"]
+[ext_resource type="Texture2D" uid="uid://bmuwi5ovm18yy" path="res://assets/Sprites/Lam-ang/lam-ang idle _w sword spritesheet.png" id="6_fewss"]
+[ext_resource type="Texture2D" uid="uid://dj6smqf84dkab" path="res://assets/Sprites/Lam-ang/lam-ang idle _w sword angry spritesheet.png" id="7_35ntw"]
+[ext_resource type="PackedScene" uid="uid://c28xj6l2ghcpl" path="res://GUI/inventory_gui.tscn" id="11_yusw4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l2381"]
 atlas = ExtResource("2_5t7uf")
@@ -261,6 +263,9 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_stb0u"]
 radius = 9.05539
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ad0y5"]
+radius = 19.235384
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3lmq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stb0u"]
@@ -271,15 +276,14 @@ bg_color = Color(0.968627, 0.337255, 0.384314, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad0y5"]
 bg_color = Color(0.905882, 0.980392, 0.196078, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ad0y5"]
-radius = 19.235384
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3lmq"]
 radius = 21.0
 
 [node name="Lam-Ang" type="CharacterBody2D"]
+process_mode = 3
 collision_layer = 3
 script = ExtResource("1_67xbk")
+inventory = ExtResource("2_fewss")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
@@ -291,15 +295,20 @@ autoplay = "hurt"
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_d5ujj")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_stb0u")
 
-[node name="attack_cooldown" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_ad0y5")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 z_index = 5
@@ -320,14 +329,6 @@ value = 100.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="deal_attack_cooldown" type="Timer" parent="."]
-wait_time = 0.5
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-
-[node name="RegenTimer" type="Timer" parent="."]
-
 [node name="EnergyBar" type="ProgressBar" parent="."]
 z_index = 5
 offset_left = -192.0
@@ -339,15 +340,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_ad0y5")
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="PassiveCooldown" type="Timer" parent="."]
-
-[node name="EnergyRegenTimer" type="Timer" parent="."]
-
-[node name="DashTimer" type="Timer" parent="."]
-wait_time = 0.1
-
-[node name="SprintEnergyDecay" type="Timer" parent="."]
-
 [node name="XPBar" type="ProgressBar" parent="."]
 offset_left = -192.0
 offset_top = -85.0
@@ -355,12 +347,6 @@ offset_right = -116.0
 offset_bottom = -81.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
-
-[node name="AttackArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(0, -10)
-shape = SubResource("CircleShape2D_ad0y5")
 
 [node name="CoinLabel" type="Label" parent="."]
 z_index = 5
@@ -377,6 +363,24 @@ text = "0"
 autowrap_trim_flags = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="attack_cooldown" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="deal_attack_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="RegenTimer" type="Timer" parent="."]
+
+[node name="PassiveCooldown" type="Timer" parent="."]
+
+[node name="EnergyRegenTimer" type="Timer" parent="."]
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="SprintEnergyDecay" type="Timer" parent="."]
+
 [node name="HurtTimer" type="Timer" parent="."]
 
 [node name="Direction" type="Marker2D" parent="."]
@@ -389,10 +393,24 @@ collision_mask = 16
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_q3lmq")
 
-[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[node name="InventoryGui" parent="." instance=ExtResource("11_yusw4")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -45.5
+offset_right = 69.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_punch_body_entered"]
-[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_punch_body_exited"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="deal_attack_cooldown" to="." method="_on_deal_attack_cooldown_timeout"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
@@ -400,5 +418,6 @@ shape = SubResource("CircleShape2D_q3lmq")
 [connection signal="timeout" from="EnergyRegenTimer" to="." method="_on_energy_regen_timer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="SprintEnergyDecay" to="." method="_on_sprint_energy_decay_timeout"]
-[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]
+[connection signal="closed" from="InventoryGui" to="." method="_on_inventory_gui_closed"]
+[connection signal="opened" from="InventoryGui" to="." method="_on_inventory_gui_opened"]

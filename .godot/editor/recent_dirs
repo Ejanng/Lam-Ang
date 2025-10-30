@@ -1,5 +1,6 @@
-res://scripts
-res://howtoplay
+res://Inventory
+res://Inventory/Items
+res://GUI
 res://dialogue
 res://assets/Sprites/Lam-ang
 res://scenes/Tutorial
