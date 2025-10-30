@@ -53,7 +53,7 @@ var playerPos = Vector2.ZERO
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var inventoryGui = $InventoryGui
 
-@export var inventory: Inventory
+@export var inventory: Inventory = Inventory.new()
 @export var artifact: Artifacts
 
 func _ready() -> void:

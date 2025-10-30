@@ -3,6 +3,9 @@ extends Node
 var XP_ORB_SCENE = preload("res://scenes/Drops/XPOrb.tscn") 
 var COIN_SCENE = preload("res://scenes/Drops/CoinDrop.tscn") 
 
+var HEALTH_POTION_RESOURCE = preload("res://Inventory/Item/lifepot.tres")
+var ENERGY_POTION_RESOURCE = preload("res://Inventory/Item/energypot.tres")
+
 var dropMultiplierMin = 1.0
 var dropMultiplierMax = 2.0
 
@@ -36,3 +39,28 @@ func drop_coin(position: Vector2, coinAmount: int, dropChance: float = 1.0) -> v
 	else:
 		print("Coin drop failed (chance ", dropChance, ")")
 	
+func drop_items(type: String, position: Vector2, dropChance: float) -> void:
+	if randf() > dropChance:
+		return
+	
+	match type:
+		"healthPot":
+			var healthItem = HEALTH_POTION_RESOURCE.duplicate()
+			
+			if healthItem.scene:
+				var dropScene = healthItem.scene.instantiate()
+				dropScene.global_position = position
+				dropScene.itemResource = healthItem
+				get_tree().current_scene.add_child(dropScene)
+			else:
+				print("no health scene")
+		"energyPot":
+			var energyItem = HEALTH_POTION_RESOURCE.duplicate()
+			
+			if energyItem.scene:
+				var dropScene = energyItem.scene.instantiate()
+				dropScene.global_position = position
+				dropScene.itemResource = energyItem
+				get_tree().current_scene.add_child(dropScene)
+			else:
+				print("no energy scene")

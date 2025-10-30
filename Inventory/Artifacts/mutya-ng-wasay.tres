@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ArtifactsItem" load_steps=3 format=3 uid="uid://cuifvh1djodvv"]
+
+[ext_resource type="Script" uid="uid://ccjyopo6hld7g" path="res://Inventory/artifacts_item.gd" id="1_fa6fi"]
+[ext_resource type="Texture2D" uid="uid://chvw2chmjy2n0" path="res://assets/Drops/mutya ng wasay.png" id="2_dnidq"]
+
+[resource]
+script = ExtResource("1_fa6fi")
+name = "mutya-ng-wasay"
+texture = ExtResource("2_dnidq")
+metadata/_custom_type_script = "uid://ccjyopo6hld7g"

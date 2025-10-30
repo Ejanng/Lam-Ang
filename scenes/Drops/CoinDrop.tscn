@@ -1,19 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://mvv00kffixip"]
 
-[ext_resource type="Texture2D" uid="uid://ck6auu12t34u0" path="res://assets/Environment Assets/Kubo 2.png" id="1_ufohb"]
 [ext_resource type="Script" uid="uid://o0h43lwnpcym" path="res://scripts/coin_drop.gd" id="1_xrdiv"]
+[ext_resource type="Texture2D" uid="uid://cogkwi7r5nprn" path="res://assets/Drops/coin.png" id="2_xrdiv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufohb"]
-size = Vector2(4, 81)
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrdiv"]
+radius = 4.0
 
 [node name="Coin" type="Area2D"]
 rotation = 1.5707964
 script = ExtResource("1_xrdiv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1875, 2.75)
-texture = ExtResource("1_ufohb")
+rotation = -1.5707964
+texture = ExtResource("2_xrdiv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.5)
-shape = SubResource("RectangleShape2D_ufohb")
+shape = SubResource("CircleShape2D_xrdiv")
