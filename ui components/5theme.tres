@@ -831,7 +831,7 @@ cache/0/16/0/glyphs/402653187/texture_idx = -1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47bg0"]
 texture = ExtResource("1_drp6t")
-region_rect = Rect2(371, 887, 421, 459)
+region_rect = Rect2(371, 1910, 421, 460)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_drp6t"]
 region_rect = Rect2(371, 887, 421, 459)

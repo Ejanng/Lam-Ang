@@ -1574,7 +1574,7 @@ scale = Vector2(3.2226558, 3.2226558)
 sprite_frames = SubResource("SpriteFrames_2na4v")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.47147998
+frame_progress = 0.98988736
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(408, 124.00001)

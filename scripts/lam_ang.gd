@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const WALK = 70.0
-const SPRINT = 140.0
+const WALK = 35.0
+const SPRINT = 65.0
 const DASH_SPEED = 600
 
 const REGEN_RATE_ENERGY = 10.0
@@ -29,6 +29,7 @@ var isDashing = false
 var isSprinting = false
 var isAttacking = false
 var isHurt = false
+var canMove = true
 
 var currentSpeed = 0
 var dashDirection = Vector2.ZERO
@@ -49,6 +50,7 @@ var playerPos = Vector2.ZERO
 @onready var xpBar = $XPBar
 @onready var attackArea = $AttackArea
 @onready var coinLabel = $CoinLabel
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
 func _ready() -> void:
 	healthBar.max_value = Global.MAX_HEALTH
@@ -64,44 +66,18 @@ func _ready() -> void:
 	
 	update_coin_display()
 	
-	#if SceneManager.target_spawn_point != "":
-		#var spawn_point = get_node_or_null("../" + SceneManager.target_spawn_point)
-		#if spawn_point:
-			#global_position = spawn_point.global_position
-		#SceneManager.target_spawn_point = ""  # Clear it
-	print("========== PLAYER READY ==========")
-	print("Player starting position BEFORE: ", global_position)
-	print("Target spawn point: '", SceneManager.target_spawn_point, "'")
-	
-	# Check if we should spawn at a specific point
-	if SceneManager.target_spawn_point != "":
-		var spawn_point = get_node_or_null("../" + SceneManager.target_spawn_point)
-		
-		if spawn_point:
-			print("Found spawn point node: ", spawn_point.name)
-			print("Spawn point position: ", spawn_point.global_position)
-			print("Spawn point local position: ", spawn_point.position)
-			
-			# Try both methods
-			global_position = spawn_point.global_position
-			print("Player position AFTER setting: ", global_position)
-		else:
-			print("ERROR: Spawn point not found!")
-			
-		SceneManager.target_spawn_point = ""
-	
-	print("Player final position: ", global_position)
-	print("==================================")
-	
-
-	#if SceneManager.spawn_position != Vector2.ZERO:
-		#global_position = SceneManager.spawn_position
-		#SceneManager.spawn_position = Vector2.ZERO
-	
 func _process(delta: float) -> void:
 	cameraMovement()
 	regenPlayerHealth(delta)
 	regenPlayerEnergy(delta)
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
+		#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/Scene1.dialogue"), "start")
+		#return
 	
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
@@ -154,11 +130,14 @@ func update_coin_display() -> void:
 	coinLabel.text = "Coins: " + str(Global.playerCoin)
 	
 func handle_movement(delta):
+	var direction = Vector2.ZERO
+	currentSpeed = 0
+	isSprinting = false
 	if isHurt:
 		return
-	var direction = Vector2.ZERO
-	isSprinting = false
-	currentSpeed = WALK
+	if canMove:
+		currentSpeed = WALK
+		
 	
 	if isDashing:
 		velocity = dashDirection * DASH_SPEED
@@ -279,15 +258,17 @@ func attack():
 			
 		# handle the attack animations
 		if abs(dir.x) > abs(dir.y):
-			anim.play("walk_side")
-			anim.flip_h = dir.x < 0 
+			anim.play("attack")
+			canMove = false
 			dealAttackCD.start()
 		else:
 			if dir.y < 0:
-				anim.play("walk_up")
+				anim.play("attack")
+				canMove = false
 				dealAttackCD.start()
 			else:
-				anim.play("walk_down")
+				anim.play("attack")
+				canMove = false
 				dealAttackCD.start()
 				
 		# finish the animation first before starting the cd
@@ -337,6 +318,7 @@ func _on_deal_attack_cooldown_timeout() -> void:
 	Global.playerCurrentAttack = false
 	attackArea.monitoring = false
 	attackIP = false
+	canMove = true
 
 func _on_regen_timer_timeout() -> void:
 	isRegeningHP = true
