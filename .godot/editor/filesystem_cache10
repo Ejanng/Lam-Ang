@@ -1,12 +1,11 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761742881
+::res://::1761805232
 icon.svg::CompressedTexture2D/CompressedTexture2D::1806369474252542340::1761708426::1761708426::1::::<><><>0<>0<>cc34509834156c61553ab835d0113c2c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1761709417
-::res://assets/Environments/::1761743286
+::res://assets/Environments/::1761805276
 bg.png::CompressedTexture2D::3574674827803665623::1761468235::1761709435::1::::<><><>0<>0<>53a4c688695c5bc6976970f5d01e0e32<>res://.godot/imported/bg.png-f5b0ee74f0db3bf73e54c8d57aea7bce.ctex::
 cliff.png::CompressedTexture2D::3015802009560018139::1761461283::1761709434::1::::<><><>0<>0<>e8353d19ef426bf3b64644e6cf082f1b<>res://.godot/imported/cliff.png-9cc8749a59f9f080e858a3d0a7f68f57.ctex::
-CliffGrass edge.png::CompressedTexture2D::7212522726990942559::1760962016::1761709434::1::::<><><>0<>0<>fd220d8269af1808c84907d323f52400<>res://.godot/imported/CliffGrass edge.png-92bfbc921565c17118bcb97d77c3723d.ctex::
-CliffGrass.png::CompressedTexture2D::5210067291717494895::1760962016::1761709434::1::::<><><>0<>0<>63db589faab0b849439b4bffbbcaba10<>res://.godot/imported/CliffGrass.png-627c0bf2570f4b0937427935bf4caf39.ctex::
+CliffGrassEDGES.png::CompressedTexture2D::5655503291889674815::1761791433::1761791434::1::::<><><>0<>0<>d0ff5950721a388d200ed85c4249b333<>res://.godot/imported/CliffGrassEDGES.png-3f72146240ee81317f52863326dc18a0.ctex::
 crops.png::CompressedTexture2D::8285833501953680040::1761704128::1761709434::1::::<><><>0<>0<>8d719207f8e525c9991f9c5dfa22a93c<>res://.godot/imported/crops.png-1b3a5ed4e5e4e23e1607c516ee44bd7d.ctex::
 D.png::CompressedTexture2D::4070913567951354600::1760967902::1761709434::1::::<><><>0<>0<>1083d97d3100ce7e28781321bdefe196<>res://.godot/imported/D.png-6113698246a99d417fa4dba77b065b99.ctex::
 Dirtfloor.png::CompressedTexture2D::4561848040572628472::1760968081::1761709434::1::::<><><>0<>0<>386327b259e1d12d9c38f0e05f6a65dd<>res://.godot/imported/Dirtfloor.png-0a818397784ee09c58836fff7b5211f6.ctex::
@@ -17,15 +16,19 @@ grasss.png::CompressedTexture2D::7922290703963155271::1760963602::1761709434::1:
 houses.png::CompressedTexture2D::3502831132001069232::1761579939::1761709434::1::::<><><>0<>0<>09d110527f61d46ec2aa1f57804be985<>res://.godot/imported/houses.png-59d58b73f9c3ca8c662d2c66975c5740.ctex::
 Kubo 1.png::CompressedTexture2D::5398388199487732961::1760968812::1761709434::1::::<><><>0<>0<>cdd7c21232aa325cfd7b1e09b1d29976<>res://.godot/imported/Kubo 1.png-9648ac81e76258067a461bf52ccacdaa.ctex::
 Kubo 2.png::CompressedTexture2D::5538762321905676197::1761032256::1761709434::1::::<><><>0<>0<>dfc4f20a47154353126ff832cf39b0c1<>res://.godot/imported/Kubo 2.png-cbd92564adae3b72f043c5c3634c93f1.ctex::
-Kubo 3.png::CompressedTexture2D::3995661065453817393::1761032619::1761709434::1::::<><><>0<>0<>8a9fff0829df6e987110ec787d4aa357<>res://.godot/imported/Kubo 3.png-08d48ea76ba4750828bc236451afa66e.ctex::
+Kubo 3.png::CompressedTexture2D::3995661065453817393::1761795406::1761795406::1::::<><><>0<>0<>8a9fff0829df6e987110ec787d4aa357<>res://.godot/imported/Kubo 3.png-08d48ea76ba4750828bc236451afa66e.ctex::
 M.png::CompressedTexture2D::4267878124702699013::1761316422::1761709434::1::::<><><>0<>0<>fdb71b9237f097573370d95cfd775da2<>res://.godot/imported/M.png-75bd139372a35821987c46aade368476.ctex::
 Mountain.png::CompressedTexture2D::310278136723278478::1761316177::1761709434::1::::<><><>0<>0<>b700bb652dd371eadc8779f1c02939a3<>res://.godot/imported/Mountain.png-b04a38fb2c70a4468bd92a7242332b19.ctex::
 Moutains.png::CompressedTexture2D::2072548317758754284::1761316586::1761709434::1::::<><><>0<>0<>28b89ec8856c5595739fcb0f0701ba42<>res://.godot/imported/Moutains.png-95a66f6edd834522ff57548ada9d29b6.ctex::
 naturebg.png::CompressedTexture2D::5587934599949803999::1761459976::1761709434::1::::<><><>0<>0<>a654afd93db0b3cf1679072d6d91a025<>res://.godot/imported/naturebg.png-74912efe6b79f2e853ef2c6960e853ca.ctex::
+river spritesheet.png::CompressedTexture2D::6740198420092371448::1761805276::1761805276::1::::<><><>0<>0<>d95e603dd3c0430f3672c6600b159037<>res://.godot/imported/river spritesheet.png-62794e412f3c8b560092ea61225a9126.ctex::
 Title.png::CompressedTexture2D::749920079235215664::1761488196::1761709434::1::::<><><>0<>0<>383c9271d130dd2140d7564388e48b92<>res://.godot/imported/Title.png-80f1e0541bd34e20d08ac75591dcdf26.ctex::
 Tree2.png::CompressedTexture2D::2905085563895125865::1761743286::1761743288::1::::<><><>0<>0<>5fe4eff9a94f96940bd45d56354c5aa0<>res://.godot/imported/Tree2.png-0bc2ab29e86399739a22abda18009848.ctex::
 Tree.png::CompressedTexture2D::459983038745842979::1761742916::1761742918::1::::<><><>0<>0<>4a03bc85eb4c653788d29efa6f8d0ecf<>res://.godot/imported/Tree.png-cefbdeee0f0cfdfbbfab458015a3c69e.ctex::
 trees.png::CompressedTexture2D::6206285477966573801::1760967287::1761709434::1::::<><><>0<>0<>923ac154efc9148a56c962dbfbd32d38<>res://.godot/imported/trees.png-f9ca4e430c4c5912b251fd4c039ad297.ctex::
+water1.png::CompressedTexture2D::3115072318508665265::1761803169::1761803408::1::::<><><>0<>0<>94d85f5c3eb933401c00468d09a63751<>res://.godot/imported/water1.png-2ad64b56d1995a72f6cadffd80ba7dd7.ctex::
+Water 2.png::CompressedTexture2D::5917586902344452459::1761803199::1761803414::1::::<><><>0<>0<>9711e590799cfbac48b02b4bdaff3ca0<>res://.godot/imported/Water 2.png-1d7f62d473f3d3f7d0f52727157ed20a.ctex::
+water.tres::AnimatedTexture::8110824945128229797::1761805186::0::1::::<><><>0<>0<><>::uid://bkm71ytxo16kr::::res://assets/Environments/water1.png<>uid://cqkr16homyom2::::res://assets/Environments/Water 2.png
 Wood barricade.png::CompressedTexture2D::4003293797364946435::1761576846::1761709434::1::::<><><>0<>0<>2a07a4560d454780466d969947288f9c<>res://.godot/imported/Wood barricade.png-3b9f5834d7c76539bd0fcb3396bc1de0.ctex::
 ::res://assets/Sprites/::1761709545
 lam-ang spritesheet (1).png::CompressedTexture2D::5157916536171339310::1761708426::1761709545::1::::<><><>0<>0<>a5257801dac45bb3df9a9307f22dedcf<>res://.godot/imported/lam-ang spritesheet (1).png-1332548c4dfaf969a923c8421b434002.ctex::
@@ -65,8 +68,8 @@ XPOrb.tscn::PackedScene::4594444080677332832::1761708426::0::1::::<><><>0<>0<><>
 melee_tribe_member.tscn::PackedScene::2574462848710875326::1761708426::0::1::::<><><>0<>0<><>::uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://buwasdtb3dsvk::::res://scripts/melee_enemy.gd<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
 projectile.tscn::PackedScene::5587501533922286515::1761708426::0::1::::<><><>0<>0<><>::uid://bs7uppd36kia::::res://assets/Environment Assets/Kubo 2.png<>uid://dps83b2rlmgw6::::res://scripts/projectile.gd
 ranged_tribe_member.tscn::PackedScene::3189396453004295698::1761708426::0::1::::<><><>0<>0<><>::uid://b6tkcsf7dvwml::::res://scripts/ranged_enemy.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
-::res://scenes/MainStory/::1761742880
-home_town.tscn::PackedScene::2440116361625165815::1761742880::0::1::::<><><>0<>0<><>::uid://drainjd7ywvxg::::res://assets/Environments/grass2.png<>uid://bqi60xyvplvxm::::res://assets/Environments/grass.png<>uid://eokialhslv6e::::res://assets/Environments/Mountain.png<>uid://4r7tkukado4c::::res://assets/Environments/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environments/Tree.png<>uid://4p1g5gqwb62r::::res://assets/Environments/Dirttile.png<>uid://bxbhwtsbydi2v::::res://assets/Environments/Wood barricade.png<>uid://bp52d8hsunqno::::res://assets/Environments/houses.png<>uid://dqbyp5c5rx3my::::res://assets/Environments/crops.png
+::res://scenes/MainStory/::1761805186
+Town.tscn::PackedScene::2440116361625165815::1761805186::0::1::::<><><>0<>0<><>::uid://drainjd7ywvxg::::res://assets/Environments/grass2.png<>uid://bqi60xyvplvxm::::res://assets/Environments/grass.png<>uid://cmttkv0ynbj1p::::res://assets/Environments/CliffGrassEDGES.png<>uid://eokialhslv6e::::res://assets/Environments/Mountain.png<>uid://dqbyp5c5rx3my::::res://assets/Environments/crops.png<>uid://4r7tkukado4c::::res://assets/Environments/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environments/Tree.png<>uid://bw6r7o2awdwir::::res://assets/Environments/Kubo 3.png<>uid://4p1g5gqwb62r::::res://assets/Environments/Dirttile.png<>uid://bxbhwtsbydi2v::::res://assets/Environments/Wood barricade.png<>uid://dns7dpyylmhld::::res://assets/Environments/water.tres<>uid://bhnilna7alpkb::::res://assets/Environments/Tree2.png<>uid://bp52d8hsunqno::::res://assets/Environments/houses.png<>uid://c3bac3hax6dnk::::res://assets/Environments/river spritesheet.png<>uid://bkm71ytxo16kr::::res://assets/Environments/water1.png
 ::res://scenes/Player/::1761708426
 lam_ang.tscn::PackedScene::2977696409066647794::1761708426::0::1::::<><><>0<>0<><>::uid://c8vs6jfdt5lrb::::res://scripts/lam_ang.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://ult3cm3ocub7::::res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png<>uid://15e7hnpffcr1::::res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png<>uid://ddxg0illq4jmm::::res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png
 ::res://scenes/Plots/::1761742880

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da02gwb6sypt4"
-path="res://.godot/imported/CliffGrass edge.png-92bfbc921565c17118bcb97d77c3723d.ctex"
+uid="uid://cqkr16homyom2"
+path="res://.godot/imported/Water 2.png-1d7f62d473f3d3f7d0f52727157ed20a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Environments/CliffGrass edge.png"
-dest_files=["res://.godot/imported/CliffGrass edge.png-92bfbc921565c17118bcb97d77c3723d.ctex"]
+source_file="res://assets/Environments/Water 2.png"
+dest_files=["res://.godot/imported/Water 2.png-1d7f62d473f3d3f7d0f52727157ed20a.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
