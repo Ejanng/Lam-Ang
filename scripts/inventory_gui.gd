@@ -11,6 +11,7 @@ var isOpen: bool = false
 @onready var artifact_slots: Array = $NinePatchRect2/GridContainer.get_children()
 
 func _ready() -> void:
+	inventory.updated.connect(update)
 	update()
 
 func update():

@@ -21,3 +21,5 @@ res://scripts/health_potion.gd
 res://scenes/Drops/health_potion.tscn
 res://scripts/lam_ang.gd
 res://scripts/energy_potion.gd
+res://GUI/inventory_gui.tscn
+res://scripts/inventory_gui.gd

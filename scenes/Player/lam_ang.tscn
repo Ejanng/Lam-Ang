@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
 [ext_resource type="Texture2D" uid="uid://d0e2vdb0hpbaj" path="res://assets/Sprites/Lam-ang/lam-ang iswing sword angry spritesheet.png" id="2_5t7uf"]
 [ext_resource type="Texture2D" uid="uid://ult3cm3ocub7" path="res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png" id="2_ad0y5"]
+[ext_resource type="Resource" uid="uid://dbnujrtlpcy0i" path="res://Inventory/Item/playerInventory.tres" id="2_fewss"]
 [ext_resource type="Texture2D" uid="uid://15e7hnpffcr1" path="res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png" id="3_h7kcq"]
 [ext_resource type="Texture2D" uid="uid://dn7ncb1xcmhoj" path="res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png" id="4_e34qr"]
 [ext_resource type="Texture2D" uid="uid://cxpdxget7wu2y" path="res://assets/Sprites/Lam-ang/lam-ang hurt _w sword spritesheet.png" id="4_yusw4"]
@@ -11,9 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bmuwi5ovm18yy" path="res://assets/Sprites/Lam-ang/lam-ang idle _w sword spritesheet.png" id="6_fewss"]
 [ext_resource type="Texture2D" uid="uid://dj6smqf84dkab" path="res://assets/Sprites/Lam-ang/lam-ang idle _w sword angry spritesheet.png" id="7_35ntw"]
 [ext_resource type="PackedScene" uid="uid://c28xj6l2ghcpl" path="res://GUI/inventory_gui.tscn" id="11_yusw4"]
-
-[sub_resource type="Resource" id="Resource_yusw4"]
-metadata/__load_path__ = "res://Inventory/playerInventory.tres"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l2381"]
 atlas = ExtResource("2_5t7uf")
@@ -286,7 +284,7 @@ process_mode = 3
 position = Vector2(0, 2)
 collision_layer = 3
 script = ExtResource("1_67xbk")
-inventory = SubResource("Resource_yusw4")
+inventory = ExtResource("2_fewss")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
