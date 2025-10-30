@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://oqsma5bvm44t"]
+[gd_scene load_steps=25 format=3 uid="uid://oqsma5bvm44t"]
 
+[ext_resource type="Script" uid="uid://bf5b5k5jkdebx" path="res://scripts/endless_battle.gd" id="1_2rr56"]
 [ext_resource type="Texture2D" uid="uid://drainjd7ywvxg" path="res://assets/Environments/grass2.png" id="1_euge8"]
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environments/grass.png" id="2_0tldb"]
 [ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://assets/Environments/Mountain.png" id="3_2rr56"]
@@ -801,6 +802,7 @@ sources/0 = SubResource("TileSetAtlasSource_d10y6")
 sources/4 = SubResource("TileSetAtlasSource_5edn2")
 
 [node name="EndlessBattle" type="Node2D"]
+script = ExtResource("1_2rr56")
 
 [node name="Act1_Scene3" type="TileMap" parent="."]
 position = Vector2(-64, 422)
@@ -919,3 +921,23 @@ layer_9/tile_data = PackedInt32Array(524303, 4, 1, 589839, 4, 2, 655375, 4, 3, 7
 
 [node name="Lam-Ang" parent="." instance=ExtResource("11_0tldb")]
 position = Vector2(826, 732)
+
+[node name="MeleeTribeSpawnPoint1" type="Marker2D" parent="."]
+
+[node name="MeleeTribeSpawnPoint2" type="Marker2D" parent="."]
+
+[node name="MeleeTribeSpawnPoint3" type="Marker2D" parent="."]
+
+[node name="MeleeTribeSpawnPoint4" type="Marker2D" parent="."]
+
+[node name="MeleeTribeSpawnPoint5" type="Marker2D" parent="."]
+
+[node name="ProjectileTribeSpawnPoint1" type="Marker2D" parent="."]
+
+[node name="ProjectileTribeSpawnPoint2" type="Marker2D" parent="."]
+
+[node name="ProjectileTribeSpawnPoint3" type="Marker2D" parent="."]
+
+[node name="ProjectileTribeSpawnPoint4" type="Marker2D" parent="."]
+
+[node name="ProjectileTribeSpawnPoint5" type="Marker2D" parent="."]
