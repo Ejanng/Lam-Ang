@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/Environments/CliffGrassEDGES.png.import
-uid="uid://cmttkv0ynbj1p"
-path="res://.godot/imported/CliffGrassEDGES.png-3f72146240ee81317f52863326dc18a0.ctex"
-========
-uid="uid://da02gwb6sypt4"
+uid="uid://bwc0aad6ockey"
 path="res://.godot/imported/CliffGrass edge.png-92bfbc921565c17118bcb97d77c3723d.ctex"
->>>>>>>> main:assets/Environments/CliffGrass edge.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/Environments/CliffGrassEDGES.png.import
-source_file="res://assets/Environments/CliffGrassEDGES.png"
-dest_files=["res://.godot/imported/CliffGrassEDGES.png-3f72146240ee81317f52863326dc18a0.ctex"]
-========
 source_file="res://assets/Environments/CliffGrass edge.png"
 dest_files=["res://.godot/imported/CliffGrass edge.png-92bfbc921565c17118bcb97d77c3723d.ctex"]
->>>>>>>> main:assets/Environments/CliffGrass edge.png.import
 
 [params]
 
