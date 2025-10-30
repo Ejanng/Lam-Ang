@@ -126,7 +126,7 @@ texture = ExtResource("1_fl1qx")
 9:9/0 = 0
 10:9/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxf11"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a4bam"]
 texture = ExtResource("1_tyf6y")
 2:1/0 = 0
 4:4/0 = 0
@@ -239,7 +239,7 @@ texture = ExtResource("1_tyf6y")
 10:6/0 = 0
 10:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o4f3m"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jl64p"]
 texture = ExtResource("2_wyao2")
 3:1/0 = 0
 4:1/0 = 0
@@ -279,7 +279,7 @@ texture = ExtResource("2_wyao2")
 5:7/0 = 0
 6:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ifev5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvf4t"]
 texture = ExtResource("8_i6ukv")
 0:0/0 = 0
 1:0/0 = 0
@@ -318,7 +318,7 @@ texture = ExtResource("8_i6ukv")
 2:8/0 = 0
 3:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w581s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7jkp"]
 texture = ExtResource("3_vup7p")
 3:0/0 = 0
 4:0/0 = 0
@@ -352,7 +352,7 @@ texture = ExtResource("3_vup7p")
 6:5/0 = 0
 7:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07sus"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7j4d"]
 texture = ExtResource("4_ifev5")
 2:0/0 = 0
 3:0/0 = 0
@@ -404,7 +404,7 @@ texture = ExtResource("4_ifev5")
 2:10/0 = 0
 3:10/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rxax5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7xcpx"]
 texture = ExtResource("5_i6ukv")
 0:0/0 = 0
 1:0/0 = 0
@@ -479,7 +479,7 @@ texture = ExtResource("5_i6ukv")
 7:7/0 = 0
 8:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vup7p"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4145"]
 texture = ExtResource("6_wyao2")
 0:1/0 = 0
 0:2/0 = 0
@@ -515,7 +515,7 @@ texture = ExtResource("6_wyao2")
 1:2/0 = 0
 1:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a4bam"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yk5ke"]
 texture = ExtResource("9_ke4hq")
 2:0/0 = 0
 3:0/0 = 0
@@ -567,7 +567,7 @@ texture = ExtResource("9_ke4hq")
 2:10/0 = 0
 3:10/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o44xa"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ev3v"]
 texture = ExtResource("2_wyao2")
 3:1/0 = 0
 4:1/0 = 0
@@ -607,7 +607,7 @@ texture = ExtResource("2_wyao2")
 5:7/0 = 0
 6:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g0eh1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4ve1"]
 texture = ExtResource("7_ifev5")
 1:0/0 = 0
 2:0/0 = 0
@@ -789,17 +789,17 @@ texture = ExtResource("7_ifev5")
 8:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rxax5"]
-sources/1 = SubResource("TileSetAtlasSource_xxf11")
-sources/5 = SubResource("TileSetAtlasSource_o44xa")
-sources/11 = SubResource("TileSetAtlasSource_o4f3m")
-sources/14 = SubResource("TileSetAtlasSource_w581s")
-sources/18 = SubResource("TileSetAtlasSource_07sus")
-sources/24 = SubResource("TileSetAtlasSource_rxax5")
-sources/3 = SubResource("TileSetAtlasSource_vup7p")
-sources/6 = SubResource("TileSetAtlasSource_g0eh1")
-sources/13 = SubResource("TileSetAtlasSource_ifev5")
+sources/1 = SubResource("TileSetAtlasSource_a4bam")
+sources/5 = SubResource("TileSetAtlasSource_0ev3v")
+sources/11 = SubResource("TileSetAtlasSource_jl64p")
+sources/14 = SubResource("TileSetAtlasSource_a7jkp")
+sources/18 = SubResource("TileSetAtlasSource_u7j4d")
+sources/24 = SubResource("TileSetAtlasSource_7xcpx")
+sources/3 = SubResource("TileSetAtlasSource_h4145")
+sources/6 = SubResource("TileSetAtlasSource_n4ve1")
+sources/13 = SubResource("TileSetAtlasSource_mvf4t")
 sources/0 = SubResource("TileSetAtlasSource_ke4hq")
-sources/4 = SubResource("TileSetAtlasSource_a4bam")
+sources/4 = SubResource("TileSetAtlasSource_yk5ke")
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-3522, 405)
