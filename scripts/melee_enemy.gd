@@ -70,10 +70,10 @@ func handle_movement():
 func _on_wander_timer_timeout() -> void:
 	if randf() <= WANDER_CHANCE:
 		random_dir = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-		print("Enemy wandering on random direction: ", random_dir)
+		#print("Enemy wandering on random direction: ", random_dir)
 	else:
 		random_dir = Vector2.ZERO
-		print("Enemy idling")
+		#print("Enemy idling")
 
 func perform_attack():
 	if isAttacking or not canAttack:
@@ -82,7 +82,7 @@ func perform_attack():
 	isAttacking = true
 	velocity = Vector2.ZERO
 	#anim.play("attack")   # save for attack animation
-	print("Enemy attacks player!")
+	#print("Enemy attacks player!")
 	
 	var hitChance= 0.8
 	var roll = randf()
@@ -91,7 +91,7 @@ func perform_attack():
 		if roll <= hitChance:
 			if player.has_method("take_damage"):
 				player.take_damage(enemyDMG - Global.addDef)
-				print("Enemy dealt ", enemyDMG - Global.addDef, " damage to player!")
+				#print("Enemy dealt ", enemyDMG - Global.addDef, " damage to player!")
 		else:
 			print("Enemy missed the attack")
 	attackPauseTimer.start()
@@ -125,7 +125,7 @@ func deal_dmg(damage):
 	canTakeDMG = false
 	health -= damage
 	health_bar.value = health
-	print("Player Deals DMG: ", damage, "\nEnemy Health: ", health)
+	#print("Player Deals DMG: ", damage, "\nEnemy Health: ", health)
 	
 	takeDMGCD.stop()
 	takeDMGCD.start()
@@ -140,12 +140,12 @@ func die():
 
 func _on_take_dmg_cooldown_timeout() -> void:
 	canTakeDMG = true
-	print("Cooldwon finished - enemy can take damage again")
+	#print("Cooldwon finished - enemy can take damage again")
 
 
 func _on_attack_pause_timer_timeout() -> void:
 	isAttacking = false
-	print("Enemy movement resumed after attack pause.")
+	#print("Enemy movement resumed after attack pause.")
 
 
 func _on_attack_cooldown_timeout() -> void:

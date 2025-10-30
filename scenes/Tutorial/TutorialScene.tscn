@@ -9,7 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bg8igj13o1og6" path="res://dialogue/actionable.tscn" id="8_23kjh"]
 [ext_resource type="PackedScene" uid="uid://di6ytm5suocus" path="res://npcs/namongan.tscn" id="8_om1g8"]
 [ext_resource type="Resource" uid="uid://k0ajtmpkft7" path="res://dialogue/Scene1.dialogue" id="9_5bpsw"]
-[ext_resource type="PackedScene" uid="uid://01tlp3idk3n7" path="res://howtoplay/ui.tscn" id="10_2jkmf"]
+
+[sub_resource type="GDScript" id="GDScript_5bpsw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gdwvu"]
 texture = ExtResource("1_23kjh")
@@ -1545,6 +1546,7 @@ sources/24 = SubResource("TileSetAtlasSource_chk6s")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jkmf"]
 
 [node name="Tutorial" type="Node2D"]
+script = SubResource("GDScript_5bpsw")
 
 [node name="Empty" type="TileMap" parent="."]
 position = Vector2(1134.3699, -27.83728)

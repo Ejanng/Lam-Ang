@@ -1,13 +1,2 @@
-Camera2D
-Panel
-CenterContainer
-Sprite2D
-CanvasLayer
-Control
-HBoxContainer
-Label
-CharacterBody2D
-CollisionShape2D
-Area2D
-Marker2D
-TextureRect
+AnimationPlayer
+ColorRect
