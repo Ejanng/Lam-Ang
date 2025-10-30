@@ -1,4 +1,4 @@
-~ start
+~ namongan_start
 
 Namongan: Must you go, Don Juan? I fear for you... and our child grows within me.
 
@@ -12,4 +12,10 @@ Namongan: Then take this with you
 Don Juan: I will return. I promise
 => END
 
+~ wounded_villager_start
 
+WOUNDED VILLAGER: Turn back! The Igorots... they're holding a feast... celebrating their victories...
+
+DON JUAN: Which is why I must go forward.
+
+=> END
