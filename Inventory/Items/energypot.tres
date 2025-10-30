@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cjybnnb3f56ti"]
+
+[ext_resource type="Script" uid="uid://da4vjawjfk36v" path="res://Inventory/inventory_item.gd" id="1_uva1k"]
+[ext_resource type="Texture2D" uid="uid://p6mbxiaq0ug3" path="res://assets/GUI/healthbarProgress.png" id="2_uva1k"]
+
+[resource]
+script = ExtResource("1_uva1k")
+name = "energypot"
+texture = ExtResource("2_uva1k")
+metadata/_custom_type_script = "uid://da4vjawjfk36v"

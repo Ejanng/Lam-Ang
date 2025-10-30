@@ -51,6 +51,9 @@ var playerPos = Vector2.ZERO
 @onready var attackArea = $AttackArea
 @onready var coinLabel = $CoinLabel
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
+@onready var inventoryGui = $InventoryGui
+
+@export var inventory: Inventory
 
 func _ready() -> void:
 	healthBar.max_value = Global.MAX_HEALTH
@@ -64,6 +67,7 @@ func _ready() -> void:
 	xpBar.value = Global.playerXP
 	xpBar.max_value = Global.xpToNextLevel
 	
+	inventoryGui.close()
 	update_coin_display()
 	
 func _process(delta: float) -> void:
@@ -82,6 +86,13 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	attack()
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("toggle_inventory"):
+		if inventoryGui.isOpen:
+			inventoryGui.close()
+		else:
+			inventoryGui.open()
 	
 func cameraMovement():
 	var input = Vector2(
@@ -111,7 +122,7 @@ func regenPlayerEnergy(delta) -> void:
 func add_experience(amount: int) -> void:
 	Global.playerXP += amount
 	xpBar.value = Global.playerXP
-	print("Gained", amount, "XP. Total: ", Global.playerXP)
+	#print("Gained", amount, "XP. Total: ", Global.playerXP)
 	
 	if Global.playerXP >= Global.xpToNextLevel:
 		Global.playerXP -= Global.xpToNextLevel
@@ -119,11 +130,11 @@ func add_experience(amount: int) -> void:
 		Global.playerLevel += 1
 		Global.xpToNextLevel = int(Global.xpToNextLevel * 1.2)
 		xpBar.value = Global.playerXP
-		print("Level Up! Now Level: ", Global.playerLevel)
+		#print("Level Up! Now Level: ", Global.playerLevel)
 		
 func add_coin(amount: int) -> void:
 	Global.playerCoin += amount
-	print("Gained", amount, "Coin. Total: ", Global.playerCoin)
+	#print("Gained", amount, "Coin. Total: ", Global.playerCoin)
 	update_coin_display()
 	
 func update_coin_display() -> void:
@@ -148,7 +159,7 @@ func handle_movement(delta):
 				doubleTapTimers[dir] -= delta
 				
 		if Input.is_action_pressed("ui_select"):
-			print(Global.playerEnergy, ENERGY_DECAY_RATE_SPRINT)
+			#print(Global.playerEnergy, ENERGY_DECAY_RATE_SPRINT)
 			if Global.playerEnergy >= ENERGY_DECAY_RATE_SPRINT:
 				isRegeningEnergy = false
 				isSprinting = true
@@ -201,7 +212,7 @@ func handle_double_dash():
 					start_dash(dir)
 					Global.playerEnergy -= DASH_ENERGY_COST
 					energyBar.value = Global.playerEnergy
-					print("Dashing", dir, "- Energy left: ", Global.playerEnergy)
+					#print("Dashing", dir, "- Energy left: ", Global.playerEnergy)
 					energyRegenTimer.start()
 				else:
 					print("Not enough energy to dash!")
@@ -216,16 +227,12 @@ func start_dash(dir):
 	match dir:
 		"left":
 			dashDirection = Vector2.LEFT
-			print("Im left")
 		"right":
 			dashDirection = Vector2.RIGHT
-			print("Im right")
 		"up":
 			dashDirection = Vector2.UP
-			print("Im up")
 		"down":
 			dashDirection = Vector2.DOWN
-			print("Im down")
 			
 func attack():
 	if isHurt:
@@ -246,7 +253,6 @@ func attack():
 		
 		
 		Global.playerEnergy -= passiveCost
-		print(passiveCost)
 		energyBar.value = Global.playerEnergy
 		
 		# issue on player attack at start wont work
@@ -278,7 +284,7 @@ func die():
 	if Global.playerHealth <= 0 and name:
 		isPlayerAlive = false
 		Global.playerHealth = 0
-		print("Player Died!")
+		#print("Player Died!")
 		self.queue_free()
 		
 func player():
@@ -291,11 +297,10 @@ func take_damage(damage: int):
 		healthBar.value = Global.playerHealth
 		isRegeningHP = false
 		regenTimer.start()  # Reset health regen timer
-		print("Player took ", damage, " damage. Health: ", Global.playerHealth)
+		#print("Player took ", damage, " damage. Health: ", Global.playerHealth)
 		
 		if Global.playerHealth > 0:
 			isHurt = true
-			print("am i playing? hurttt")
 			anim.play("hurt")
 			modulate = Color(1, 0.6, 0.6)
 			await get_tree().create_timer(0.2).timeout
@@ -337,9 +342,18 @@ func _on_sprint_energy_decay_timeout() -> void:
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if Global.playerCurrentAttack and body.has_method("deal_dmg"):
-		print("do i get calledd?")
 		body.deal_dmg()
 
 
 func _on_exit_to_scene_2_2_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
+
+
+func _on_inventory_gui_closed() -> void:
+	canMove = true
+	get_tree().paused = false
+
+
+func _on_inventory_gui_opened() -> void:
+	canMove = false
+	get_tree().paused = true
