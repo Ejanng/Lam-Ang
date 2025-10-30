@@ -1,2 +1,3 @@
+res://scenes/Player/lam_ang.tscn
 res://scenes/EndlessBattle/EndlessBattle.tscn
-res://scripts/endless_battle.gd
+res://scripts/global.gd
