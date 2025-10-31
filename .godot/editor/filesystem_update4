@@ -3,3 +3,5 @@ res://Inventory/Item/playerInventory.tres
 res://scripts/inventory_gui.gd
 res://Inventory/inventory_item.gd
 res://Inventory/inventory.gd
+res://GUI/itemStackGui.tscn
+res://scripts/slot_gui.gd
