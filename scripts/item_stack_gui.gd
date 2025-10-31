@@ -15,5 +15,7 @@ func update():
 	if inventorySlot.amount > 1:
 		amountLabel.visible = true
 		amountLabel.text = str(inventorySlot.amount)
+	elif inventorySlot.amount == 1:
+		amountLabel.visible = false
 	else:
 		amountLabel.visible = true
