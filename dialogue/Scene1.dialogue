@@ -23,6 +23,8 @@ Don Juan: The destruction grows worse the close I get. These raids must end
 
 SYSTEM: Press 'Shift' to sprint.
 
+=> END
+
 ~ wounded_villager_start
 
 WOUNDED VILLAGER: Turn back! The Igorots... they're holding a feast... celebrating their victories...
@@ -39,12 +41,15 @@ SYSTEM: Press 'E' to attack.
 
 Igorot Warrior 1: Another fool come to die!
 
+=> END 
 
 ~ final_battle_start
 
 Don Juan: Too many... But I will not fall without -
 
 Igorot Chief: Take his head! We feast tonight!
+
+=> END
 
 # Main Story
 
@@ -59,7 +64,7 @@ Namongan: He went to Kaigorotan... and never returned.
 Lam-ang: Then I will find him. And I will avenge him.
 
 # Can be modified if may time
-SYSTEM: *Lam-ang picks up kampilan sword*
+SYSTEM: Lam-ang picks up kampilan sword
 # ---------------------------
 
 Namongan: When you asked for your father as a newborn, I knew this day would come. You carry his spirit, Lam-ang.

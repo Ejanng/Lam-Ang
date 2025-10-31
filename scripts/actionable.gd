@@ -12,6 +12,10 @@ func action() -> void:
 			dialogue_start = "namongan_start"
 		"WoundedVillager":
 			dialogue_start = "wounded_villager_start"
+		"InternalMonologue1":
+			dialogue_start = "internal_monologue_1_start"
+		"IgorotVillage":
+			dialogue_start = "igorot_village_start"
 	
 	# Start the dialogue
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)

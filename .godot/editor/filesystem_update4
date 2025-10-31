@@ -1,2 +1,4 @@
 res://npcs/wounded_villager.tscn
 res://Inventory/Item/playerInventory.tres
+res://scenes/Tutorial/TutorialScene.tscn
+res://scripts/actionable.gd

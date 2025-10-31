@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dsi6vlnusx1tm"]
+[gd_scene load_steps=39 format=3 uid="uid://dsi6vlnusx1tm"]
 
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environments/grass.png" id="1_23kjh"]
 [ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://assets/Environments/Mountain.png" id="2_5bpsw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8igj13o1og6" path="res://dialogue/actionable.tscn" id="8_23kjh"]
 [ext_resource type="PackedScene" uid="uid://di6ytm5suocus" path="res://npcs/namongan.tscn" id="8_om1g8"]
 [ext_resource type="Resource" uid="uid://k0ajtmpkft7" path="res://dialogue/Scene1.dialogue" id="9_5bpsw"]
+[ext_resource type="PackedScene" uid="uid://d4b118rrwlhqi" path="res://npcs/wounded_villager.tscn" id="10_2jkmf"]
 
 [sub_resource type="GDScript" id="GDScript_5bpsw"]
 
@@ -1545,6 +1546,9 @@ sources/24 = SubResource("TileSetAtlasSource_chk6s")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jkmf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jkmf"]
+size = Vector2(8, 432)
+
 [node name="Tutorial" type="Node2D"]
 script = SubResource("GDScript_5bpsw")
 
@@ -1705,3 +1709,35 @@ shape = SubResource("CapsuleShape2D_2jkmf")
 
 [node name="Lam-Ang" parent="." instance=ExtResource("7_5ry8j")]
 position = Vector2(600, 334)
+
+[node name="WoundedVillager" parent="." instance=ExtResource("10_2jkmf")]
+position = Vector2(1125, 1024)
+
+[node name="Actionable" parent="WoundedVillager" instance=ExtResource("8_23kjh")]
+dialogue_resource = ExtResource("9_5bpsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoundedVillager/Actionable"]
+shape = SubResource("CapsuleShape2D_2jkmf")
+
+[node name="InternalMonologue1" type="Node" parent="."]
+
+[node name="Actionable" parent="InternalMonologue1" instance=ExtResource("8_23kjh")]
+position = Vector2(621, 845)
+dialogue_resource = ExtResource("9_5bpsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InternalMonologue1/Actionable"]
+position = Vector2(-5, 7)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_2jkmf")
+
+[node name="IgorotVillage" type="Node" parent="."]
+
+[node name="Actionable" parent="IgorotVillage" instance=ExtResource("8_23kjh")]
+position = Vector2(2467, 899)
+rotation = 1.5707964
+dialogue_resource = ExtResource("9_5bpsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IgorotVillage/Actionable"]
+position = Vector2(44, 1)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_2jkmf")
