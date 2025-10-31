@@ -1,3 +1,7 @@
-res://GUI/slot_gui.gd
-res://Inventory/inventory.gd
-res://scripts/global.gd
+res://scenes/MainStory/Town.tscn
+res://Inventory/Item/playerInventory.tres
+res://npcs/suitor.tscn
+res://npcs/priest.tscn
+res://npcs/capitan.tscn
+res://npcs/aso.tscn
+res://scripts/actionable.gd
