@@ -1,0 +1,390 @@
+# Tutorial
+
+~ namongan_start
+
+Namongan: Must you go, Don Juan? I fear for you... and our child grows within me.
+
+Don Juan: The Igorots have raided our lands for the last time. I must bring peace to Nalbuan, my love. I will return before our child is born.
+
+Namongan: Then take this with you
+
+- Claim Anting-anting
+	Namongan: May it protect you in the mountains.
+
+Don Juan: I will return. I promise
+
+SYSTEM: Follow the path to Kaigorotan.
+
+=> END
+
+~ internal_monologue_1_start
+
+Don Juan: The destruction grows worse the close I get. These raids must end
+
+SYSTEM: Press 'Shift' to sprint.
+
+=> END
+
+~ wounded_villager_start
+
+WOUNDED VILLAGER: Turn back! The Igorots... they're holding a feast... celebrating their victories...
+
+DON JUAN: Which is why I must go forward.
+
+=> END
+
+~ igorot_village_start
+
+Don Juan:  Igorots of Kaigorotan! I am Don Juan of Nalbuan! Your raids end today
+
+SYSTEM: Press 'E' to attack.
+
+Igorot Warrior 1: Another fool come to die!
+
+=> END 
+
+~ final_battle_start
+
+Don Juan: Too many... But I will not fall without -
+
+Igorot Chief: Take his head! We feast tonight!
+
+=> END
+
+# Main Story
+
+~ lam_ang_scene1_start
+
+Namongan: My son... you've only been alive for nine months. You named yourself the moment you were born, grew into a man in days... but you cannot—
+
+Lam-ang: Mother, you know I'm not like other men. When I first opened my eyes and spoke my name, I knew my purpose. Where is father?
+
+Namongan: He went to Kaigorotan... and never returned.
+
+Lam-ang: Then I will find him. And I will avenge him.
+
+# Can be modified if may time
+SYSTEM: Lam-ang picks up kampilan sword
+# ---------------------------
+
+Namongan: When you asked for your father as a newborn, I knew this day would come. You carry his spirit, Lam-ang.
+
+Lam-ang: I carry the mutya stones. I carry father's courage. The Igorots will answer for what they've done.
+
+SYSTEM: Lam-ang equips two mutya stones, boosting his stats.
+
+Namongan: Then go, my son. But please... return to me. You're all I have left.
+
+# SYSTEM: You are now Lam-ang. Press ESC to view Controls.
+
+=> END 
+
+~ lam_ang_scene2_start
+
+Lam-ang: (internal monologue) They call this the darkest mountain. Death lingers here. Good. Let death come for those who took my father.
+
+Igorot Scout: Who dares enter Igorotan territory?
+
+Lam-ang: I am Lam-ang, son of Don Juan! I've come for the ones who killed my father!
+
+Igorot Scout: Don Juan? (laughs) His head decorates our chief's spear! You'll join him!
+
+Lam-ang: You'll regret those words.
+
+SYSTEM: Combat Started. Defeat all enemies to proceed. (3 waves)
+
+=> END 
+
+~ lam_ang_scene3_start
+
+Lam-ang: Father... I will honor you.
+
+Igorot Chief: Another warrior from Nalbuan? You people never learn!
+
+Lam-ang: I am Lam-ang, son of Don Juan! I challenge all of Kaigorotan! Every warrior here - face me!
+
+Igorot Chief: Bold words for a boy! Kill him! Throw your spears!
+
+SYSTEM: BOSS FIGHT — Igorot Chief. Defeat him and his warriors!
+
+#Igorot Chief: You have skill, boy. But can you face ME?
+
+=> END 
+
+~ lam_ang_scene4_start
+
+Lam-ang: It's done.
+
+Lam-ang: Father, your death is avenged. Nalbuan is safe. No more raids. No more fear.
+
+Lam-ang: I wish you could have met the man I've become. I hope... I hope I've made you proud.
+
+Lam-ang: I will bring you home. Rest now.
+
+#SYSTEM: Returning to Nalbuan...
+
+=> END
+
+~ act2_scene1_homecoming_start
+
+Namongan: Lam-ang! You've returned!
+
+Namongan: My son... you've done what seemed impossible. Your father's spirit can rest now.
+
+Namongan: But I see it in your eyes—something still troubles you.
+
+Lam-ang: I feel... incomplete. As if there's something more I must do. The battle is won, but my purpose isn't finished.
+
+Namongan: You're a man now, Lam-ang. A warrior. Perhaps it's time you thought of... a wife?
+
+Lam-ang: A wife? Mother, who would want—
+
+Namongan: There is a maiden in Calanutian. Doña Ines Cannoyan. They say she shines like nine flocks of stars in the night sky. Beautiful, wealthy, but... proud.
+
+Lam-ang: Tell me more.
+
+Namongan: She has rejected countless wealthy Castilian suitors! Rich merchants, Spanish officials—none were good enough. What makes you think—
+
+Lam-ang: Mother, I defeated all of Kaigorotan alone. Surely I can win one woman's heart.
+ 
+#SYSTEM: A white rooster with yellow feet struts forward.
+
+White Rooster: Trust in us, Namongan! Your son will succeed where others have failed!
+
+#SYSTEM: A shaggy dog with golden collar trots in, barking twice.
+
+Namongan: Even your animals have more confidence than I do. Very well, my son. But take care—matters of the heart are more dangerous than any battle.
+
+Lam-ang: Then it's settled. I leave for Calanutian tomorrow.
+
+SYSTEM: New Quest: The Courtship of Ines Cannoyan
+
+SYSTEM: Companions Acquired: White Rooster, Shaggy Dog
+
+=> END
+
+~ act2_scene2_travel_start
+
+Lam-ang: Calanutian lies to the east. A new challenge awaits — one I cannot solve with a sword alone.
+
+SYSTEM: Follow the path to Calanutian.
+
+=> END 
+
+~ act2_scene2_1_travel_start
+
+Bandit Leader: Hold there, traveler! Nice rope you've got. And that rooster looks... exotic. Hand them over and you can pass.
+
+Lam-ang: I have no time for this. These are my companions, not your plunder. Move aside.
+
+Bandit Leader: Companions? Boys, looks like we've got a crazy one!
+
+SYSTEM: Bandits draw weapons.
+
+Lam-ang: I warned you.
+
+SYSTEM: Combat Started. Defeat the Bandits! 6 enemies remaining.
+
+# SYSTEM: Combat Complete. Calanutian ahead.
+
+=> END
+
+~ act2_scene3_suitors_start
+
+Lam-ang: So many suitors...
+
+Suitor 1: Get in line, friend!
+
+Lam-ang: I don't wait in lines. Tandang!
+
+#SYSTEM: PRESS Q — ROOSTER ABILITY
+#
+#White Rooster: (flaps wings)
+#SYSTEM: The house shakes and collapses.
+#
+#Doña Ines: (furious) WHO DESTROYED MY HOUSE?!
+#
+#Lam-ang: Aso, fix it!
+#
+#SYSTEM: PRESS E — DOG ABILITY
+#
+#Shaggy Dog: (barks)
+#SYSTEM: House rebuilds itself, even better than before.
+
+Suitors: Impossible!
+
+Doña Ines: You there! Come inside.
+
+SYSTEM: Enter the house.
+
+=> END 
+
+~ act2_scene4_meeting_ines
+
+Don Unnayan: What is your name, young man?
+
+Lam-ang: I am Lam-ang of Nalbuan, son of Don Juan.
+
+Doña Ines: You destroyed my house just to get my attention?
+
+Lam-ang: And I fixed it. Better than before.
+
+Doña Ines: Bold. I like that.
+
+Don Unnayan: My daughter is wealthy — lands, gold, servants. What do you offer?
+
+Lam-ang: I own the lands of Kaigorotan. I trade with Chinese merchants. My wealth matches hers.
+
+Doña Ines: And what do you offer ME?
+
+Lam-ang: Loyalty. Strength. A love that even death cannot break.
+
+SYSTEM: Ines studies him.
+
+Doña Ines: Then you may court me, Lam-ang of Nalbuan.
+
+SYSTEM: Courtship Successful!
+
+=> END 
+
+~ act2_scene5_wedding_start
+
+Priest: I now pronounce you husband and wife!
+
+SYSTEM: Lam-ang and Ines embrace.
+
+SYSTEM: Married! Returning to Nalbuan...
+
+=> END
+
+~ act3_scene1_rarang_call
+
+Capitan: Lam-ang! You must dive for the rarang. It's your duty as a man of this barangay.
+
+Lam-ang: When?
+
+Capitan: Tomorrow at dawn. The deep trench.
+
+Doña Ines: I have a bad feeling about this...
+
+Lam-ang: I'll be fine. I've faced worse.
+
+=> END 
+
+~ act3_scene1_1_rarang_call
+
+Lam-ang: Ines... I saw my death. A great shark.
+
+Doña Ines: Then don't go!
+
+Lam-ang: I must. But listen — if the stairs shake, the roof falls, and the stove breaks... I'm dead. Gather my bones. The rooster and dog will bring me back.
+
+Doña Ines: Lam-ang...
+
+Lam-ang: Trust me. Even death won't keep us apart.
+
+~ act3_scene2_shore_dive
+
+Lam-ang: Whatever comes... I'm ready.
+
+SYSTEM: Swim to the rarang.
+
+=> END 
+
+~ act3_scene2_1_shore_dive
+
+SYSTEM: Reaches glowing rarang at bottom
+
+Lam-ang: There it is—
+
+SYSTEM: Massive shadow. BERKAKAN THE SHARK appears
+
+Berkakan the Shark: Your journey ends, Lam-ang!
+
+=> END 
+
+~ act3_scene2_2_shore_dive
+
+Lam-ang: (weakening) Ines... I'm sorry...
+
+=> END
+
+~ act3_scene3_ines_returns
+
+
+#SYSTEM: Suddenly — Screen shakes. Stairs animated shaking.
+
+Doña Ines: No...
+
+#SYSTEM: Roof collapses
+
+Doña Ines: No, no!
+
+#SYSTEM: Stove breaks.
+
+Doña Ines: LAM-ANG!
+
+#SYSTEM: She collapses. Rooster approaches.
+
+White Rooster: Doña Ines... we can still save him. We need his bones.
+
+~ act3_scene4_bones_of_lamang
+
+Tandang Marcos: Every bone. As you asked.
+
+Doña Ines: Thank you.
+
+SYSTEM: Ines lays bones on sand, covers with her cloth, turns away.
+
+White Rooster: Don't look.
+
+SYSTEM: Rooster flaps wings.
+
+SYSTEM: Dog barks twice.
+
+SYSTEM: Cloth rises, takes human shape.
+
+White Rooster: Look now.
+
+SYSTEM: Cloth falls. Lam-ang stands, stretching.
+
+Lam-ang: What a sleep... seven days?
+
+Doña Ines: LAM-ANG!
+
+SYSTEM: She embraces him.
+
+Lam-ang: I... I remember. The shark. But I'm alive?
+
+Doña Ines: Not even death could take you from me.
+
+Lam-ang: And it never will.
+
+=> END 
+
+
+~ epilogue_nalbuan_return
+
+SYSTEM: Lam-ang and Ines walk home hand in hand.
+
+Lam-ang: Finally, peace. We can live quietly now.
+
+Doña Ines: After all you've been through, you deserve rest.
+
+SYSTEM: They reach home. Suddenly — war drums in distance.
+
+Namongan:  Lam-ang! Raiders approach from the mountains!
+
+Lam-ang: It seems my battles aren't over yet.
+
+Doña Ines: Then we fight together. This is OUR home.
+
+Lam-ang: Together.
+
+SYSTEM: ENDLESS MODE — Defend Nalbuan!
+
+=> END
+
+
+
+

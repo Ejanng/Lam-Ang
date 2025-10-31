@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://rdo2p3vpslq3"]
+
+[ext_resource type="PackedScene" uid="uid://c38rh2ft5lke5" path="res://scenes/Drops/health_potion.tscn" id="1_beou7"]
+[ext_resource type="Script" uid="uid://buqlpcs727fru" path="res://Inventory/inventory_item.gd" id="1_nb7vn"]
+[ext_resource type="Texture2D" uid="uid://c4bh2ipcyncl0" path="res://assets/Drops/health potion.png" id="2_nb7vn"]
+
+[resource]
+script = ExtResource("1_nb7vn")
+name = "lifepot"
+texture = ExtResource("2_nb7vn")
+scene = ExtResource("1_beou7")
+effectValue = 0.2
+metadata/_custom_type_script = "uid://buqlpcs727fru"

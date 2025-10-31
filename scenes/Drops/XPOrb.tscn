@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6pt28dphmjns"]
+
+[ext_resource type="Script" uid="uid://dod42px5mjo3k" path="res://scripts/XPOrb.gd" id="1_p5458"]
+[ext_resource type="Texture2D" uid="uid://ck6auu12t34u0" path="res://assets/Environments/Kubo 2.png" id="1_ufohb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufohb"]
+size = Vector2(4, 81)
+
+[node name="XP" type="Area2D"]
+rotation = 1.5707964
+script = ExtResource("1_p5458")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1875, 2.75)
+texture = ExtResource("1_ufohb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_ufohb")
