@@ -1,5 +1,2 @@
-res://scenes/EndlessBattle/EndlessBattle.tscn
+res://scenes/MainStory/Town.tscn
 res://Inventory/Item/playerInventory.tres
-res://scripts/inventory_gui.gd
-res://Inventory/inventory_item.gd
-res://Inventory/inventory.gd
