@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://flfi1n3n3sxp"]
+
+[ext_resource type="PackedScene" uid="uid://dad2r7fvn2wit" path="res://scenes/MainStory/Town.tscn" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="World_Map" parent="." instance=ExtResource("1_wtcfe")]

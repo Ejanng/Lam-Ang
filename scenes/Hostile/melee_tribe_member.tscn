@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bcxda6gun7nus"]
+[gd_scene load_steps=18 format=3 uid="uid://dwlr5kuov2u"]
 
-[ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_hdtyb"]
-[ext_resource type="Script" uid="uid://buwasdtb3dsvk" path="res://scripts/melee_enemy.gd" id="1_jgi5p"]
-[ext_resource type="Texture2D" uid="uid://dn7ncb1xcmhoj" path="res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png" id="4_628s0"]
+[ext_resource type="Texture2D" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_hdtyb"]
+[ext_resource type="Script" path="res://scripts/melee_enemy.gd" id="1_jgi5p"]
+[ext_resource type="Texture2D" path="res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png" id="4_628s0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgi5p"]
 atlas = ExtResource("1_hdtyb")
@@ -89,6 +89,15 @@ bg_color = Color(0.968627, 0.337255, 0.384314, 1)
 
 [node name="melee_enemy" type="CharacterBody2D"]
 script = ExtResource("1_jgi5p")
+xpDrop = null
+xpDropChance = null
+coinDrop = null
+coinDropChance = null
+healthPotionDrop = null
+healthPotionDropChance = null
+energyPotionDrop = null
+energyPotionDropChance = null
+lootDropChance = null
 
 [node name="AttackPauseTimer" type="Timer" parent="."]
 wait_time = 3.0
