@@ -1,3 +1,4 @@
 res://scenes/EndlessBattle/EndlessBattle.tscn
 res://Inventory/Item/playerInventory.tres
 res://scripts/slot_gui.gd
+res://scripts/inventory_gui.gd
