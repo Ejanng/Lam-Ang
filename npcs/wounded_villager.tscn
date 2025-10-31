@@ -42,7 +42,7 @@ animations = [{
 radius = 17.0
 height = 36.0
 
-[node name="Namongan" type="CharacterBody2D"]
+[node name="WoundedVillager" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

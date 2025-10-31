@@ -15,3 +15,12 @@ res://GUI/inventory_gui.tscn
 res://scenes/Player/lam_ang.tscn
 res://GUI/slot_gui.tscn
 res://GUI/itemStackGui.tscn
+res://GUI/artifact_slot.tscn
+res://Inventory/inventory_item.gd
+res://Inventory/Item/lifepot.tres
+res://scenes/scripts/actionable.gd
+res://scenes/scripts/global.gd
+res://scenes/scripts/inventory_gui.gd
+res://scenes/scripts/item_stack_gui.gd
+res://scenes/scripts/slot_gui.gd
+res://scenes/Tutorial/TutorialScene.tscn
