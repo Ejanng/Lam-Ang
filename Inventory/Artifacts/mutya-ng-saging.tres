@@ -7,5 +7,5 @@
 script = ExtResource("1_ke3sh")
 name = "mutya-ng-saging"
 texture = ExtResource("2_op1qg")
-size = Vector2(1, 1)
+energyStat = 0.35
 metadata/_custom_type_script = "uid://ccjyopo6hld7g"

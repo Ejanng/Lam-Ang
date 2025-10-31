@@ -7,4 +7,5 @@
 script = ExtResource("1_mvv3c")
 name = "mutya-ng-ibon"
 texture = ExtResource("2_rirjn")
+speedStat = 0.3
 metadata/_custom_type_script = "uid://ccjyopo6hld7g"
