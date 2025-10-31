@@ -15,28 +15,49 @@ var xpToNextLevel = 100
 var playerCoin = 0
 var playerLevel = 0
 
-# character stats
-var addDef = 0          # multiplier for health e.g health x def, to make the player can withstand longer 			
-var addStrength = 1000		# added dmg for player to deal in enemy
-var addEnergy = 0		# added energy for player
-var addHealth = 0
-var addSpeed = 100
-
 # drop effects
-var healthPotion: float
-var energyPotion: float
-
-# artifacts slot
-var isNameStat1 = false
-var isNameStat2 = false
+var healthPotion: float = 0
+var energyPotion: float = 0
 
 var mapBounds = Rect2(-1000, -1000 ,10000, 10000)
 
-# recalculated variable
-var playerHealth = health + addHealth
-var playerEnergy = energy + addEnergy
-var playerDamage = damage + addStrength
-
-
 var currentWave: int
 var moveingToNextWave: bool
+
+# base player stats (no artifacts)
+var base_def = 0.0
+var base_speed = 0.0
+var base_health = 0.0
+var base_energy = 0.0
+var base_strength = 0.0
+var base_crit_chance = 0.0
+var base_crit_dmg = 0.0
+
+# artifact bonuses
+var artifacts_def = 0.0
+var artifacts_speed = 0.0
+var artifacts_health = 0.0
+var artifacts_energy = 0.0
+var artifacts_strength = 0.0
+var artifacts_crit_chance = 0.0
+var artifacts_crit_dmg = 0.0
+
+var active_artifacts: Array = []
+
+func recalc_artifacts():
+	artifacts_def = 0.0
+	artifacts_speed = 0.0
+	artifacts_health = 0.0
+	artifacts_energy = 0.0
+	artifacts_strength = 0.0
+	artifacts_crit_chance = 0.0
+	artifacts_crit_dmg = 0.0
+	
+	for artifact in ArtifactsItem:
+		artifacts_def += artifact.defStat
+		artifacts_speed += artifact.speedStat
+		artifacts_health += artifact.healthStat
+		artifacts_energy += artifact.energyStat
+		artifacts_strength += artifact.strengthStat
+		artifacts_crit_chance += artifact.critChanceStat
+		artifacts_crit_dmg += artifact.critDMGChance

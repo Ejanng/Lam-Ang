@@ -68,13 +68,25 @@ func _ready() -> void:
 	xpBar.value = Global.playerXP
 	xpBar.max_value = Global.xpToNextLevel
 	
+	
+	
 	inventoryGui.close()
 	update_coin_display()
 	
+# function stats of consumable
+func health_potion():
+	if Global.healthPotion > 0:
+		print("Before: ", Global.playerHealth)
+		Global.playerHealth += (Global.playerHealth * Global.healthPotion)
+		print("After: ", Global.playerHealth)
+		Global.healthPotion = 0
+
 func _process(delta: float) -> void:
 	cameraMovement()
+	health_potion()
 	regenPlayerHealth(delta)
 	regenPlayerEnergy(delta)
+	
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()

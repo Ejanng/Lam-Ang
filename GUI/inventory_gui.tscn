@@ -101,7 +101,7 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect2"]
+[node name="Artifacts" type="GridContainer" parent="NinePatchRect2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -115,18 +115,18 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ArtifactSlot" parent="NinePatchRect2/GridContainer" instance=ExtResource("4_qygy4")]
+[node name="ArtifactSlot" parent="NinePatchRect2/Artifacts" instance=ExtResource("4_qygy4")]
 layout_mode = 2
 
-[node name="ArtifactSlot2" parent="NinePatchRect2/GridContainer" instance=ExtResource("4_qygy4")]
+[node name="ArtifactSlot2" parent="NinePatchRect2/Artifacts" instance=ExtResource("4_qygy4")]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect2"]
+[node name="Skills" type="GridContainer" parent="NinePatchRect2"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 62.0
 offset_right = 30.0
 offset_bottom = 82.0
 
-[node name="ArtifactSlot" parent="NinePatchRect2/HBoxContainer" instance=ExtResource("4_qygy4")]
+[node name="ArtifactSlot" parent="NinePatchRect2/Skills" instance=ExtResource("4_qygy4")]
 layout_mode = 2
