@@ -282,7 +282,6 @@ radius = 21.0
 
 [node name="Lam-Ang" type="CharacterBody2D"]
 process_mode = 3
-position = Vector2(0, 2)
 collision_layer = 3
 script = ExtResource("1_67xbk")
 inventory = ExtResource("2_fewss")
