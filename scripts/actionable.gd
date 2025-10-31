@@ -8,6 +8,7 @@ func action() -> void:
 	
 	# Modify dialogue_start based on parent
 	match parent_name:
+		# Tutorial
 		"Namongan":
 			dialogue_start = "namongan_start"
 		"WoundedVillager":
@@ -16,6 +17,10 @@ func action() -> void:
 			dialogue_start = "internal_monologue_1_start"
 		"IgorotVillage":
 			dialogue_start = "igorot_village_start"
+			
+		# Main Story
+		"NamonganMain1":
+			dialogue_start = "lam_ang_scene1_start"
 	
 	# Start the dialogue
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)

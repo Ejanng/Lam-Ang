@@ -25,7 +25,7 @@ var addSpeed = 100
 var isNameStat1 = false
 var isNameStat2 = false
 
-var mapBounds = Rect2(-100,-100,10000,10000)
+var mapBounds = Rect2(-1000, -1000 ,10000, 10000)
 
 # recalculated variable
 var playerHealth = health + addHealth

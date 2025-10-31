@@ -1547,7 +1547,7 @@ sources/24 = SubResource("TileSetAtlasSource_chk6s")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jkmf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jkmf"]
-size = Vector2(8, 432)
+size = Vector2(10.9999695, 480)
 
 [node name="Tutorial" type="Node2D"]
 script = SubResource("GDScript_5bpsw")
@@ -1726,7 +1726,7 @@ position = Vector2(621, 845)
 dialogue_resource = ExtResource("9_5bpsw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InternalMonologue1/Actionable"]
-position = Vector2(-5, 7)
+position = Vector2(19, 16.499939)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_2jkmf")
 
