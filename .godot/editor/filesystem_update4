@@ -1,2 +1,7 @@
 res://scenes/MainStory/Town.tscn
 res://Inventory/Item/playerInventory.tres
+res://npcs/suitor.tscn
+res://npcs/priest.tscn
+res://npcs/capitan.tscn
+res://npcs/aso.tscn
+res://scripts/actionable.gd

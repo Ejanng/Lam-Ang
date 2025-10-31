@@ -22,10 +22,15 @@ var addEnergy = 0		# added energy for player
 var addHealth = 0
 var addSpeed = 100
 
+# drop effects
+var healthPotion: float
+var energyPotion: float
+
+# artifacts slot
 var isNameStat1 = false
 var isNameStat2 = false
 
-var mapBounds = Rect2(-100,-100,10000,10000)
+var mapBounds = Rect2(-1000, -1000 ,10000, 10000)
 
 # recalculated variable
 var playerHealth = health + addHealth

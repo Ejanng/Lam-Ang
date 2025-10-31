@@ -9,4 +9,5 @@ script = ExtResource("1_0wvm8")
 name = "energypot"
 texture = ExtResource("3_s5il3")
 scene = ExtResource("1_n7xnp")
+maxAmount = 10
 metadata/_custom_type_script = "uid://buqlpcs727fru"

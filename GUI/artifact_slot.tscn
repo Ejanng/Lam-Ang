@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bamqdmubtwtok"]
 
-[ext_resource type="Script" uid="uid://bqeuaqx7uoojv" path="res://scripts/artifact_slot.gd" id="1_22gih"]
+[ext_resource type="Script" uid="uid://bqeuaqx7uoojv" path="res://GUI/artifact_slot.gd" id="1_22gih"]
 [ext_resource type="Texture2D" uid="uid://dbw7ebgstkq8k" path="res://assets/GUI/inventorySlot.png" id="2_7gfjw"]
 
 [node name="ArtifactSlot" type="Panel"]

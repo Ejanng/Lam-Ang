@@ -9,4 +9,5 @@ script = ExtResource("1_nb7vn")
 name = "lifepot"
 texture = ExtResource("2_nb7vn")
 scene = ExtResource("1_beou7")
+effectValue = 0.2
 metadata/_custom_type_script = "uid://buqlpcs727fru"
