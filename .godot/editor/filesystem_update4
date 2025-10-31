@@ -15,4 +15,3 @@ res://scripts/endless_battle.gd
 res://GUI/itemStackGui.tscn
 res://scripts/item_stack_gui.gd
 res://scenes/Drops/XPOrb.tscn
-res://scripts/DropManager.gd
