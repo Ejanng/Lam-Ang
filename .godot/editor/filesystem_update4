@@ -1,7 +1,2 @@
-res://scenes/Drops/XPOrb.tscn
-res://Inventory/artifacts_item.gd
+res://scenes/MainStory/Town.tscn
 res://Inventory/Item/playerInventory.tres
-res://Inventory/Artifacts/bato-ng-palos.tres
-res://Inventory/Artifacts/mutya-ng-buaya.tres
-res://Inventory/Artifacts/mutya-ng-ibon.tres
-res://Inventory/Artifacts/mutya-ng-wasay.tres
