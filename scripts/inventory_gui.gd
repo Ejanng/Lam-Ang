@@ -55,14 +55,18 @@ func close():
 	closed.emit()
 
 func onSlotClicked(slot):
-	if slot.isEmpty() && itemInHand:
+	if slot.isEmpty():
+		if !itemInHand: return
+		
 		insertItemInSlot(slot)
 		return
 	
 	if !itemInHand:
 		takeItemFromSlot(slot)
+		return
 		
-		
+	swapItems(slot)
+	
 func takeItemFromSlot(slot):
 	itemInHand = slot.takeItem()
 	add_child(itemInHand)
@@ -75,6 +79,15 @@ func insertItemInSlot(slot):
 	itemInHand = null
 	
 	slot.insert(item)
+	
+func swapItems(slot):
+	var tempItem = slot.takeItem()
+	
+	insertItemInSlot(slot)
+	
+	itemInHand = tempItem
+	add_child(itemInHand)
+	updateItemInHand()
 
 func updateItemInHand():
 	if !itemInHand: return
