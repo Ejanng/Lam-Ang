@@ -1,5 +1,6 @@
 res://scenes/EndlessBattle/EndlessBattle.tscn
 res://scripts/endless_battle.gd
+<<<<<<< HEAD
 
 res://scenes/Player/lam_ang.tscn
 res://Inventory/inventory.gd
@@ -16,3 +17,5 @@ res://GUI/itemStackGui.tscn
 res://scripts/item_stack_gui.gd
 res://scenes/Drops/XPOrb.tscn
 res://scripts/DropManager.gd
+=======
+>>>>>>> parent of a7343d6 (whole map)
