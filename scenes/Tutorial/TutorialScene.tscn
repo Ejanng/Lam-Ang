@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dsi6vlnusx1tm"]
+[gd_scene load_steps=38 format=3 uid="uid://dsi6vlnusx1tm"]
 
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environments/grass.png" id="1_23kjh"]
 [ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://assets/Environments/Mountain.png" id="2_5bpsw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8igj13o1og6" path="res://dialogue/actionable.tscn" id="8_23kjh"]
 [ext_resource type="PackedScene" uid="uid://di6ytm5suocus" path="res://npcs/namongan.tscn" id="8_om1g8"]
 [ext_resource type="Resource" uid="uid://k0ajtmpkft7" path="res://dialogue/Scene1.dialogue" id="9_5bpsw"]
+[ext_resource type="PackedScene" uid="uid://d4b118rrwlhqi" path="res://npcs/wounded_villager.tscn" id="10_2jkmf"]
 
 [sub_resource type="GDScript" id="GDScript_5bpsw"]
 
@@ -1704,4 +1705,13 @@ dialogue_resource = ExtResource("9_5bpsw")
 shape = SubResource("CapsuleShape2D_2jkmf")
 
 [node name="Lam-Ang" parent="." instance=ExtResource("7_5ry8j")]
-position = Vector2(600, 334)
+position = Vector2(544, 318)
+
+[node name="WoundedVillager" parent="." instance=ExtResource("10_2jkmf")]
+position = Vector2(964, 1047)
+
+[node name="Actionable" parent="WoundedVillager" instance=ExtResource("8_23kjh")]
+dialogue_resource = ExtResource("9_5bpsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoundedVillager/Actionable"]
+shape = SubResource("CapsuleShape2D_2jkmf")

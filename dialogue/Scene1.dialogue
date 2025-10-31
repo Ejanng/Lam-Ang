@@ -10,12 +10,38 @@ Namongan: Then take this with you
 	Namongan: May it protect you in the mountains.
 
 Don Juan: I will return. I promise
+
+SYSTEM: Follow the path to Kaigorotan.
+
+=> END
+
+~ internal_monologue_start
+
+Don Juan: The destruction grows worse the closer I get. These raids must end.
+
+SYSTEM: Press 'Shift' to sprint.
+
 => END
 
 ~ wounded_villager_start
 
-WOUNDED VILLAGER: Turn back! The Igorots... they're holding a feast... celebrating their victories...
+Wounded Villager: Turn back! The Igorots... they're holding a feast... celebrating their victories...
 
-DON JUAN: Which is why I must go forward.
+Don Juan: Which is why I must go forward.
 
 => END
+
+~ igorot_feasting_start
+
+Don Juan: Igorots of Kaigorotan! I am Don Juan of Nalbuan! Your raids end today!
+
+SYSTEM: Press 'E' to attack.
+
+Igorot Warrior 1: Another fool come to die!
+
+SYSTEM: Fight 3 Igorot Warriors.
+
+=> END
+
+
+

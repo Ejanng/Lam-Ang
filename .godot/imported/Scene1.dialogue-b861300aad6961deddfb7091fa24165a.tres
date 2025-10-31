@@ -6,10 +6,12 @@
 script = ExtResource("1_tgus6")
 using_states = PackedStringArray()
 titles = {
+"igorot_feasting_start": "35",
+"internal_monologue_start": "19",
 "namongan_start": "2",
-"wounded_villager_start": "16"
+"wounded_villager_start": "27"
 }
-character_names = PackedStringArray("Namongan", "Don Juan", "WOUNDED VILLAGER", "DON JUAN")
+character_names = PackedStringArray("Namongan", "Don Juan", "SYSTEM", "Wounded Villager", "Igorot Warrior 1")
 first_title = "0"
 lines = {
 "0": {
@@ -30,55 +32,55 @@ lines = {
 "11": {
 &"character": "Don Juan",
 &"id": "11",
-&"next_id": "12",
+&"next_id": "13",
 &"text": "I will return. I promise",
 &"type": "dialogue"
 },
 "12": {
 &"id": "12",
+&"next_id": "13",
+&"type": ""
+},
+"13": {
+&"character": "SYSTEM",
+&"id": "13",
+&"next_id": "15",
+&"text": "Follow the path to Kaigorotan.",
+&"type": "dialogue"
+},
+"14": {
+&"id": "14",
+&"next_id": "15",
+&"type": ""
+},
+"15": {
+&"id": "15",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
 &"type": "goto"
 },
-"13": {
-&"id": "13",
-&"next_id": "14",
-&"type": ""
-},
-"14": {
-&"id": "14",
-&"next_id": "16",
-&"type": "title"
-},
-"15": {
-&"id": "15",
-&"next_id": "16",
-&"type": ""
-},
 "16": {
-&"character": "WOUNDED VILLAGER",
 &"id": "16",
-&"next_id": "18",
-&"text": "Turn back! The Igorots... they're holding a feast... celebrating their victories...",
-&"type": "dialogue"
+&"next_id": "17",
+&"type": ""
 },
 "17": {
 &"id": "17",
-&"next_id": "18",
-&"type": ""
+&"next_id": "19",
+&"type": "title"
 },
 "18": {
-&"character": "DON JUAN",
 &"id": "18",
-&"next_id": "20",
-&"text": "Which is why I must go forward.",
-&"type": "dialogue"
+&"next_id": "19",
+&"type": ""
 },
 "19": {
+&"character": "Don Juan",
 &"id": "19",
-&"next_id": "20",
-&"type": ""
+&"next_id": "21",
+&"text": "The destruction grows worse the closer I get. These raids must end.",
+&"type": "dialogue"
 },
 "2": {
 &"character": "Namongan",
@@ -89,22 +91,124 @@ lines = {
 },
 "20": {
 &"id": "20",
+&"next_id": "21",
+&"type": ""
+},
+"21": {
+&"character": "SYSTEM",
+&"id": "21",
+&"next_id": "23",
+&"text": "Press 'Shift' to sprint.",
+&"type": "dialogue"
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"type": ""
+},
+"23": {
+&"id": "23",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
 &"type": "goto"
 },
-"21": {
-&"id": "21",
-&"is_snippet": false,
-&"next_id": "end",
-&"next_id_after": "",
-&"type": "goto"
+"24": {
+&"id": "24",
+&"next_id": "25",
+&"type": ""
+},
+"25": {
+&"id": "25",
+&"next_id": "27",
+&"type": "title"
+},
+"26": {
+&"id": "26",
+&"next_id": "27",
+&"type": ""
+},
+"27": {
+&"character": "Wounded Villager",
+&"id": "27",
+&"next_id": "29",
+&"text": "Turn back! The Igorots... they're holding a feast... celebrating their victories...",
+&"type": "dialogue"
+},
+"28": {
+&"id": "28",
+&"next_id": "29",
+&"type": ""
+},
+"29": {
+&"character": "Don Juan",
+&"id": "29",
+&"next_id": "31",
+&"text": "Which is why I must go forward.",
+&"type": "dialogue"
 },
 "3": {
 &"id": "3",
 &"next_id": "4",
 &"type": ""
+},
+"30": {
+&"id": "30",
+&"next_id": "31",
+&"type": ""
+},
+"31": {
+&"id": "31",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"32": {
+&"id": "32",
+&"next_id": "33",
+&"type": ""
+},
+"33": {
+&"id": "33",
+&"next_id": "35",
+&"type": "title"
+},
+"34": {
+&"id": "34",
+&"next_id": "35",
+&"type": ""
+},
+"35": {
+&"character": "Don Juan",
+&"id": "35",
+&"next_id": "37",
+&"text": "Igorots of Kaigorotan! I am Don Juan of Nalbuan! Your raids end today!",
+&"type": "dialogue"
+},
+"36": {
+&"id": "36",
+&"next_id": "37",
+&"type": ""
+},
+"37": {
+&"character": "SYSTEM",
+&"id": "37",
+&"next_id": "39",
+&"text": "Press 'E' to attack.",
+&"type": "dialogue"
+},
+"38": {
+&"id": "38",
+&"next_id": "39",
+&"type": ""
+},
+"39": {
+&"character": "Igorot Warrior 1",
+&"id": "39",
+&"next_id": "41",
+&"text": "Another fool come to die!",
+&"type": "dialogue"
 },
 "4": {
 &"character": "Don Juan",
@@ -112,6 +216,42 @@ lines = {
 &"next_id": "6",
 &"text": "The Igorots have raided our lands for the last time. I must bring peace to Nalbuan, my love. I will return before our child is born.",
 &"type": "dialogue"
+},
+"40": {
+&"id": "40",
+&"next_id": "41",
+&"type": ""
+},
+"41": {
+&"character": "SYSTEM",
+&"id": "41",
+&"next_id": "43",
+&"text": "Fight 3 Igorot Warriors.",
+&"type": "dialogue"
+},
+"42": {
+&"id": "42",
+&"next_id": "43",
+&"type": ""
+},
+"43": {
+&"id": "43",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"47": {
+&"id": "47",
+&"next_id": "48",
+&"type": ""
+},
+"48": {
+&"id": "48",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
 },
 "5": {
 &"id": "5",
@@ -157,13 +297,40 @@ Namongan: Then take this with you
 	Namongan: May it protect you in the mountains.
 
 Don Juan: I will return. I promise
+
+SYSTEM: Follow the path to Kaigorotan.
+
+=> END
+
+~ internal_monologue_start
+
+Don Juan: The destruction grows worse the closer I get. These raids must end.
+
+SYSTEM: Press 'Shift' to sprint.
+
 => END
 
 ~ wounded_villager_start
 
-WOUNDED VILLAGER: Turn back! The Igorots... they're holding a feast... celebrating their victories...
+Wounded Villager: Turn back! The Igorots... they're holding a feast... celebrating their victories...
 
-DON JUAN: Which is why I must go forward.
+Don Juan: Which is why I must go forward.
 
-=> END"
+=> END
+
+~ igorot_feasting_start
+
+Don Juan: Igorots of Kaigorotan! I am Don Juan of Nalbuan! Your raids end today!
+
+SYSTEM: Press 'E' to attack.
+
+Igorot Warrior 1: Another fool come to die!
+
+SYSTEM: Fight 3 Igorot Warriors.
+
+=> END
+
+
+
+"
 metadata/dialogue_manager_version = "3.7.1"
