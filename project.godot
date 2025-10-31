@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://scripts/global.gd"
-DropManager="*res://scripts/DropManager.gd"
+Global="*res://scenes/scripts/global.gd"
+DropManager="*res://scenes/scripts/DropManager.gd"
 SceneManager="res://scripts/SceneManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 

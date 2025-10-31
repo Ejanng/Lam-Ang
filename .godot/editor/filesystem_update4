@@ -1,2 +1,17 @@
 res://scenes/MainStory/Town.tscn
 res://Inventory/Item/playerInventory.tres
+res://ui components/1theme.tres
+res://ui components/2theme.tres
+res://ui components/3theme.tres
+res://ui components/4theme.tres
+res://ui components/5theme.tres
+res://scenes/EndlessBattle/EndlessBattle.tscn
+res://scenes/Drops/XPOrb.tscn
+res://scenes/Drops/CoinDrop.tscn
+res://scenes/Hostile/melee_tribe_member.tscn
+res://scenes/Drops/health_potion.tscn
+res://scenes/Drops/energy_potion.tscn
+res://GUI/inventory_gui.tscn
+res://scenes/Player/lam_ang.tscn
+res://GUI/slot_gui.tscn
+res://GUI/itemStackGui.tscn

@@ -1,6 +1,6 @@
 [gd_scene load_steps=51 format=3 uid="uid://bioohv47js651"]
 
-[ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scripts/lam_ang.gd" id="1_67xbk"]
+[ext_resource type="Script" uid="uid://c8vs6jfdt5lrb" path="res://scenes/scripts/lam_ang.gd" id="1_67xbk"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qestl"]
 [ext_resource type="Texture2D" uid="uid://d0e2vdb0hpbaj" path="res://assets/Sprites/Lam-ang/lam-ang iswing sword angry spritesheet.png" id="2_5t7uf"]
 [ext_resource type="Texture2D" uid="uid://ult3cm3ocub7" path="res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png" id="2_ad0y5"]

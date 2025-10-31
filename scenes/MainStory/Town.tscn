@@ -1236,7 +1236,7 @@ sources/2 = SubResource("TileSetAtlasSource_yabb8")
 sources/8 = SubResource("TileSetAtlasSource_ma4vj")
 
 [node name="World_Map" type="Node2D"]
-position = Vector2(-58, 480)
+position = Vector2(-55, 1444)
 
 [node name="Home_town" type="TileMap" parent="."]
 position = Vector2(-7, 6)
