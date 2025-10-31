@@ -28,14 +28,11 @@ func insert(item):
 				updated.emit()
 				return
 			
-func removeItemAtIndex(index: int):
-	print("remove index",index)
+func removeSlot(inventorySlot: InventorySlot):
+	var index = slots.find(inventorySlot)
+	if index < 0: return
+	
 	slots[index] = InventorySlot.new()
-	print("new index", slots[index])
 	
 func insertSlot(index: int, inventorySlot: InventorySlot):
-	var oldIndex: int = slots.find(inventorySlot)
-	removeItemAtIndex(oldIndex)
-	
 	slots[index] = inventorySlot
-	print("inserted index", slots[index])

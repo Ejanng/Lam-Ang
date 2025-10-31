@@ -6,17 +6,33 @@
 script = ExtResource("1_tgus6")
 using_states = PackedStringArray()
 titles = {
-"namongan_start": "2",
-"wounded_villager_start": "16"
+"act2_scene1_homecoming_start": "129",
+"act2_scene2_1_travel_start": "175",
+"act2_scene2_travel_start": "167",
+"act2_scene3_suitors_start": "193",
+"act2_scene4_meeting_ines": "223",
+"act2_scene5_wedding_start": "251",
+"act3_scene1_1_rarang_call": "275",
+"act3_scene1_rarang_call": "261",
+"act3_scene2_1_shore_dive": "295",
+"act3_scene2_2_shore_dive": "307",
+"act3_scene2_shore_dive": "287",
+"act3_scene3_ines_returns": "316",
+"act3_scene4_bones_of_lamang": "332",
+"epilogue_nalbuan_return": "367",
+"final_battle_start": "47",
+"igorot_village_start": "37",
+"internal_monologue_1_start": "21",
+"lam_ang_scene1_start": "57",
+"lam_ang_scene2_start": "83",
+"lam_ang_scene3_start": "99",
+"lam_ang_scene4_start": "115",
+"namongan_start": "4",
+"wounded_villager_start": "29"
 }
-character_names = PackedStringArray("Namongan", "Don Juan", "WOUNDED VILLAGER", "DON JUAN")
-first_title = "0"
+character_names = PackedStringArray("Namongan", "Don Juan", "SYSTEM", "WOUNDED VILLAGER", "DON JUAN", "Igorot Warrior 1", "Igorot Chief", "Lam-ang", "Igorot Scout", "White Rooster", "Bandit Leader", "Suitor 1", "Suitors", "Doña Ines", "Don Unnayan", "Priest", "Capitan", "Berkakan the Shark", "Tandang Marcos")
+first_title = "2"
 lines = {
-"0": {
-&"id": "0",
-&"next_id": "2",
-&"type": "title"
-},
 "1": {
 &"id": "1",
 &"next_id": "2",
@@ -25,92 +41,1746 @@ lines = {
 "10": {
 &"id": "10",
 &"next_id": "11",
+&"responses": PackedStringArray("10"),
+&"text": "Claim Anting-anting",
+&"type": "response"
+},
+"100": {
+&"id": "100",
+&"next_id": "101",
 &"type": ""
 },
+"101": {
+&"character": "Igorot Chief",
+&"id": "101",
+&"next_id": "103",
+&"text": "Another warrior from Nalbuan? You people never learn!",
+&"type": "dialogue"
+},
+"102": {
+&"id": "102",
+&"next_id": "103",
+&"type": ""
+},
+"103": {
+&"character": "Lam-ang",
+&"id": "103",
+&"next_id": "105",
+&"text": "I am Lam-ang, son of Don Juan! I challenge all of Kaigorotan! Every warrior here - face me!",
+&"type": "dialogue"
+},
+"104": {
+&"id": "104",
+&"next_id": "105",
+&"type": ""
+},
+"105": {
+&"character": "Igorot Chief",
+&"id": "105",
+&"next_id": "107",
+&"text": "Bold words for a boy! Kill him! Throw your spears!",
+&"type": "dialogue"
+},
+"106": {
+&"id": "106",
+&"next_id": "107",
+&"type": ""
+},
+"107": {
+&"character": "SYSTEM",
+&"id": "107",
+&"next_id": "111",
+&"text": "BOSS FIGHT — Igorot Chief. Defeat him and his warriors!",
+&"type": "dialogue"
+},
 "11": {
-&"character": "Don Juan",
+&"character": "Namongan",
 &"id": "11",
-&"next_id": "12",
-&"text": "I will return. I promise",
+&"next_id": "13",
+&"text": "May it protect you in the mountains.",
+&"type": "dialogue"
+},
+"110": {
+&"id": "110",
+&"next_id": "111",
+&"type": ""
+},
+"111": {
+&"id": "111",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"112": {
+&"id": "112",
+&"next_id": "113",
+&"type": ""
+},
+"113": {
+&"id": "113",
+&"next_id": "115",
+&"type": "title"
+},
+"114": {
+&"id": "114",
+&"next_id": "115",
+&"type": ""
+},
+"115": {
+&"character": "Lam-ang",
+&"id": "115",
+&"next_id": "117",
+&"text": "It's done.",
+&"type": "dialogue"
+},
+"116": {
+&"id": "116",
+&"next_id": "117",
+&"type": ""
+},
+"117": {
+&"character": "Lam-ang",
+&"id": "117",
+&"next_id": "119",
+&"text": "Father, your death is avenged. Nalbuan is safe. No more raids. No more fear.",
+&"type": "dialogue"
+},
+"118": {
+&"id": "118",
+&"next_id": "119",
+&"type": ""
+},
+"119": {
+&"character": "Lam-ang",
+&"id": "119",
+&"next_id": "121",
+&"text": "I wish you could have met the man I've become. I hope... I hope I've made you proud.",
 &"type": "dialogue"
 },
 "12": {
 &"id": "12",
+&"next_id": "13",
+&"type": ""
+},
+"120": {
+&"id": "120",
+&"next_id": "121",
+&"type": ""
+},
+"121": {
+&"character": "Lam-ang",
+&"id": "121",
+&"next_id": "125",
+&"text": "I will bring you home. Rest now.",
+&"type": "dialogue"
+},
+"124": {
+&"id": "124",
+&"next_id": "125",
+&"type": ""
+},
+"125": {
+&"id": "125",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
 &"type": "goto"
 },
-"13": {
-&"id": "13",
-&"next_id": "14",
+"126": {
+&"id": "126",
+&"next_id": "127",
 &"type": ""
+},
+"127": {
+&"id": "127",
+&"next_id": "129",
+&"type": "title"
+},
+"128": {
+&"id": "128",
+&"next_id": "129",
+&"type": ""
+},
+"129": {
+&"character": "Namongan",
+&"id": "129",
+&"next_id": "131",
+&"text": "Lam-ang! You've returned!",
+&"type": "dialogue"
+},
+"13": {
+&"character": "Don Juan",
+&"id": "13",
+&"next_id": "15",
+&"text": "I will return. I promise",
+&"type": "dialogue"
+},
+"130": {
+&"id": "130",
+&"next_id": "131",
+&"type": ""
+},
+"131": {
+&"character": "Namongan",
+&"id": "131",
+&"next_id": "133",
+&"text": "My son... you've done what seemed impossible. Your father's spirit can rest now.",
+&"type": "dialogue"
+},
+"132": {
+&"id": "132",
+&"next_id": "133",
+&"type": ""
+},
+"133": {
+&"character": "Namongan",
+&"id": "133",
+&"next_id": "135",
+&"text": "But I see it in your eyes—something still troubles you.",
+&"type": "dialogue"
+},
+"134": {
+&"id": "134",
+&"next_id": "135",
+&"type": ""
+},
+"135": {
+&"character": "Lam-ang",
+&"id": "135",
+&"next_id": "137",
+&"text": "I feel... incomplete. As if there's something more I must do. The battle is won, but my purpose isn't finished.",
+&"type": "dialogue"
+},
+"136": {
+&"id": "136",
+&"next_id": "137",
+&"type": ""
+},
+"137": {
+&"character": "Namongan",
+&"id": "137",
+&"next_id": "139",
+&"text": "You're a man now, Lam-ang. A warrior. Perhaps it's time you thought of... a wife?",
+&"type": "dialogue"
+},
+"138": {
+&"id": "138",
+&"next_id": "139",
+&"type": ""
+},
+"139": {
+&"character": "Lam-ang",
+&"id": "139",
+&"next_id": "141",
+&"text": "A wife? Mother, who would want—",
+&"type": "dialogue"
 },
 "14": {
 &"id": "14",
-&"next_id": "16",
-&"type": "title"
-},
-"15": {
-&"id": "15",
-&"next_id": "16",
+&"next_id": "15",
 &"type": ""
 },
+"140": {
+&"id": "140",
+&"next_id": "141",
+&"type": ""
+},
+"141": {
+&"character": "Namongan",
+&"id": "141",
+&"next_id": "143",
+&"text": "There is a maiden in Calanutian. Doña Ines Cannoyan. They say she shines like nine flocks of stars in the night sky. Beautiful, wealthy, but... proud.",
+&"type": "dialogue"
+},
+"142": {
+&"id": "142",
+&"next_id": "143",
+&"type": ""
+},
+"143": {
+&"character": "Lam-ang",
+&"id": "143",
+&"next_id": "145",
+&"text": "Tell me more.",
+&"type": "dialogue"
+},
+"144": {
+&"id": "144",
+&"next_id": "145",
+&"type": ""
+},
+"145": {
+&"character": "Namongan",
+&"id": "145",
+&"next_id": "147",
+&"text": "She has rejected countless wealthy Castilian suitors! Rich merchants, Spanish officials—none were good enough. What makes you think—",
+&"type": "dialogue"
+},
+"146": {
+&"id": "146",
+&"next_id": "147",
+&"type": ""
+},
+"147": {
+&"character": "Lam-ang",
+&"id": "147",
+&"next_id": "151",
+&"text": "Mother, I defeated all of Kaigorotan alone. Surely I can win one woman's heart.",
+&"type": "dialogue"
+},
+"15": {
+&"character": "SYSTEM",
+&"id": "15",
+&"next_id": "17",
+&"text": "Follow the path to Kaigorotan.",
+&"type": "dialogue"
+},
+"150": {
+&"id": "150",
+&"next_id": "151",
+&"type": ""
+},
+"151": {
+&"character": "White Rooster",
+&"id": "151",
+&"next_id": "155",
+&"text": "Trust in us, Namongan! Your son will succeed where others have failed!",
+&"type": "dialogue"
+},
+"154": {
+&"id": "154",
+&"next_id": "155",
+&"type": ""
+},
+"155": {
+&"character": "Namongan",
+&"id": "155",
+&"next_id": "157",
+&"text": "Even your animals have more confidence than I do. Very well, my son. But take care—matters of the heart are more dangerous than any battle.",
+&"type": "dialogue"
+},
+"156": {
+&"id": "156",
+&"next_id": "157",
+&"type": ""
+},
+"157": {
+&"character": "Lam-ang",
+&"id": "157",
+&"next_id": "159",
+&"text": "Then it's settled. I leave for Calanutian tomorrow.",
+&"type": "dialogue"
+},
+"158": {
+&"id": "158",
+&"next_id": "159",
+&"type": ""
+},
+"159": {
+&"character": "SYSTEM",
+&"id": "159",
+&"next_id": "161",
+&"text": "New Quest: The Courtship of Ines Cannoyan",
+&"type": "dialogue"
+},
 "16": {
-&"character": "WOUNDED VILLAGER",
 &"id": "16",
-&"next_id": "18",
-&"text": "Turn back! The Igorots... they're holding a feast... celebrating their victories...",
+&"next_id": "17",
+&"type": ""
+},
+"160": {
+&"id": "160",
+&"next_id": "161",
+&"type": ""
+},
+"161": {
+&"character": "SYSTEM",
+&"id": "161",
+&"next_id": "163",
+&"text": "Companions Acquired: White Rooster, Shaggy Dog",
+&"type": "dialogue"
+},
+"162": {
+&"id": "162",
+&"next_id": "163",
+&"type": ""
+},
+"163": {
+&"id": "163",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"164": {
+&"id": "164",
+&"next_id": "165",
+&"type": ""
+},
+"165": {
+&"id": "165",
+&"next_id": "167",
+&"type": "title"
+},
+"166": {
+&"id": "166",
+&"next_id": "167",
+&"type": ""
+},
+"167": {
+&"character": "Lam-ang",
+&"id": "167",
+&"next_id": "169",
+&"text": "Calanutian lies to the east. A new challenge awaits — one I cannot solve with a sword alone.",
+&"type": "dialogue"
+},
+"168": {
+&"id": "168",
+&"next_id": "169",
+&"type": ""
+},
+"169": {
+&"character": "SYSTEM",
+&"id": "169",
+&"next_id": "171",
+&"text": "Follow the path to Calanutian.",
 &"type": "dialogue"
 },
 "17": {
 &"id": "17",
-&"next_id": "18",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"170": {
+&"id": "170",
+&"next_id": "171",
 &"type": ""
 },
-"18": {
-&"character": "DON JUAN",
-&"id": "18",
-&"next_id": "20",
-&"text": "Which is why I must go forward.",
+"171": {
+&"id": "171",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"172": {
+&"id": "172",
+&"next_id": "173",
+&"type": ""
+},
+"173": {
+&"id": "173",
+&"next_id": "175",
+&"type": "title"
+},
+"174": {
+&"id": "174",
+&"next_id": "175",
+&"type": ""
+},
+"175": {
+&"character": "Bandit Leader",
+&"id": "175",
+&"next_id": "177",
+&"text": "Hold there, traveler! Nice rope you've got. And that rooster looks... exotic. Hand them over and you can pass.",
 &"type": "dialogue"
+},
+"176": {
+&"id": "176",
+&"next_id": "177",
+&"type": ""
+},
+"177": {
+&"character": "Lam-ang",
+&"id": "177",
+&"next_id": "179",
+&"text": "I have no time for this. These are my companions, not your plunder. Move aside.",
+&"type": "dialogue"
+},
+"178": {
+&"id": "178",
+&"next_id": "179",
+&"type": ""
+},
+"179": {
+&"character": "Bandit Leader",
+&"id": "179",
+&"next_id": "181",
+&"text": "Companions? Boys, looks like we've got a crazy one!",
+&"type": "dialogue"
+},
+"18": {
+&"id": "18",
+&"next_id": "19",
+&"type": ""
+},
+"180": {
+&"id": "180",
+&"next_id": "181",
+&"type": ""
+},
+"181": {
+&"character": "SYSTEM",
+&"id": "181",
+&"next_id": "183",
+&"text": "Bandits draw weapons.",
+&"type": "dialogue"
+},
+"182": {
+&"id": "182",
+&"next_id": "183",
+&"type": ""
+},
+"183": {
+&"character": "Lam-ang",
+&"id": "183",
+&"next_id": "185",
+&"text": "I warned you.",
+&"type": "dialogue"
+},
+"184": {
+&"id": "184",
+&"next_id": "185",
+&"type": ""
+},
+"185": {
+&"character": "SYSTEM",
+&"id": "185",
+&"next_id": "189",
+&"text": "Combat Started. Defeat the Bandits! 6 enemies remaining.",
+&"type": "dialogue"
+},
+"188": {
+&"id": "188",
+&"next_id": "189",
+&"type": ""
+},
+"189": {
+&"id": "189",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
 },
 "19": {
 &"id": "19",
-&"next_id": "20",
+&"next_id": "21",
+&"type": "title"
+},
+"190": {
+&"id": "190",
+&"next_id": "191",
 &"type": ""
 },
+"191": {
+&"id": "191",
+&"next_id": "193",
+&"type": "title"
+},
+"192": {
+&"id": "192",
+&"next_id": "193",
+&"type": ""
+},
+"193": {
+&"character": "Lam-ang",
+&"id": "193",
+&"next_id": "195",
+&"text": "So many suitors...",
+&"type": "dialogue"
+},
+"194": {
+&"id": "194",
+&"next_id": "195",
+&"type": ""
+},
+"195": {
+&"character": "Suitor 1",
+&"id": "195",
+&"next_id": "197",
+&"text": "Get in line, friend!",
+&"type": "dialogue"
+},
+"196": {
+&"id": "196",
+&"next_id": "197",
+&"type": ""
+},
+"197": {
+&"character": "Lam-ang",
+&"id": "197",
+&"next_id": "213",
+&"text": "I don't wait in lines. Tandang!",
+&"type": "dialogue"
+},
 "2": {
-&"character": "Namongan",
 &"id": "2",
 &"next_id": "4",
-&"text": "Must you go, Don Juan? I fear for you... and our child grows within me.",
-&"type": "dialogue"
+&"type": "title"
 },
 "20": {
 &"id": "20",
+&"next_id": "21",
+&"type": ""
+},
+"21": {
+&"character": "Don Juan",
+&"id": "21",
+&"next_id": "23",
+&"text": "The destruction grows worse the close I get. These raids must end",
+&"type": "dialogue"
+},
+"212": {
+&"id": "212",
+&"next_id": "213",
+&"type": ""
+},
+"213": {
+&"character": "Suitors",
+&"id": "213",
+&"next_id": "215",
+&"text": "Impossible!",
+&"type": "dialogue"
+},
+"214": {
+&"id": "214",
+&"next_id": "215",
+&"type": ""
+},
+"215": {
+&"character": "Doña Ines",
+&"id": "215",
+&"next_id": "217",
+&"text": "You there! Come inside.",
+&"type": "dialogue"
+},
+"216": {
+&"id": "216",
+&"next_id": "217",
+&"type": ""
+},
+"217": {
+&"character": "SYSTEM",
+&"id": "217",
+&"next_id": "219",
+&"text": "Enter the house.",
+&"type": "dialogue"
+},
+"218": {
+&"id": "218",
+&"next_id": "219",
+&"type": ""
+},
+"219": {
+&"id": "219",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
 &"type": "goto"
 },
-"21": {
-&"id": "21",
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"type": ""
+},
+"220": {
+&"id": "220",
+&"next_id": "221",
+&"type": ""
+},
+"221": {
+&"id": "221",
+&"next_id": "223",
+&"type": "title"
+},
+"222": {
+&"id": "222",
+&"next_id": "223",
+&"type": ""
+},
+"223": {
+&"character": "Don Unnayan",
+&"id": "223",
+&"next_id": "225",
+&"text": "What is your name, young man?",
+&"type": "dialogue"
+},
+"224": {
+&"id": "224",
+&"next_id": "225",
+&"type": ""
+},
+"225": {
+&"character": "Lam-ang",
+&"id": "225",
+&"next_id": "227",
+&"text": "I am Lam-ang of Nalbuan, son of Don Juan.",
+&"type": "dialogue"
+},
+"226": {
+&"id": "226",
+&"next_id": "227",
+&"type": ""
+},
+"227": {
+&"character": "Doña Ines",
+&"id": "227",
+&"next_id": "229",
+&"text": "You destroyed my house just to get my attention?",
+&"type": "dialogue"
+},
+"228": {
+&"id": "228",
+&"next_id": "229",
+&"type": ""
+},
+"229": {
+&"character": "Lam-ang",
+&"id": "229",
+&"next_id": "231",
+&"text": "And I fixed it. Better than before.",
+&"type": "dialogue"
+},
+"23": {
+&"character": "SYSTEM",
+&"id": "23",
+&"next_id": "25",
+&"text": "Press 'Shift' to sprint.",
+&"type": "dialogue"
+},
+"230": {
+&"id": "230",
+&"next_id": "231",
+&"type": ""
+},
+"231": {
+&"character": "Doña Ines",
+&"id": "231",
+&"next_id": "233",
+&"text": "Bold. I like that.",
+&"type": "dialogue"
+},
+"232": {
+&"id": "232",
+&"next_id": "233",
+&"type": ""
+},
+"233": {
+&"character": "Don Unnayan",
+&"id": "233",
+&"next_id": "235",
+&"text": "My daughter is wealthy — lands, gold, servants. What do you offer?",
+&"type": "dialogue"
+},
+"234": {
+&"id": "234",
+&"next_id": "235",
+&"type": ""
+},
+"235": {
+&"character": "Lam-ang",
+&"id": "235",
+&"next_id": "237",
+&"text": "I own the lands of Kaigorotan. I trade with Chinese merchants. My wealth matches hers.",
+&"type": "dialogue"
+},
+"236": {
+&"id": "236",
+&"next_id": "237",
+&"type": ""
+},
+"237": {
+&"character": "Doña Ines",
+&"id": "237",
+&"next_id": "239",
+&"text": "And what do you offer ME?",
+&"type": "dialogue"
+},
+"238": {
+&"id": "238",
+&"next_id": "239",
+&"type": ""
+},
+"239": {
+&"character": "Lam-ang",
+&"id": "239",
+&"next_id": "241",
+&"text": "Loyalty. Strength. A love that even death cannot break.",
+&"type": "dialogue"
+},
+"24": {
+&"id": "24",
+&"next_id": "25",
+&"type": ""
+},
+"240": {
+&"id": "240",
+&"next_id": "241",
+&"type": ""
+},
+"241": {
+&"character": "SYSTEM",
+&"id": "241",
+&"next_id": "243",
+&"text": "Ines studies him.",
+&"type": "dialogue"
+},
+"242": {
+&"id": "242",
+&"next_id": "243",
+&"type": ""
+},
+"243": {
+&"character": "Doña Ines",
+&"id": "243",
+&"next_id": "245",
+&"text": "Then you may court me, Lam-ang of Nalbuan.",
+&"type": "dialogue"
+},
+"244": {
+&"id": "244",
+&"next_id": "245",
+&"type": ""
+},
+"245": {
+&"character": "SYSTEM",
+&"id": "245",
+&"next_id": "247",
+&"text": "Courtship Successful!",
+&"type": "dialogue"
+},
+"246": {
+&"id": "246",
+&"next_id": "247",
+&"type": ""
+},
+"247": {
+&"id": "247",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
 &"type": "goto"
+},
+"248": {
+&"id": "248",
+&"next_id": "249",
+&"type": ""
+},
+"249": {
+&"id": "249",
+&"next_id": "251",
+&"type": "title"
+},
+"25": {
+&"id": "25",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"250": {
+&"id": "250",
+&"next_id": "251",
+&"type": ""
+},
+"251": {
+&"character": "Priest",
+&"id": "251",
+&"next_id": "253",
+&"text": "I now pronounce you husband and wife!",
+&"type": "dialogue"
+},
+"252": {
+&"id": "252",
+&"next_id": "253",
+&"type": ""
+},
+"253": {
+&"character": "SYSTEM",
+&"id": "253",
+&"next_id": "255",
+&"text": "Lam-ang and Ines embrace.",
+&"type": "dialogue"
+},
+"254": {
+&"id": "254",
+&"next_id": "255",
+&"type": ""
+},
+"255": {
+&"character": "SYSTEM",
+&"id": "255",
+&"next_id": "257",
+&"text": "Married! Returning to Nalbuan...",
+&"type": "dialogue"
+},
+"256": {
+&"id": "256",
+&"next_id": "257",
+&"type": ""
+},
+"257": {
+&"id": "257",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"258": {
+&"id": "258",
+&"next_id": "259",
+&"type": ""
+},
+"259": {
+&"id": "259",
+&"next_id": "261",
+&"type": "title"
+},
+"26": {
+&"id": "26",
+&"next_id": "27",
+&"type": ""
+},
+"260": {
+&"id": "260",
+&"next_id": "261",
+&"type": ""
+},
+"261": {
+&"character": "Capitan",
+&"id": "261",
+&"next_id": "263",
+&"text": "Lam-ang! You must dive for the rarang. It's your duty as a man of this barangay.",
+&"type": "dialogue"
+},
+"262": {
+&"id": "262",
+&"next_id": "263",
+&"type": ""
+},
+"263": {
+&"character": "Lam-ang",
+&"id": "263",
+&"next_id": "265",
+&"text": "When?",
+&"type": "dialogue"
+},
+"264": {
+&"id": "264",
+&"next_id": "265",
+&"type": ""
+},
+"265": {
+&"character": "Capitan",
+&"id": "265",
+&"next_id": "267",
+&"text": "Tomorrow at dawn. The deep trench.",
+&"type": "dialogue"
+},
+"266": {
+&"id": "266",
+&"next_id": "267",
+&"type": ""
+},
+"267": {
+&"character": "Doña Ines",
+&"id": "267",
+&"next_id": "269",
+&"text": "I have a bad feeling about this...",
+&"type": "dialogue"
+},
+"268": {
+&"id": "268",
+&"next_id": "269",
+&"type": ""
+},
+"269": {
+&"character": "Lam-ang",
+&"id": "269",
+&"next_id": "271",
+&"text": "I'll be fine. I've faced worse.",
+&"type": "dialogue"
+},
+"27": {
+&"id": "27",
+&"next_id": "29",
+&"type": "title"
+},
+"270": {
+&"id": "270",
+&"next_id": "271",
+&"type": ""
+},
+"271": {
+&"id": "271",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"272": {
+&"id": "272",
+&"next_id": "273",
+&"type": ""
+},
+"273": {
+&"id": "273",
+&"next_id": "275",
+&"type": "title"
+},
+"274": {
+&"id": "274",
+&"next_id": "275",
+&"type": ""
+},
+"275": {
+&"character": "Lam-ang",
+&"id": "275",
+&"next_id": "277",
+&"text": "Ines... I saw my death. A great shark.",
+&"type": "dialogue"
+},
+"276": {
+&"id": "276",
+&"next_id": "277",
+&"type": ""
+},
+"277": {
+&"character": "Doña Ines",
+&"id": "277",
+&"next_id": "279",
+&"text": "Then don't go!",
+&"type": "dialogue"
+},
+"278": {
+&"id": "278",
+&"next_id": "279",
+&"type": ""
+},
+"279": {
+&"character": "Lam-ang",
+&"id": "279",
+&"next_id": "281",
+&"text": "I must. But listen — if the stairs shake, the roof falls, and the stove breaks... I'm dead. Gather my bones. The rooster and dog will bring me back.",
+&"type": "dialogue"
+},
+"28": {
+&"id": "28",
+&"next_id": "29",
+&"type": ""
+},
+"280": {
+&"id": "280",
+&"next_id": "281",
+&"type": ""
+},
+"281": {
+&"character": "Doña Ines",
+&"id": "281",
+&"next_id": "283",
+&"text": "Lam-ang...",
+&"type": "dialogue"
+},
+"282": {
+&"id": "282",
+&"next_id": "283",
+&"type": ""
+},
+"283": {
+&"character": "Lam-ang",
+&"id": "283",
+&"next_id": "285",
+&"text": "Trust me. Even death won't keep us apart.",
+&"type": "dialogue"
+},
+"284": {
+&"id": "284",
+&"next_id": "285",
+&"type": ""
+},
+"285": {
+&"id": "285",
+&"next_id": "287",
+&"type": "title"
+},
+"286": {
+&"id": "286",
+&"next_id": "287",
+&"type": ""
+},
+"287": {
+&"character": "Lam-ang",
+&"id": "287",
+&"next_id": "289",
+&"text": "Whatever comes... I'm ready.",
+&"type": "dialogue"
+},
+"288": {
+&"id": "288",
+&"next_id": "289",
+&"type": ""
+},
+"289": {
+&"character": "SYSTEM",
+&"id": "289",
+&"next_id": "291",
+&"text": "Swim to the rarang.",
+&"type": "dialogue"
+},
+"29": {
+&"character": "WOUNDED VILLAGER",
+&"id": "29",
+&"next_id": "31",
+&"text": "Turn back! The Igorots... they're holding a feast... celebrating their victories...",
+&"type": "dialogue"
+},
+"290": {
+&"id": "290",
+&"next_id": "291",
+&"type": ""
+},
+"291": {
+&"id": "291",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"292": {
+&"id": "292",
+&"next_id": "293",
+&"type": ""
+},
+"293": {
+&"id": "293",
+&"next_id": "295",
+&"type": "title"
+},
+"294": {
+&"id": "294",
+&"next_id": "295",
+&"type": ""
+},
+"295": {
+&"character": "SYSTEM",
+&"id": "295",
+&"next_id": "297",
+&"text": "Reaches glowing rarang at bottom",
+&"type": "dialogue"
+},
+"296": {
+&"id": "296",
+&"next_id": "297",
+&"type": ""
+},
+"297": {
+&"character": "Lam-ang",
+&"id": "297",
+&"next_id": "299",
+&"text": "There it is—",
+&"type": "dialogue"
+},
+"298": {
+&"id": "298",
+&"next_id": "299",
+&"type": ""
+},
+"299": {
+&"character": "SYSTEM",
+&"id": "299",
+&"next_id": "301",
+&"text": "Massive shadow. BERKAKAN THE SHARK appears",
+&"type": "dialogue"
 },
 "3": {
 &"id": "3",
 &"next_id": "4",
 &"type": ""
 },
-"4": {
+"30": {
+&"id": "30",
+&"next_id": "31",
+&"type": ""
+},
+"300": {
+&"id": "300",
+&"next_id": "301",
+&"type": ""
+},
+"301": {
+&"character": "Berkakan the Shark",
+&"id": "301",
+&"next_id": "303",
+&"text": "Your journey ends, Lam-ang!",
+&"type": "dialogue"
+},
+"302": {
+&"id": "302",
+&"next_id": "303",
+&"type": ""
+},
+"303": {
+&"id": "303",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"304": {
+&"id": "304",
+&"next_id": "305",
+&"type": ""
+},
+"305": {
+&"id": "305",
+&"next_id": "307",
+&"type": "title"
+},
+"306": {
+&"id": "306",
+&"next_id": "307",
+&"type": ""
+},
+"307": {
+&"character": "Lam-ang",
+&"id": "307",
+&"next_id": "309",
+&"text": "(weakening) Ines... I'm sorry...",
+&"type": "dialogue"
+},
+"308": {
+&"id": "308",
+&"next_id": "309",
+&"type": ""
+},
+"309": {
+&"id": "309",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"31": {
+&"character": "DON JUAN",
+&"id": "31",
+&"next_id": "33",
+&"text": "Which is why I must go forward.",
+&"type": "dialogue"
+},
+"310": {
+&"id": "310",
+&"next_id": "311",
+&"type": ""
+},
+"311": {
+&"id": "311",
+&"next_id": "316",
+&"type": "title"
+},
+"315": {
+&"id": "315",
+&"next_id": "316",
+&"type": ""
+},
+"316": {
+&"character": "Doña Ines",
+&"id": "316",
+&"next_id": "320",
+&"text": "No...",
+&"type": "dialogue"
+},
+"319": {
+&"id": "319",
+&"next_id": "320",
+&"type": ""
+},
+"32": {
+&"id": "32",
+&"next_id": "33",
+&"type": ""
+},
+"320": {
+&"character": "Doña Ines",
+&"id": "320",
+&"next_id": "324",
+&"text": "No, no!",
+&"type": "dialogue"
+},
+"323": {
+&"id": "323",
+&"next_id": "324",
+&"type": ""
+},
+"324": {
+&"character": "Doña Ines",
+&"id": "324",
+&"next_id": "328",
+&"text": "LAM-ANG!",
+&"type": "dialogue"
+},
+"327": {
+&"id": "327",
+&"next_id": "328",
+&"type": ""
+},
+"328": {
+&"character": "White Rooster",
+&"id": "328",
+&"next_id": "330",
+&"text": "Doña Ines... we can still save him. We need his bones.",
+&"type": "dialogue"
+},
+"329": {
+&"id": "329",
+&"next_id": "330",
+&"type": ""
+},
+"33": {
+&"id": "33",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"330": {
+&"id": "330",
+&"next_id": "332",
+&"type": "title"
+},
+"331": {
+&"id": "331",
+&"next_id": "332",
+&"type": ""
+},
+"332": {
+&"character": "Tandang Marcos",
+&"id": "332",
+&"next_id": "334",
+&"text": "Every bone. As you asked.",
+&"type": "dialogue"
+},
+"333": {
+&"id": "333",
+&"next_id": "334",
+&"type": ""
+},
+"334": {
+&"character": "Doña Ines",
+&"id": "334",
+&"next_id": "336",
+&"text": "Thank you.",
+&"type": "dialogue"
+},
+"335": {
+&"id": "335",
+&"next_id": "336",
+&"type": ""
+},
+"336": {
+&"character": "SYSTEM",
+&"id": "336",
+&"next_id": "338",
+&"text": "Ines lays bones on sand, covers with her cloth, turns away.",
+&"type": "dialogue"
+},
+"337": {
+&"id": "337",
+&"next_id": "338",
+&"type": ""
+},
+"338": {
+&"character": "White Rooster",
+&"id": "338",
+&"next_id": "340",
+&"text": "Don't look.",
+&"type": "dialogue"
+},
+"339": {
+&"id": "339",
+&"next_id": "340",
+&"type": ""
+},
+"34": {
+&"id": "34",
+&"next_id": "35",
+&"type": ""
+},
+"340": {
+&"character": "SYSTEM",
+&"id": "340",
+&"next_id": "342",
+&"text": "Rooster flaps wings.",
+&"type": "dialogue"
+},
+"341": {
+&"id": "341",
+&"next_id": "342",
+&"type": ""
+},
+"342": {
+&"character": "SYSTEM",
+&"id": "342",
+&"next_id": "344",
+&"text": "Dog barks twice.",
+&"type": "dialogue"
+},
+"343": {
+&"id": "343",
+&"next_id": "344",
+&"type": ""
+},
+"344": {
+&"character": "SYSTEM",
+&"id": "344",
+&"next_id": "346",
+&"text": "Cloth rises, takes human shape.",
+&"type": "dialogue"
+},
+"345": {
+&"id": "345",
+&"next_id": "346",
+&"type": ""
+},
+"346": {
+&"character": "White Rooster",
+&"id": "346",
+&"next_id": "348",
+&"text": "Look now.",
+&"type": "dialogue"
+},
+"347": {
+&"id": "347",
+&"next_id": "348",
+&"type": ""
+},
+"348": {
+&"character": "SYSTEM",
+&"id": "348",
+&"next_id": "350",
+&"text": "Cloth falls. Lam-ang stands, stretching.",
+&"type": "dialogue"
+},
+"349": {
+&"id": "349",
+&"next_id": "350",
+&"type": ""
+},
+"35": {
+&"id": "35",
+&"next_id": "37",
+&"type": "title"
+},
+"350": {
+&"character": "Lam-ang",
+&"id": "350",
+&"next_id": "352",
+&"text": "What a sleep... seven days?",
+&"type": "dialogue"
+},
+"351": {
+&"id": "351",
+&"next_id": "352",
+&"type": ""
+},
+"352": {
+&"character": "Doña Ines",
+&"id": "352",
+&"next_id": "354",
+&"text": "LAM-ANG!",
+&"type": "dialogue"
+},
+"353": {
+&"id": "353",
+&"next_id": "354",
+&"type": ""
+},
+"354": {
+&"character": "SYSTEM",
+&"id": "354",
+&"next_id": "356",
+&"text": "She embraces him.",
+&"type": "dialogue"
+},
+"355": {
+&"id": "355",
+&"next_id": "356",
+&"type": ""
+},
+"356": {
+&"character": "Lam-ang",
+&"id": "356",
+&"next_id": "358",
+&"text": "I... I remember. The shark. But I'm alive?",
+&"type": "dialogue"
+},
+"357": {
+&"id": "357",
+&"next_id": "358",
+&"type": ""
+},
+"358": {
+&"character": "Doña Ines",
+&"id": "358",
+&"next_id": "360",
+&"text": "Not even death could take you from me.",
+&"type": "dialogue"
+},
+"359": {
+&"id": "359",
+&"next_id": "360",
+&"type": ""
+},
+"36": {
+&"id": "36",
+&"next_id": "37",
+&"type": ""
+},
+"360": {
+&"character": "Lam-ang",
+&"id": "360",
+&"next_id": "362",
+&"text": "And it never will.",
+&"type": "dialogue"
+},
+"361": {
+&"id": "361",
+&"next_id": "362",
+&"type": ""
+},
+"362": {
+&"id": "362",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"364": {
+&"id": "364",
+&"next_id": "365",
+&"type": ""
+},
+"365": {
+&"id": "365",
+&"next_id": "367",
+&"type": "title"
+},
+"366": {
+&"id": "366",
+&"next_id": "367",
+&"type": ""
+},
+"367": {
+&"character": "SYSTEM",
+&"id": "367",
+&"next_id": "369",
+&"text": "Lam-ang and Ines walk home hand in hand.",
+&"type": "dialogue"
+},
+"368": {
+&"id": "368",
+&"next_id": "369",
+&"type": ""
+},
+"369": {
+&"character": "Lam-ang",
+&"id": "369",
+&"next_id": "371",
+&"text": "Finally, peace. We can live quietly now.",
+&"type": "dialogue"
+},
+"37": {
 &"character": "Don Juan",
+&"id": "37",
+&"next_id": "39",
+&"text": "Igorots of Kaigorotan! I am Don Juan of Nalbuan! Your raids end today",
+&"type": "dialogue"
+},
+"370": {
+&"id": "370",
+&"next_id": "371",
+&"type": ""
+},
+"371": {
+&"character": "Doña Ines",
+&"id": "371",
+&"next_id": "373",
+&"text": "After all you've been through, you deserve rest.",
+&"type": "dialogue"
+},
+"372": {
+&"id": "372",
+&"next_id": "373",
+&"type": ""
+},
+"373": {
+&"character": "SYSTEM",
+&"id": "373",
+&"next_id": "375",
+&"text": "They reach home. Suddenly — war drums in distance.",
+&"type": "dialogue"
+},
+"374": {
+&"id": "374",
+&"next_id": "375",
+&"type": ""
+},
+"375": {
+&"character": "Namongan",
+&"id": "375",
+&"next_id": "377",
+&"text": "Lam-ang! Raiders approach from the mountains!",
+&"type": "dialogue"
+},
+"376": {
+&"id": "376",
+&"next_id": "377",
+&"type": ""
+},
+"377": {
+&"character": "Lam-ang",
+&"id": "377",
+&"next_id": "379",
+&"text": "It seems my battles aren't over yet.",
+&"type": "dialogue"
+},
+"378": {
+&"id": "378",
+&"next_id": "379",
+&"type": ""
+},
+"379": {
+&"character": "Doña Ines",
+&"id": "379",
+&"next_id": "381",
+&"text": "Then we fight together. This is OUR home.",
+&"type": "dialogue"
+},
+"38": {
+&"id": "38",
+&"next_id": "39",
+&"type": ""
+},
+"380": {
+&"id": "380",
+&"next_id": "381",
+&"type": ""
+},
+"381": {
+&"character": "Lam-ang",
+&"id": "381",
+&"next_id": "383",
+&"text": "Together.",
+&"type": "dialogue"
+},
+"382": {
+&"id": "382",
+&"next_id": "383",
+&"type": ""
+},
+"383": {
+&"character": "SYSTEM",
+&"id": "383",
+&"next_id": "385",
+&"text": "ENDLESS MODE — Defend Nalbuan!",
+&"type": "dialogue"
+},
+"384": {
+&"id": "384",
+&"next_id": "385",
+&"type": ""
+},
+"385": {
+&"id": "385",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"39": {
+&"character": "SYSTEM",
+&"id": "39",
+&"next_id": "41",
+&"text": "Press 'E' to attack.",
+&"type": "dialogue"
+},
+"390": {
+&"id": "390",
+&"next_id": "391",
+&"type": ""
+},
+"391": {
+&"id": "391",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"4": {
+&"character": "Namongan",
 &"id": "4",
 &"next_id": "6",
-&"text": "The Igorots have raided our lands for the last time. I must bring peace to Nalbuan, my love. I will return before our child is born.",
+&"text": "Must you go, Don Juan? I fear for you... and our child grows within me.",
+&"type": "dialogue"
+},
+"40": {
+&"id": "40",
+&"next_id": "41",
+&"type": ""
+},
+"41": {
+&"character": "Igorot Warrior 1",
+&"id": "41",
+&"next_id": "43",
+&"text": "Another fool come to die!",
+&"type": "dialogue"
+},
+"42": {
+&"id": "42",
+&"next_id": "43",
+&"type": ""
+},
+"43": {
+&"id": "43",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"44": {
+&"id": "44",
+&"next_id": "45",
+&"type": ""
+},
+"45": {
+&"id": "45",
+&"next_id": "47",
+&"type": "title"
+},
+"46": {
+&"id": "46",
+&"next_id": "47",
+&"type": ""
+},
+"47": {
+&"character": "Don Juan",
+&"id": "47",
+&"next_id": "49",
+&"text": "Too many... But I will not fall without -",
+&"type": "dialogue"
+},
+"48": {
+&"id": "48",
+&"next_id": "49",
+&"type": ""
+},
+"49": {
+&"character": "Igorot Chief",
+&"id": "49",
+&"next_id": "51",
+&"text": "Take his head! We feast tonight!",
 &"type": "dialogue"
 },
 "5": {
@@ -118,11 +1788,105 @@ lines = {
 &"next_id": "6",
 &"type": ""
 },
-"6": {
+"50": {
+&"id": "50",
+&"next_id": "51",
+&"type": ""
+},
+"51": {
+&"id": "51",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"54": {
+&"id": "54",
+&"next_id": "55",
+&"type": ""
+},
+"55": {
+&"id": "55",
+&"next_id": "57",
+&"type": "title"
+},
+"56": {
+&"id": "56",
+&"next_id": "57",
+&"type": ""
+},
+"57": {
 &"character": "Namongan",
+&"id": "57",
+&"next_id": "59",
+&"text": "My son... you've only been alive for nine months. You named yourself the moment you were born, grew into a man in days... but you cannot—",
+&"type": "dialogue"
+},
+"58": {
+&"id": "58",
+&"next_id": "59",
+&"type": ""
+},
+"59": {
+&"character": "Lam-ang",
+&"id": "59",
+&"next_id": "61",
+&"text": "Mother, you know I'm not like other men. When I first opened my eyes and spoke my name, I knew my purpose. Where is father?",
+&"type": "dialogue"
+},
+"6": {
+&"character": "Don Juan",
 &"id": "6",
 &"next_id": "8",
-&"text": "Then take this with you",
+&"text": "The Igorots have raided our lands for the last time. I must bring peace to Nalbuan, my love. I will return before our child is born.",
+&"type": "dialogue"
+},
+"60": {
+&"id": "60",
+&"next_id": "61",
+&"type": ""
+},
+"61": {
+&"character": "Namongan",
+&"id": "61",
+&"next_id": "63",
+&"text": "He went to Kaigorotan... and never returned.",
+&"type": "dialogue"
+},
+"62": {
+&"id": "62",
+&"next_id": "63",
+&"type": ""
+},
+"63": {
+&"character": "Lam-ang",
+&"id": "63",
+&"next_id": "66",
+&"text": "Then I will find him. And I will avenge him.",
+&"type": "dialogue"
+},
+"65": {
+&"id": "65",
+&"next_id": "66",
+&"type": ""
+},
+"66": {
+&"character": "SYSTEM",
+&"id": "66",
+&"next_id": "69",
+&"text": "Lam-ang picks up kampilan sword",
+&"type": "dialogue"
+},
+"68": {
+&"id": "68",
+&"next_id": "69",
+&"type": ""
+},
+"69": {
+&"character": "Namongan",
+&"id": "69",
+&"next_id": "71",
+&"text": "When you asked for your father as a newborn, I knew this day would come. You carry his spirit, Lam-ang.",
 &"type": "dialogue"
 },
 "7": {
@@ -130,22 +1894,186 @@ lines = {
 &"next_id": "8",
 &"type": ""
 },
+"70": {
+&"id": "70",
+&"next_id": "71",
+&"type": ""
+},
+"71": {
+&"character": "Lam-ang",
+&"id": "71",
+&"next_id": "73",
+&"text": "I carry the mutya stones. I carry father's courage. The Igorots will answer for what they've done.",
+&"type": "dialogue"
+},
+"72": {
+&"id": "72",
+&"next_id": "73",
+&"type": ""
+},
+"73": {
+&"character": "SYSTEM",
+&"id": "73",
+&"next_id": "75",
+&"text": "Lam-ang equips two mutya stones, boosting his stats.",
+&"type": "dialogue"
+},
+"74": {
+&"id": "74",
+&"next_id": "75",
+&"type": ""
+},
+"75": {
+&"character": "Namongan",
+&"id": "75",
+&"next_id": "79",
+&"text": "Then go, my son. But please... return to me. You're all I have left.",
+&"type": "dialogue"
+},
+"78": {
+&"id": "78",
+&"next_id": "79",
+&"type": ""
+},
+"79": {
+&"id": "79",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
 "8": {
+&"character": "Namongan",
 &"id": "8",
-&"next_id": "9",
-&"responses": PackedStringArray("8"),
-&"text": "Claim Anting-anting",
-&"type": "response"
+&"next_id": "10",
+&"text": "Then take this with you",
+&"type": "dialogue"
+},
+"80": {
+&"id": "80",
+&"next_id": "81",
+&"type": ""
+},
+"81": {
+&"id": "81",
+&"next_id": "83",
+&"type": "title"
+},
+"82": {
+&"id": "82",
+&"next_id": "83",
+&"type": ""
+},
+"83": {
+&"character": "Lam-ang",
+&"id": "83",
+&"next_id": "85",
+&"text": "(internal monologue) They call this the darkest mountain. Death lingers here. Good. Let death come for those who took my father.",
+&"type": "dialogue"
+},
+"84": {
+&"id": "84",
+&"next_id": "85",
+&"type": ""
+},
+"85": {
+&"character": "Igorot Scout",
+&"id": "85",
+&"next_id": "87",
+&"text": "Who dares enter Igorotan territory?",
+&"type": "dialogue"
+},
+"86": {
+&"id": "86",
+&"next_id": "87",
+&"type": ""
+},
+"87": {
+&"character": "Lam-ang",
+&"id": "87",
+&"next_id": "89",
+&"text": "I am Lam-ang, son of Don Juan! I've come for the ones who killed my father!",
+&"type": "dialogue"
+},
+"88": {
+&"id": "88",
+&"next_id": "89",
+&"type": ""
+},
+"89": {
+&"character": "Igorot Scout",
+&"id": "89",
+&"next_id": "91",
+&"text": "Don Juan? (laughs) His head decorates our chief's spear! You'll join him!",
+&"type": "dialogue"
 },
 "9": {
-&"character": "Namongan",
 &"id": "9",
-&"next_id": "11",
-&"text": "May it protect you in the mountains.",
+&"next_id": "10",
+&"type": ""
+},
+"90": {
+&"id": "90",
+&"next_id": "91",
+&"type": ""
+},
+"91": {
+&"character": "Lam-ang",
+&"id": "91",
+&"next_id": "93",
+&"text": "You'll regret those words.",
+&"type": "dialogue"
+},
+"92": {
+&"id": "92",
+&"next_id": "93",
+&"type": ""
+},
+"93": {
+&"character": "SYSTEM",
+&"id": "93",
+&"next_id": "95",
+&"text": "Combat Started. Defeat all enemies to proceed. (3 waves)",
+&"type": "dialogue"
+},
+"94": {
+&"id": "94",
+&"next_id": "95",
+&"type": ""
+},
+"95": {
+&"id": "95",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"96": {
+&"id": "96",
+&"next_id": "97",
+&"type": ""
+},
+"97": {
+&"id": "97",
+&"next_id": "99",
+&"type": "title"
+},
+"98": {
+&"id": "98",
+&"next_id": "99",
+&"type": ""
+},
+"99": {
+&"character": "Lam-ang",
+&"id": "99",
+&"next_id": "101",
+&"text": "Father... I will honor you.",
 &"type": "dialogue"
 }
 }
-raw_text = "~ namongan_start
+raw_text = "# Tutorial
+
+~ namongan_start
 
 Namongan: Must you go, Don Juan? I fear for you... and our child grows within me.
 
@@ -157,6 +2085,17 @@ Namongan: Then take this with you
 	Namongan: May it protect you in the mountains.
 
 Don Juan: I will return. I promise
+
+SYSTEM: Follow the path to Kaigorotan.
+
+=> END
+
+~ internal_monologue_1_start
+
+Don Juan: The destruction grows worse the close I get. These raids must end
+
+SYSTEM: Press 'Shift' to sprint.
+
 => END
 
 ~ wounded_villager_start
@@ -165,5 +2104,362 @@ WOUNDED VILLAGER: Turn back! The Igorots... they're holding a feast... celebrati
 
 DON JUAN: Which is why I must go forward.
 
-=> END"
+=> END
+
+~ igorot_village_start
+
+Don Juan:  Igorots of Kaigorotan! I am Don Juan of Nalbuan! Your raids end today
+
+SYSTEM: Press 'E' to attack.
+
+Igorot Warrior 1: Another fool come to die!
+
+=> END 
+
+~ final_battle_start
+
+Don Juan: Too many... But I will not fall without -
+
+Igorot Chief: Take his head! We feast tonight!
+
+=> END
+
+# Main Story
+
+~ lam_ang_scene1_start
+
+Namongan: My son... you've only been alive for nine months. You named yourself the moment you were born, grew into a man in days... but you cannot—
+
+Lam-ang: Mother, you know I'm not like other men. When I first opened my eyes and spoke my name, I knew my purpose. Where is father?
+
+Namongan: He went to Kaigorotan... and never returned.
+
+Lam-ang: Then I will find him. And I will avenge him.
+
+# Can be modified if may time
+SYSTEM: Lam-ang picks up kampilan sword
+# ---------------------------
+
+Namongan: When you asked for your father as a newborn, I knew this day would come. You carry his spirit, Lam-ang.
+
+Lam-ang: I carry the mutya stones. I carry father's courage. The Igorots will answer for what they've done.
+
+SYSTEM: Lam-ang equips two mutya stones, boosting his stats.
+
+Namongan: Then go, my son. But please... return to me. You're all I have left.
+
+# SYSTEM: You are now Lam-ang. Press ESC to view Controls.
+
+=> END 
+
+~ lam_ang_scene2_start
+
+Lam-ang: (internal monologue) They call this the darkest mountain. Death lingers here. Good. Let death come for those who took my father.
+
+Igorot Scout: Who dares enter Igorotan territory?
+
+Lam-ang: I am Lam-ang, son of Don Juan! I've come for the ones who killed my father!
+
+Igorot Scout: Don Juan? (laughs) His head decorates our chief's spear! You'll join him!
+
+Lam-ang: You'll regret those words.
+
+SYSTEM: Combat Started. Defeat all enemies to proceed. (3 waves)
+
+=> END 
+
+~ lam_ang_scene3_start
+
+Lam-ang: Father... I will honor you.
+
+Igorot Chief: Another warrior from Nalbuan? You people never learn!
+
+Lam-ang: I am Lam-ang, son of Don Juan! I challenge all of Kaigorotan! Every warrior here - face me!
+
+Igorot Chief: Bold words for a boy! Kill him! Throw your spears!
+
+SYSTEM: BOSS FIGHT — Igorot Chief. Defeat him and his warriors!
+
+#Igorot Chief: You have skill, boy. But can you face ME?
+
+=> END 
+
+~ lam_ang_scene4_start
+
+Lam-ang: It's done.
+
+Lam-ang: Father, your death is avenged. Nalbuan is safe. No more raids. No more fear.
+
+Lam-ang: I wish you could have met the man I've become. I hope... I hope I've made you proud.
+
+Lam-ang: I will bring you home. Rest now.
+
+#SYSTEM: Returning to Nalbuan...
+
+=> END
+
+~ act2_scene1_homecoming_start
+
+Namongan: Lam-ang! You've returned!
+
+Namongan: My son... you've done what seemed impossible. Your father's spirit can rest now.
+
+Namongan: But I see it in your eyes—something still troubles you.
+
+Lam-ang: I feel... incomplete. As if there's something more I must do. The battle is won, but my purpose isn't finished.
+
+Namongan: You're a man now, Lam-ang. A warrior. Perhaps it's time you thought of... a wife?
+
+Lam-ang: A wife? Mother, who would want—
+
+Namongan: There is a maiden in Calanutian. Doña Ines Cannoyan. They say she shines like nine flocks of stars in the night sky. Beautiful, wealthy, but... proud.
+
+Lam-ang: Tell me more.
+
+Namongan: She has rejected countless wealthy Castilian suitors! Rich merchants, Spanish officials—none were good enough. What makes you think—
+
+Lam-ang: Mother, I defeated all of Kaigorotan alone. Surely I can win one woman's heart.
+ 
+#SYSTEM: A white rooster with yellow feet struts forward.
+
+White Rooster: Trust in us, Namongan! Your son will succeed where others have failed!
+
+#SYSTEM: A shaggy dog with golden collar trots in, barking twice.
+
+Namongan: Even your animals have more confidence than I do. Very well, my son. But take care—matters of the heart are more dangerous than any battle.
+
+Lam-ang: Then it's settled. I leave for Calanutian tomorrow.
+
+SYSTEM: New Quest: The Courtship of Ines Cannoyan
+
+SYSTEM: Companions Acquired: White Rooster, Shaggy Dog
+
+=> END
+
+~ act2_scene2_travel_start
+
+Lam-ang: Calanutian lies to the east. A new challenge awaits — one I cannot solve with a sword alone.
+
+SYSTEM: Follow the path to Calanutian.
+
+=> END 
+
+~ act2_scene2_1_travel_start
+
+Bandit Leader: Hold there, traveler! Nice rope you've got. And that rooster looks... exotic. Hand them over and you can pass.
+
+Lam-ang: I have no time for this. These are my companions, not your plunder. Move aside.
+
+Bandit Leader: Companions? Boys, looks like we've got a crazy one!
+
+SYSTEM: Bandits draw weapons.
+
+Lam-ang: I warned you.
+
+SYSTEM: Combat Started. Defeat the Bandits! 6 enemies remaining.
+
+# SYSTEM: Combat Complete. Calanutian ahead.
+
+=> END
+
+~ act2_scene3_suitors_start
+
+Lam-ang: So many suitors...
+
+Suitor 1: Get in line, friend!
+
+Lam-ang: I don't wait in lines. Tandang!
+
+#SYSTEM: PRESS Q — ROOSTER ABILITY
+#
+#White Rooster: (flaps wings)
+#SYSTEM: The house shakes and collapses.
+#
+#Doña Ines: (furious) WHO DESTROYED MY HOUSE?!
+#
+#Lam-ang: Aso, fix it!
+#
+#SYSTEM: PRESS E — DOG ABILITY
+#
+#Shaggy Dog: (barks)
+#SYSTEM: House rebuilds itself, even better than before.
+
+Suitors: Impossible!
+
+Doña Ines: You there! Come inside.
+
+SYSTEM: Enter the house.
+
+=> END 
+
+~ act2_scene4_meeting_ines
+
+Don Unnayan: What is your name, young man?
+
+Lam-ang: I am Lam-ang of Nalbuan, son of Don Juan.
+
+Doña Ines: You destroyed my house just to get my attention?
+
+Lam-ang: And I fixed it. Better than before.
+
+Doña Ines: Bold. I like that.
+
+Don Unnayan: My daughter is wealthy — lands, gold, servants. What do you offer?
+
+Lam-ang: I own the lands of Kaigorotan. I trade with Chinese merchants. My wealth matches hers.
+
+Doña Ines: And what do you offer ME?
+
+Lam-ang: Loyalty. Strength. A love that even death cannot break.
+
+SYSTEM: Ines studies him.
+
+Doña Ines: Then you may court me, Lam-ang of Nalbuan.
+
+SYSTEM: Courtship Successful!
+
+=> END 
+
+~ act2_scene5_wedding_start
+
+Priest: I now pronounce you husband and wife!
+
+SYSTEM: Lam-ang and Ines embrace.
+
+SYSTEM: Married! Returning to Nalbuan...
+
+=> END
+
+~ act3_scene1_rarang_call
+
+Capitan: Lam-ang! You must dive for the rarang. It's your duty as a man of this barangay.
+
+Lam-ang: When?
+
+Capitan: Tomorrow at dawn. The deep trench.
+
+Doña Ines: I have a bad feeling about this...
+
+Lam-ang: I'll be fine. I've faced worse.
+
+=> END 
+
+~ act3_scene1_1_rarang_call
+
+Lam-ang: Ines... I saw my death. A great shark.
+
+Doña Ines: Then don't go!
+
+Lam-ang: I must. But listen — if the stairs shake, the roof falls, and the stove breaks... I'm dead. Gather my bones. The rooster and dog will bring me back.
+
+Doña Ines: Lam-ang...
+
+Lam-ang: Trust me. Even death won't keep us apart.
+
+~ act3_scene2_shore_dive
+
+Lam-ang: Whatever comes... I'm ready.
+
+SYSTEM: Swim to the rarang.
+
+=> END 
+
+~ act3_scene2_1_shore_dive
+
+SYSTEM: Reaches glowing rarang at bottom
+
+Lam-ang: There it is—
+
+SYSTEM: Massive shadow. BERKAKAN THE SHARK appears
+
+Berkakan the Shark: Your journey ends, Lam-ang!
+
+=> END 
+
+~ act3_scene2_2_shore_dive
+
+Lam-ang: (weakening) Ines... I'm sorry...
+
+=> END
+
+~ act3_scene3_ines_returns
+
+
+#SYSTEM: Suddenly — Screen shakes. Stairs animated shaking.
+
+Doña Ines: No...
+
+#SYSTEM: Roof collapses
+
+Doña Ines: No, no!
+
+#SYSTEM: Stove breaks.
+
+Doña Ines: LAM-ANG!
+
+#SYSTEM: She collapses. Rooster approaches.
+
+White Rooster: Doña Ines... we can still save him. We need his bones.
+
+~ act3_scene4_bones_of_lamang
+
+Tandang Marcos: Every bone. As you asked.
+
+Doña Ines: Thank you.
+
+SYSTEM: Ines lays bones on sand, covers with her cloth, turns away.
+
+White Rooster: Don't look.
+
+SYSTEM: Rooster flaps wings.
+
+SYSTEM: Dog barks twice.
+
+SYSTEM: Cloth rises, takes human shape.
+
+White Rooster: Look now.
+
+SYSTEM: Cloth falls. Lam-ang stands, stretching.
+
+Lam-ang: What a sleep... seven days?
+
+Doña Ines: LAM-ANG!
+
+SYSTEM: She embraces him.
+
+Lam-ang: I... I remember. The shark. But I'm alive?
+
+Doña Ines: Not even death could take you from me.
+
+Lam-ang: And it never will.
+
+=> END 
+
+
+~ epilogue_nalbuan_return
+
+SYSTEM: Lam-ang and Ines walk home hand in hand.
+
+Lam-ang: Finally, peace. We can live quietly now.
+
+Doña Ines: After all you've been through, you deserve rest.
+
+SYSTEM: They reach home. Suddenly — war drums in distance.
+
+Namongan:  Lam-ang! Raiders approach from the mountains!
+
+Lam-ang: It seems my battles aren't over yet.
+
+Doña Ines: Then we fight together. This is OUR home.
+
+Lam-ang: Together.
+
+SYSTEM: ENDLESS MODE — Defend Nalbuan!
+
+=> END
+
+
+
+
+"
 metadata/dialogue_manager_version = "3.7.1"
