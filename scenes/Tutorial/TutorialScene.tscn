@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://k0ajtmpkft7" path="res://dialogue/Scene1.dialogue" id="9_5bpsw"]
 [ext_resource type="PackedScene" uid="uid://d4b118rrwlhqi" path="res://npcs/wounded_villager.tscn" id="10_2jkmf"]
 
+
 [sub_resource type="GDScript" id="GDScript_5bpsw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gdwvu"]

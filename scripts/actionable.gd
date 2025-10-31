@@ -21,6 +21,10 @@ func action() -> void:
 		# Main Story
 		"NamonganMain1":
 			dialogue_start = "lam_ang_scene1_start"
+		"Act1Scene2":
+			dialogue_start = "lam_ang_scene2_start"
+			
+
 	
 	# Start the dialogue
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dad2r7fvn2wit"]
+[gd_scene load_steps=38 format=3 uid="uid://dad2r7fvn2wit"]
 
 [ext_resource type="Texture2D" uid="uid://drainjd7ywvxg" path="res://assets/Environments/grass2.png" id="1_yiewr"]
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environments/grass.png" id="2_fv77o"]
@@ -1796,9 +1796,6 @@ sources/7 = SubResource("TileSetAtlasSource_yabb8")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iuva2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcnna"]
-size = Vector2(10.9999695, 480)
-
 [node name="World_Map" type="Node2D"]
 position = Vector2(1099, -911)
 
@@ -2163,7 +2160,7 @@ layer_0/tile_data = PackedInt32Array(4, 131073, 8, 65540, 524289, 1, 131076, 524
 layer_1/name = "Layer1"
 
 [node name="Lam-Ang" parent="." instance=ExtResource("16_hcnna")]
-position = Vector2(3414, -118)
+position = Vector2(628, 271)
 
 [node name="NamonganMain1" parent="." instance=ExtResource("17_jc3vk")]
 position = Vector2(696, 53)
@@ -2173,15 +2170,3 @@ dialogue_resource = ExtResource("19_in1fl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NamonganMain1/Actionable"]
 shape = SubResource("CapsuleShape2D_iuva2")
-
-[node name="Act1Scene2" type="Node" parent="."]
-
-[node name="Actionable" parent="Act1Scene2" instance=ExtResource("18_uyish")]
-position = Vector2(2467, 899)
-rotation = 1.5707964
-dialogue_resource = ExtResource("19_in1fl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Act1Scene2/Actionable"]
-position = Vector2(-1921.0001, -2217)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_hcnna")
