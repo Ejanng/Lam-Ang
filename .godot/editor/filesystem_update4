@@ -1,5 +1,0 @@
-res://scenes/MainStory/Town.tscn
-res://Inventory/Item/playerInventory.tres
-res://GUI/slot_gui.gd
-res://scripts/actionable.gd
-res://npcs/white_rooster.tscn
