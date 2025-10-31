@@ -18,7 +18,7 @@ func drop_xp(position: Vector2, xpAmount: int, dropChance: float = 1.0) -> void:
 		
 		orb.xp_amount = finalAmount
 		orb.global_position = position
-		get_tree().current_scene.add_child(orb)
+		get_tree().current_scene.call_deferred("add_child", orb)
 		
 		print("Drop XP orb: ", finalAmount, "(x", multiplier, ")")
 	else:
@@ -33,7 +33,7 @@ func drop_coin(position: Vector2, coinAmount: int, dropChance: float = 1.0) -> v
 		
 		coin.coin_amount = finalAmount
 		coin.global_position = position
-		get_tree().current_scene.add_child(coin)
+		get_tree().current_scene.call_deferred("add_child", coin)
 		
 		print("Drop Coin: ", finalAmount, "(x", multiplier, ")")
 	else:
@@ -51,7 +51,7 @@ func drop_items(type: String, position: Vector2, dropChance: float) -> void:
 				var dropScene = healthItem.scene.instantiate()
 				dropScene.global_position = position
 				dropScene.itemResource = healthItem
-				get_tree().current_scene.add_child(dropScene)
+				get_tree().current_scene.call_deferred("add_child", dropScene)
 			else:
 				print("no health scene")
 		"energyPot":
@@ -61,6 +61,6 @@ func drop_items(type: String, position: Vector2, dropChance: float) -> void:
 				var dropScene = energyItem.scene.instantiate()
 				dropScene.global_position = position
 				dropScene.itemResource = energyItem
-				get_tree().current_scene.add_child(dropScene)
+				get_tree().current_scene.call_deferred("add_child", dropScene)
 			else:
 				print("no energy scene")

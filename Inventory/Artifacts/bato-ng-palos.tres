@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ArtifactsItem" load_steps=3 format=3 uid="uid://y6624d5b4neu"]
+
+[ext_resource type="Script" uid="uid://ccjyopo6hld7g" path="res://Inventory/artifacts_item.gd" id="1_wkj20"]
+[ext_resource type="Texture2D" uid="uid://chatf4jn6rvir" path="res://assets/Drops/bato ng palos.png" id="2_u3a1w"]
+
+[resource]
+script = ExtResource("1_wkj20")
+name = "bato-ng-palos"
+texture = ExtResource("2_u3a1w")
+healthStat = 0.25
+metadata/_custom_type_script = "uid://ccjyopo6hld7g"
