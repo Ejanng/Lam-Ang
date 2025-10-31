@@ -314,6 +314,8 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	#if body.has_method("melee_enemy") || body.has_method("ranged_enemy"):
 	if body.has_method("enemy"):
 		isEnemyInAttackRange = true
+		
+
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("enemy"):

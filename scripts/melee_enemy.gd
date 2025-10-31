@@ -16,10 +16,16 @@ var player = null
 var health = 100 
 var enemyDMG = 20
 
-var xpDrop = 20
-var xpDropChance = 0.8
-var coinDrop = 25
-var coinDropChance = 0.6
+@export var xpDrop = 20
+@export var xpDropChance = 0.8
+@export var coinDrop = 25
+@export var coinDropChance = 0.6
+@export var healthPotionDrop = 1
+@export var healthPotionDropChance = 0.1
+@export var energyPotionDrop = 1
+@export var energyPotionDropChance = 0.1
+@export var lootDrop: InventoryItem
+@export var lootDropChance: float = 0.4
 
 var random_dir: Vector2 = Vector2.ZERO
 
@@ -136,6 +142,20 @@ func deal_dmg(damage):
 func die():
 	DropManager.drop_xp(global_position, xpDrop, xpDropChance)
 	DropManager.drop_coin(global_position, coinDrop, coinDropChance)
+	
+	var roll = randi_range(1, 5)
+	print(roll)
+	match roll:
+		1:
+			DropManager.drop_items("healthPot", global_position, healthPotionDropChance)
+		2:
+			DropManager.drop_items("energyPot", global_position, energyPotionDropChance)
+		#3:
+			#DropManager.drop_item(global_position, Drop, coinDropChance)
+		#4:
+			#DropManager.drop_item(global_position, coinDrop, coinDropChance)
+		#5:
+			#DropManager.drop_item(global_position, coinDrop, coinDropChance)
 	queue_free()
 
 func _on_take_dmg_cooldown_timeout() -> void:

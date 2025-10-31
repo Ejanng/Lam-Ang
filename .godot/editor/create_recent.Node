@@ -1,2 +1,6 @@
+Sprite2D
+TextureRect
+CollisionShape2D
+Area2D
 AnimationPlayer
 ColorRect
