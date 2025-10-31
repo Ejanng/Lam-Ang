@@ -8,11 +8,13 @@ var isOpen: bool = false
 @onready var inventory: Inventory = preload("res://Inventory/Item/playerInventory.tres")
 @onready var artifacts: Artifacts = preload("res://Inventory/Artifacts/playerArtifacts.tres")
 @onready var itemStackGuiClass = preload("res://GUI/itemStackGui.tscn")
-@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var hotbarSlots: Array = $NinePatchRect/HBoxContainer.get_children()
+@onready var slots: Array = hotbarSlots + $NinePatchRect/GridContainer.get_children()
 @onready var artifact_slots: Array = $NinePatchRect2/GridContainer.get_children()
 
 var itemInHand: ItemStackGui
 var oldIndex: int = -1
+var locked: bool = false		#used for if there is animtion tween
 
 func _ready() -> void:
 	connectSlots()
@@ -20,6 +22,8 @@ func _ready() -> void:
 	update()
 	
 func connectSlots():
+	if locked: return
+	
 	for i in range(slots.size()):
 		var slot = slots[i]
 		slot.index = i
@@ -32,7 +36,9 @@ func update():
 	for i in range(min(inventory.slots.size(), slots.size())):
 		var inventorySlot: InventorySlot = inventory.slots[i]
 		
-		if !inventorySlot.item: continue
+		if !inventorySlot.item: 
+			slots[i].clear()
+			continue
 		
 		var itemStackGui: ItemStackGui = slots[i].itemStackGui
 		if !itemStackGui:
@@ -118,12 +124,14 @@ func stackItems(slot):
 		
 	slotItem.update()
 	if itemInHand: itemInHand.update()
+	inventory.updated.emit()
 
 func updateItemInHand():
 	if !itemInHand: return
 	itemInHand.global_position = get_global_mouse_position() - itemInHand.size / 2
 	
 func putItemBack():
+	locked = true
 	if oldIndex < 0:
 		var emptySlots = slots.filter(func (s): return s.isEmpty())
 		if emptySlots.is_empty(): return
@@ -132,9 +140,10 @@ func putItemBack():
 		
 	var targetSlot = slots[oldIndex]
 	insertItemInSlot(targetSlot)
+	locked = false
 	
 func _input(event):
-	if itemInHand and Input.is_action_pressed("rightClick"):
+	if itemInHand and !locked and Input.is_action_pressed("rightClick"):
 		putItemBack()
 		
 	updateItemInHand()
