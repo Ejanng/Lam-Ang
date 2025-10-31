@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi7423fwwhe24"
-path="res://.godot/imported/cliff.png-9cc8749a59f9f080e858a3d0a7f68f57.ctex"
+uid="uid://x5ldpcs216gr"
+path="res://.godot/imported/kubo1.png-9eed9e9d72b74dd009b9837ab712d62e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Environments/cliff.png"
-dest_files=["res://.godot/imported/cliff.png-9cc8749a59f9f080e858a3d0a7f68f57.ctex"]
+source_file="res://assets/Environments/kubo1.png"
+dest_files=["res://.godot/imported/kubo1.png-9eed9e9d72b74dd009b9837ab712d62e.ctex"]
 
 [params]
 

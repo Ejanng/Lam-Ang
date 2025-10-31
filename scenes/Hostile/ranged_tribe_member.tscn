@@ -1,8 +1,9 @@
 [gd_scene load_steps=18 format=3 uid="uid://blo75nahvq6g1"]
 
-[ext_resource type="Script" uid="uid://b6tkcsf7dvwml" path="res://scripts/ranged_enemy.gd" id="1_gts3v"]
+[ext_resource type="Script" uid="uid://b6tkcsf7dvwml" path="res://scenes/scripts/ranged_enemy.gd" id="1_gts3v"]
 [ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="2_d8wnm"]
 [ext_resource type="Texture2D" uid="uid://dn7ncb1xcmhoj" path="res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png" id="3_n30ah"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgi5p"]
 atlas = ExtResource("2_d8wnm")
