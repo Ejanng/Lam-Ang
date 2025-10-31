@@ -22,11 +22,6 @@ var addEnergy = 0		# added energy for player
 var addHealth = 0
 var addSpeed = 100
 
-# drop effects
-var healthPotion: float
-var energyPotion: float
-
-# artifacts slot
 var isNameStat1 = false
 var isNameStat2 = false
 
