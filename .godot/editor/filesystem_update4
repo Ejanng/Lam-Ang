@@ -1,3 +1,6 @@
+res://scenes/EndlessBattle/EndlessBattle.tscn
+res://scripts/endless_battle.gd
+
 res://scenes/Player/lam_ang.tscn
 res://Inventory/inventory.gd
 res://Inventory/Item/playerInventory.tres
