@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ba1amiejsq2ch"]
+[gd_scene load_steps=33 format=3 uid="uid://dad2r7fvn2wit"]
 
 [ext_resource type="Texture2D" uid="uid://drainjd7ywvxg" path="res://assets/Environments/grass2.png" id="1_yiewr"]
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environments/grass.png" id="2_fv77o"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dns7dpyylmhld" path="res://assets/Environments/water.tres" id="9_42yfr"]
 [ext_resource type="Texture2D" uid="uid://bhnilna7alpkb" path="res://assets/Environments/Tree2.png" id="9_v0t1i"]
 [ext_resource type="Texture2D" uid="uid://bp52d8hsunqno" path="res://assets/Environments/houses.png" id="10_hcnna"]
-[ext_resource type="Texture2D" uid="uid://c3bac3hax6dnk" path="res://assets/Environments/river spritesheet.png" id="11_yabb8"]
+[ext_resource type="Texture2D" uid="uid://i3r0jt4rojir" path="res://assets/Environments/river spritesheet.png" id="11_yabb8"]
 [ext_resource type="Texture2D" uid="uid://bkm71ytxo16kr" path="res://assets/Environments/water1.png" id="12_ma4vj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ke4hq"]
