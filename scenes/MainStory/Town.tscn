@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dad2r7fvn2wit"]
+[gd_scene load_steps=42 format=3 uid="uid://ba1amiejsq2ch"]
 
 [ext_resource type="Texture2D" uid="uid://drainjd7ywvxg" path="res://assets/Environments/grass2.png" id="1_yiewr"]
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environments/grass.png" id="2_fv77o"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://di6ytm5suocus" path="res://npcs/namongan.tscn" id="17_jc3vk"]
 [ext_resource type="PackedScene" uid="uid://bg8igj13o1og6" path="res://dialogue/actionable.tscn" id="18_uyish"]
 [ext_resource type="Resource" uid="uid://k0ajtmpkft7" path="res://dialogue/Scene1.dialogue" id="19_in1fl"]
+[ext_resource type="PackedScene" uid="uid://dwaingb1o5dik" path="res://npcs/white_rooster.tscn" id="20_jc3vk"]
+[ext_resource type="PackedScene" uid="uid://ex00a1v3tgg2" path="res://npcs/aso.tscn" id="20_uyish"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ke4hq"]
 texture = ExtResource("1_yiewr")
@@ -1796,6 +1798,12 @@ sources/7 = SubResource("TileSetAtlasSource_yabb8")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iuva2"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcnna"]
+size = Vector2(10.9999695, 480)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_in1fl"]
+radius = 70.064255
+
 [node name="World_Map" type="Node2D"]
 position = Vector2(1099, -911)
 
@@ -2160,7 +2168,7 @@ layer_0/tile_data = PackedInt32Array(4, 131073, 8, 65540, 524289, 1, 131076, 524
 layer_1/name = "Layer1"
 
 [node name="Lam-Ang" parent="." instance=ExtResource("16_hcnna")]
-position = Vector2(628, 271)
+position = Vector2(629, 244)
 
 [node name="NamonganMain1" parent="." instance=ExtResource("17_jc3vk")]
 position = Vector2(696, 53)
@@ -2170,3 +2178,36 @@ dialogue_resource = ExtResource("19_in1fl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NamonganMain1/Actionable"]
 shape = SubResource("CapsuleShape2D_iuva2")
+
+[node name="Act1Scene2" type="Node" parent="."]
+
+[node name="Actionable" parent="Act1Scene2" instance=ExtResource("18_uyish")]
+position = Vector2(2467, 899)
+rotation = 1.5707964
+dialogue_resource = ExtResource("19_in1fl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Act1Scene2/Actionable"]
+position = Vector2(-1921.0001, -2217)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_hcnna")
+
+[node name="Namongan&Pets" type="Node" parent="."]
+
+[node name="Aso" parent="Namongan&Pets" instance=ExtResource("20_uyish")]
+position = Vector2(1892, -674)
+
+[node name="WhiteRooster" parent="Namongan&Pets" instance=ExtResource("20_jc3vk")]
+position = Vector2(1844, -682)
+
+[node name="NamonganMain2" parent="Namongan&Pets" instance=ExtResource("17_jc3vk")]
+position = Vector2(1864, -628)
+
+[node name="Actionable" parent="Namongan&Pets" instance=ExtResource("18_uyish")]
+position = Vector2(1863, -656)
+rotation = 1.5707964
+dialogue_resource = ExtResource("19_in1fl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Namongan&Pets/Actionable"]
+position = Vector2(-1.9999847, -8.000001)
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_in1fl")
