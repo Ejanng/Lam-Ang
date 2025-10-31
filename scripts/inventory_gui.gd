@@ -96,7 +96,7 @@ func swapItems(slot):
 func stackItems(slot):
 	var slotItem: ItemStackGui = slot.itemStackGui
 	var maxAmount = slotItem.inventorySlot.item.maxAmountPerStack
-	var totalAmount = slotItem.Inventory.amount + itemInHand.inventorySlot.amount
+	var totalAmount = slotItem.inventorySlot.amount + itemInHand.inventorySlot.amount
 	
 	if slotItem.inventorySlot.amount == maxAmount:
 		swapItems(slot)
