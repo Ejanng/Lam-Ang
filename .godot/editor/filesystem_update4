@@ -13,3 +13,6 @@ res://GUI/inventory_gui.tscn
 res://GUI/slot_gui.gd
 res://scripts/item_stack_gui.gd
 res://GUI/itemStackGui.tscn
+res://Inventory/Item/lifepot.tres
+res://Inventory/inventory_item.gd
+res://scripts/global.gd

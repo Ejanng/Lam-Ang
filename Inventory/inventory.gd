@@ -43,13 +43,28 @@ func insertSlot(index: int, inventorySlot: InventorySlot):
 	updated.emit()
 	
 func use_item_at_index(index: int) -> void:
-	if index < 0 or index >= slots.size() or !slots[index].item: return
-	
+	if index < 0 or index >= slots.size(): return
 	var slot = slots[index]
+	if !slot.item: return
+	var item = slot.item
 	
-	if slot.amount > 1:
-		slot.amount -= 1
-		updated.emit()
-		return
+	if item.isConsumable:
+		_apply_item_effect(item)
+		
+		if slot.amount > 1:
+			slot.amount -= 1
+			updated.emit()
+			return
 	
 	remove_at_index(index)
+
+func _apply_item_effect(item: InventoryItem):
+	match item.name:
+		"lifepot":
+			Global.healthPotion = 0.0
+			Global.healthPotion += item.effectValue
+		"energypot":
+			Global.energyPotion = 0.0
+			Global.energyPotion += item.effectValue
+		_:
+			pass
