@@ -21,9 +21,9 @@ var enemyDMG = 20
 @export var coinDrop = 25
 @export var coinDropChance = 0.6
 @export var healthPotionDrop = 1
-@export var healthPotionDropChance = 0.1
+@export var healthPotionDropChance = 1
 @export var energyPotionDrop = 1
-@export var energyPotionDropChance = 0.1
+@export var energyPotionDropChance = 1
 @export var lootDrop: InventoryItem
 @export var lootDropChance: float = 0.4
 
@@ -143,7 +143,7 @@ func die():
 	DropManager.drop_xp(global_position, xpDrop, xpDropChance)
 	DropManager.drop_coin(global_position, coinDrop, coinDropChance)
 	
-	var roll = randi_range(1, 5)
+	var roll = randi_range(1, 2)
 	print(roll)
 	match roll:
 		1:

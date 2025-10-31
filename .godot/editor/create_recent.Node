@@ -1,3 +1,5 @@
+Button
+Label
 Sprite2D
 TextureRect
 CollisionShape2D
