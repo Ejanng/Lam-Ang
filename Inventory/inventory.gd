@@ -55,12 +55,12 @@ func use_item_at_index(index: int) -> void:
 			slot.amount -= 1
 			updated.emit()
 			return
-	
-	remove_at_index(index)
+		remove_at_index(index)
 
 func _apply_item_effect(item: InventoryItem):
 	match item.name:
 		"lifepot":
+			print("imworking")
 			Global.healthPotion = 0.0
 			Global.healthPotion += item.effectValue
 		"energypot":

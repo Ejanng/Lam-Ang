@@ -1,3 +1,2 @@
+InventoryItem
 Resource
-ArtifactsItem
-Artifacts

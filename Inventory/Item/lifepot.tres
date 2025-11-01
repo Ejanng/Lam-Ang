@@ -10,4 +10,5 @@ name = "lifepot"
 texture = ExtResource("2_nb7vn")
 scene = ExtResource("1_beou7")
 effectValue = 0.2
+isConsumable = true
 metadata/_custom_type_script = "uid://buqlpcs727fru"

@@ -58,6 +58,7 @@ var playerPos = Vector2.ZERO
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var inventoryGui = $InventoryGui
 
+@export var inventory: Inventory
 
 func _ready() -> void:
 	# Initialize UI + stats
@@ -208,22 +209,10 @@ func cameraMovement():
 	)
 	velocity = input.normalized() * currentSpeed
 	move_and_slide()
-
+	
 	global_position.x = clamp(global_position.x, Global.mapBounds.position.x, Global.mapBounds.position.x + Global.mapBounds.size.x)
-	global_position.y = clamp(global_position.y, Global.mapBounds.position.y, Global.mapBounds.position.y + Global.mapBounds.size.y)
-
-
-# ==========================
-# ====== STATS / ENERGY =====
-# ==========================
-func health_potion():
-	if Global.healthPotion > 0:
-		print("Before: ", Global.playerHealth)
-		Global.playerHealth += (Global.playerHealth * Global.healthPotion)
-		print("After: ", Global.playerHealth)
-		Global.healthPotion = 0
-
-
+	global_position.y = clamp(global_position.y, Global.mapBounds.position.x, Global.mapBounds.position.y + Global.mapBounds.size.y)
+	
 func regenPlayerHealth(delta) -> void:
 	if isRegeningHP and Global.playerHealth < Global.MAX_HEALTH:
 		Global.playerHealth += REGEN_RATE_HP * delta
@@ -273,8 +262,8 @@ func handle_movement(delta):
 	isSprinting = false
 	if isHurt:
 		return
-		#print("Inside canMove block - should not print during dialogue!")
-	currentSpeed = WALK
+	if canMove:
+		currentSpeed = WALK + Global.speedBuff
 		
 	
 	if isDashing:
