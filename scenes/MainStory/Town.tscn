@@ -1805,7 +1805,7 @@ size = Vector2(10.9999695, 480)
 radius = 70.064255
 
 [node name="World_Map" type="Node2D"]
-position = Vector2(1099, -911)
+position = Vector2(-35, 404)
 
 [node name="Home_town" type="TileMap" parent="."]
 position = Vector2(-7, 6)
@@ -2184,7 +2184,7 @@ shape = SubResource("CapsuleShape2D_iuva2")
 [node name="Act1Scene2" type="Node" parent="."]
 
 [node name="Actionable" parent="Act1Scene2" instance=ExtResource("18_uyish")]
-position = Vector2(2467, 899)
+position = Vector2(1333, 2214)
 rotation = 1.5707964
 dialogue_resource = ExtResource("19_in1fl")
 dialogue_start = null
@@ -2198,16 +2198,16 @@ shape = SubResource("RectangleShape2D_hcnna")
 [node name="Namongan&Pets" type="Node" parent="."]
 
 [node name="Aso" parent="Namongan&Pets" instance=ExtResource("20_uyish")]
-position = Vector2(1892, -674)
+position = Vector2(758, 641)
 
 [node name="WhiteRooster" parent="Namongan&Pets" instance=ExtResource("20_jc3vk")]
-position = Vector2(1844, -682)
+position = Vector2(710, 633)
 
 [node name="NamonganMain2" parent="Namongan&Pets" instance=ExtResource("17_jc3vk")]
-position = Vector2(1864, -628)
+position = Vector2(730, 687)
 
 [node name="Actionable" parent="Namongan&Pets" instance=ExtResource("18_uyish")]
-position = Vector2(1863, -656)
+position = Vector2(729, 659)
 rotation = 1.5707964
 dialogue_resource = ExtResource("19_in1fl")
 dialogue_start = null

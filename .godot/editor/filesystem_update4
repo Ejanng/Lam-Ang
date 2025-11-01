@@ -1,6 +1,10 @@
-res://scripts/lam_ang.gd
 res://scenes/Tutorial/TutorialScene.tscn
 res://Inventory/Item/playerInventory.tres
 res://Inventory/Artifacts/playerArtifacts.tres
-res://scripts/global.gd
+res://ui components/1theme.tres
+res://ui components/2theme.tres
+res://ui components/3theme.tres
+res://ui components/4theme.tres
+res://ui components/5theme.tres
+res://scripts/lam_ang.gd
 res://scripts/actionable.gd
