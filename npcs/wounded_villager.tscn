@@ -1,37 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4b118rrwlhqi"]
+[gd_scene load_steps=6 format=3 uid="uid://d4b118rrwlhqi"]
 
-[ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_tion4"]
+[ext_resource type="Texture2D" uid="uid://24u1fr81fimj" path="res://assets/Sprites/OS and  BERKAKAN/villger female hurt spritesheet.png" id="1_fu3aj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uv2tn"]
-atlas = ExtResource("1_tion4")
-region = Rect2(1, 1, 30, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbueh"]
+atlas = ExtResource("1_fu3aj")
+region = Rect2(0, 4, 28, 27)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i05vm"]
-atlas = ExtResource("1_tion4")
-region = Rect2(33, 33, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cgviw"]
-atlas = ExtResource("1_tion4")
-region = Rect2(1, 33, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jrcdj"]
-atlas = ExtResource("1_tion4")
-region = Rect2(33, 1, 30, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr3q8"]
+atlas = ExtResource("1_fu3aj")
+region = Rect2(0, 37, 28, 27)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rebq2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uv2tn")
+"texture": SubResource("AtlasTexture_vbueh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i05vm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cgviw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jrcdj")
+"texture": SubResource("AtlasTexture_qr3q8")
 }],
 "loop": true,
 "name": &"idle_down",
@@ -50,7 +36,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rebq2")
 animation = &"idle_down"
 autoplay = "idle_down"
-frame_progress = 0.54473984
+frame_progress = 0.5347797
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_e4t8w")

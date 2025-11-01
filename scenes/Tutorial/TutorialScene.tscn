@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dsi6vlnusx1tm"]
+[gd_scene load_steps=40 format=3 uid="uid://dsi6vlnusx1tm"]
 
 [ext_resource type="Texture2D" uid="uid://bqi60xyvplvxm" path="res://assets/Environments/grass.png" id="1_23kjh"]
 [ext_resource type="Texture2D" uid="uid://eokialhslv6e" path="res://assets/Environments/Mountain.png" id="2_5bpsw"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://di6ytm5suocus" path="res://npcs/namongan.tscn" id="8_om1g8"]
 [ext_resource type="Resource" uid="uid://k0ajtmpkft7" path="res://dialogue/Scene1.dialogue" id="9_5bpsw"]
 [ext_resource type="PackedScene" uid="uid://d4b118rrwlhqi" path="res://npcs/wounded_villager.tscn" id="10_2jkmf"]
+[ext_resource type="PackedScene" uid="uid://bcxda6gun7nus" path="res://scenes/Hostile/melee_tribe_member.tscn" id="11_7luj0"]
 
 [sub_resource type="GDScript" id="GDScript_5bpsw"]
 
@@ -1545,8 +1546,8 @@ sources/18 = SubResource("TileSetAtlasSource_fuh3e")
 sources/24 = SubResource("TileSetAtlasSource_chk6s")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jkmf"]
-radius = 20.833313
-height = 41.666626
+radius = 71.66669
+height = 148.33337
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jkmf"]
 size = Vector2(16.000015, 508)
@@ -1712,7 +1713,7 @@ auto_trigger = true
 shape = SubResource("CapsuleShape2D_2jkmf")
 
 [node name="Lam-Ang" parent="." instance=ExtResource("7_5ry8j")]
-position = Vector2(548, 326)
+position = Vector2(598, 324)
 collision_layer = 19
 
 [node name="Camera2D2" type="Camera2D" parent="Lam-Ang"]
@@ -1731,6 +1732,7 @@ position = Vector2(1125, 1024)
 [node name="Actionable" parent="WoundedVillager" instance=ExtResource("8_23kjh")]
 collision_mask = 1
 dialogue_resource = ExtResource("9_5bpsw")
+auto_trigger = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WoundedVillager/Actionable"]
 position = Vector2(0.833313, 0)
@@ -1759,8 +1761,17 @@ dialogue_resource = ExtResource("9_5bpsw")
 auto_trigger = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IgorotVillage/Actionable"]
-position = Vector2(5, 3)
+position = Vector2(19.999992, -194)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_2jkmf")
+
+[node name="melee_enemy" parent="IgorotVillage" instance=ExtResource("11_7luj0")]
+position = Vector2(2976, 1088)
+
+[node name="melee_enemy2" parent="IgorotVillage" instance=ExtResource("11_7luj0")]
+position = Vector2(2978, 951)
+
+[node name="melee_enemy3" parent="IgorotVillage" instance=ExtResource("11_7luj0")]
+position = Vector2(2971, 802)
 
 [node name="Node" type="Node" parent="."]
