@@ -30,11 +30,9 @@ func action() -> void:
 	if player:
 		print("Setting can_move and canMove to false")
 		player.can_move = false
-		player.canMove = false
 		player.velocity = Vector2.ZERO
 		player.set_physics_process(false)
 		print("can_move is now: ", player.can_move)
-		print("canMove is now: ", player.canMove)
 	
 	# Modify dialogue_start based on parent
 	match parent_name:
@@ -65,6 +63,5 @@ func action() -> void:
 	if player:
 		print("Re-enabling movement")
 		player.can_move = true
-		player.canMove = true
 		player.set_physics_process(true)
 		
