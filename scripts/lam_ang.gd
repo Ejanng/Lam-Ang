@@ -21,7 +21,7 @@ var doubleTapTimers = {
 
 var isEnemyInAttackRange = false
 var isPlayerAlive = true
-var attackIP = false    # save for attack animation
+var attackIP = false
 var isRegeningHP = false
 var isPassiveCD = false
 var isRegeningEnergy = false
@@ -29,16 +29,18 @@ var isDashing = false
 var isSprinting = false
 var isAttacking = false
 var isHurt = false
-var canMove = true
+
+# Unified movement + dialogue flags
+var can_move: bool = true
+var dialogue_active: bool = false
+var dialogue_lock: bool = false
+var dialogue_manager
 
 var currentSpeed = 0
 var dashDirection = Vector2.ZERO
 var passiveCost = 5.0
 
 var playerPos = Vector2.ZERO
-
-var dialogue_active: bool = false
-var can_move: bool = true
 
 @onready var anim = $AnimatedSprite2D
 @onready var attackCD = $attack_cooldown
@@ -58,6 +60,7 @@ var can_move: bool = true
 
 
 func _ready() -> void:
+	# Initialize UI + stats
 	healthBar.max_value = Global.MAX_HEALTH
 	healthBar.value = Global.playerHealth
 	energyBar.max_value = Global.MAX_ENERGY
@@ -68,13 +71,151 @@ func _ready() -> void:
 	energyRegenTimer.one_shot = true
 	xpBar.value = Global.playerXP
 	xpBar.max_value = Global.xpToNextLevel
-	
-	
-	
+
 	inventoryGui.close()
 	update_coin_display()
-	
-# function stats of consumable
+
+	# connect DialogueManager signals (safe guard: try both singleton and autoload)
+	var dm = null
+	if Engine.has_singleton("DialogueManager"):
+		dm = Engine.get_singleton("DialogueManager")
+	else:
+		dm = get_node_or_null("/root/DialogueManager")
+
+	if dm:
+		# connect only if not already connected
+		if not dm.is_connected("dialogue_started", Callable(self, "_on_dialogue_started")):
+			dm.connect("dialogue_started", Callable(self, "_on_dialogue_started"))
+		if not dm.is_connected("dialogue_ended", Callable(self, "_on_dialogue_ended")):
+			dm.connect("dialogue_ended", Callable(self, "_on_dialogue_ended"))
+
+	dialogue_manager = dm
+
+func start_dialogue(area: Node) -> void:
+	# Safety: if area is null or has no action, ignore
+	if not area:
+		return
+
+	# Avoid double-starts
+	if dialogue_active or dialogue_lock:
+		return
+
+	# If dialogue_manager exposes a way to check if it's already playing, use it
+	if dialogue_manager:
+		# many dialogue systems include a flag or method; check common names:
+		if dialogue_manager.has_method("is_playing") and dialogue_manager.is_playing():
+			return
+		# some plugins have `is_showing` or `is_active`
+		if dialogue_manager.has_method("is_showing") and dialogue_manager.is_showing():
+			return
+
+	# Lock immediately so multiple key presses can't call action() multiple times
+	dialogue_lock = true
+
+	# Call the actionable's action (which should start the dialogue via the DialogueManager)
+	# Wrap in a try/catch style safe call
+	if area.has_method("action"):
+		area.action()
+	else:
+		# if area exposes a dialogue resource directly, try calling DialogueManager.start
+		if dialogue_manager and area.has_meta("dialogue_resource"):
+			var res = area.get_meta("dialogue_resource")
+			if dialogue_manager.has_method("start"):
+				dialogue_manager.start(res)
+
+# ==========================
+# ====== DIALOGUE LOGIC =====
+# ==========================
+func _process(delta: float) -> void:
+	cameraMovement()
+	health_potion()
+	regenPlayerHealth(delta)
+	regenPlayerEnergy(delta)
+
+	# If dialogue is active, we don't start another; but we DO allow advancing through DialogueManager
+	if Input.is_action_just_pressed("ui_accept"):
+		# If dialogue currently running -> advance (do not restart)
+		if dialogue_active:
+			# Try multiple common method names used by dialogue plugins:
+			if dialogue_manager:
+				# prefer a known method name if it exists
+				if dialogue_manager.has_method("advance_dialogue"):
+					dialogue_manager.advance_dialogue()
+				elif dialogue_manager.has_method("advance"):
+					dialogue_manager.advance()
+				elif dialogue_manager.has_method("next"):
+					dialogue_manager.next()
+				# if none exist, fallback: attempt to emit a signal or do nothing
+			return
+
+		# If we already locked starting a dialogue, ignore
+		if dialogue_lock:
+			return
+
+		# Try to find an actionable and start dialogue via wrapper
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			# use wrapper which sets lock immediately
+			start_dialogue(actionables[0])
+
+
+func _on_dialogue_started() -> void:
+	# Dialogue actually started
+	dialogue_active = true
+	can_move = false
+	velocity = Vector2.ZERO
+	anim.play("idle")
+	# Keep dialogue_lock true until dialogue ends (prevents queued starts)
+
+func _on_dialogue_ended() -> void:
+	# Dialogue finished — re-enable movement and release lock after tiny cooldown
+	dialogue_active = false
+	can_move = true
+	# small cooldown to avoid immediate re-trigger from the same key press
+	await get_tree().create_timer(0.08).timeout
+	dialogue_lock = false
+
+
+
+# ==========================
+# ====== MOVEMENT & COMBAT =====
+# ==========================
+func _physics_process(delta: float) -> void:
+	if not can_move:
+		velocity = Vector2.ZERO
+		anim.play("idle")
+		return
+
+	handle_movement(delta)
+	attack()
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("toggle_inventory"):
+		if inventoryGui.isOpen:
+			inventoryGui.close()
+		else:
+			inventoryGui.open()
+
+
+func cameraMovement():
+	if not can_move:
+		return
+
+	var input = Vector2(
+		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"),
+	)
+	velocity = input.normalized() * currentSpeed
+	move_and_slide()
+
+	global_position.x = clamp(global_position.x, Global.mapBounds.position.x, Global.mapBounds.position.x + Global.mapBounds.size.x)
+	global_position.y = clamp(global_position.y, Global.mapBounds.position.y, Global.mapBounds.position.y + Global.mapBounds.size.y)
+
+
+# ==========================
+# ====== STATS / ENERGY =====
+# ==========================
 func health_potion():
 	if Global.healthPotion > 0:
 		print("Before: ", Global.playerHealth)
@@ -82,60 +223,13 @@ func health_potion():
 		print("After: ", Global.playerHealth)
 		Global.healthPotion = 0
 
-func _process(delta: float) -> void:
-	cameraMovement()
-	health_potion()
-	regenPlayerHealth(delta)
-	regenPlayerEnergy(delta)
-	
-	
-	if Input.is_action_just_pressed("ui_accept"):
-		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0:
-			dialogue_active = true
-			actionables[0].action()
-			await DialogueManager.dialogue_ended
-			dialogue_active = false
-			return
-		
-		#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/Scene1.dialogue"), "start")
-		#return
-	
-func _physics_process(delta: float) -> void:
-	
-	if not can_move or not canMove:
-		velocity = Vector2.ZERO  # Stop all movement
-		anim.stop()
-		set_physics_process(false)
-		return
-		
-	handle_movement(delta)
-	attack()
 
-	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("toggle_inventory"):
-		if inventoryGui.isOpen:
-			inventoryGui.close()
-		else:
-			inventoryGui.open()
-	
-func cameraMovement():
-	var input = Vector2(
-		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"),
-	)
-	velocity = input.normalized() * currentSpeed
-	move_and_slide()
-	
-	global_position.x = clamp(global_position.x, Global.mapBounds.position.x, Global.mapBounds.position.x + Global.mapBounds.size.x)
-	global_position.y = clamp(global_position.y, Global.mapBounds.position.x, Global.mapBounds.position.y + Global.mapBounds.size.y)
-	
 func regenPlayerHealth(delta) -> void:
 	if isRegeningHP and Global.playerHealth < Global.MAX_HEALTH:
 		Global.playerHealth += REGEN_RATE_HP * delta
 		Global.playerHealth = clamp(Global.playerHealth, 0, Global.MAX_HEALTH)
 		healthBar.value = Global.playerHealth
+
 
 func regenPlayerEnergy(delta) -> void:
 	if isRegeningEnergy and Global.playerEnergy < Global.MAX_ENERGY:
@@ -144,36 +238,36 @@ func regenPlayerEnergy(delta) -> void:
 		energyBar.value = Global.playerEnergy
 	if isDashing or isSprinting or isAttacking:
 		isRegeningEnergy = false
-		
+
+
 func add_experience(amount: int) -> void:
 	Global.playerXP += amount
 	xpBar.value = Global.playerXP
-	#print("Gained", amount, "XP. Total: ", Global.playerXP)
-	
 	if Global.playerXP >= Global.xpToNextLevel:
 		Global.playerXP -= Global.xpToNextLevel
 		Global.playerXP += 1
 		Global.playerLevel += 1
 		Global.xpToNextLevel = int(Global.xpToNextLevel * 1.2)
 		xpBar.value = Global.playerXP
-		#print("Level Up! Now Level: ", Global.playerLevel)
-		
+
+
 func add_coin(amount: int) -> void:
 	Global.playerCoin += amount
-	#print("Gained", amount, "Coin. Total: ", Global.playerCoin)
 	update_coin_display()
-	
+
+
 func update_coin_display() -> void:
 	coinLabel.text = "Coins: " + str(Global.playerCoin)
-	
+
+
+# ==========================
+# ====== MOVEMENT =====
+# ==========================
 func handle_movement(delta):
-	print("canMove: ", canMove, " | can_move: ", can_move)
-	if not canMove or not can_move:
+	if not can_move:
 		velocity = Vector2.ZERO
-		print("Movement blocked - not moving!")
 		return
-		
-	print("Inside movement - should not print during dialogue!")
+
 	var direction = Vector2.ZERO
 	currentSpeed = 0
 	isSprinting = false
@@ -186,13 +280,13 @@ func handle_movement(delta):
 	if isDashing:
 		velocity = dashDirection * DASH_SPEED
 		move_and_slide()
+		return
 	else:
 		for dir in doubleTapTimers.keys():
 			if doubleTapTimers[dir] > 0:
 				doubleTapTimers[dir] -= delta
-				
+
 		if Input.is_action_pressed("ui_select"):
-			#print(Global.playerEnergy, ENERGY_DECAY_RATE_SPRINT)
 			if Global.playerEnergy >= ENERGY_DECAY_RATE_SPRINT:
 				isRegeningEnergy = false
 				isSprinting = true
@@ -201,8 +295,7 @@ func handle_movement(delta):
 				energyBar.value = Global.playerEnergy
 				energyRegenTimer.start()
 				currentSpeed = SPRINT
-			
-		# movements directions
+
 		if Input.is_action_pressed("ui_right"):
 			direction.x += 1
 			playerPos = direction
@@ -215,17 +308,16 @@ func handle_movement(delta):
 		if Input.is_action_pressed("ui_down"):
 			direction.y += 1
 			playerPos = direction
-		
-		# animated sprites
+
 		if direction != Vector2.ZERO:
 			direction = direction.normalized()
 			velocity = direction * currentSpeed
 			move_and_slide()
-		
+
 			if abs(direction.x) > abs(direction.y):
 				if not attackIP:
 					anim.play("walk_side")
-					anim.flip_h = direction.x < 0 
+					anim.flip_h = direction.x < 0
 			else:
 				if not attackIP:
 					if direction.y < 0:
@@ -237,7 +329,11 @@ func handle_movement(delta):
 				anim.play("idle")
 		handle_double_dash()
 
+
 func handle_double_dash():
+	if not can_move:
+		return
+
 	for dir in ["left", "right", "up", "down"]:
 		if Input.is_action_just_pressed("ui_" + dir):
 			if doubleTapTimers[dir] > 0:
@@ -245,7 +341,6 @@ func handle_double_dash():
 					start_dash(dir)
 					Global.playerEnergy -= DASH_ENERGY_COST
 					energyBar.value = Global.playerEnergy
-					#print("Dashing", dir, "- Energy left: ", Global.playerEnergy)
 					energyRegenTimer.start()
 				else:
 					print("Not enough energy to dash!")
@@ -253,10 +348,11 @@ func handle_double_dash():
 			else:
 				doubleTapTimers[dir] = DOUBLE_TAP_WINDOW
 
+
 func start_dash(dir):
 	isDashing = true
 	dashTimer.start()
-	
+
 	match dir:
 		"left":
 			dashDirection = Vector2.LEFT
@@ -266,62 +362,42 @@ func start_dash(dir):
 			dashDirection = Vector2.UP
 		"down":
 			dashDirection = Vector2.DOWN
-			
+
+
+# ==========================
+# ====== ATTACK / DAMAGE =====
+# ==========================
 func attack():
-	if isHurt:
+	if not can_move or isHurt:
 		return
-	var dir = playerPos
 	isAttacking = false
 	if Input.is_action_just_pressed("attack") and not isPassiveCD:
-		# player attack variables
 		Global.playerCurrentAttack = true
 		attackArea.monitoring = true
 		isPassiveCD = true
-		# player animtion variables
 		attackIP = true
 		isAttacking = true
-		# timers
 		energyRegenTimer.start()
 		passiveTimer.start()
-		
-		
+
 		Global.playerEnergy -= passiveCost
 		energyBar.value = Global.playerEnergy
-		
-		# issue on player attack at start wont work
-		# this function will overide that and deal dmg on enemy will work
-		# this function only work once... better not remove it
+
 		for body in attackArea.get_overlapping_bodies():
 			if Global.playerCurrentAttack and body.has_method("deal_dmg"):
 				body.deal_dmg(Global.playerDamage)
-			
-		# handle the attack animations
-		if abs(dir.x) > abs(dir.y):
-			anim.play("attack")
-			canMove = false
-			dealAttackCD.start()
-		else:
-			if dir.y < 0:
-				anim.play("attack")
-				canMove = false
-				dealAttackCD.start()
-			else:
-				anim.play("attack")
-				canMove = false
-				dealAttackCD.start()
-				
-		# finish the animation first before starting the cd
+
+		anim.play("attack")
+		can_move = false
 		dealAttackCD.start()
+
 
 func die():
 	if Global.playerHealth <= 0 and name:
 		isPlayerAlive = false
 		Global.playerHealth = 0
-		#print("Player Died!")
-		self.queue_free()
-		
-func player():
-	pass
+		queue_free()
+
 
 func take_damage(damage: int):
 	if isPlayerAlive and not isHurt:
@@ -329,9 +405,8 @@ func take_damage(damage: int):
 		Global.playerHealth = clamp(Global.playerHealth, 0, Global.MAX_HEALTH)
 		healthBar.value = Global.playerHealth
 		isRegeningHP = false
-		regenTimer.start()  # Reset health regen timer
-		#print("Player took ", damage, " damage. Health: ", Global.playerHealth)
-		
+		regenTimer.start()
+
 		if Global.playerHealth > 0:
 			isHurt = true
 			anim.play("hurt")
@@ -342,52 +417,61 @@ func take_damage(damage: int):
 		else:
 			die()
 
+
+# ==========================
+# ====== SIGNAL HANDLERS =====
+# ==========================
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	#if body.has_method("melee_enemy") || body.has_method("ranged_enemy"):
 	if body.has_method("enemy"):
 		isEnemyInAttackRange = true
-		
 
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("enemy"):
 		isEnemyInAttackRange = false
-		
+
 
 func _on_deal_attack_cooldown_timeout() -> void:
 	Global.playerCurrentAttack = false
 	attackArea.monitoring = false
 	attackIP = false
-	canMove = true
+	can_move = true
+
 
 func _on_regen_timer_timeout() -> void:
 	isRegeningHP = true
 
+
 func _on_passive_cooldown_timeout() -> void:
 	isPassiveCD = false
+
 
 func _on_energy_regen_timer_timeout() -> void:
 	isRegeningEnergy = true
 
+
 func _on_dash_timer_timeout() -> void:
 	isDashing = false
 
+
 func _on_sprint_energy_decay_timeout() -> void:
 	isRegeningEnergy = true
+
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if Global.playerCurrentAttack and body.has_method("deal_dmg"):
 		body.deal_dmg(Global.playerDamage)
 
+
 func _on_exit_to_scene_2_2_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_inventory_gui_closed() -> void:
-	canMove = true
+	can_move = true
 	get_tree().paused = false
 
 
 func _on_inventory_gui_opened() -> void:
-	canMove = false
+	can_move = false
 	get_tree().paused = true

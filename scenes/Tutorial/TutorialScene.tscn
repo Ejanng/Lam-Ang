@@ -1545,8 +1545,8 @@ sources/18 = SubResource("TileSetAtlasSource_fuh3e")
 sources/24 = SubResource("TileSetAtlasSource_chk6s")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jkmf"]
-radius = 19.166626
-height = 38.333252
+radius = 20.833313
+height = 41.666626
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jkmf"]
 size = Vector2(16.000015, 508)
@@ -1712,7 +1712,7 @@ auto_trigger = true
 shape = SubResource("CapsuleShape2D_2jkmf")
 
 [node name="Lam-Ang" parent="." instance=ExtResource("7_5ry8j")]
-position = Vector2(608, 324)
+position = Vector2(548, 326)
 collision_layer = 19
 
 [node name="Camera2D2" type="Camera2D" parent="Lam-Ang"]
@@ -1729,9 +1729,11 @@ position_smoothing_speed = 20.0
 position = Vector2(1125, 1024)
 
 [node name="Actionable" parent="WoundedVillager" instance=ExtResource("8_23kjh")]
+collision_mask = 1
 dialogue_resource = ExtResource("9_5bpsw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WoundedVillager/Actionable"]
+position = Vector2(0.833313, 0)
 shape = SubResource("CapsuleShape2D_2jkmf")
 
 [node name="InternalMonologue1" type="Node" parent="."]
