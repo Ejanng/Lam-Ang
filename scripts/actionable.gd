@@ -53,6 +53,8 @@ func action() -> void:
 			dialogue_start = "lam_ang_scene1_start"
 		"Act1Scene2":
 			dialogue_start = "lam_ang_scene2_start"
+		"Act1Scene3":
+			dialogue_start = "lam_ang_scene3_start"
 		"Namongan&Pets":
 			dialogue_start = "act2_scene1_homecoming_start"
 			

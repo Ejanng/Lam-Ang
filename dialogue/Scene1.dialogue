@@ -75,13 +75,15 @@ SYSTEM: Lam-ang equips two mutya stones, boosting his stats.
 
 Namongan: Then go, my son. But please... return to me. You're all I have left.
 
+SYSTEM: Go to the east leading to the dark forest.
+
 # SYSTEM: You are now Lam-ang. Press ESC to view Controls.
 
 => END 
 
 ~ lam_ang_scene2_start
 
-Lam-ang: (internal monologue) They call this the darkest mountain. Death lingers here. Good. Let death come for those who took my father.
+Lam-ang: They call this the darkest mountain. Death lingers here. Good. Let death come for those who took my father.
 
 Igorot Scout: Who dares enter Igorotan territory?
 

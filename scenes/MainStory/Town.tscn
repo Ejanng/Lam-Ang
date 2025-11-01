@@ -1797,6 +1797,8 @@ sources/26 = SubResource("TileSetAtlasSource_v0t1i")
 sources/7 = SubResource("TileSetAtlasSource_yabb8")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iuva2"]
+radius = 20.0
+height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hcnna"]
 size = Vector2(10.9999695, 480)
@@ -2207,7 +2209,8 @@ layer_14/tile_data = PackedInt32Array(327683, 18, 1, 393219, 18, 2, 458755, 18, 
 layer_15/name = "Layer15"
 
 [node name="Lam-Ang" parent="." instance=ExtResource("16_hcnna")]
-position = Vector2(481, 1243)
+position = Vector2(615, 78)
+collision_layer = 19
 
 [node name="Camera2D2" type="Camera2D" parent="Lam-Ang"]
 zoom = Vector2(2, 2)
@@ -2220,10 +2223,12 @@ position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 
 [node name="NamonganMain1" parent="." instance=ExtResource("17_jc3vk")]
-position = Vector2(696, 53)
+position = Vector2(642, 64)
 
 [node name="Actionable" parent="NamonganMain1" instance=ExtResource("18_uyish")]
+collision_mask = 1
 dialogue_resource = ExtResource("19_in1fl")
+auto_trigger = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NamonganMain1/Actionable"]
 shape = SubResource("CapsuleShape2D_iuva2")
@@ -2231,25 +2236,41 @@ shape = SubResource("CapsuleShape2D_iuva2")
 [node name="Act1Scene2" type="Node" parent="."]
 
 [node name="Actionable" parent="Act1Scene2" instance=ExtResource("18_uyish")]
-position = Vector2(2467, 899)
-rotation = 1.5707964
+position = Vector2(5952, 362)
+rotation = 1.701696
+collision_mask = 1
 dialogue_resource = ExtResource("19_in1fl")
+auto_trigger = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Act1Scene2/Actionable"]
-position = Vector2(-1921.0001, -2217)
-rotation = 1.5707964
+position = Vector2(71.98365, 1427.8192)
+rotation = 1.4486233
+shape = SubResource("RectangleShape2D_hcnna")
+
+[node name="Act1Scene3" type="Node" parent="."]
+
+[node name="Actionable" parent="Act1Scene3" instance=ExtResource("18_uyish")]
+position = Vector2(5952, 362)
+rotation = 1.701696
+collision_mask = 1
+dialogue_resource = ExtResource("19_in1fl")
+auto_trigger = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Act1Scene3/Actionable"]
+position = Vector2(-18.834702, 40.807434)
+rotation = 1.4486233
 shape = SubResource("RectangleShape2D_hcnna")
 
 [node name="Namongan&Pets" type="Node" parent="."]
 
 [node name="Aso" parent="Namongan&Pets" instance=ExtResource("20_uyish")]
-position = Vector2(1892, -674)
+position = Vector2(3038, 654)
 
 [node name="WhiteRooster" parent="Namongan&Pets" instance=ExtResource("20_jc3vk")]
-position = Vector2(1844, -682)
+position = Vector2(2975, 636)
 
 [node name="NamonganMain2" parent="Namongan&Pets" instance=ExtResource("17_jc3vk")]
-position = Vector2(1864, -628)
+position = Vector2(2987, 682)
 
 [node name="Actionable" parent="Namongan&Pets" instance=ExtResource("18_uyish")]
 position = Vector2(1863, -656)
@@ -2257,7 +2278,7 @@ rotation = 1.5707964
 dialogue_resource = ExtResource("19_in1fl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Namongan&Pets/Actionable"]
-position = Vector2(-1.9999847, -8.000001)
+position = Vector2(1313.0002, -1142)
 rotation = 1.5707964
 shape = SubResource("CircleShape2D_in1fl")
 
