@@ -9,3 +9,6 @@ res://npcs/namongan.tscn
 res://npcs/capitan.tscn
 res://npcs/wounded_villager.tscn
 res://npcs/ines.tscn
+res://npcs/white_rooster.tscn
+res://scenes/MainStory/Town.tscn
+res://scripts/actionable.gd

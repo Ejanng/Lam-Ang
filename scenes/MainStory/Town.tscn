@@ -2175,6 +2175,8 @@ position = Vector2(696, 53)
 
 [node name="Actionable" parent="NamonganMain1" instance=ExtResource("18_uyish")]
 dialogue_resource = ExtResource("19_in1fl")
+dialogue_start = null
+auto_trigger = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NamonganMain1/Actionable"]
 shape = SubResource("CapsuleShape2D_iuva2")
@@ -2185,6 +2187,8 @@ shape = SubResource("CapsuleShape2D_iuva2")
 position = Vector2(2467, 899)
 rotation = 1.5707964
 dialogue_resource = ExtResource("19_in1fl")
+dialogue_start = null
+auto_trigger = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Act1Scene2/Actionable"]
 position = Vector2(-1921.0001, -2217)
@@ -2206,6 +2210,8 @@ position = Vector2(1864, -628)
 position = Vector2(1863, -656)
 rotation = 1.5707964
 dialogue_resource = ExtResource("19_in1fl")
+dialogue_start = null
+auto_trigger = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Namongan&Pets/Actionable"]
 position = Vector2(-1.9999847, -8.000001)

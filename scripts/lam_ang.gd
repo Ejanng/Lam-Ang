@@ -37,6 +37,9 @@ var passiveCost = 5.0
 
 var playerPos = Vector2.ZERO
 
+var dialogue_active: bool = false
+var can_move: bool = true
+
 @onready var anim = $AnimatedSprite2D
 @onready var attackCD = $attack_cooldown
 @onready var healthBar = $HealthBar
@@ -79,14 +82,26 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
+			dialogue_active = true
 			actionables[0].action()
+			await DialogueManager.dialogue_ended
+			dialogue_active = false
 			return
+		
 		#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/Scene1.dialogue"), "start")
 		#return
 	
 func _physics_process(delta: float) -> void:
+	
+	if not can_move or not canMove:
+		velocity = Vector2.ZERO  # Stop all movement
+		anim.stop()
+		move_and_slide()
+		return
+		
 	handle_movement(delta)
 	attack()
+
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_inventory"):
@@ -142,12 +157,20 @@ func update_coin_display() -> void:
 	coinLabel.text = "Coins: " + str(Global.playerCoin)
 	
 func handle_movement(delta):
+	print("canMove: ", canMove, " | can_move: ", can_move)
+	if not canMove or not can_move:
+		velocity = Vector2.ZERO
+		print("Movement blocked - not moving!")
+		return
+		
+	print("Inside movement - should not print during dialogue!")
 	var direction = Vector2.ZERO
 	currentSpeed = 0
 	isSprinting = false
 	if isHurt:
 		return
-	if canMove:
+		#print("Inside canMove block - should not print during dialogue!")
+	if canMove or can_move:
 		currentSpeed = WALK + Global.addSpeed
 		
 	
