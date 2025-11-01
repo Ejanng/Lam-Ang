@@ -222,7 +222,7 @@ Suitors: Impossible!
 
 Doña Ines: You there! Come inside.
 
-SYSTEM: Enter the house.
+SYSTEM: Talk to Don Unnayan
 
 => END 
 
@@ -254,6 +254,7 @@ SYSTEM: Courtship Successful!
 
 => END 
 
+#will add this soon if my time
 ~ act2_scene5_wedding_start
 
 Priest: I now pronounce you husband and wife!
@@ -280,6 +281,7 @@ Lam-ang: I'll be fine. I've faced worse.
 
 ~ act3_scene1_1_rarang_call
 
+#will add this soon
 Lam-ang: Ines... I saw my death. A great shark.
 
 Doña Ines: Then don't go!

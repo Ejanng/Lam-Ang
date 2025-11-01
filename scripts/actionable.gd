@@ -61,8 +61,14 @@ func action() -> void:
 			dialogue_start = "act2_scene2_1_travel_start"
 		"Act2Scene3":
 			dialogue_start = "act2_scene3_suitors_start"
-			
-
+		"Act2Scene4":
+			dialogue_start = "act2_scene4_meeting_ines"
+		"Act3Scene1":
+			dialogue_start = "act3_scene1_rarang_call"
+		"Act3Scene2":
+			dialogue_start = "act3_scene2_shore_dive"
+		"Act3Scene2_1":
+			dialogue_start = "act3_scene2_1_shore_dive"
 	
 	# Start the dialogue
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
