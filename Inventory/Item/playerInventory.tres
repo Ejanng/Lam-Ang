@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Inventory" load_steps=19 format=3 uid="uid://dbnujrtlpcy0i"]
 
-[ext_resource type="Script" uid="uid://cgmqv1bern5k7" path="res://Inventory/inventory_slot.gd" id="2_i86kb"]
+[ext_resource type="Script" uid="uid://cgmqv1bern5k7" path="res://GUI/Inventory/inventory_slot.gd" id="2_i86kb"]
 [ext_resource type="Resource" uid="uid://rdo2p3vpslq3" path="res://Inventory/Item/lifepot.tres" id="3_0ci43"]
 [ext_resource type="Script" uid="uid://bse7pqi7s2h5k" path="res://Inventory/inventory.gd" id="4_6uptj"]
 

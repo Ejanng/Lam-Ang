@@ -1,18 +1,18 @@
 f098f8d3115d962055284dee314b4f89
-::res://::1761934863
+::res://::1761972997
 collectable.gd::GDScript::5567403539443567601::1761926486::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::1806369474252542340::1761926486::1761934864::1::::<><><>0<>0<>cc34509834156c61553ab835d0113c2c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 scriptsendless_battle.gd::GDScript::1074447089816598783::1761926486::0::1::::<>Node2D<><>0<>0<><>::
 ::res://addons/::1761926486
 ::res://addons/dialogue_manager/::1761933911
 constants.gd::GDScript::4240262336831424009::1761926486::0::1::::DMConstants<>RefCounted<><>0<>0<><>::
-dialogue_label.gd::GDScript::480611383085669467::1761933911::0::1::::DialogueLabel<>RichTextLabel<>res://addons/dialogue_manager/assets/icon.svg<>0<>1<><>::
+dialogue_label.gd::GDScript::480611383085669467::1761933911::0::1::::DialogueLabel<>RichTextLabel<><>0<>1<><>::
 dialogue_label.tscn::PackedScene::5518490004210093266::1761926486::0::1::::<><><>0<>0<><>::uid://g32um0mltv5d::::res://addons/dialogue_manager/dialogue_label.gd
 dialogue_line.gd::GDScript::1208905219044177333::1761933911::0::1::::DialogueLine<>RefCounted<><>0<>0<><>::
 dialogue_manager.gd::GDScript::6774079045493014679::1761933911::0::1::::<>Node<><>0<>0<><>::
-dialogue_resource.gd::GDScript::7268423792262407282::1761926486::0::1::::DialogueResource<>Resource<>res://addons/dialogue_manager/assets/icon.svg<>0<>1<><>::
+dialogue_resource.gd::GDScript::7268423792262407282::1761926486::0::1::::DialogueResource<>Resource<><>0<>1<><>::
 dialogue_response.gd::GDScript::5668140482552713515::1761926486::0::1::::DialogueResponse<>RefCounted<><>0<>0<><>::
-dialogue_responses_menu.gd::GDScript::2520211531407682507::1761933911::0::1::::DialogueResponsesMenu<>Container<>res://addons/dialogue_manager/assets/responses_menu.svg<>0<>0<><>::
+dialogue_responses_menu.gd::GDScript::2520211531407682507::1761933911::0::1::::DialogueResponsesMenu<>Container<><>0<>0<><>::
 editor_translation_parser_plugin.gd::GDScript::6952218891186463517::1761926486::0::1::::DMTranslationParserPlugin<>EditorTranslationParserPlugin<><>0<>0<><>::
 export_plugin.gd::GDScript::1265275163198105838::1761926486::0::1::::DMExportPlugin<>EditorExportPlugin<><>0<>0<><>::
 import_plugin.gd::GDScript::7696928728755687928::1761926486::0::1::::DMImportPlugin<>EditorImportPlugin<><>0<>1<><>::
@@ -22,7 +22,7 @@ plugin.gd::GDScript::3484415935520294050::1761933911::0::1::::<>EditorPlugin<><>
 settings.gd::GDScript::5108079527952811623::1761926486::0::1::::DMSettings<>Node<><>0<>1<><>::
 test_scene.gd::GDScript::7098965565189014022::1761926486::0::1::::BaseDialogueTestScene<>Node2D<><>0<>0<><>::
 test_scene.tscn::PackedScene::1416400481679934567::1761926486::0::1::::<><><>0<>0<><>::uid://c8e16qdgu40wo::::res://addons/dialogue_manager/test_scene.gd
-::res://addons/dialogue_manager/assets/::1761933113
+::res://addons/dialogue_manager/assets/::1761934864
 banner.png::CompressedTexture2D::5712008637852493176::1761926486::1761926486::1::::<><><>0<>0<>fb4fc905c1a325217052671df272d56b<>res://.godot/imported/banner.png-7e9e6a304eef850602c8d5afb80df9c3.ctex::
 icon.svg::CompressedTexture2D::9148339284877624195::1761926486::1761934864::1::::<><><>0<>0<>b9cd01d47b7432b7516dc9b23d8cf543<>res://.godot/imported/icon.svg-17eb5d3e2a3cfbe59852220758c5b7bd.ctex::
 responses_menu.svg::CompressedTexture2D::8371359403825774630::1761926486::1761934864::1::::<><><>0<>0<>87c0e16666f0d434c838e4c260e9dfa7<>res://.godot/imported/responses_menu.svg-87cf63ca685d53616205049572f4eb8f.ctex::
@@ -92,7 +92,7 @@ mutya ng saging.png::CompressedTexture2D::2865935348991384856::1761926486::17619
 mutya ng wasay.png::CompressedTexture2D::5308899312382536783::1761926486::1761926486::1::::<><><>0<>0<>b53f5a49d216f350eba22a9427ad799a<>res://.godot/imported/mutya ng wasay.png-a40d688247a49ba1d6f540e86d9a32c2.ctex::
 mutya-ng-alon.png::CompressedTexture2D::8427059139972181615::1761926486::1761926486::1::::<><><>0<>0<>c154c027c7136340af4709b56ff1daa7<>res://.godot/imported/mutya-ng-alon.png-4326dd64cdf20435f2583442cc6bc37a.ctex::
 xpxp.png::CompressedTexture2D::8964288696573156327::1761926486::1761926486::1::::<><><>0<>0<>2e2d92580f61257f027cfb83d69585e8<>res://.godot/imported/xpxp.png-3c8761e58c33ab13e40da959d8392657.ctex::
-::res://assets/Environments/::1761933911
+::res://assets/Environments/::1761934864
 bg.png::CompressedTexture2D::3574674827803665623::1761926486::1761933911::1::::<><><>0<>0<>53a4c688695c5bc6976970f5d01e0e32<>res://.godot/imported/bg.png-f5b0ee74f0db3bf73e54c8d57aea7bce.ctex::
 cliff.png::CompressedTexture2D::3015802009560018139::1761933911::1761934864::1::::<><><>0<>0<>e8353d19ef426bf3b64644e6cf082f1b<>res://.godot/imported/cliff.png-9cc8749a59f9f080e858a3d0a7f68f57.ctex::
 CliffGrassEDGES.png::CompressedTexture2D::8898801352992661128::1761926486::1761926486::1::::<><><>0<>0<>f740f82592686afc30f5643793c2a1ed<>res://.godot/imported/CliffGrassEDGES.png-3f72146240ee81317f52863326dc18a0.ctex::
@@ -161,7 +161,7 @@ menu second demo tribal.wav::AudioStreamWAV::6380964362949623372::1761926486::17
 ::res://audio/effects/::1761926486
 BUTTON CLICK.wav::AudioStreamWAV::8746903497574425800::1761926486::1761926486::1::::<><><>0<>0<>f0bc3217ab4994199bafd8f19d74fc50<>res://.godot/imported/BUTTON CLICK.wav-9391e8e56692137e5ff5028666d9f9ba.sample::
 menu second demo tribal.wav::AudioStreamWAV::7015245395855721754::1761926486::1761926486::1::::<><><>0<>0<>4fa3734da577f91155ebd9cab32ddab9<>res://.godot/imported/menu second demo tribal.wav-85d879a40a34e0b04ef1df93fa5fc901.sample::
-::res://dialogue/::1761933911
+::res://dialogue/::1761934864
 actionable.tscn::PackedScene::2876175176277834067::1761933911::0::1::::<><><>0<>0<><>::uid://c2c3w6kmgmmet::::res://scripts/actionable.gd
 balloon.gd::GDScript::1093683688923844628::1761926486::0::1::::<>CanvasLayer<><>0<>0<><>::
 balloon.tscn::PackedScene::8923585897706280902::1761926486::0::1::::<><><>0<>0<><>::uid://pt12tasnaad5::::res://dialogue/balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>uid://bb52rsfwhkxbn::::res://addons/dialogue_manager/dialogue_responses_menu.gd
@@ -169,37 +169,46 @@ Scene1.dialogue::Resource::22162204986864186::1761933316::1761934864::1::::<><><
 ::res://Environments/::1761926486
 crops.png::CompressedTexture2D::2063062135454718630::1761926486::1761926486::1::::<><><>0<>0<>4f93ae1a480c0e0b4ae12a1c22b8d762<>res://.godot/imported/crops.png-86f134b8b4bb534d9cc68f4eafb59c05.ctex::
 Title.png::CompressedTexture2D::8427841487423459992::1761926486::1761926486::1::::<><><>0<>0<>39934734818f11f4d8e8a246fcb3a794<>res://.godot/imported/Title.png-f0f6afca4164ca2599b293e80d427779.ctex::
-::res://GUI/::1761933911
-artifact_slot.gd::GDScript::3518914910158518511::1761933316::0::1::::<>Panel<><>0<>0<><>::
-artifact_slot.tscn::PackedScene::2412170707255799474::1761933316::0::1::::<><><>0<>0<><>::uid://bqeuaqx7uoojv::::res://GUI/artifact_slot.gd<>uid://dbw7ebgstkq8k::::res://assets/GUI/inventorySlot.png
+::res://GUI/::1761971128
 hotbar.gd::GDScript::8514747907980848486::1761933316::0::1::::<>Panel<><>0<>0<><>::
 hotbar.tscn::PackedScene::5555639653820071899::1761933316::0::1::::<><><>0<>0<><>::uid://dtkuwib1deceg::::res://GUI/hotbar.gd<>uid://culv1yao6h1cq::::res://GUI/hotbar_slot.tscn<>uid://bjsms57pylj4u::::res://assets/GUI/hotbar_selector.png
 hotbar_slot.gd::GDScript::351795324988119349::1761933316::0::1::::<>Button<><>0<>0<><>::
-hotbar_slot.tscn::PackedScene::6200649144169361444::1761933316::0::1::::<><><>0<>0<><>::uid://faoaul6xduq4::::res://GUI/hotbar_slot.gd<>uid://dbw7ebgstkq8k::::res://assets/GUI/inventorySlot.png<>uid://cvbaw6f6bbkst::::res://GUI/itemStackGui.tscn
-inventory_gui.gd::GDScript::4249577334383193651::1761933316::0::1::::<>Control<><>0<>0<><>::
-inventory_gui.tscn::PackedScene::6737478820927577289::1761933911::0::1::::<><><>0<>0<><>::uid://cwwmx6kio1l71::::res://assets/GUI/InventoryRect.png<>uid://b1sr6haij314b::::res://GUI/inventory_gui.gd<>uid://dd088v0mmb118::::res://GUI/slot_gui.tscn<>uid://bamqdmubtwtok::::res://GUI/artifact_slot.tscn
-itemStackGui.tscn::PackedScene::6248912386362612183::1761933911::0::1::::<><><>0<>0<><>::uid://cwbqesv7j36vl::::res://scripts/item_stack_gui.gd
+hotbar_slot.tscn::PackedScene::6200649144169361444::1761971073::0::1::::<><><>0<>0<><>::uid://faoaul6xduq4::::res://GUI/hotbar_slot.gd<>uid://dbw7ebgstkq8k::::res://assets/GUI/inventorySlot.png<>uid://cvbaw6f6bbkst::::res://GUI/itemStackGui.tscn
+::res://GUI/Artifacts/::1761973025
+artifact_gui.gd::GDScript::7477268351283247104::1761972574::0::1::::<>Control<><>0<>0<><>::
+artifact_gui.tscn::PackedScene::2661204610926330923::1761972997::0::1::::<><><>0<>0<><>::uid://desbruacxy6em::::res://GUI/Artifacts/artifact_gui.gd<>uid://cwwmx6kio1l71::::res://assets/GUI/InventoryRect.png<>uid://bamqdmubtwtok::::res://GUI/Artifacts/artifact_slot_gui.tscn
+artifact_slot_gui.gd::GDScript::312487997514368022::1761972490::0::1::::<>Button<><>0<>0<><>::
+artifact_slot_gui.tscn::PackedScene::2412170707255799474::1761972863::0::1::::<><><>0<>0<><>::uid://epmvqg6lndl3::::res://GUI/Artifacts/artifact_slot_gui.gd<>uid://dbw7ebgstkq8k::::res://assets/GUI/inventorySlot.png
+artifact_stack_gui.gd::GDScript::7400336048486097537::1761972190::0::1::::ArtifactStackGui<>Panel<><>0<>0<><>::
+artifact_stack_gui.tscn::PackedScene::4166320557522821174::1761972673::0::1::::<><><>0<>0<><>::uid://ddo1poi8w65ar::::res://GUI/Artifacts/artifact_stack_gui.gd
+aritfacts_slot.gd::GDScript::1291683678766583520::1761973097::0::1::::<>Resource<><>0<>0<><>::
+::res://GUI/Inventory/::1761972850
+inventory_gui.gd::GDScript::4249577334383193651::1761971166::0::1::::<>Control<><>0<>0<><>::
+inventory_gui.tscn::PackedScene::6737478820927577289::1761971073::0::1::::<><><>0<>0<><>::uid://cwwmx6kio1l71::::res://assets/GUI/InventoryRect.png<>uid://b1sr6haij314b::::res://GUI/Inventory/inventory_gui.gd<>uid://dd088v0mmb118::::res://GUI/Inventory/slot_gui.tscn
+inventory_slot.gd::GDScript::5219757303176293540::1761972850::0::1::::InventorySlot<>Resource<><>0<>0<><>::
+itemStackGui.tscn::PackedScene::6248912386362612183::1761972578::0::1::::<><><>0<>0<><>::uid://cwbqesv7j36vl::::res://GUI/Inventory/item_stack_gui.gd
+item_stack_gui.gd::GDScript::6320039899565150337::1761933911::0::1::::ItemStackGui<>Panel<><>0<>0<><>::
 slot_gui.gd::GDScript::3884432355121107635::1761933911::0::1::::<>Button<><>0<>0<><>::
-slot_gui.tscn::PackedScene::7423501759976844421::1761933911::0::1::::<><><>0<>0<><>::uid://dbw7ebgstkq8k::::res://assets/GUI/inventorySlot.png<>uid://bvlwbetookrb4::::res://GUI/slot_gui.gd
+slot_gui.tscn::PackedScene::7423501759976844421::1761971073::0::1::::<><><>0<>0<><>::uid://dbw7ebgstkq8k::::res://assets/GUI/inventorySlot.png<>uid://bvlwbetookrb4::::res://GUI/Inventory/slot_gui.gd
+::res://GUI/trash/::1761971128
 ::res://howtoplay/::1761926486
 ui.tscn::PackedScene::1809569010624574538::1761926486::0::1::::<><><>0<>0<><>::uid://bovpf33c3s5ee::::res://scripts/TutorialPopup.gd
-::res://Inventory/::1761933911
-artifacts.gd::GDScript::5763363731577188231::1761926486::0::1::::Artifacts<>Resource<><>0<>0<><>::
+::res://Inventory/::1761972668
+artifacts.gd::GDScript::5763363731577188231::1761972668::0::1::::Artifacts<>Resource<><>0<>0<><>::
 artifacts_item.gd::GDScript::4933281474285671930::1761926486::0::1::::ArtifactsItem<>Resource<><>0<>0<><>::
 inventory.gd::GDScript::3660047965082118938::1761933911::0::1::::Inventory<>Resource<><>0<>0<><>::
 inventory_item.gd::GDScript::3823922408692168218::1761933316::0::1::::InventoryItem<>Resource<><>0<>0<><>::
-inventory_slot.gd::GDScript::5219757303176293540::1761926486::0::1::::InventorySlot<>Resource<><>0<>0<><>::
-::res://Inventory/Artifacts/::1761933911
+::res://Inventory/Artifacts/::1761972850
 bato-ng-palos.tres::Resource/ArtifactsItem::1750459930076944328::1761933911::0::1::::<><><>0<>0<><>::uid://ccjyopo6hld7g::::res://Inventory/artifacts_item.gd<>uid://chatf4jn6rvir::::res://assets/Drops/bato ng palos.png
 mutya-ng-buaya.tres::Resource/ArtifactsItem::411543986323265459::1761933911::0::1::::<><><>0<>0<><>::uid://ccjyopo6hld7g::::res://Inventory/artifacts_item.gd<>uid://h50lh4437x6j::::res://assets/Drops/mutya ng buaya.png
 mutya-ng-ibon.tres::Resource/ArtifactsItem::4067338322082102985::1761933911::0::1::::<><><>0<>0<><>::uid://ccjyopo6hld7g::::res://Inventory/artifacts_item.gd<>uid://cadburwxur4ve::::res://assets/Drops/mutya ng ibon.png
 mutya-ng-saging.tres::Resource/ArtifactsItem::4990389414524835727::1761926486::0::1::::<><><>0<>0<><>::uid://ccjyopo6hld7g::::res://Inventory/artifacts_item.gd<>uid://bg3jsif14ioy7::::res://assets/Drops/mutya ng saging.png
 mutya-ng-wasay.tres::Resource/ArtifactsItem::6193474756792416715::1761933911::0::1::::<><><>0<>0<><>::uid://ccjyopo6hld7g::::res://Inventory/artifacts_item.gd<>uid://chvw2chmjy2n0::::res://assets/Drops/mutya ng wasay.png
-playerArtifacts.tres::Resource/Artifacts::3503041556458266977::1761933128::0::1::::<><><>0<>0<><>::uid://ccjyopo6hld7g::::res://Inventory/artifacts_item.gd<>uid://cod20173xgyh0::::res://Inventory/artifacts.gd
-::res://Inventory/Item/::1761933316
+playerArtifacts.tres::Resource/Artifacts::3503041556458266977::1761972850::0::1::::<><><>0<>0<><>::uid://ccjyopo6hld7g::::res://Inventory/artifacts_item.gd<>uid://cod20173xgyh0::::res://Inventory/artifacts.gd
+::res://Inventory/Item/::1761971073
 energypot.tres::Resource/InventoryItem::6438235823953979743::1761933316::0::1::::<><><>0<>0<><>::uid://buqlpcs727fru::::res://Inventory/inventory_item.gd<>uid://cypm4m455essl::::res://scenes/Drops/energy_potion.tscn<>uid://7ecy740gg68g::::res://assets/Drops/mana potion.png
 lifepot.tres::Resource/InventoryItem::1200302561522578056::1761933316::0::1::::<><><>0<>0<><>::uid://c38rh2ft5lke5::::res://scenes/Drops/health_potion.tscn<>uid://buqlpcs727fru::::res://Inventory/inventory_item.gd<>uid://c4bh2ipcyncl0::::res://assets/Drops/health potion.png
-playerInventory.tres::Resource/Inventory::7257519140288764250::1761933316::0::1::::<><><>0<>0<><>::uid://cgmqv1bern5k7::::res://Inventory/inventory_slot.gd<>uid://rdo2p3vpslq3::::res://Inventory/Item/lifepot.tres<>uid://bse7pqi7s2h5k::::res://Inventory/inventory.gd
+playerInventory.tres::Resource/Inventory::7257519140288764250::1761971073::0::1::::<><><>0<>0<><>::uid://cgmqv1bern5k7::::res://GUI/Inventory/inventory_slot.gd<>uid://rdo2p3vpslq3::::res://Inventory/Item/lifepot.tres<>uid://bse7pqi7s2h5k::::res://Inventory/inventory.gd
 ::res://npcs/::1761933911
 aso.tscn::PackedScene::329798673719518455::1761933911::0::1::::<><><>0<>0<><>::uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png
 capitan.tscn::PackedScene::4554745536671160144::1761933911::0::1::::<><><>0<>0<><>::uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png
@@ -220,8 +229,8 @@ CoinDrop.tscn::PackedScene::886939086953359915::1761933911::0::1::::<><><>0<>0<>
 energy_potion.tscn::PackedScene::6489120349429176759::1761933911::0::1::::<><><>0<>0<><>::uid://c7c83pob68an6::::res://scripts/energy_potion.gd<>uid://7ecy740gg68g::::res://assets/Drops/mana potion.png
 health_potion.tscn::PackedScene::6807299571327728806::1761933911::0::1::::<><><>0<>0<><>::uid://dgw4wdeg6dhei::::res://scripts/health_potion.gd<>uid://c4bh2ipcyncl0::::res://assets/Drops/health potion.png
 XPOrb.tscn::PackedScene::4594444080677332832::1761933911::0::1::::<><><>0<>0<><>::uid://dod42px5mjo3k::::res://scripts/XPOrb.gd<>uid://ck6auu12t34u0::::res://assets/Environments/Kubo 2.png
-::res://scenes/EndlessBattle/::1761933911
-EndlessBattle.tscn::PackedScene::1016788236812202033::1761933911::0::1::::<><><>0<>0<><>::uid://bf5b5k5jkdebx::::res://scripts/endless_battle.gd<>uid://drainjd7ywvxg::::res://assets/Environments/grass2.png<>uid://bqi60xyvplvxm::::res://assets/Environments/grass.png<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://eokialhslv6e::::res://assets/Environments/Mountain.png<>uid://dqbyp5c5rx3my::::res://assets/Environments/crops.png<>uid://4r7tkukado4c::::res://assets/Environments/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environments/Tree.png<>uid://4p1g5gqwb62r::::res://assets/Environments/Dirttile.png<>uid://bxbhwtsbydi2v::::res://assets/Environments/Wood barricade.png<>uid://bhnilna7alpkb::::res://assets/Environments/Tree2.png<>uid://bp52d8hsunqno::::res://assets/Environments/houses.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn
+::res://scenes/EndlessBattle/::1761937338
+EndlessBattle.tscn::PackedScene::1016788236812202033::1761937338::0::1::::<><><>0<>0<><>::uid://bf5b5k5jkdebx::::res://scripts/endless_battle.gd<>uid://drainjd7ywvxg::::res://assets/Environments/grass2.png<>uid://bqi60xyvplvxm::::res://assets/Environments/grass.png<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn<>uid://eokialhslv6e::::res://assets/Environments/Mountain.png<>uid://dqbyp5c5rx3my::::res://assets/Environments/crops.png<>uid://4r7tkukado4c::::res://assets/Environments/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environments/Tree.png<>uid://4p1g5gqwb62r::::res://assets/Environments/Dirttile.png<>uid://bxbhwtsbydi2v::::res://assets/Environments/Wood barricade.png<>uid://bhnilna7alpkb::::res://assets/Environments/Tree2.png<>uid://bp52d8hsunqno::::res://assets/Environments/houses.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn
 ::res://scenes/Hostile/::1761933911
 bandit.tscn::PackedScene::6560640320094692932::1761933911::0::1::::<><><>0<>0<><>::uid://buwasdtb3dsvk::::res://scripts/melee_enemy.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
 melee_tribe_member.tscn::PackedScene::2574462848710875326::1761933911::0::1::::<><><>0<>0<><>::uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://buwasdtb3dsvk::::res://scripts/melee_enemy.gd<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
@@ -229,8 +238,8 @@ projectile.tscn::PackedScene::5587501533922286515::1761933911::0::1::::<><><>0<>
 ranged_tribe_member.tscn::PackedScene::3189396453004295698::1761933911::0::1::::<><><>0<>0<><>::uid://b6tkcsf7dvwml::::res://scripts/ranged_enemy.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png
 ::res://scenes/MainStory/::1761933911
 Town.tscn::PackedScene::2440116361625165815::1761933911::0::1::::<><><>0<>0<><>::uid://drainjd7ywvxg::::res://assets/Environments/grass2.png<>uid://bqi60xyvplvxm::::res://assets/Environments/grass.png<>uid://dy1v7tvh4p7mi::::res://assets/Environments/CliffGrassEDGES.png<>uid://eokialhslv6e::::res://assets/Environments/Mountain.png<>uid://dqbyp5c5rx3my::::res://assets/Environments/crops.png<>uid://4r7tkukado4c::::res://assets/Environments/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environments/Tree.png<>uid://bw6r7o2awdwir::::res://assets/Environments/Kubo 3.png<>uid://4p1g5gqwb62r::::res://assets/Environments/Dirttile.png<>uid://bxbhwtsbydi2v::::res://assets/Environments/Wood barricade.png<>uid://dns7dpyylmhld::::res://assets/Environments/water.tres<>uid://bhnilna7alpkb::::res://assets/Environments/Tree2.png<>uid://bp52d8hsunqno::::res://assets/Environments/houses.png<>uid://i3r0jt4rojir::::res://assets/Environments/river spritesheet.png<>uid://bkm71ytxo16kr::::res://assets/Environments/water1.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://di6ytm5suocus::::res://npcs/namongan.tscn<>uid://bg8igj13o1og6::::res://dialogue/actionable.tscn<>uid://k0ajtmpkft7::::res://dialogue/Scene1.dialogue<>uid://dwaingb1o5dik::::res://npcs/white_rooster.tscn<>uid://ex00a1v3tgg2::::res://npcs/aso.tscn
-::res://scenes/Player/::1761933911
-lam_ang.tscn::PackedScene::2977696409066647794::1761933911::0::1::::<><><>0<>0<><>::uid://c8vs6jfdt5lrb::::res://scripts/lam_ang.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://d0e2vdb0hpbaj::::res://assets/Sprites/Lam-ang/lam-ang iswing sword angry spritesheet.png<>uid://ult3cm3ocub7::::res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png<>uid://dbnujrtlpcy0i::::res://Inventory/Item/playerInventory.tres<>uid://bp55t2r3572cr::::res://Inventory/Artifacts/playerArtifacts.tres<>uid://15e7hnpffcr1::::res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png<>uid://cxpdxget7wu2y::::res://assets/Sprites/Lam-ang/lam-ang hurt _w sword spritesheet.png<>uid://ddxg0illq4jmm::::res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png<>uid://bmuwi5ovm18yy::::res://assets/Sprites/Lam-ang/lam-ang idle _w sword spritesheet.png<>uid://dj6smqf84dkab::::res://assets/Sprites/Lam-ang/lam-ang idle _w sword angry spritesheet.png<>uid://c28xj6l2ghcpl::::res://GUI/inventory_gui.tscn<>uid://clfgtq4jq5lod::::res://GUI/hotbar.tscn
+::res://scenes/Player/::1761971073
+lam_ang.tscn::PackedScene::2977696409066647794::1761971073::0::1::::<><><>0<>0<><>::uid://c8vs6jfdt5lrb::::res://scripts/lam_ang.gd<>uid://bf2r4yqoq5sfr::::res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png<>uid://d0e2vdb0hpbaj::::res://assets/Sprites/Lam-ang/lam-ang iswing sword angry spritesheet.png<>uid://ult3cm3ocub7::::res://assets/Sprites/Lam-ang/lam-ang hurt spritesheet.png<>uid://dbnujrtlpcy0i::::res://Inventory/Item/playerInventory.tres<>uid://bp55t2r3572cr::::res://Inventory/Artifacts/playerArtifacts.tres<>uid://15e7hnpffcr1::::res://assets/Sprites/Lam-ang/lam-ang front walk spritesheet.png<>uid://dn7ncb1xcmhoj::::res://assets/Sprites/Lam-ang/lam-ang side walk spritesheet.png<>uid://cxpdxget7wu2y::::res://assets/Sprites/Lam-ang/lam-ang hurt _w sword spritesheet.png<>uid://ddxg0illq4jmm::::res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png<>uid://bmuwi5ovm18yy::::res://assets/Sprites/Lam-ang/lam-ang idle _w sword spritesheet.png<>uid://dj6smqf84dkab::::res://assets/Sprites/Lam-ang/lam-ang idle _w sword angry spritesheet.png<>uid://c28xj6l2ghcpl::::res://GUI/inventory_gui.tscn<>uid://clfgtq4jq5lod::::res://GUI/hotbar.tscn
 ::res://scenes/Plots/::1761926486
 starting_town.tscn::PackedScene::4283614478854630119::1761926486::0::1::::<><><>0<>0<><>::uid://cff76bduixjec::::res://scenes/game.tscn
 tutorial_scene1.tscn::PackedScene::4469145058526298740::1761926486::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://assets/Environments/grass.png<>uid://eokialhslv6e::::res://assets/Environments/Mountain.png<>uid://4r7tkukado4c::::res://assets/Environments/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environments/Tree.png<>uid://4p1g5gqwb62r::::res://assets/Environments/Dirttile.png
@@ -238,17 +247,16 @@ tutorial_scene1.tscn::PackedScene::4469145058526298740::1761926486::0::1::::<><>
 TransitionAnimation.tscn::PackedScene::5229394225199779814::1761926486::0::1::::<><><>0<>0<><>::
 ::res://scenes/Tutorial/::1761933911
 TutorialScene.tscn::PackedScene::8441096585817133714::1761933911::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://assets/Environments/grass.png<>uid://eokialhslv6e::::res://assets/Environments/Mountain.png<>uid://4r7tkukado4c::::res://assets/Environments/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environments/Tree.png<>uid://4p1g5gqwb62r::::res://assets/Environments/Dirttile.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bg8igj13o1og6::::res://dialogue/actionable.tscn<>uid://di6ytm5suocus::::res://npcs/namongan.tscn<>uid://k0ajtmpkft7::::res://dialogue/Scene1.dialogue<>uid://d4b118rrwlhqi::::res://npcs/wounded_villager.tscn
-::res://scripts/::1761933911
+::res://scripts/::1761971697
 actionable.gd::GDScript::6673809908610192139::1761933911::0::1::::<>Area2D<><>0<>0<><>::
 canvas_layer.gd::GDScript::6642954416609033457::1761933911::0::1::::<>CanvasLayer<><>0<>0<><>::
 coin_drop.gd::GDScript::1034731550420752012::1761933911::0::1::::<>Area2D<><>0<>0<><>::
 DropManager.gd::GDScript::3732885360965250149::1761933911::0::1::::<>Node<><>0<>0<><>::
 endless_battle.gd::GDScript::2799411097315008289::1761933911::0::1::::<>Node2D<><>0<>0<><>::
 energy_potion.gd::GDScript::7025067591867661681::1761933911::0::1::::<>Area2D<><>0<>0<><>::
-global.gd::GDScript::2091869979308642291::1761933911::0::1::::<>Node<><>0<>0<><>::
+global.gd::GDScript::2091869979308642291::1761936579::0::1::::<>Node<><>0<>0<><>::
 health_potion.gd::GDScript::7627611667816380916::1761933911::0::1::::<>Area2D<><>0<>0<><>::
-item_stack_gui.gd::GDScript::6320039899565150337::1761933911::0::1::::ItemStackGui<>Panel<><>0<>0<><>::
-lam_ang.gd::GDScript::7133573886354436655::1761933911::0::1::::<>CharacterBody2D<><>0<>0<><>::
+lam_ang.gd::GDScript::7133573886354436655::1761935613::0::1::::<>CharacterBody2D<><>0<>0<><>::
 melee_enemy.gd::GDScript::3835646198337678548::1761933911::0::1::::<>CharacterBody2D<><>0<>0<><>::
 projectile.gd::GDScript::8251307263234145939::1761933911::0::1::::<>Area2D<><>0<>0<><>::
 ranged_enemy.gd::GDScript::4602109709917833619::1761933911::0::1::::<>CharacterBody2D<><>0<>0<><>::

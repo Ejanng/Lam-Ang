@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@export var inventory: Inventory
+@export var artifact: Artifacts
+
 const WALK = 35.0
 const SPRINT = 65.0
 const DASH_SPEED = 600
@@ -53,8 +56,6 @@ var playerPos = Vector2.ZERO
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var inventoryGui = $InventoryGui
 
-@export var inventory: Inventory
-@export var artifact: Artifacts
 
 func _ready() -> void:
 	healthBar.max_value = Global.MAX_HEALTH
@@ -160,7 +161,7 @@ func handle_movement(delta):
 	if isHurt:
 		return
 	if canMove:
-		currentSpeed = WALK + Global.addSpeed
+		currentSpeed = WALK
 		
 	
 	if isDashing:
@@ -180,7 +181,7 @@ func handle_movement(delta):
 				Global.playerEnergy = clamp(Global.playerEnergy, 0, Global.MAX_ENERGY)
 				energyBar.value = Global.playerEnergy
 				energyRegenTimer.start()
-				currentSpeed = SPRINT + Global.addSpeed
+				currentSpeed = SPRINT
 			
 		# movements directions
 		if Input.is_action_pressed("ui_right"):

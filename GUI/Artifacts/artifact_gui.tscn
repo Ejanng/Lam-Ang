@@ -1,22 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd6dweyhjhny6"]
 
-[ext_resource type="Script" uid="uid://desbruacxy6em" path="res://GUI/artifact_gui.gd" id="1_6v06x"]
-[ext_resource type="Texture2D" uid="uid://cwwmx6kio1l71" path="res://assets/GUI/InventoryRect.png" id="1_hu53o"]
-[ext_resource type="PackedScene" uid="uid://bamqdmubtwtok" path="res://GUI/artifact_slot.tscn" id="2_6v06x"]
+[ext_resource type="Script" uid="uid://desbruacxy6em" path="res://GUI/Artifacts/artifact_gui.gd" id="1_e0mfy"]
+[ext_resource type="Texture2D" uid="uid://cwwmx6kio1l71" path="res://assets/GUI/InventoryRect.png" id="2_nq6ib"]
+[ext_resource type="PackedScene" uid="uid://bamqdmubtwtok" path="res://GUI/Artifacts/artifact_slot_gui.tscn" id="3_unhnp"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_6v06x")
+script = ExtResource("1_e0mfy")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(40, 60)
 layout_mode = 0
 offset_left = -40.0
 offset_bottom = 89.0
-texture = ExtResource("1_hu53o")
+texture = ExtResource("2_nq6ib")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -36,10 +36,10 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ArtifactSlot" parent="NinePatchRect2/Artifacts" instance=ExtResource("2_6v06x")]
+[node name="ArtifactSlot" parent="NinePatchRect2/Artifacts" instance=ExtResource("3_unhnp")]
 layout_mode = 2
 
-[node name="ArtifactSlot2" parent="NinePatchRect2/Artifacts" instance=ExtResource("2_6v06x")]
+[node name="ArtifactSlot2" parent="NinePatchRect2/Artifacts" instance=ExtResource("3_unhnp")]
 layout_mode = 2
 
 [node name="Skills" type="GridContainer" parent="NinePatchRect2"]
@@ -49,5 +49,5 @@ offset_top = 62.0
 offset_right = 30.0
 offset_bottom = 82.0
 
-[node name="ArtifactSlot" parent="NinePatchRect2/Skills" instance=ExtResource("2_6v06x")]
+[node name="ArtifactSlot" parent="NinePatchRect2/Skills" instance=ExtResource("3_unhnp")]
 layout_mode = 2

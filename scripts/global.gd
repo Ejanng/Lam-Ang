@@ -3,8 +3,8 @@ extends Node
 const MAX_HEALTH = 1000
 const MAX_ENERGY = 70
 
-var health = MAX_HEALTH
-var energy = MAX_ENERGY
+var playerHealth = MAX_HEALTH
+var playerEnergy = MAX_ENERGY
 var damage = 20
 
 var playerCurrentAttack = false
@@ -53,7 +53,7 @@ func recalc_artifacts():
 	artifacts_crit_chance = 0.0
 	artifacts_crit_dmg = 0.0
 	
-	for artifact in ArtifactsItem:
+	for artifact in active_artifacts:
 		artifacts_def += artifact.defStat
 		artifacts_speed += artifact.speedStat
 		artifacts_health += artifact.healthStat

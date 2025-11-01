@@ -1,11 +1,12 @@
+ResourcePreloader
+Label
+Sprite2D
+Panel
 Control
 Button
 GridContainer
 Node
-Sprite2D
-Panel
 HBoxContainer
-Label
 TextureRect
 CollisionShape2D
 Area2D
