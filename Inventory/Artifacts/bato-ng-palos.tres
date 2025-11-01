@@ -7,4 +7,5 @@
 script = ExtResource("1_wkj20")
 name = "bato-ng-palos"
 texture = ExtResource("2_u3a1w")
+buffSpeed = 2000.0
 metadata/_custom_type_script = "uid://buqlpcs727fru"

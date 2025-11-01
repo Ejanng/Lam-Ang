@@ -12,3 +12,9 @@ res://Inventory/Item/energypot.tres
 res://Inventory/Artifacts/bato-ng-palos.tres
 res://Inventory/inventory_slot.gd
 res://Inventory/inventory.gd
+res://scripts/global.gd
+res://scripts/melee_enemy.gd
+res://scenes/Hostile/melee_tribe_member.tscn
+res://scripts/endless_battle.gd
+res://scenes/EndlessBattle/endless_melee_enemy.tscn
+res://scenes/EndlessBattle/endless_melee_enemy.gd

@@ -12,10 +12,10 @@ var waveSpawnEnded
 
 
 func _ready():
-	currentWave = 10
-	Global.currentWave = currentWave
 	startingNodes = get_child_count()
 	currentNodes = get_child_count()
+	currentWave = 10
+	Global.currentWave = currentWave
 	position_to_next_wave()
 	
 func position_to_next_wave():

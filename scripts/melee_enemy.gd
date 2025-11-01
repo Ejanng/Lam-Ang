@@ -96,7 +96,7 @@ func perform_attack():
 	if player and is_instance_valid(player) and isPlayerInAttackRange:
 		if roll <= hitChance:
 			if player.has_method("take_damage"):
-				player.take_damage(enemyDMG - Global.addDef)
+				player.take_damage(enemyDMG - Global.defBuff)
 				#print("Enemy dealt ", enemyDMG - Global.addDef, " damage to player!")
 		else:
 			print("Enemy missed the attack")

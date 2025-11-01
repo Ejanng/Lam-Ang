@@ -147,7 +147,7 @@ func handle_movement(delta):
 	if isHurt:
 		return
 	if canMove:
-		currentSpeed = WALK + Global.addSpeed
+		currentSpeed = WALK + Global.speedBuff
 		
 	
 	if isDashing:

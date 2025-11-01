@@ -46,6 +46,7 @@ func update():
 		
 		itemStackGui.inventorySlot = inventorySlot
 		itemStackGui.update()
+	update_artifact_buffs()
 	
 
 func open():
@@ -79,6 +80,7 @@ func takeItemFromSlot(slot):
 	itemInHand = slot.takeItem()
 	add_child(itemInHand)
 	updateItemInHand()
+	update_artifact_buffs()
 	
 	oldIndex = slot.index
 
@@ -95,6 +97,7 @@ func insertItemInSlot(slot):
 	slot.insert(item)
 	
 	oldIndex = -1
+	update_artifact_buffs()
 	
 func swapItems(slot):
 	var tempItem = slot.takeItem()
@@ -162,3 +165,36 @@ func _input(event):
 		putItemBack()
 		
 	updateItemInHand()
+
+func update_artifact_buffs():
+	var total_strength = 0.0
+	var total_health = 0.0
+	var total_speed = 0.0
+	var total_energy = 0.0
+	var total_def = 0.0
+	var total_crit_dmg = 0.0
+	var total_crit_chance = 0.0
+
+	# Loop through all artifact slots
+	for slot in artifactSlots:
+		if slot.itemStackGui and slot.itemStackGui.inventorySlot and slot.itemStackGui.inventorySlot.item:
+			var item = slot.itemStackGui.inventorySlot.item
+			
+			# Only apply buffs if not consumable
+			if !item.isConsumable:
+				total_strength += item.buffAttack
+				total_health += item.buffHealth
+				total_speed += item.buffSpeed
+				total_energy += item.buffEnergy
+				total_def += item.buffDefense
+				total_crit_dmg += item.buffCritDamage
+				total_crit_chance += item.buffCritChance
+	
+	# Update Global singleton values
+	Global.strengthBuff = total_strength
+	Global.healthBuff = total_health
+	Global.speedBuff = total_speed
+	Global.energyBuff = total_energy
+	Global.defBuff = total_def
+	Global.critDamageBuff = total_crit_dmg
+	Global.critChanceBuff = total_crit_chance
