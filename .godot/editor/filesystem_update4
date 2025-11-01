@@ -6,5 +6,8 @@ res://ui components/2theme.tres
 res://ui components/3theme.tres
 res://ui components/4theme.tres
 res://ui components/5theme.tres
-res://scenes/Tutorial/TutorialScene.tscn
 res://scripts/actionable.gd
+res://scenes/Hostile/bandit.tscn
+res://scripts/melee_enemy.gd
+res://scripts/lam_ang.gd
+res://npcs/ines.tscn

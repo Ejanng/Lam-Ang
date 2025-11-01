@@ -111,6 +111,7 @@ SYSTEM: BOSS FIGHT — Igorot Chief. Defeat him and his warriors!
 
 #Igorot Chief: You have skill, boy. But can you face ME?
 
+#Act 1 Scene 4 will only start when the killed the Igorot Chief
 => END 
 
 ~ lam_ang_scene4_start
@@ -163,15 +164,19 @@ SYSTEM: New Quest: The Courtship of Ines Cannoyan
 
 SYSTEM: Companions Acquired: White Rooster, Shaggy Dog
 
-=> END
-
-~ act2_scene2_travel_start
-
 Lam-ang: Calanutian lies to the east. A new challenge awaits — one I cannot solve with a sword alone.
 
-SYSTEM: Follow the path to Calanutian.
+SYSTEM: Head South and follow the path to Calanutian.
 
-=> END 
+=> END
+
+#~ act2_scene2_travel_start
+#
+#Lam-ang: Calanutian lies to the east. A new challenge awaits — one I cannot solve with a sword alone.
+#
+#SYSTEM: Head South and follow the path to Calanutian.
+#
+#=> END 
 
 ~ act2_scene2_1_travel_start
 
@@ -201,17 +206,17 @@ Lam-ang: I don't wait in lines. Tandang!
 
 #SYSTEM: PRESS Q — ROOSTER ABILITY
 #
-#White Rooster: (flaps wings)
-#SYSTEM: The house shakes and collapses.
+White Rooster: (flaps wings)
+SYSTEM: The house shakes and collapses.
 #
-#Doña Ines: (furious) WHO DESTROYED MY HOUSE?!
+Doña Ines: WHO DESTROYED MY HOUSE?!
 #
-#Lam-ang: Aso, fix it!
+Lam-ang: Aso, fix it!
 #
 #SYSTEM: PRESS E — DOG ABILITY
 #
-#Shaggy Dog: (barks)
-#SYSTEM: House rebuilds itself, even better than before.
+Shaggy Dog: (barks)
+SYSTEM: House rebuilds itself, even better than before.
 
 Suitors: Impossible!
 
