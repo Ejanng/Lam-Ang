@@ -1,2 +1,4 @@
 res://scenes/MainStory/Town.tscn
+res://Inventory/Artifacts/playerArtifacts.tres
 res://Inventory/Item/playerInventory.tres
+res://scripts/lam_ang.gd

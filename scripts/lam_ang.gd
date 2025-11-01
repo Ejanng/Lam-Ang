@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const WALK = 0.1
+const WALK = 100
 const SPRINT = 15
 const DASH_SPEED = 600
 
@@ -180,7 +180,7 @@ func handle_movement(delta):
 	if isHurt:
 		return
 		#print("Inside canMove block - should not print during dialogue!")
-	currentSpeed = WALK + Global.addSpeed
+	currentSpeed = WALK
 		
 	
 	if isDashing:
