@@ -180,7 +180,7 @@ func handle_movement(delta):
 	if isHurt:
 		return
 		#print("Inside canMove block - should not print during dialogue!")
-	currentSpeed = WALK + Global.addSpeed
+	currentSpeed = WALK
 		
 	
 	if isDashing:
