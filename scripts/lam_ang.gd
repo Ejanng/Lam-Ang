@@ -96,7 +96,7 @@ func _physics_process(delta: float) -> void:
 	if not can_move or not canMove:
 		velocity = Vector2.ZERO  # Stop all movement
 		anim.stop()
-		move_and_slide()
+		set_physics_process(false)
 		return
 		
 	handle_movement(delta)
@@ -170,8 +170,7 @@ func handle_movement(delta):
 	if isHurt:
 		return
 		#print("Inside canMove block - should not print during dialogue!")
-	if canMove or can_move:
-		currentSpeed = WALK + Global.addSpeed
+	currentSpeed = WALK + Global.addSpeed
 		
 	
 	if isDashing:
