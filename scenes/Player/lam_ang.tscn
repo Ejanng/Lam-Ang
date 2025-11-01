@@ -283,6 +283,7 @@ radius = 21.0
 
 [node name="Lam-Ang" type="CharacterBody2D"]
 process_mode = 3
+scale = Vector2(1.2, 1.2)
 collision_layer = 3
 script = ExtResource("1_67xbk")
 inventory = ExtResource("2_fewss")
@@ -297,9 +298,6 @@ autoplay = "hurt"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_d5ujj")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
 
 [node name="hitbox" type="Area2D" parent="."]
 

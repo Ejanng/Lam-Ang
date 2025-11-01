@@ -1,7 +1,11 @@
-res://scenes/MainStory/Town.tscn
+res://scenes/Tutorial/TutorialScene.tscn
 res://Inventory/Item/playerInventory.tres
+res://scripts/lam_ang.gd
+res://scenes/Player/lam_ang.tscn
+res://npcs/aso.tscn
 res://npcs/suitor.tscn
 res://npcs/priest.tscn
+res://npcs/namongan.tscn
 res://npcs/capitan.tscn
-res://npcs/aso.tscn
-res://scripts/actionable.gd
+res://npcs/wounded_villager.tscn
+res://npcs/ines.tscn
