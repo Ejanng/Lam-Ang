@@ -1008,4 +1008,4 @@ position = Vector2(924, 1274)
 position = Vector2(50, 745)
 
 [node name="Lam-Ang" parent="." instance=ExtResource("11_0tldb")]
-position = Vector2(1015, 314)
+position = Vector2(1345, 611)
