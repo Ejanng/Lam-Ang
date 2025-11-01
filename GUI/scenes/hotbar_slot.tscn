@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://culv1yao6h1cq"]
 
-[ext_resource type="Script" uid="uid://faoaul6xduq4" path="res://GUI/hotbar_slot.gd" id="1_acwxn"]
+[ext_resource type="Script" uid="uid://faoaul6xduq4" path="res://GUI/scripts/hotbar_slot.gd" id="1_acwxn"]
 [ext_resource type="Texture2D" uid="uid://dbw7ebgstkq8k" path="res://assets/GUI/inventorySlot.png" id="2_acwxn"]
-[ext_resource type="PackedScene" uid="uid://cvbaw6f6bbkst" path="res://GUI/itemStackGui.tscn" id="3_86cb4"]
+[ext_resource type="PackedScene" uid="uid://cvbaw6f6bbkst" path="res://GUI/scenes/item_stack_gui.tscn" id="3_86cb4"]
 
 [node name="HotbarSlot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)

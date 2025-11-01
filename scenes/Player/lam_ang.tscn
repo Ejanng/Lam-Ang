@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ddxg0illq4jmm" path="res://assets/Sprites/Lam-ang/lam-ang back walk spritesheet.png" id="5_d5ujj"]
 [ext_resource type="Texture2D" uid="uid://bmuwi5ovm18yy" path="res://assets/Sprites/Lam-ang/lam-ang idle _w sword spritesheet.png" id="6_fewss"]
 [ext_resource type="Texture2D" uid="uid://dj6smqf84dkab" path="res://assets/Sprites/Lam-ang/lam-ang idle _w sword angry spritesheet.png" id="7_35ntw"]
-[ext_resource type="PackedScene" uid="uid://c28xj6l2ghcpl" path="res://GUI/inventory_gui.tscn" id="11_yusw4"]
-[ext_resource type="PackedScene" uid="uid://clfgtq4jq5lod" path="res://GUI/hotbar.tscn" id="14_l2381"]
+[ext_resource type="PackedScene" uid="uid://c28xj6l2ghcpl" path="res://GUI/scenes/inventory_gui.tscn" id="11_yusw4"]
+[ext_resource type="PackedScene" uid="uid://clfgtq4jq5lod" path="res://GUI/scenes/hotbar.tscn" id="14_l2381"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l2381"]
 atlas = ExtResource("2_5t7uf")

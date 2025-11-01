@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c28xj6l2ghcpl"]
+[gd_scene load_steps=4 format=3 uid="uid://c28xj6l2ghcpl"]
 
 [ext_resource type="Texture2D" uid="uid://cwwmx6kio1l71" path="res://assets/GUI/InventoryRect.png" id="1_fh8r3"]
-[ext_resource type="Script" uid="uid://b1sr6haij314b" path="res://GUI/inventory_gui.gd" id="1_ts6uu"]
-[ext_resource type="PackedScene" uid="uid://dd088v0mmb118" path="res://GUI/slot_gui.tscn" id="2_oog7l"]
-[ext_resource type="PackedScene" uid="uid://bamqdmubtwtok" path="res://GUI/artifact_slot.tscn" id="4_qygy4"]
+[ext_resource type="Script" uid="uid://b1sr6haij314b" path="res://GUI/scripts/inventory_gui.gd" id="1_ts6uu"]
+[ext_resource type="PackedScene" uid="uid://dd088v0mmb118" path="res://GUI/scenes/slot_gui.tscn" id="2_oog7l"]
 
 [node name="InventoryGui" type="Control"]
 layout_mode = 3
@@ -13,9 +12,9 @@ offset_bottom = 40.0
 script = ExtResource("1_ts6uu")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(138, 90)
+custom_minimum_size = Vector2(200, 120)
 layout_mode = 0
-offset_right = 138.0
+offset_right = 198.0
 offset_bottom = 90.0
 texture = ExtResource("1_fh8r3")
 patch_margin_left = 6
@@ -23,12 +22,32 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
+[node name="Artifacts" type="Label" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 7.0
-offset_right = 126.0
-offset_bottom = 27.0
+offset_top = 16.5
+offset_right = 59.0
+offset_bottom = 39.5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Artifacts"
+
+[node name="Inventory" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 39.5
+offset_right = 152.0
+offset_bottom = 56.5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Inventory"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 17.0
+offset_right = 182.0
+offset_bottom = 37.0
 
 [node name="Slot" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_oog7l")]
 layout_mode = 2
@@ -52,10 +71,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = -7.0
-offset_right = 58.0
-offset_bottom = 37.0
+offset_left = -34.0
+offset_top = 2.0
+offset_right = 82.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 5
@@ -90,43 +109,18 @@ layout_mode = 2
 [node name="Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("2_oog7l")]
 layout_mode = 2
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(40, 60)
+[node name="GridContainer2" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = -40.0
-offset_bottom = 89.0
-texture = ExtResource("1_fh8r3")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+offset_left = 25.0
+offset_top = 38.0
+offset_right = 45.0
+offset_bottom = 106.0
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -38.0
-offset_right = 10.0
-offset_bottom = 6.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ArtifactSlot" parent="NinePatchRect2/GridContainer" instance=ExtResource("4_qygy4")]
+[node name="Slot16" parent="NinePatchRect/GridContainer2" instance=ExtResource("2_oog7l")]
 layout_mode = 2
 
-[node name="ArtifactSlot2" parent="NinePatchRect2/GridContainer" instance=ExtResource("4_qygy4")]
+[node name="Slot17" parent="NinePatchRect/GridContainer2" instance=ExtResource("2_oog7l")]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect2"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 62.0
-offset_right = 30.0
-offset_bottom = 82.0
-
-[node name="ArtifactSlot" parent="NinePatchRect2/HBoxContainer" instance=ExtResource("4_qygy4")]
+[node name="Slot18" parent="NinePatchRect/GridContainer2" instance=ExtResource("2_oog7l")]
 layout_mode = 2

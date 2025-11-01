@@ -1,10 +1,10 @@
-ResourcePreloader
 Label
+GridContainer
+ResourcePreloader
 Sprite2D
 Panel
 Control
 Button
-GridContainer
 Node
 HBoxContainer
 TextureRect

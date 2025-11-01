@@ -6,8 +6,7 @@ signal closed
 var isOpen: bool = false
 
 @onready var inventory: Inventory = preload("res://Inventory/Item/playerInventory.tres")
-@onready var artifacts: Artifacts = preload("res://Inventory/Artifacts/playerArtifacts.tres")
-@onready var itemStackGuiClass = preload("res://GUI/itemStackGui.tscn")
+@onready var itemStackGuiClass = preload("res://GUI/scenes/item_stack_gui.tscn")
 @onready var hotbarSlots: Array = $NinePatchRect/HBoxContainer.get_children()
 @onready var slots: Array = hotbarSlots + $NinePatchRect/GridContainer.get_children()
 @onready var artifact_slots: Array = $NinePatchRect2/GridContainer.get_children()
@@ -47,9 +46,7 @@ func update():
 		
 		itemStackGui.inventorySlot = inventorySlot
 		itemStackGui.update()
-		
-	for i in range(min(artifacts.items.size(), artifact_slots.size())):
-		artifact_slots[i].update(artifacts.items[i])
+	
 
 func open():
 	visible = true
