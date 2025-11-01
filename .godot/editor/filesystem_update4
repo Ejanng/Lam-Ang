@@ -8,3 +8,5 @@ res://ui components/4theme.tres
 res://ui components/5theme.tres
 res://npcs/wounded_villager.tscn
 res://npcs/namongan.tscn
+res://scripts/actionable.gd
+res://scenes/Hostile/melee_tribe_member.tscn

@@ -3,14 +3,20 @@ extends Area2D
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
 @export var auto_trigger: bool = false
+@export var barrier: StaticBody2D
+
 var has_triggered: bool = false
 var dialogue_active: bool = false
 
 func _ready() -> void:
+	if barrier:
+		barrier.visible = false
+		barrier.set_collision_layer_value(1, false)  # Disable collision
+		barrier.set_collision_mask_value(1, false)
+	
 	if auto_trigger:
 		body_entered.connect(_on_body_entered)
-
-
+		
 func _on_body_entered(body: Node2D) -> void:
 	# Only trigger once and ignore repeated space presses
 	if has_triggered or dialogue_active:
@@ -20,6 +26,12 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") or body.name == "Lam-Ang":
 		print("Player entered trigger zone.")
 		has_triggered = true
+		
+		if barrier:
+			barrier.visible = true
+			barrier.set_collision_layer_value(1, true)  # Enable collision
+			barrier.set_collision_mask_value(1, true)
+			
 		action()
 	else:
 		print("Non-player entered; ignoring.")
@@ -29,8 +41,8 @@ func action() -> void:
 	var parent_name = get_parent().name
 	var player = get_tree().get_root().find_child("Lam-Ang", true, false)
 
-	dialogue_active = true  # ✅ Prevent multiple triggers while active
-
+	dialogue_active = true  # Prevent multiple triggers while active
+	
 	if player:
 		print("Disabling player movement.")
 		player.can_move = false

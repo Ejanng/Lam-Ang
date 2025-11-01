@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://im718yqqxa6p"
+path="res://.godot/imported/travels_bgm story mode.wav-1a198ecfe1bdadc3a961d72347a36a62.sample"
+
+[deps]
+
+source_file="res://audio/Music/travels_bgm story mode.wav"
+dest_files=["res://.godot/imported/travels_bgm story mode.wav-1a198ecfe1bdadc3a961d72347a36a62.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

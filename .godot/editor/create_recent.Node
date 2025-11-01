@@ -1,3 +1,5 @@
+CollisionShape2D
+StaticBody2D
 Node
 Camera2D
 Sprite2D
@@ -7,7 +9,6 @@ Button
 GridContainer
 HBoxContainer
 TextureRect
-CollisionShape2D
 Area2D
 AnimationPlayer
 ColorRect
