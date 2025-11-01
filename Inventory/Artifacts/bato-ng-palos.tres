@@ -7,5 +7,6 @@
 script = ExtResource("1_wkj20")
 name = "bato-ng-palos"
 texture = ExtResource("2_u3a1w")
-healthStat = 0.25
+speedStat = 0.2
+energyStat = 0.1
 metadata/_custom_type_script = "uid://ccjyopo6hld7g"

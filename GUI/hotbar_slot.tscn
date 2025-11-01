@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://faoaul6xduq4" path="res://GUI/hotbar_slot.gd" id="1_acwxn"]
 [ext_resource type="Texture2D" uid="uid://dbw7ebgstkq8k" path="res://assets/GUI/inventorySlot.png" id="2_acwxn"]
-[ext_resource type="PackedScene" uid="uid://cvbaw6f6bbkst" path="res://GUI/itemStackGui.tscn" id="3_86cb4"]
+[ext_resource type="PackedScene" uid="uid://cvbaw6f6bbkst" path="res://GUI/Inventory/itemStackGui.tscn" id="3_86cb4"]
 
 [node name="HotbarSlot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)

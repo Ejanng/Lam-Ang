@@ -56,8 +56,6 @@ var can_move: bool = true
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var inventoryGui = $InventoryGui
 
-@export var inventory: Inventory
-@export var artifact: Artifacts
 
 func _ready() -> void:
 	healthBar.max_value = Global.MAX_HEALTH
@@ -71,13 +69,25 @@ func _ready() -> void:
 	xpBar.value = Global.playerXP
 	xpBar.max_value = Global.xpToNextLevel
 	
+	
+	
 	inventoryGui.close()
 	update_coin_display()
 	
+# function stats of consumable
+func health_potion():
+	if Global.healthPotion > 0:
+		print("Before: ", Global.playerHealth)
+		Global.playerHealth += (Global.playerHealth * Global.healthPotion)
+		print("After: ", Global.playerHealth)
+		Global.healthPotion = 0
+
 func _process(delta: float) -> void:
 	cameraMovement()
+	health_potion()
 	regenPlayerHealth(delta)
 	regenPlayerEnergy(delta)
+	
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
@@ -190,7 +200,7 @@ func handle_movement(delta):
 				Global.playerEnergy = clamp(Global.playerEnergy, 0, Global.MAX_ENERGY)
 				energyBar.value = Global.playerEnergy
 				energyRegenTimer.start()
-				currentSpeed = SPRINT + Global.addSpeed
+				currentSpeed = SPRINT
 			
 		# movements directions
 		if Input.is_action_pressed("ui_right"):

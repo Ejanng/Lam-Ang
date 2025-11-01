@@ -81,7 +81,7 @@ Namongan: Then go, my son. But please... return to me. You're all I have left.
 
 ~ lam_ang_scene2_start
 
-Lam-ang: They call this the darkest mountain. Death lingers here. Good. Let death come for those who took my father.
+Lam-ang: (internal monologue) They call this the darkest mountain. Death lingers here. Good. Let death come for those who took my father.
 
 Igorot Scout: Who dares enter Igorotan territory?
 
@@ -95,7 +95,6 @@ SYSTEM: Combat Started. Defeat all enemies to proceed. (3 waves)
 
 => END 
 
-#will add this when i know how to trigger a dialogue after defeating the last enemy
 ~ lam_ang_scene3_start
 
 Lam-ang: Father... I will honor you.
@@ -112,7 +111,6 @@ SYSTEM: BOSS FIGHT — Igorot Chief. Defeat him and his warriors!
 
 => END 
 
-#will add this when i know how to trigger a dialogue after defeating the last enemy
 ~ lam_ang_scene4_start
 
 Lam-ang: It's done.

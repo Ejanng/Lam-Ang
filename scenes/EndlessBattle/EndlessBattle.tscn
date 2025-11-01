@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://bp52d8hsunqno" path="res://assets/Environments/houses.png" id="10_3j3tg"]
 [ext_resource type="PackedScene" uid="uid://bioohv47js651" path="res://scenes/Player/lam_ang.tscn" id="11_0tldb"]
 
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d10y6"]
 texture = ExtResource("1_euge8")
 0:0/0 = 0

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0mgxqwfuoypi"]
+
+[ext_resource type="Script" uid="uid://ddo1poi8w65ar" path="res://GUI/Artifacts/artifact_stack_gui.gd" id="1_0yhvk"]
+
+[node name="ArtifactStackGui" type="Panel"]
+script = ExtResource("1_0yhvk")
+
+[node name="artifact" type="Sprite2D" parent="."]

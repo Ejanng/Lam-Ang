@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd6dweyhjhny6"]
+
+[ext_resource type="Script" uid="uid://desbruacxy6em" path="res://GUI/Artifacts/artifact_gui.gd" id="1_e0mfy"]
+[ext_resource type="Texture2D" uid="uid://cwwmx6kio1l71" path="res://assets/GUI/InventoryRect.png" id="2_nq6ib"]
+[ext_resource type="PackedScene" uid="uid://bamqdmubtwtok" path="res://GUI/Artifacts/artifact_slot_gui.tscn" id="3_unhnp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_e0mfy")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(40, 60)
+layout_mode = 0
+offset_left = -40.0
+offset_bottom = 89.0
+texture = ExtResource("2_nq6ib")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Artifacts" type="GridContainer" parent="NinePatchRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -38.0
+offset_right = 10.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ArtifactSlot" parent="NinePatchRect2/Artifacts" instance=ExtResource("3_unhnp")]
+layout_mode = 2
+
+[node name="ArtifactSlot2" parent="NinePatchRect2/Artifacts" instance=ExtResource("3_unhnp")]
+layout_mode = 2
+
+[node name="Skills" type="GridContainer" parent="NinePatchRect2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 62.0
+offset_right = 30.0
+offset_bottom = 82.0
+
+[node name="ArtifactSlot" parent="NinePatchRect2/Skills" instance=ExtResource("3_unhnp")]
+layout_mode = 2

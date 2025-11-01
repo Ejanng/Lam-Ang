@@ -2,9 +2,11 @@ Camera2D
 Node
 Sprite2D
 Panel
-HBoxContainer
+Control
 Button
-Label
+GridContainer
+Node
+HBoxContainer
 TextureRect
 CollisionShape2D
 Area2D

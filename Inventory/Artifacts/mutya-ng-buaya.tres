@@ -8,4 +8,6 @@ script = ExtResource("1_havj5")
 name = "mutya-ng-buaya"
 texture = ExtResource("2_uo2lf")
 defStat = 0.2
+speedStat = -0.1
+strengthStat = 0.25
 metadata/_custom_type_script = "uid://ccjyopo6hld7g"
