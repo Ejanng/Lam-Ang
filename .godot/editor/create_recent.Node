@@ -1,11 +1,10 @@
-ResourcePreloader
-Label
+Node
+Camera2D
 Sprite2D
 Panel
 Control
 Button
 GridContainer
-Node
 HBoxContainer
 TextureRect
 CollisionShape2D

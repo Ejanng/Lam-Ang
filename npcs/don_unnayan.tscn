@@ -1,21 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://ex00a1v3tgg2"]
+[gd_scene load_steps=8 format=3 uid="uid://dbi10xmdqo1rx"]
 
-[ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_shybo"]
+[ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_qx35t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uv2tn"]
-atlas = ExtResource("1_shybo")
+atlas = ExtResource("1_qx35t")
 region = Rect2(1, 1, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i05vm"]
-atlas = ExtResource("1_shybo")
+atlas = ExtResource("1_qx35t")
 region = Rect2(33, 33, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cgviw"]
-atlas = ExtResource("1_shybo")
+atlas = ExtResource("1_qx35t")
 region = Rect2(1, 33, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrcdj"]
-atlas = ExtResource("1_shybo")
+atlas = ExtResource("1_qx35t")
 region = Rect2(33, 1, 30, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rebq2"]
@@ -42,7 +42,7 @@ animations = [{
 radius = 17.0
 height = 36.0
 
-[node name="Aso" type="CharacterBody2D"]
+[node name="DonUnnayan" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

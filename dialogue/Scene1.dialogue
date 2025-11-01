@@ -75,13 +75,15 @@ SYSTEM: Lam-ang equips two mutya stones, boosting his stats.
 
 Namongan: Then go, my son. But please... return to me. You're all I have left.
 
+SYSTEM: Go to the east leading to the dark forest.
+
 # SYSTEM: You are now Lam-ang. Press ESC to view Controls.
 
 => END 
 
 ~ lam_ang_scene2_start
 
-Lam-ang: (internal monologue) They call this the darkest mountain. Death lingers here. Good. Let death come for those who took my father.
+Lam-ang: They call this the darkest mountain. Death lingers here. Good. Let death come for those who took my father.
 
 Igorot Scout: Who dares enter Igorotan territory?
 
@@ -109,6 +111,7 @@ SYSTEM: BOSS FIGHT — Igorot Chief. Defeat him and his warriors!
 
 #Igorot Chief: You have skill, boy. But can you face ME?
 
+#Act 1 Scene 4 will only start when the killed the Igorot Chief
 => END 
 
 ~ lam_ang_scene4_start
@@ -161,15 +164,19 @@ SYSTEM: New Quest: The Courtship of Ines Cannoyan
 
 SYSTEM: Companions Acquired: White Rooster, Shaggy Dog
 
-=> END
-
-~ act2_scene2_travel_start
-
 Lam-ang: Calanutian lies to the east. A new challenge awaits — one I cannot solve with a sword alone.
 
-SYSTEM: Follow the path to Calanutian.
+SYSTEM: Head South and follow the path to Calanutian.
 
-=> END 
+=> END
+
+#~ act2_scene2_travel_start
+#
+#Lam-ang: Calanutian lies to the east. A new challenge awaits — one I cannot solve with a sword alone.
+#
+#SYSTEM: Head South and follow the path to Calanutian.
+#
+#=> END 
 
 ~ act2_scene2_1_travel_start
 
@@ -199,23 +206,23 @@ Lam-ang: I don't wait in lines. Tandang!
 
 #SYSTEM: PRESS Q — ROOSTER ABILITY
 #
-#White Rooster: (flaps wings)
-#SYSTEM: The house shakes and collapses.
+White Rooster: (flaps wings)
+SYSTEM: The house shakes and collapses.
 #
-#Doña Ines: (furious) WHO DESTROYED MY HOUSE?!
+Doña Ines: WHO DESTROYED MY HOUSE?!
 #
-#Lam-ang: Aso, fix it!
+Lam-ang: Aso, fix it!
 #
 #SYSTEM: PRESS E — DOG ABILITY
 #
-#Shaggy Dog: (barks)
-#SYSTEM: House rebuilds itself, even better than before.
+Shaggy Dog: (barks)
+SYSTEM: House rebuilds itself, even better than before.
 
 Suitors: Impossible!
 
 Doña Ines: You there! Come inside.
 
-SYSTEM: Enter the house.
+SYSTEM: Talk to Don Unnayan
 
 => END 
 
@@ -247,6 +254,7 @@ SYSTEM: Courtship Successful!
 
 => END 
 
+#will add this soon if my time
 ~ act2_scene5_wedding_start
 
 Priest: I now pronounce you husband and wife!
@@ -273,6 +281,7 @@ Lam-ang: I'll be fine. I've faced worse.
 
 ~ act3_scene1_1_rarang_call
 
+#will add this soon
 Lam-ang: Ines... I saw my death. A great shark.
 
 Doña Ines: Then don't go!
@@ -303,6 +312,7 @@ Berkakan the Shark: Your journey ends, Lam-ang!
 
 => END 
 
+# will add this after defeating berkakan
 ~ act3_scene2_2_shore_dive
 
 Lam-ang: (weakening) Ines... I'm sorry...
@@ -311,7 +321,7 @@ Lam-ang: (weakening) Ines... I'm sorry...
 
 ~ act3_scene3_ines_returns
 
-
+#will add this in the future since there's no lam-ang to interact with this
 #SYSTEM: Suddenly — Screen shakes. Stairs animated shaking.
 
 Doña Ines: No...
@@ -371,7 +381,7 @@ Lam-ang: Finally, peace. We can live quietly now.
 
 Doña Ines: After all you've been through, you deserve rest.
 
-SYSTEM: They reach home. Suddenly — war drums in distance.
+SYSTEM: Suddenly — war drums in distance.
 
 Namongan:  Lam-ang! Raiders approach from the mountains!
 
@@ -381,7 +391,7 @@ Doña Ines: Then we fight together. This is OUR home.
 
 Lam-ang: Together.
 
-SYSTEM: ENDLESS MODE — Defend Nalbuan!
+SYSTEM: ENDLESS MODE AVAILABLE — Defend Nalbuan!
 
 => END
 

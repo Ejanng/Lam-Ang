@@ -87,7 +87,7 @@ radius = 10.0499
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1ptj"]
 bg_color = Color(0.968627, 0.337255, 0.384314, 1)
 
-[node name="melee_enemy" type="CharacterBody2D"]
+[node name="Bandit" type="CharacterBody2D"]
 script = ExtResource("1_kjp57")
 
 [node name="AttackPauseTimer" type="Timer" parent="."]
