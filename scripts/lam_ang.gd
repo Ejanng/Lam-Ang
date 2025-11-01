@@ -54,7 +54,6 @@ var playerPos = Vector2.ZERO
 @onready var inventoryGui = $InventoryGui
 
 @export var inventory: Inventory
-@export var artifact: Artifacts
 
 func _ready() -> void:
 	healthBar.max_value = Global.MAX_HEALTH

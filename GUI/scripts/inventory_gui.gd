@@ -8,8 +8,8 @@ var isOpen: bool = false
 @onready var inventory: Inventory = preload("res://Inventory/Item/playerInventory.tres")
 @onready var itemStackGuiClass = preload("res://GUI/scenes/item_stack_gui.tscn")
 @onready var hotbarSlots: Array = $NinePatchRect/HBoxContainer.get_children()
-@onready var slots: Array = hotbarSlots + $NinePatchRect/GridContainer.get_children()
-@onready var artifact_slots: Array = $NinePatchRect2/GridContainer.get_children()
+@onready var artifactSlots: Array = $NinePatchRect/GridContainer2.get_children()
+@onready var slots: Array = hotbarSlots + $NinePatchRect/GridContainer.get_children() + artifactSlots
 
 var itemInHand: ItemStackGui
 var oldIndex: int = -1
@@ -85,6 +85,10 @@ func takeItemFromSlot(slot):
 func insertItemInSlot(slot):
 	var item = itemInHand
 	
+	if item.inventorySlot.item.isConsumable and artifactSlots.has(slot):
+		print(item.inventorySlot.item.name + " is consumable!")
+		return
+	
 	remove_child(itemInHand)
 	itemInHand = null
 	
@@ -94,6 +98,20 @@ func insertItemInSlot(slot):
 	
 func swapItems(slot):
 	var tempItem = slot.takeItem()
+	var inv_item = tempItem.inventorySlot.item
+	
+	# Check if the old slot was from artifactsSlot
+	var fromArtifact = false
+	if oldIndex >= 0 and oldIndex < slots.size():
+		var previousSlot = slots[oldIndex]
+		if artifactSlots.has(previousSlot):
+			fromArtifact = true
+	
+	# Example logic: prevent swapping consumable items into artifact slots
+	if fromArtifact and inv_item.isConsumable:
+		print("❌ Cannot swap a consumable item from artifact slot!")
+		slot.insert(tempItem)  # put it back
+		return
 	
 	insertItemInSlot(slot)
 	

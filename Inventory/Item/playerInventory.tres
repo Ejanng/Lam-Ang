@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=19 format=3 uid="uid://dbnujrtlpcy0i"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=20 format=3 uid="uid://dbnujrtlpcy0i"]
 
 [ext_resource type="Script" uid="uid://cgmqv1bern5k7" path="res://Inventory/inventory_slot.gd" id="2_i86kb"]
 [ext_resource type="Resource" uid="uid://rdo2p3vpslq3" path="res://Inventory/Item/lifepot.tres" id="3_0ci43"]
 [ext_resource type="Script" uid="uid://bse7pqi7s2h5k" path="res://Inventory/inventory.gd" id="4_6uptj"]
+[ext_resource type="Resource" uid="uid://bcioe3nk7ioki" path="res://Inventory/Artifacts/bato-ng-palos.tres" id="4_gbjkg"]
 
 [sub_resource type="Resource" id="Resource_i86kb"]
 script = ExtResource("2_i86kb")
@@ -52,6 +53,7 @@ metadata/_custom_type_script = "uid://cgmqv1bern5k7"
 
 [sub_resource type="Resource" id="Resource_8nyw4"]
 script = ExtResource("2_i86kb")
+item = ExtResource("4_gbjkg")
 metadata/_custom_type_script = "uid://cgmqv1bern5k7"
 
 [sub_resource type="Resource" id="Resource_qmcys"]
@@ -76,5 +78,5 @@ metadata/_custom_type_script = "uid://cgmqv1bern5k7"
 
 [resource]
 script = ExtResource("4_6uptj")
-slots = Array[ExtResource("2_i86kb")]([SubResource("Resource_i86kb"), SubResource("Resource_0ci43"), SubResource("Resource_gbjkg"), SubResource("Resource_xi2tl"), SubResource("Resource_awn3d"), SubResource("Resource_6uptj"), SubResource("Resource_q6lvj"), SubResource("Resource_w1tt7"), SubResource("Resource_via3y"), SubResource("Resource_8nyw4"), SubResource("Resource_qmcys"), SubResource("Resource_qbjqa"), SubResource("Resource_prgbk"), SubResource("Resource_wkxil"), SubResource("Resource_vntvb")])
+slots = Array[ExtResource("2_i86kb")]([SubResource("Resource_i86kb"), SubResource("Resource_0ci43"), SubResource("Resource_gbjkg"), SubResource("Resource_xi2tl"), SubResource("Resource_awn3d"), SubResource("Resource_6uptj"), SubResource("Resource_q6lvj"), SubResource("Resource_w1tt7"), SubResource("Resource_via3y"), SubResource("Resource_8nyw4"), SubResource("Resource_qmcys"), SubResource("Resource_qbjqa"), SubResource("Resource_prgbk"), SubResource("Resource_wkxil"), SubResource("Resource_vntvb"), SubResource("Resource_vntvb"), SubResource("Resource_vntvb"), SubResource("Resource_vntvb")])
 metadata/_custom_type_script = "uid://bse7pqi7s2h5k"
