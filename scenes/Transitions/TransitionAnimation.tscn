@@ -1,20 +1,5 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgrfmg33gvoe5"]
 
-[sub_resource type="Animation" id="Animation_t7rtn"]
-resource_name = "wave_start"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.36, 0.81, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0.22911215, 0.22911215, 0.22911215, 1), Color(0.14767182, 0.14767179, 0.14767179, 1), Color(0.11858145, 0.11858136, 0.11858138, 1), Color(0.118581474, 0.118581355, 0.118581355, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_w6t48"]
 length = 0.001
 tracks/0/type = "value"
@@ -28,6 +13,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t7rtn"]
+resource_name = "wave_start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36, 0.81, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.22911215, 0.22911215, 0.22911215, 1), Color(0.14767182, 0.14767179, 0.14767179, 1), Color(0.11858145, 0.11858136, 0.11858138, 1), Color(0.118581474, 0.118581355, 0.118581355, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_24sgk"]

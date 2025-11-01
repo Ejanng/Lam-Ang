@@ -1,4 +1,7 @@
+AudioStreamPlayer
 CollisionShape2D
+Area2D
+AudioStreamPlayer      - Matches the "music" keyword.
 StaticBody2D
 Node
 Camera2D
@@ -9,6 +12,3 @@ Button
 GridContainer
 HBoxContainer
 TextureRect
-Area2D
-AnimationPlayer
-ColorRect

@@ -10,3 +10,5 @@ res://npcs/wounded_villager.tscn
 res://npcs/namongan.tscn
 res://scripts/actionable.gd
 res://scenes/Hostile/melee_tribe_member.tscn
+res://scripts/final_music.gd
+res://scenes/Transitions/TransitionAnimation.tscn

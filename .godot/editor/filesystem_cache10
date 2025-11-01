@@ -187,14 +187,14 @@ menu second demo tribal.wav::AudioStreamWAV::6380964362949623372::1761927097::17
 ::res://audio/effects/::1761927160
 BUTTON CLICK.wav::AudioStreamWAV::8746903497574425800::1761927097::1761927160::1::::<><><>0<>0<>f0bc3217ab4994199bafd8f19d74fc50<>res://.godot/imported/BUTTON CLICK.wav-9391e8e56692137e5ff5028666d9f9ba.sample::
 menu second demo tribal.wav::AudioStreamWAV::7015245395855721754::1761927097::1761927160::1::::<><><>0<>0<>4fa3734da577f91155ebd9cab32ddab9<>res://.godot/imported/menu second demo tribal.wav-85d879a40a34e0b04ef1df93fa5fc901.sample::
-::res://audio/Music/::1762010550
+::res://audio/Music/::1762011450
 dad battle, tutorial.wav::AudioStreamWAV::3905059524147924209::1762010550::1762010633::1::::<><><>0<>0<>4927501f996ac22bb82365a7e52fdb8b<>res://.godot/imported/dad battle, tutorial.wav-6f14b4357f0c14fc2d3bce8f79cd15b1.sample::
-final farewell ni namongan ken daddy lam-ang.wav::AudioStreamWAV::1275494055846947428::1762010550::1762010633::1::::<><><>0<>0<>6e9e96d9f5d94ef2c785b7648c4df323<>res://.godot/imported/final farewell ni namongan ken daddy lam-ang.wav-7a5669e6aee746cf46b62e53c60305a7.sample::
+final farewell ni namongan ken daddy lam-ang.wav::AudioStreamWAV::1275494055846947428::1762010550::1762011499::1::::<><><>0<>0<>e13c60e6e92e7fa2c558c12a73a4d496<>res://.godot/imported/final farewell ni namongan ken daddy lam-ang.wav-7a5669e6aee746cf46b62e53c60305a7.sample::
 FINALBOSS.wav::AudioStreamWAV::5258508892823391902::1762010550::1762010635::1::::<><><>0<>0<>d4ed58f6b635cb110c654645788ae155<>res://.godot/imported/FINALBOSS.wav-d73e4faf6f5fc1a6994c731f2c96dd86.sample::
 menu second demo tribal.wav::AudioStreamWAV::2574925208791258368::1762010550::1762010633::1::::<><><>0<>0<>afb14a2d14cec809c224285369573326<>res://.godot/imported/menu second demo tribal.wav-cc78d1e89a8b6be47f1745b8ae394fe2.sample::
 travels_bgm story mode.wav::AudioStreamWAV::588274427658144485::1762010550::1762010633::1::::<><><>0<>0<>d12ff11f6e3556429fb7c24d44a92931<>res://.godot/imported/travels_bgm story mode.wav-1a198ecfe1bdadc3a961d72347a36a62.sample::
 ::res://audio/Sound Effects/::1762010535
-::res://audio/Sound Effects/MENU AND NAVIGATION/::1762010535
+::res://audio/Sound Effects/MENU AND NAVIGATION/::1762010633
 BUTTON CLICK.wav::AudioStreamWAV::1286930396163400791::1762010535::1762010633::1::::<><><>0<>0<>99f707b3eb7f288700b6dc97cbe70f28<>res://.godot/imported/BUTTON CLICK.wav-31a9efdcedf11ca6ee3ae68e2ff402f8.sample::
 BUTTON HOVER.wav::AudioStreamWAV::7328015753565161545::1762010535::1762010633::1::::<><><>0<>0<>4b682571ab0e61a2238c1b0bfb1988bc<>res://.godot/imported/BUTTON HOVER.wav-f1ccaf6f46122e6bfdae3fba5ca0a321.sample::
 SUBMENU OPEN_CLOSE.wav::AudioStreamWAV::1592050191433260256::1762010535::1762010633::1::::<><><>0<>0<>c52bca8dfa80a5aa5f3a0f17df0e1de1<>res://.godot/imported/SUBMENU OPEN_CLOSE.wav-06f01a9ffe9418d2cf0665f03a499cd2.sample::
@@ -283,8 +283,8 @@ starting_town.tscn::PackedScene::4283614478854630119::1761927097::0::1::::<><><>
 tutorial_scene1.tscn::PackedScene::4469145058526298740::1761927097::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://assets/Environments/grass.png<>uid://eokialhslv6e::::res://assets/Environments/Mountain.png<>uid://4r7tkukado4c::::res://assets/Environments/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environments/Tree.png<>uid://4p1g5gqwb62r::::res://assets/Environments/Dirttile.png
 ::res://scenes/Transitions/::1761927097
 TransitionAnimation.tscn::PackedScene::5229394225199779814::1761927097::0::1::::<><><>0<>0<><>::
-::res://scenes/Tutorial/::1762010069
-TutorialScene.tscn::PackedScene::8441096585817133714::1762010069::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://assets/Environments/grass.png<>uid://eokialhslv6e::::res://assets/Environments/Mountain.png<>uid://4r7tkukado4c::::res://assets/Environments/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environments/Tree.png<>uid://4p1g5gqwb62r::::res://assets/Environments/Dirttile.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bg8igj13o1og6::::res://dialogue/actionable.tscn<>uid://di6ytm5suocus::::res://npcs/namongan.tscn<>uid://k0ajtmpkft7::::res://dialogue/Scene1.dialogue<>uid://d4b118rrwlhqi::::res://npcs/wounded_villager.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn
+::res://scenes/Tutorial/::1762011457
+TutorialScene.tscn::PackedScene::8441096585817133714::1762011457::0::1::::<><><>0<>0<><>::uid://bqi60xyvplvxm::::res://assets/Environments/grass.png<>uid://eokialhslv6e::::res://assets/Environments/Mountain.png<>uid://4r7tkukado4c::::res://assets/Environments/Moutains.png<>uid://gs24at0wbyhn::::res://assets/Environments/Tree.png<>uid://4p1g5gqwb62r::::res://assets/Environments/Dirttile.png<>uid://bioohv47js651::::res://scenes/Player/lam_ang.tscn<>uid://bg8igj13o1og6::::res://dialogue/actionable.tscn<>uid://di6ytm5suocus::::res://npcs/namongan.tscn<>uid://k0ajtmpkft7::::res://dialogue/Scene1.dialogue<>uid://sf4g3cgq0q2g::::res://audio/Music/final farewell ni namongan ken daddy lam-ang.wav<>uid://d4b118rrwlhqi::::res://npcs/wounded_villager.tscn<>uid://bcxda6gun7nus::::res://scenes/Hostile/melee_tribe_member.tscn
 ::res://scripts/::1762009985
 actionable.gd::GDScript::6673809908610192139::1762009985::0::1::::<>Area2D<><>0<>0<><>::
 canvas_layer.gd::GDScript::6642954416609033457::1761927097::0::1::::<>CanvasLayer<><>0<>0<><>::
