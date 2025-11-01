@@ -2222,7 +2222,7 @@ layer_14/tile_data = PackedInt32Array(327683, 18, 1, 393219, 18, 2, 458755, 18, 
 layer_15/name = "Layer15"
 
 [node name="Lam-Ang" parent="." instance=ExtResource("16_hcnna")]
-position = Vector2(-1211, 1194)
+position = Vector2(615, 335)
 collision_layer = 19
 
 [node name="Camera2D2" type="Camera2D" parent="Lam-Ang"]
@@ -2448,3 +2448,20 @@ auto_trigger = true
 position = Vector2(107.54237, 1743.8823)
 rotation = 1.4486233
 shape = SubResource("RectangleShape2D_hcnna")
+
+[node name="Epilogue" type="Node" parent="."]
+
+[node name="Ines" parent="Epilogue" instance=ExtResource("24_hgjkx")]
+position = Vector2(2889, 737)
+
+[node name="Actionable" parent="Epilogue" instance=ExtResource("18_uyish")]
+position = Vector2(1863, -656)
+rotation = 1.5707964
+collision_mask = 1
+dialogue_resource = ExtResource("19_in1fl")
+auto_trigger = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Epilogue/Actionable"]
+position = Vector2(1395, -1012)
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_in1fl")

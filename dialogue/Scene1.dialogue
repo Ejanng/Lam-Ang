@@ -312,6 +312,7 @@ Berkakan the Shark: Your journey ends, Lam-ang!
 
 => END 
 
+# will add this after defeating berkakan
 ~ act3_scene2_2_shore_dive
 
 Lam-ang: (weakening) Ines... I'm sorry...
@@ -320,7 +321,7 @@ Lam-ang: (weakening) Ines... I'm sorry...
 
 ~ act3_scene3_ines_returns
 
-
+#will add this in the future since there's no lam-ang to interact with this
 #SYSTEM: Suddenly — Screen shakes. Stairs animated shaking.
 
 Doña Ines: No...
@@ -380,7 +381,7 @@ Lam-ang: Finally, peace. We can live quietly now.
 
 Doña Ines: After all you've been through, you deserve rest.
 
-SYSTEM: They reach home. Suddenly — war drums in distance.
+SYSTEM: Suddenly — war drums in distance.
 
 Namongan:  Lam-ang! Raiders approach from the mountains!
 
@@ -390,7 +391,7 @@ Doña Ines: Then we fight together. This is OUR home.
 
 Lam-ang: Together.
 
-SYSTEM: ENDLESS MODE — Defend Nalbuan!
+SYSTEM: ENDLESS MODE AVAILABLE — Defend Nalbuan!
 
 => END
 

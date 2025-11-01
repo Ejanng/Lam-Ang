@@ -69,6 +69,8 @@ func action() -> void:
 			dialogue_start = "act3_scene2_shore_dive"
 		"Act3Scene2_1":
 			dialogue_start = "act3_scene2_1_shore_dive"
+		"Epilogue":
+			dialogue_start = "epilogue_nalbuan_return"
 	
 	# Start the dialogue
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
