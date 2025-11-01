@@ -12,3 +12,9 @@ res://scripts/actionable.gd
 res://scenes/Hostile/melee_tribe_member.tscn
 res://scripts/final_music.gd
 res://scenes/Transitions/TransitionAnimation.tscn
+res://npcs/ines.tscn
+res://scenes/MainStory/Town.tscn
+res://npcs/suitor3.tscn
+res://npcs/suitor2.tscn
+res://npcs/suitor1.tscn
+res://npcs/don_unnayan.tscn

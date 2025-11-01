@@ -1,16 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbi10xmdqo1rx"]
+[gd_scene load_steps=6 format=3 uid="uid://ch6myvy8qmnye"]
 
-[ext_resource type="Texture2D" uid="uid://etdajta3713y" path="res://assets/Sprites/OS and  BERKAKAN/don Juan spritesheet.png" id="1_qx35t"]
+[ext_resource type="Texture2D" uid="uid://c7sikaj4j5lnf" path="res://assets/Sprites/OS and  BERKAKAN/color 1 spritesheet.png" id="1_ikb8n"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rw88s"]
-atlas = ExtResource("1_qx35t")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rrn7"]
+atlas = ExtResource("1_ikb8n")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbv8i"]
+atlas = ExtResource("1_ikb8n")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rebq2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rw88s")
+"texture": SubResource("AtlasTexture_0rrn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbv8i")
 }],
 "loop": true,
 "name": &"idle_down",
@@ -21,7 +28,7 @@ animations = [{
 radius = 17.0
 height = 36.0
 
-[node name="DonUnnayan" type="CharacterBody2D"]
+[node name="Suitor1" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
