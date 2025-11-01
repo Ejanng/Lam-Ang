@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ArtifactsItem" load_steps=3 format=3 uid="uid://cddm8qe3s6l3t"]
+
+[ext_resource type="Script" uid="uid://ccjyopo6hld7g" path="res://Inventory/artifacts_item.gd" id="1_ke3sh"]
+[ext_resource type="Texture2D" uid="uid://bg3jsif14ioy7" path="res://assets/Drops/mutya ng saging.png" id="2_op1qg"]
+
+[resource]
+script = ExtResource("1_ke3sh")
+name = "mutya-ng-saging"
+texture = ExtResource("2_op1qg")
+energyStat = 0.35
+metadata/_custom_type_script = "uid://ccjyopo6hld7g"

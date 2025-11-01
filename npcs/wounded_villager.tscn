@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4b118rrwlhqi"]
+
+[ext_resource type="Texture2D" uid="uid://bf2r4yqoq5sfr" path="res://assets/Sprites/Lam-ang/lam-ang idle spritesheet.png" id="1_tion4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv2tn"]
+atlas = ExtResource("1_tion4")
+region = Rect2(1, 1, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i05vm"]
+atlas = ExtResource("1_tion4")
+region = Rect2(33, 33, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgviw"]
+atlas = ExtResource("1_tion4")
+region = Rect2(1, 33, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrcdj"]
+atlas = ExtResource("1_tion4")
+region = Rect2(33, 1, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rebq2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv2tn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i05vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgviw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrcdj")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4t8w"]
+radius = 17.0
+height = 36.0
+
+[node name="WoundedVillager" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_rebq2")
+animation = &"idle_down"
+autoplay = "idle_down"
+frame_progress = 0.54473984
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_e4t8w")

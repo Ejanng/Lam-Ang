@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cluvlmamwqyhf"]
+
+[ext_resource type="Texture2D" uid="uid://bs7uppd36kia" path="res://assets/Environment Assets/Kubo 2.png" id="1_ufohb"]
+[ext_resource type="Script" uid="uid://dps83b2rlmgw6" path="res://scripts/projectile.gd" id="1_ulgu8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufohb"]
+size = Vector2(4, 81)
+
+[node name="Projectile" type="Area2D"]
+rotation = 1.5707964
+script = ExtResource("1_ulgu8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1875, 2.75)
+texture = ExtResource("1_ufohb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_ufohb")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
