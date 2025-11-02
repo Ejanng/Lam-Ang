@@ -15,12 +15,6 @@ var xpToNextLevel = 100
 var playerCoin = 0
 var playerLevel = 0
 
-# character stats 
-var addDef = 0
-var addStrength = 1000
-var addEnergy = 0
-var addHealth = 0
-var addSpeed = 100
 # drop effects
 var healthPotion: float
 var energyPotion: float

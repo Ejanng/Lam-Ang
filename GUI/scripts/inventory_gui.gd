@@ -87,9 +87,13 @@ func takeItemFromSlot(slot):
 func insertItemInSlot(slot):
 	var item = itemInHand
 	
+
 	if item.inventorySlot.item.isConsumable and artifactSlots.has(slot):
+		print(item.inventorySlot.item.isConsumable, " + ", artifactSlots.has(slot))
 		print(item.inventorySlot.item.name + " is consumable!")
 		return
+		
+	
 	
 	remove_child(itemInHand)
 	itemInHand = null
@@ -112,8 +116,7 @@ func swapItems(slot):
 	
 	# Example logic: prevent swapping consumable items into artifact slots
 	if fromArtifact and inv_item.isConsumable:
-		print("❌ Cannot swap a consumable item from artifact slot!")
-		slot.insert(tempItem)  # put it back
+		#slot.insert(tempItem)  # put it back
 		return
 	
 	insertItemInSlot(slot)
